@@ -1,0 +1,641 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        11/Feb/2014  12:04:36 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Users\OurEDA\Documents\Tencent                 /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\Source\HC_SR04.c                       /
+//    Command line       =  -f "C:\Users\OurEDA\Documents\Tencent             /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f8wEn /
+//                          dev.cfg" (-DCPU32MHZ -DROOT=__near_func           /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "C:\Users\OurEDA\Documents /
+//                          \Tencent Files\1534143789\FileRecv\ZStack-CC2530- /
+//                          2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Sampl /
+//                          es\04Distance_ENDDB\CC2530DB\..\..\..\Tools\CC253 /
+//                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0        /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Users\OurEDA\Documents /
+//                          \Tencent Files\1534143789\FileRecv\ZStack-CC2530- /
+//                          2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Sampl /
+//                          es\04Distance_ENDDB\Source\HC_SR04.c" -D          /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\EndDeviceEB\List\" -lA        /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\EndDeviceEB\List\"            /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\EndDeviceEB\Obj\" -e          /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\" -I                          /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\Source\" -I                /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\ZMain\TI2530DB\" -I  /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\hal /
+//                          \include\" -I "C:\Users\OurEDA\Documents\Tencent  /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\hal /
+//                          \target\CC2530EB\" -I "C:\Users\OurEDA\Documents\ /
+//                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2 /
+//                          .5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\04Distance_ENDDB\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\mac\include\" -I "C:\Users\OurEDA\Documents\ /
+//                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2 /
+//                          .5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\04Distance_ENDDB\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\mac\high_level\" -I                          /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \low_level\srf04\" -I "C:\Users\OurEDA\Documents\ /
+//                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2 /
+//                          .5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\04Distance_ENDDB\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\mac\low_level\srf04\single_chip\" -I         /
+//                          "C:\Users\OurEDA\Documents\Tencent                /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\mt\ /
+//                          " -I "C:\Users\OurEDA\Documents\Tencent           /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\osa /
+//                          l\include\" -I "C:\Users\OurEDA\Documents\Tencent /
+//                           Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\Z /
+//                          Stack-CC2530-2.5.1a\Projects\zstack\Samples\04Dis /
+//                          tance_ENDDB\CC2530DB\..\..\..\..\..\Components\se /
+//                          rvices\saddr\" -I "C:\Users\OurEDA\Documents\Tenc /
+//                          ent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1 /
+//                          a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04 /
+//                          Distance_ENDDB\CC2530DB\..\..\..\..\..\Components /
+//                          \services\sdata\" -I "C:\Users\OurEDA\Documents\T /
+//                          encent Files\1534143789\FileRecv\ZStack-CC2530-2. /
+//                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples /
+//                          \04Distance_ENDDB\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\stack\af\" -I "C:\Users\OurEDA\Documents\Tenc /
+//                          ent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1 /
+//                          a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04 /
+//                          Distance_ENDDB\CC2530DB\..\..\..\..\..\Components /
+//                          \stack\nwk\" -I "C:\Users\OurEDA\Documents\Tencen /
+//                          t Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04Di /
+//                          stance_ENDDB\CC2530DB\..\..\..\..\..\Components\s /
+//                          tack\sapi\" -I "C:\Users\OurEDA\Documents\Tencent /
+//                           Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\Z /
+//                          Stack-CC2530-2.5.1a\Projects\zstack\Samples\04Dis /
+//                          tance_ENDDB\CC2530DB\..\..\..\..\..\Components\st /
+//                          ack\sec\" -I "C:\Users\OurEDA\Documents\Tencent   /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\sys\" -I "C:\Users\OurEDA\Documents\Tencent    /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\zdo\" -I "C:\Users\OurEDA\Documents\Tencent    /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\zma /
+//                          c\" -I "C:\Users\OurEDA\Documents\Tencent         /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\..\..\..\..\..\Components\zma /
+//                          c\f8w\" -Ohz                                      /
+//    List file          =  C:\Users\OurEDA\Documents\Tencent                 /
+//                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS /
+//                          tack-CC2530-2.5.1a\Projects\zstack\Samples\04Dist /
+//                          ance_ENDDB\CC2530DB\EndDeviceEB\List\HC_SR04.s51  /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME HC_SR04
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??Delay_10us?relay
+        FUNCTION ??Delay_10us?relay,0203H
+        PUBLIC ??Delayms?relay
+        FUNCTION ??Delayms?relay,0203H
+        PUBLIC ??Init_GPIO?relay
+        FUNCTION ??Init_GPIO?relay,0203H
+        PUBLIC ??Init_Key1?relay
+        FUNCTION ??Init_Key1?relay,0203H
+        PUBLIC ??Init_T1?relay
+        FUNCTION ??Init_T1?relay,0203H
+        PUBLIC ??SysClkSet32M?relay
+        FUNCTION ??SysClkSet32M?relay,0203H
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBLIC Delay_10us
+        FUNCTION Delay_10us,080203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Delayms
+        FUNCTION Delayms,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK IEN2
+        PUBLIC Init_GPIO
+        FUNCTION Init_GPIO,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Init_Key1
+        FUNCTION Init_Key1,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Init_T1
+        FUNCTION Init_T1,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK PICTL
+        PUBLIC SysClkSet32M
+        FUNCTION SysClkSet32M,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK T1CNTH
+        PUBWEAK T1CNTL
+        PUBWEAK T1CTL
+        PUBWEAK T1STAT
+        PUBWEAK _A_IEN0
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+Delay_10us          SYMBOL "Delay_10us"
+??Delay_10us?relay  SYMBOL "?relay", Delay_10us
+Delayms             SYMBOL "Delayms"
+??Delayms?relay     SYMBOL "?relay", Delayms
+Init_GPIO           SYMBOL "Init_GPIO"
+??Init_GPIO?relay   SYMBOL "?relay", Init_GPIO
+Init_Key1           SYMBOL "Init_Key1"
+??Init_Key1?relay   SYMBOL "?relay", Init_Key1
+Init_T1             SYMBOL "Init_T1"
+??Init_T1?relay     SYMBOL "?relay", Init_T1
+SysClkSet32M        SYMBOL "SysClkSet32M"
+??SysClkSet32M?relay SYMBOL "?relay", SysClkSet32M
+
+// C:\Users\OurEDA\Documents\Tencent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04Distance_ENDDB\Source\HC_SR04.c
+//    1 /*******************************************************
+//    2 文件名:main.c
+//    3 版本号:v1.0
+//    4 创建日期:2013-10-23
+//    5 作者：楼燚航
+//    6 主要函数描述：
+//    7 ********************************************************/
+//    8 
+//    9 #include "HC_SR04.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0afH
+// unsigned char volatile __sfr T1STAT
+T1STAT:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e2H
+// unsigned char volatile __sfr T1CNTL
+T1CNTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e3H
+// unsigned char volatile __sfr T1CNTH
+T1CNTH:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e4H
+// unsigned char volatile __sfr T1CTL
+T1CTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   10 
+//   11 /**************************** 
+//   12       配置时钟晶振函数 
+//   13 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   14 void SysClkSet32M()
+SysClkSet32M:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function SysClkSet32M
+        CODE
+//   15 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   16     CLKCONCMD &= ~0x40;         //设置系统时钟源为32MHZ晶振
+        ANL     0xc6,#0xbf
+//   17     while(CLKCONSTA & 0x40);     //等待晶振稳定
+??SysClkSet32M_0:
+        MOV     A,0x9e
+        MOV     C,0xE0 /* A   */.6
+        JC      ??SysClkSet32M_0
+//   18     CLKCONCMD &= ~0x47;        //设置系统主时钟频率为32MHZ
+        ANL     0xc6,#0xb8
+//   19                                //此时的CLKCONSTA为0x88。即普通时钟和定时器时钟都是32M。     
+//   20 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE CLKCONCMD
+        REQUIRE CLKCONSTA
+//   21 
+//   22 /**************************** 
+//   23      延时10us函数 
+//   24 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   25 void Delay_10us() //10 us延时
+Delay_10us:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Delay_10us
+        CODE
+//   26 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   27    uchar i;
+//   28    for(i=0;i<9;i++)
+        MOV     A,#0x9
+//   29    asm("NOP");
+??Delay_10us_0:
+        NOP
+        DEC     A
+        JNZ     ??Delay_10us_0
+//   30 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//   31 
+//   32 /**************************** 
+//   33       延时xms函数 
+//   34 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   35 void Delayms(uint xms)
+Delayms:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Delayms
+        CODE
+//   36 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   37   uint i,j;
+//   38   for(i=xms;i>0;i--)
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        SJMP    ??Delayms_0
+//   39     for(j=587;j>0;j--);
+??Delayms_1:
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+??Delayms_0:
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??Delayms_1
+//   40 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//   41 
+//   42 /**************************** 
+//   43       初始化IO口 
+//   44 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   45 void Init_GPIO(void)
+Init_GPIO:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Init_GPIO
+        CODE
+//   46 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   47   P1DIR |= 0x80;
+        ORL     0xfe,#0x80
+//   48   P1DIR &= ~0x08;
+        ANL     0xfe,#0xf7
+//   49 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+        REQUIRE P1DIR
+//   50 
+//   51 /**************************** 
+//   52       初始化定时器T1 
+//   53 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   54 void Init_T1(void)
+Init_T1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Init_T1
+        CODE
+//   55 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   56   T1CTL = 0x05;	
+        MOV     0xe4,#0x5
+//   57   T1STAT= 0x21;          //通道0,中断有效,8分频;自动重装模式(0x0000->0xffff) 
+        MOV     0xaf,#0x21
+//   58   T1CNTL=0x0000;
+        MOV     0xe2,#0x0
+//   59   T1CNTH=0x0000;
+        MOV     0xe3,#0x0
+//   60 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+        REQUIRE T1CTL
+        REQUIRE T1STAT
+        REQUIRE T1CNTL
+        REQUIRE T1CNTH
+//   61 
+//   62 /**************************** 
+//   63       外部中断方式中断配置 
+//   64 *****************************/ 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   65 void Init_Key1(void)
+Init_Key1:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Init_Key1
+        CODE
+//   66 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   67   P1IEN |= 0X08;
+        ORL     0x8d,#0x8
+//   68   PICTL &= ~0X01; // 上升沿触发   
+        ANL     0x8c,#0xfe
+//   69   IEN2 |= 0X10;   // 允许P0口中断; 
+        ORL     0x9a,#0x10
+//   70   P1IFG = 0x08;   // 初始化中断标志位
+        MOV     0x8a,#0x8
+//   71   EA = 1; 
+        SETB    0xa8.7
+//   72 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+        REQUIRE P1IEN
+        REQUIRE PICTL
+        REQUIRE IEN2
+        REQUIRE P1IFG
+        REQUIRE _A_IEN0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SysClkSet32M?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SysClkSet32M
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay_10us?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay_10us
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delayms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delayms
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Init_GPIO?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Init_GPIO
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Init_T1?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Init_T1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Init_Key1?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Init_Key1
+
+        END
+//   73 
+//   74 
+//   75 
+//   76 
+//   77 
+// 
+// 85 bytes in segment BANKED_CODE
+// 36 bytes in segment BANK_RELAYS
+// 12 bytes in segment SFR_AN
+// 
+// 121 bytes of CODE memory
+//   0 bytes of DATA memory (+ 12 bytes shared)
+//
+//Errors: none
+//Warnings: none

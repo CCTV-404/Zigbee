@@ -1,0 +1,844 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         25/Jul/2015  11:17:02 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\Source\Double.c                               #
+#    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \08双向\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev. #
+#                          cfg (-DCPU32MHZ -DROOT=__near_func                 #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\08双向\CC2530DB\..\..\..\Tool #
+#                          s\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0   #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\08双向\Source\Double.c -D     #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\08双向\CC2530DB\EndDeviceEB\Lis #
+#                          t\ -lA C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\08双向\CC2530DB\EndDeviceEB\List\             #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\EndDeviceEB\Obj\ -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \08双向\CC2530DB\ -I C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\08双向\CC2530DB\..\Source\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\ZMain\TI2530DB\ -I          #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\..\..\Components\hal\includ #
+#                          e\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\08双向\CC2530DB\..\..\..\..\..\Components\hal\ #
+#                          target\CC2530EB\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\08双向\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\ -I                          #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\..\..\Components\mac\high_l #
+#                          evel\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\08双向\CC2530DB\..\..\..\..\..\Components\m #
+#                          ac\low_level\srf04\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\08双向\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\low_level\srf04\single_chip\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\..\..\Components\mt\ -I     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\..\..\Components\osal\inclu #
+#                          de\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\08双向\CC2530DB\..\..\..\..\..\Components\ser #
+#                          vices\saddr\ -I C:\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\08双向\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\ -I                           #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\..\..\..\..\..\Components\stack\af\  #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \08双向\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\08双向\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\sapi\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstac #
+#                          k\Samples\08双向\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sec\ -I C:\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\08双向\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\08双向\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\zdo\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\08双向\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\08双向\CC2530DB\..\..\..\..\. #
+#                          .\Components\zmac\f8w\ -Ohz                        #
+#    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\EndDeviceEB\List\Double.lst          #
+#    Object file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08 #
+#                          双向\CC2530DB\EndDeviceEB\Obj\Double.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\08双向\Source\Double.c
+      1          /******************************************************************************
+      2          Filename:       Double.c
+      3          Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4          Revision:       $Revision: 29656 $
+      5          
+      6          Description:    Generic Application (no Profile).
+      7          
+      8          
+      9          Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11          IMPORTANT: Your use of this Software is limited to those specific rights
+     12          granted under the terms of a software license agreement between the user
+     13          who downloaded the software, his/her employer (which must be your employer)
+     14          and Texas Instruments Incorporated (the "License"). You may not use this
+     15          Software unless you agree to abide by the terms of the License. The License
+     16          limits your use, and you acknowledge, that the Software may not be modified,
+     17          copied or distributed unless embedded on a Texas Instruments microcontroller
+     18          or used solely and exclusively in conjunction with a Texas Instruments radio
+     19          frequency transceiver, which is integrated into your product. Other than for
+     20          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21          works of, modify, distribute, perform, display or sell this Software and/or
+     22          its documentation for any purpose.
+     23          
+     24          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25          PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36          Should you have any questions regarding your right to use this Software,
+     37          contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41          This application isn't intended to do anything useful, it is
+     42          intended to be a simple example of an application's structure.
+     43          
+     44          This application sends "Hello World" to another "Generic"
+     45          application every 5 seconds.  The application will also
+     46          receives "Hello World" packets.
+     47          
+     48          The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50          This applications doesn't have a profile, so it handles everything
+     51          directly - itself.
+     52          
+     53          Key control:
+     54          SW1:
+     55          SW2:  initiates end device binding
+     56          SW3:
+     57          SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61          * INCLUDES
+     62          */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          #include <string.h>
+     69          //#include "Common.h"
+     70          #include "DebugTrace.h"
+     71          #include "Double.h"
+     72          #include "MT.h"
+     73          
+     74          #if !defined( WIN32 )
+     75          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     76          #endif
+     77          
+     78          /* HAL */
+     79          #include "hal_lcd.h"
+     80          #include "hal_led.h"
+     81          #include "hal_key.h"
+     82          #include "hal_uart.h"
+     83          #include "mt_uart.h"
+     84          
+     85          /* RTOS */
+     86          #if defined( IAR_ARMCM3_LM )
+     87          #include "RTOS_App.h"
+     88          #endif  
+     89          
+     90          /*********************************************************************
+     91          * MACROS
+     92          */
+     93          
+     94          /*********************************************************************
+     95          * CONSTANTS
+     96          */
+     97          
+     98          /*********************************************************************
+     99          * TYPEDEFS
+    100          */
+    101          
+    102          /*********************************************************************
+    103          * GLOBAL VARIABLES
+    104          */
+    105          // This list should be filled with Application specific Cluster IDs.
+    106          #define SEND_DATA_EVENT 0x01
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    107          unsigned char flag='0';
+   \                     flag:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for flag>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    108          const cId_t Double_ClusterList[Double_MAX_CLUSTERS] =
+   \                     Double_ClusterList:
+   \   000000   0300         DW 3
+   \   000002   0000         DW 0
+   \   000004   0000         DW 0
+   \   000006   0000         DW 0
+   \   000008   0000         DW 0
+   \   00000A   0000         DW 0
+   \   00000C   0000         DW 0
+   \   00000E   0000         DW 0
+    109          {
+    110            Double_CLUSTERID
+    111          };
+    112          
+    113          
+    114          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    115          const SimpleDescriptionFormat_t Double_SimpleDesc =
+   \                     Double_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   0000         DW 0H
+   \   000009   08           DB 8
+   \   00000A   ....         DW Double_ClusterList
+    116          {
+    117            Double_ENDPOINT,              //  int Endpoint;
+    118            Double_PROFID,                //  uint16 AppProfId[2];
+    119            Double_DEVICEID,              //  uint16 AppDeviceId[2];
+    120            Double_DEVICE_VERSION,        //  int   AppDevVer:4;
+    121            Double_FLAGS,                 //  int   AppFlags:4;
+    122            
+    123            
+    124            0,          //  byte  AppNumInClusters;
+    125            (cId_t *)NULL,  //  byte *pAppInClusterList;
+    126            Double_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    127            (cId_t *)Double_ClusterList   //  byte *pAppInClusterList;
+    128          };
+    129          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    130          unsigned char TempDATA;
+   \                     TempDATA:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    131          endPointDesc_t Double_epDesc;
+   \                     Double_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    132          byte Double_TaskID;
+   \                     Double_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    133          byte Double_TransID;
+   \                     Double_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    134          devStates_t Double_NwkState;
+   \                     Double_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    135          void Double_MessageMSGCB(afIncomingMSGPacket_t *MSGpkt);
+    136          void Double_SendTheMessage(void);
+    137          
+    138          
+    139          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    140          void Double_Init( byte task_id )
+   \                     Double_Init:
+    141          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    142            halUARTCfg_t uartConfig;//串口
+    143            
+    144            Double_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Double_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    145            Double_NwkState=DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Double_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    146            Double_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Double_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    147            
+    148            
+    149            Double_epDesc.endPoint = Double_ENDPOINT;
+   \   000015   90....       MOV     DPTR,#Double_epDesc
+   \   000018   740A         MOV     A,#0xa
+   \   00001A   F0           MOVX    @DPTR,A
+    150            Double_epDesc.task_id = &Double_TaskID;
+   \   00001B   A3           INC     DPTR
+   \   00001C   74..         MOV     A,#Double_TaskID & 0xff
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   74..         MOV     A,#(Double_TaskID >> 8) & 0xff
+   \   000022   F0           MOVX    @DPTR,A
+    151            Double_epDesc.simpleDesc
+    152              = (SimpleDescriptionFormat_t *)&Double_SimpleDesc;
+   \   000023   A3           INC     DPTR
+   \   000024   74..         MOV     A,#Double_SimpleDesc & 0xff
+   \   000026   F0           MOVX    @DPTR,A
+   \   000027   A3           INC     DPTR
+   \   000028   74..         MOV     A,#(Double_SimpleDesc >> 8) & 0xff
+   \   00002A   F0           MOVX    @DPTR,A
+    153            
+    154            Double_epDesc.latencyReq = noLatencyReqs;
+   \   00002B   A3           INC     DPTR
+   \   00002C   E4           CLR     A
+   \   00002D   F0           MOVX    @DPTR,A
+    155            afRegister( &Double_epDesc ); 
+   \   00002E                ; Setup parameters for call to function afRegister
+   \   00002E   7A..         MOV     R2,#Double_epDesc & 0xff
+   \   000030   7B..         MOV     R3,#(Double_epDesc >> 8) & 0xff
+   \   000032   12....       LCALL   ??afRegister?relay
+    156            
+    157          }
+   \   000035   7F01         MOV     R7,#0x1
+   \   000037   02....       LJMP    ?BANKED_LEAVE_XDATA
+    158          //KET1 外部中断方式
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    159          void InitKey2(void)
+   \                     InitKey2:
+    160          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    161            //  P1IEN |= 0X08;
+    162            //  PICTL |= 0X2; // 下降沿触发   
+    163            //  IEN2 |= 0X10;   // 允许P1口中断; 
+    164            //  P1IFG = 0x08;   // 初始化中断标志位
+    165            P1DIR |= 0x13;
+   \   000000   43FE13       ORL     0xfe,#0x13
+    166            //  EA = 1; 
+    167          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P1DIR
+    168          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    169          UINT16 Double_ProcessEvent( byte task_id, UINT16 events )
+   \                     Double_ProcessEvent:
+    170          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+    171            afIncomingMSGPacket_t *MSGpkt;
+    172            
+    173            if ( events & SYS_EVENT_MSG )
+   \   000009   EB           MOV     A,R3
+   \   00000A   5480         ANL     A,#0x80
+   \   00000C   605C         JZ      ??Double_ProcessEvent_0
+    174            {
+    175              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Double_TaskID );
+   \   00000E                ; Setup parameters for call to function osal_msg_receive
+   \   00000E   800E         SJMP    ??Double_ProcessEvent_1
+    176              while ( MSGpkt )
+    177              {
+    178                switch ( MSGpkt->hdr.event )
+    179                {
+    180                  
+    181                case ZDO_STATE_CHANGE:
+    182                  Double_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    183                  if(Double_NwkState==DEV_END_DEVICE)
+    184                  {
+    185                    P1_0 = ~P1_0;
+    186                    osal_set_event(Double_TaskID,SEND_DATA_EVENT);
+    187                  }
+    188                  break;
+    189                  
+    190                case AF_INCOMING_MSG_CMD:
+    191                  Double_MessageMSGCB( MSGpkt );
+   \                     ??Double_ProcessEvent_2:
+   \   000010                ; Setup parameters for call to function Double_MessageMSGCB
+   \   000010   EE           MOV     A,R6
+   \   000011   FA           MOV     R2,A
+   \   000012   EF           MOV     A,R7
+   \   000013   FB           MOV     R3,A
+   \   000014   12....       LCALL   ??Double_MessageMSGCB?relay
+    192                  break;
+    193                  
+    194                  
+    195                default:
+    196                  break;
+    197                }
+    198                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??Double_ProcessEvent_3:
+   \   000017                ; Setup parameters for call to function osal_msg_deallocate
+   \   000017   EE           MOV     A,R6
+   \   000018   FA           MOV     R2,A
+   \   000019   EF           MOV     A,R7
+   \   00001A   FB           MOV     R3,A
+   \   00001B   12....       LCALL   ??osal_msg_deallocate?relay
+    199                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Double_TaskID );
+   \   00001E                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Double_ProcessEvent_1:
+   \   00001E   90....       MOV     DPTR,#Double_TaskID
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   F9           MOV     R1,A
+   \   000023   12....       LCALL   ??osal_msg_receive?relay
+   \   000026   8A..         MOV     ?V0 + 2,R2
+   \   000028   8B..         MOV     ?V0 + 3,R3
+   \   00002A   AE..         MOV     R6,?V0 + 2
+   \   00002C   AF..         MOV     R7,?V0 + 3
+   \   00002E   EE           MOV     A,R6
+   \   00002F   4F           ORL     A,R7
+   \   000030   602F         JZ      ??Double_ProcessEvent_4
+   \   000032   8E82         MOV     DPL,R6
+   \   000034   8F83         MOV     DPH,R7
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   24E6         ADD     A,#-0x1a
+   \   000039   60D5         JZ      ??Double_ProcessEvent_2
+   \   00003B   2449         ADD     A,#0x49
+   \   00003D   70D8         JNZ     ??Double_ProcessEvent_3
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   90....       MOV     DPTR,#Double_NwkState
+   \   000044   F0           MOVX    @DPTR,A
+   \   000045   6406         XRL     A,#0x6
+   \   000047   70CE         JNZ     ??Double_ProcessEvent_3
+   \   000049   D2F0         SETB    B.0
+   \   00004B   A290         MOV     C,0x90.0
+   \   00004D   30F001       JNB     B.0,??Double_ProcessEvent_5
+   \   000050   B3           CPL     C
+   \                     ??Double_ProcessEvent_5:
+   \   000051   9290         MOV     0x90.0,C
+   \   000053                ; Setup parameters for call to function osal_set_event
+   \   000053   7A01         MOV     R2,#0x1
+   \   000055   7B00         MOV     R3,#0x0
+   \   000057   90....       MOV     DPTR,#Double_TaskID
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   F9           MOV     R1,A
+   \   00005C   12....       LCALL   ??osal_set_event?relay
+   \   00005F   80B6         SJMP    ??Double_ProcessEvent_3
+    200              }
+    201              // return unprocessed events
+    202              return (events ^ SYS_EVENT_MSG);
+   \                     ??Double_ProcessEvent_4:
+   \   000061   AA..         MOV     R2,?V0 + 0
+   \   000063   E5..         MOV     A,?V0 + 1
+   \   000065   6480         XRL     A,#0x80
+   \   000067   FB           MOV     R3,A
+   \   000068   8015         SJMP    ??Double_ProcessEvent_6
+    203            }
+    204            if(events&SEND_DATA_EVENT)
+   \                     ??Double_ProcessEvent_0:
+   \   00006A   EA           MOV     A,R2
+   \   00006B   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00006D   500C         JNC     ??Double_ProcessEvent_7
+    205            {
+    206              flag='0';
+   \   00006F   90....       MOV     DPTR,#flag
+   \   000072   7430         MOV     A,#0x30
+   \   000074   F0           MOVX    @DPTR,A
+    207              //InitKey2();
+    208              //Double_SendTheMessage();
+    209              //osal_start_timerEx(Double_TaskID,SEND_DATA_EVENT,3000);
+    210              return(events^SEND_DATA_EVENT);
+   \   000075   EA           MOV     A,R2
+   \   000076   6401         XRL     A,#0x1
+   \   000078   FA           MOV     R2,A
+   \   000079   8004         SJMP    ??Double_ProcessEvent_6
+    211            }
+    212            return 0;
+   \                     ??Double_ProcessEvent_7:
+   \   00007B   7A00         MOV     R2,#0x0
+   \   00007D   7B00         MOV     R3,#0x0
+   \                     ??Double_ProcessEvent_6:
+   \   00007F   7F04         MOV     R7,#0x4
+   \   000081   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000084                REQUIRE _A_P1
+    213          }
+    214          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    215          void Double_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     Double_MessageMSGCB:
+    216          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    217            unsigned char buffer[4]; 
+    218            switch ( pkt->clusterId )
+   \   00000A   8A82         MOV     DPL,R2
+   \   00000C   8B83         MOV     DPH,R3
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   A3           INC     DPTR
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   6403         XRL     A,#0x3
+   \   000015   7002         JNZ     ??Double_MessageMSGCB_0
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \                     ??Double_MessageMSGCB_0:
+   \   000019   707C         JNZ     ??Double_MessageMSGCB_1
+    219            {
+    220            case Double_CLUSTERID:
+    221              osal_memcpy(buffer, pkt->cmd.Data, 4);
+   \   00001B                ; Setup parameters for call to function osal_memcpy
+   \   00001B   EA           MOV     A,R2
+   \   00001C   2422         ADD     A,#0x22
+   \   00001E   F582         MOV     DPL,A
+   \   000020   EB           MOV     A,R3
+   \   000021   3400         ADDC    A,#0x0
+   \   000023   F583         MOV     DPH,A
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F5..         MOV     ?V0 + 0,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F5..         MOV     ?V0 + 1,A
+   \   00002C   75..00       MOV     ?V0 + 2,#0x0
+   \   00002F   78..         MOV     R0,#?V0 + 0
+   \   000031   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000034   7C04         MOV     R4,#0x4
+   \   000036   7D00         MOV     R5,#0x0
+   \   000038   7403         MOV     A,#0x3
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   AA82         MOV     R2,DPL
+   \   00003F   AB83         MOV     R3,DPH
+   \   000041   12....       LCALL   ??osal_memcpy?relay
+   \   000044   7403         MOV     A,#0x3
+   \   000046   12....       LCALL   ?DEALLOC_XSTACK8
+    222              if(buffer[0] == '1')       
+   \   000049   85..82       MOV     DPL,?XSP + 0
+   \   00004C   85..83       MOV     DPH,?XSP + 1
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   6431         XRL     A,#0x31
+   \   000052   701C         JNZ     ??Double_MessageMSGCB_2
+    223              {
+    224                HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );;
+   \   000054                ; Setup parameters for call to function HalLedSet
+   \   000054   7A01         MOV     R2,#0x1
+   \   000056   7901         MOV     R1,#0x1
+   \   000058   12....       LCALL   ??HalLedSet?relay
+    225                HalLedSet ( HAL_LED_2, HAL_LED_MODE_ON );;
+   \   00005B                ; Setup parameters for call to function HalLedSet
+   \   00005B   7A01         MOV     R2,#0x1
+   \   00005D   7902         MOV     R1,#0x2
+   \   00005F   12....       LCALL   ??HalLedSet?relay
+    226                HalLedSet ( HAL_LED_3, HAL_LED_MODE_ON );;
+   \   000062                ; Setup parameters for call to function HalLedSet
+   \   000062   7A01         MOV     R2,#0x1
+   \   000064   7904         MOV     R1,#0x4
+   \   000066   12....       LCALL   ??HalLedSet?relay
+    227                HalLedSet ( HAL_LED_4, HAL_LED_MODE_ON );;
+   \   000069                ; Setup parameters for call to function HalLedSet
+   \   000069   7A01         MOV     R2,#0x1
+   \   00006B   7908         MOV     R1,#0x8
+   \   00006D   12....       LCALL   ??HalLedSet?relay
+    228              }
+    229              if(buffer[0] == '2')       
+   \                     ??Double_MessageMSGCB_2:
+   \   000070   85..82       MOV     DPL,?XSP + 0
+   \   000073   85..83       MOV     DPH,?XSP + 1
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   6432         XRL     A,#0x32
+   \   000079   701C         JNZ     ??Double_MessageMSGCB_1
+    230              {
+    231                HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );;
+   \   00007B                ; Setup parameters for call to function HalLedSet
+   \   00007B   7A00         MOV     R2,#0x0
+   \   00007D   7901         MOV     R1,#0x1
+   \   00007F   12....       LCALL   ??HalLedSet?relay
+    232                HalLedSet ( HAL_LED_2, HAL_LED_MODE_OFF );;
+   \   000082                ; Setup parameters for call to function HalLedSet
+   \   000082   7A00         MOV     R2,#0x0
+   \   000084   7902         MOV     R1,#0x2
+   \   000086   12....       LCALL   ??HalLedSet?relay
+    233                HalLedSet ( HAL_LED_3, HAL_LED_MODE_OFF );;
+   \   000089                ; Setup parameters for call to function HalLedSet
+   \   000089   7A00         MOV     R2,#0x0
+   \   00008B   7904         MOV     R1,#0x4
+   \   00008D   12....       LCALL   ??HalLedSet?relay
+    234                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );;
+   \   000090                ; Setup parameters for call to function HalLedSet
+   \   000090   7A00         MOV     R2,#0x0
+   \   000092   7908         MOV     R1,#0x8
+   \   000094   12....       LCALL   ??HalLedSet?relay
+    235              }
+    236              break;
+    237            }
+    238          }
+   \                     ??Double_MessageMSGCB_1:
+   \   000097   7404         MOV     A,#0x4
+   \   000099   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00009C   7F03         MOV     R7,#0x3
+   \   00009E   02....       LJMP    ?BANKED_LEAVE_XDATA
+    239          
+    240          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    241          void Double_SendTheMessage(void)
+   \                     Double_SendTheMessage:
+    242          { 
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 22
+   \   000005   74EA         MOV     A,#-0x16
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    243            unsigned char theMessageData[10]="1";
+   \   00000A   740C         MOV     A,#0xc
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   AC82         MOV     R4,DPL
+   \   000011   AD83         MOV     R5,DPH
+   \   000013   7583..       MOV     DPH,#(`?<Constant "1">` >> 8) & 0xff
+   \   000016   7582..       MOV     DPL,#`?<Constant "1">` & 0xff
+   \   000019   740A         MOV     A,#0xa
+   \   00001B   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    244            afAddrType_t my_DstAddr;
+    245            my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+   \   00001E   7408         MOV     A,#0x8
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7402         MOV     A,#0x2
+   \   000025   F0           MOVX    @DPTR,A
+    246            my_DstAddr.endPoint=Double_ENDPOINT;
+   \   000026   7409         MOV     A,#0x9
+   \   000028   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002B   740A         MOV     A,#0xa
+   \   00002D   F0           MOVX    @DPTR,A
+    247            my_DstAddr.addr.shortAddr=0x0000; 
+   \   00002E   85..82       MOV     DPL,?XSP + 0
+   \   000031   85..83       MOV     DPH,?XSP + 1
+   \   000034   E4           CLR     A
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   A3           INC     DPTR
+   \   000037   F0           MOVX    @DPTR,A
+    248            theMessageData[0]=flag;
+   \   000038   90....       MOV     DPTR,#flag
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   C0E0         PUSH    A
+   \   00003E   740C         MOV     A,#0xc
+   \   000040   12....       LCALL   ?XSTACK_DISP0_8
+   \   000043   D0E0         POP     A
+   \   000045   F0           MOVX    @DPTR,A
+    249            AF_DataRequest(&my_DstAddr
+    250                           ,&Double_epDesc
+    251                             ,Double_CLUSTERID
+    252                               ,1
+    253                                 ,theMessageData
+    254                                   ,&Double_TransID
+    255                                     ,AF_DISCV_ROUTE
+    256                                       ,AF_DEFAULT_RADIUS);
+   \   000046                ; Setup parameters for call to function AF_DataRequest
+   \   000046   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000049   78..         MOV     R0,#?V0 + 0
+   \   00004B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00004E   75....       MOV     ?V0 + 0,#Double_TransID & 0xff
+   \   000051   75....       MOV     ?V0 + 1,#(Double_TransID >> 8) & 0xff
+   \   000054   78..         MOV     R0,#?V0 + 0
+   \   000056   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000059   740F         MOV     A,#0xf
+   \   00005B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005E   8582..       MOV     ?V0 + 0,DPL
+   \   000061   8583..       MOV     ?V0 + 1,DPH
+   \   000064   78..         MOV     R0,#?V0 + 0
+   \   000066   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000069   75..01       MOV     ?V0 + 0,#0x1
+   \   00006C   75..00       MOV     ?V0 + 1,#0x0
+   \   00006F   78..         MOV     R0,#?V0 + 0
+   \   000071   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000074   75..03       MOV     ?V0 + 0,#0x3
+   \   000077   78..         MOV     R0,#?V0 + 0
+   \   000079   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00007C   7920         MOV     R1,#0x20
+   \   00007E   7C..         MOV     R4,#Double_epDesc & 0xff
+   \   000080   7D..         MOV     R5,#(Double_epDesc >> 8) & 0xff
+   \   000082   7409         MOV     A,#0x9
+   \   000084   12....       LCALL   ?XSTACK_DISP0_8
+   \   000087   AA82         MOV     R2,DPL
+   \   000089   AB83         MOV     R3,DPH
+   \   00008B   12....       LCALL   ??AF_DataRequest?relay
+   \   00008E   7409         MOV     A,#0x9
+   \   000090   12....       LCALL   ?DEALLOC_XSTACK8
+    257          }
+   \   000093   7416         MOV     A,#0x16
+   \   000095   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000098   7F02         MOV     R7,#0x2
+   \   00009A   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for flag>`:
+   \   000000   30           DB 48
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Double_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Double_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitKey2?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitKey2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Double_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Double_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Double_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Double_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Double_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Double_SendTheMessage
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "1">`:
+   \   000000   3100         DB "1"
+   \   000002   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     Double_Init                  0      0      9
+       -> afRegister              0      0     18
+     Double_MessageMSGCB          0      0     30
+       -> osal_memcpy             0      0     36
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+       -> HalLedSet               0      0     30
+     Double_ProcessEvent          0      0     12
+       -> osal_msg_receive        0      0     24
+       -> Double_MessageMSGCB     0      0     24
+       -> osal_msg_deallocate     0      0     24
+       -> osal_msg_receive        0      0     24
+       -> osal_set_event          0      0     24
+     Double_SendTheMessage        2      0     41
+       -> AF_DataRequest          0      0     82
+     InitKey2                     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P1                            1
+     P1DIR                            1
+     flag                             1
+     Double_ClusterList              16
+     Double_SimpleDesc               12
+     TempDATA                         1
+     Double_epDesc                    6
+     Double_TaskID                    1
+     Double_TransID                   1
+     Double_NwkState                  1
+     Double_Init                     58
+     InitKey2                         6
+     Double_ProcessEvent            132
+     Double_MessageMSGCB            161
+     Double_SendTheMessage          157
+     ?<Initializer for flag>          1
+     ??Double_Init?relay              6
+     ??InitKey2?relay                 6
+     ??Double_ProcessEvent?relay      6
+     ??Double_MessageMSGCB?relay      6
+     ??Double_SendTheMessage?relay    6
+     ?<Constant "1">                 10
+
+ 
+ 514 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+  38 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 545 bytes of CODE  memory
+  38 bytes of CONST memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+  11 bytes of XDATA memory
+
+Errors: none
+Warnings: none

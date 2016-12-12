@@ -1,0 +1,7 @@
+[Sfr]
+sfr = "CCACTRL0.CCA_THR",	"XData",	0x6196,	1,	base=16,	modified
+sfr = "CSPPROG13",	"XData",	0x61cd,	1,	base=16,	modified
+
+
+[SfrGroupInfo]
+group = "Custom", "CCACTRL0.CCA_THR", "CSPPROG13"

@@ -1,0 +1,85 @@
+[Sfr]
+sfr = "IEN2",	"SFR",	0x9a,	1,	base=16,	modified
+sfr = "TCON",	"SFR",	0x88,	1,	base=16,	modified
+sfr = "S0CON",	"SFR",	0x98,	1,	base=16,	modified
+sfr = "S1CON",	"SFR",	0x9b,	1,	base=16,	modified
+sfr = "IRCON2",	"SFR",	0xe8,	1,	base=16,	modified
+sfr = "IP1",	"SFR",	0xb9,	1,	base=16,	modified
+sfr = "IP0",	"SFR",	0xa9,	1,	base=16,	modified
+sfr = "ACC",	"SFR",	0xe0,	1,	base=16,	modified
+sfr = "DPS",	"SFR",	0x92,	1,	base=16,	modified
+sfr = "MPAGE",	"SFR",	0x93,	1,	base=16,	modified
+sfr = "DMAIRQ",	"SFR",	0xd1,	1,	base=16,	modified
+sfr = "DMA1CFGL",	"SFR",	0xd2,	1,	base=16,	modified
+sfr = "DMA1CFGH",	"SFR",	0xd3,	1,	base=16,	modified
+sfr = "DMA0CFGH",	"SFR",	0xd5,	1,	base=16,	modified
+sfr = "DMAARM",	"SFR",	0xd6,	1,	base=16,	modified
+sfr = "DMAREQ",	"SFR",	0xd7,	1,	base=16,	modified
+sfr = "P0IFG",	"SFR",	0x89,	1,	base=16,	modified
+sfr = "P2IFG",	"SFR",	0x8b,	1,	base=16,	modified
+sfr = "PICTL",	"SFR",	0x8c,	1,	base=16,	modified
+sfr = "P1IEN",	"SFR",	0x8d,	1,	base=16,	modified
+sfr = "P2IEN",	"SFR",	0xac,	1,	base=16,	modified
+sfr = "P0INP",	"SFR",	0x8f,	1,	base=16,	modified
+sfr = "PERCFG",	"SFR",	0xf1,	1,	base=16,	modified
+sfr = "APCFG",	"SFR",	0xf2,	1,	base=16,	modified
+sfr = "P0SEL",	"SFR",	0xf3,	1,	base=16,	modified
+sfr = "P0DIR",	"SFR",	0xfd,	1,	base=16,	modified
+sfr = "P2DIR",	"SFR",	0xff,	1,	base=16,	modified
+sfr = "PMUX",	"SFR",	0xae,	1,	base=16,	modified
+sfr = "OBSSEL1",	"XData",	0x6244,	1,	base=16,	modified
+sfr = "ST1",	"SFR",	0x96,	1,	base=16,	modified
+sfr = "ST2",	"SFR",	0x97,	1,	base=16,	modified
+sfr = "STCC",	"XData",	0x62b0,	1,	base=16,	modified
+sfr = "STCS",	"XData",	0x62b1,	1,	base=16,	modified
+sfr = "STCV0",	"XData",	0x62b2,	1,	base=16,	modified
+sfr = "OPAMPMC",	"XData",	0x61a6,	1,	base=16,	modified
+sfr = "OPAMPC",	"XData",	0x62c0,	1,	base=16,	modified
+sfr = "SLEEPCMD",	"SFR",	0xbe,	1,	base=16,	modified
+sfr = "CLKCONCMD",	"SFR",	0xc6,	1,	base=16,	modified
+sfr = "T1CCTL0",	"SFR",	0xe5,	1,	base=16,	modified
+sfr = "T1CC1H",	"SFR",	0xdd,	1,	base=16,	modified
+sfr = "T1CCTL4",	"XData",	0x62a4,	1,	base=16,	modified
+sfr = "IRCTL",	"XData",	0x6281,	1,	base=16,	modified
+sfr = "T2CTRL",	"SFR",	0x94,	1,	base=16,	modified
+sfr = "T2EVTCFG",	"SFR",	0x9c,	1,	base=16,	modified
+sfr = "T3CC0",	"SFR",	0xcd,	1,	base=16,	modified
+sfr = "T3CC1",	"SFR",	0xcf,	1,	base=16,	modified
+sfr = "T4CCTL0",	"SFR",	0xec,	1,	base=16,	modified
+sfr = "T4CC0",	"SFR",	0xed,	1,	base=16,	modified
+sfr = "TIMIF",	"SFR",	0xd8,	1,	base=16,	modified
+sfr = "U0CSR",	"SFR",	0x86,	1,	base=16,	modified
+sfr = "U0GCR",	"SFR",	0xc5,	1,	base=16,	modified
+sfr = "U0BAUD",	"SFR",	0xc2,	1,	base=16,	modified
+sfr = "U0BAUD.BAUD_M",	"SFR",	0xc2,	1,	base=16,	modified
+sfr = "U1UCR",	"SFR",	0xfb,	1,	base=16,	modified
+sfr = "U1GCR",	"SFR",	0xfc,	1,	base=16,	modified
+sfr = "U1BAUD",	"SFR",	0xfa,	1,	base=16,	modified
+sfr = "U1BAUD.BAUD_M",	"SFR",	0xfa,	1,	base=16,	modified
+sfr = "WDCTL",	"SFR",	0xc9,	1,	base=16,	modified
+sfr = "FCTL",	"XData",	0x6270,	1,	base=16,	modified
+sfr = "FADDRL",	"XData",	0x6271,	1,	base=16,	modified
+sfr = "FRMCTRL1",	"XData",	0x618a,	1,	base=16,	modified
+sfr = "RXENABLE",	"XData",	0x618b,	1,	base=16,	modified
+sfr = "FREQTUNE",	"XData",	0x618e,	1,	base=16,	modified
+sfr = "DACTEST0",	"XData",	0x61ba,	1,	base=16,	modified
+sfr = "CSPPROG9",	"XData",	0x61c9,	1,	base=16,	modified
+sfr = "CHIPID",	"XData",	0x624a,	1,	base=16,	modified
+sfr = "CHIPINFO0",	"XData",	0x6276,	1,	base=16,	modified
+sfr = "P2INP",	"SFR",	0xf7,	1,	base=16,	modified
+
+
+[SfrGroupInfo]
+group = "Custom", "IEN2", "TCON", "S0CON", "S1CON", "IRCON2"
+group = "Custom", "IP1", "IP0", "ACC", "DPS", "MPAGE", "DMAIRQ"
+group = "Custom", "DMA1CFGL", "DMA1CFGH", "DMA0CFGH", "DMAARM", "DMAREQ"
+group = "Custom", "P0IFG", "P2IFG", "PICTL", "P1IEN"
+group = "Custom", "P2IEN", "P0INP", "PERCFG", "APCFG", "P0SEL", "P0DIR", "P2DIR", "PMUX", "OBSSEL1", "ST1", "ST2", "STCC", "STCS"
+group = "Custom", "STCV0", "OPAMPMC", "OPAMPC", "SLEEPCMD", "CLKCONCMD", "T1CCTL0", "T1CC1H", "T1CCTL4", "IRCTL", "T2CTRL"
+group = "Custom", "T2EVTCFG", "T3CC0"
+group = "Custom", "T3CC1", "T4CCTL0", "T4CC0", "TIMIF", "U0CSR", "U0GCR"
+group = "Custom", "U0BAUD", "U0BAUD.BAUD_M", "U1UCR", "U1GCR"
+group = "Custom", "U1BAUD", "U1BAUD.BAUD_M", "WDCTL", "FCTL", "FADDRL", "FRMCTRL1"
+group = "Custom", "RXENABLE", "FREQTUNE", "DACTEST0"
+group = "Custom", "CSPPROG9"
+group = "Custom", "CHIPID", "CHIPINFO0"

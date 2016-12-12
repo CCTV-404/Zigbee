@@ -1,0 +1,417 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         25/Jul/2015  11:14:27 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\Source\HC_SR04.c                            #
+#    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\..\..\..\Tools\CC2530DB\f8wEnde #
+#                          v.cfg (-DCPU32MHZ -DROOT=__near_func               #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\Source\HC_SR04.c -D  #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\05³¬Éù²¨\CC2530DB\EndDeviceEB\L #
+#                          ist\ -lA C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\05³¬Éù²¨\CC2530DB\EndDeviceEB\List\         #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\Obj\ -e                #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\Source\  #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\..\..\..\ZMain\TI2530DB\ -I     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\hal\incl #
+#                          ude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sa #
+#                          mples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\ #
+#                          hal\target\CC2530EB\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\. #
+#                          .\..\Components\mac\include\ -I                    #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mac\high #
+#                          _level\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack #
+#                          \Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\low_level\srf04\ -I                         #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\ -I                        #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mt\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\osal\inc #
+#                          lude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components #
+#                          \services\saddr\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\.. #
+#                          \Components\services\sdata\ -I                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\stack\af #
+#                          \ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sampl #
+#                          es\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\nwk\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack #
+#                          \Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\sapi\ -I C:\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sec\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\. #
+#                          .\..\Components\stack\sys\ -I                      #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\stack\zd #
+#                          o\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\z #
+#                          mac\f8w\ -Ohz                                      #
+#    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\List\HC_SR04.lst       #
+#    Object file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\Obj\HC_SR04.r51        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05³¬Éù²¨\Source\HC_SR04.c
+      1          /*******************************************************
+      2          ÎÄ¼þÃû:main.c
+      3          °æ±¾ºÅ:v1.0
+      4          ´´½¨ÈÕÆÚ:2013-10-23
+      5          ×÷Õß£ºÂ¥ Dº½
+      6          Ö÷Òªº¯ÊýÃèÊö£º
+      7          ********************************************************/
+      8          
+      9          #include "HC_SR04.h"
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr P1IEN
+   \                     P1IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xaf
+   \   unsigned char volatile __sfr T1STAT
+   \                     T1STAT:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe2
+   \   unsigned char volatile __sfr T1CNTL
+   \                     T1CNTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe3
+   \   unsigned char volatile __sfr T1CNTH
+   \                     T1CNTH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     10          
+     11          /**************************** 
+     12                ÅäÖÃÊ±ÖÓ¾§Õñº¯Êý 
+     13          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void SysClkSet32M()
+   \                     SysClkSet32M:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16              CLKCONCMD &= ~0x40;         //ÉèÖÃÏµÍ³Ê±ÖÓÔ´Îª32MHZ¾§Õñ
+   \   000000   53C6BF       ANL     0xc6,#0xbf
+     17              while(CLKCONSTA & 0x40);     //µÈ´ý¾§ÕñÎÈ¶¨
+   \                     ??SysClkSet32M_0:
+   \   000003   E59E         MOV     A,0x9e
+   \   000005   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000007   40FA         JC      ??SysClkSet32M_0
+     18              CLKCONCMD &= ~0x47;        //ÉèÖÃÏµÍ³Ö÷Ê±ÖÓÆµÂÊÎª32MHZ
+   \   000009   53C6B8       ANL     0xc6,#0xb8
+     19                                         //´ËÊ±µÄCLKCONSTAÎª0x88¡£¼´ÆÕÍ¨Ê±ÖÓºÍ¶¨Ê±Æ÷Ê±ÖÓ¶¼ÊÇ32M¡£     
+     20          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE CLKCONCMD
+   \   00000F                REQUIRE CLKCONSTA
+     21          
+     22          /**************************** 
+     23               ÑÓÊ±10usº¯Êý 
+     24          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     25          void Delay_10us() //10 usÑÓÊ±
+   \                     Delay_10us:
+     26          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     27             uchar i;
+     28             for(i=0;i<9;i++)
+   \   000000   7409         MOV     A,#0x9
+     29             asm("NOP");
+   \                     ??Delay_10us_0:
+   \   000002   00           NOP
+   \   000003   14           DEC     A
+   \   000004   70FC         JNZ     ??Delay_10us_0
+     30          }
+   \   000006   02....       LJMP    ?BRET
+     31          
+     32          /**************************** 
+     33                ÑÓÊ±xmsº¯Êý 
+     34          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     35          void Delayms(uint xms)
+   \                     Delayms:
+     36          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     37            uint i,j;
+     38            for(i=xms;i>0;i--)
+   \   000000   EA           MOV     A,R2
+   \   000001   F8           MOV     R0,A
+   \   000002   EB           MOV     A,R3
+   \   000003   8007         SJMP    ??Delayms_0
+     39              for(j=587;j>0;j--);
+   \                     ??Delayms_1:
+   \   000005   E8           MOV     A,R0
+   \   000006   24FF         ADD     A,#-0x1
+   \   000008   18           DEC     R0
+   \   000009   E9           MOV     A,R1
+   \   00000A   34FF         ADDC    A,#-0x1
+   \                     ??Delayms_0:
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   49           ORL     A,R1
+   \   00000F   70F4         JNZ     ??Delayms_1
+     40          }
+   \   000011   02....       LJMP    ?BRET
+     41          
+     42          /**************************** 
+     43                ³õÊ¼»¯IO¿Ú 
+     44          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     45          void Init_GPIO(void)
+   \                     Init_GPIO:
+     46          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     47            P1DIR |= 0x80;
+   \   000000   43FE80       ORL     0xfe,#0x80
+     48            P1DIR &= ~0x08;
+   \   000003   53FEF7       ANL     0xfe,#0xf7
+     49          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P1DIR
+     50          
+     51          /**************************** 
+     52                ³õÊ¼»¯¶¨Ê±Æ÷T1 
+     53          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     54          void Init_T1(void)
+   \                     Init_T1:
+     55          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     56            T1CTL = 0x05;	
+   \   000000   75E405       MOV     0xe4,#0x5
+     57            T1STAT= 0x21;          //Í¨µÀ0,ÖÐ¶ÏÓÐÐ§,8·ÖÆµ;×Ô¶¯ÖØ×°Ä£Ê½(0x0000->0xffff) 
+   \   000003   75AF21       MOV     0xaf,#0x21
+     58            T1CNTL=0x0000;
+   \   000006   75E200       MOV     0xe2,#0x0
+     59            T1CNTH=0x0000;
+   \   000009   75E300       MOV     0xe3,#0x0
+     60          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE T1CTL
+   \   00000F                REQUIRE T1STAT
+   \   00000F                REQUIRE T1CNTL
+   \   00000F                REQUIRE T1CNTH
+     61          
+     62          /**************************** 
+     63                Íâ²¿ÖÐ¶Ï·½Ê½ÖÐ¶ÏÅäÖÃ 
+     64          *****************************/ 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     65          void Init_Key1(void)
+   \                     Init_Key1:
+     66          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     67            P1IEN |= 0X08;
+   \   000000   438D08       ORL     0x8d,#0x8
+     68            PICTL &= ~0X01; // ÉÏÉýÑØ´¥·¢   
+   \   000003   538CFE       ANL     0x8c,#0xfe
+     69            IEN2 |= 0X10;   // ÔÊÐíP0¿ÚÖÐ¶Ï; 
+   \   000006   439A10       ORL     0x9a,#0x10
+     70            P1IFG = 0x08;   // ³õÊ¼»¯ÖÐ¶Ï±êÖ¾Î»
+   \   000009   758A08       MOV     0x8a,#0x8
+     71            EA = 1; 
+   \   00000C   D2AF         SETB    0xa8.7
+     72          }
+   \   00000E   02....       LJMP    ?BRET
+   \   000011                REQUIRE P1IEN
+   \   000011                REQUIRE PICTL
+   \   000011                REQUIRE IEN2
+   \   000011                REQUIRE P1IFG
+   \   000011                REQUIRE _A_IEN0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SysClkSet32M?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SysClkSet32M
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delayms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delayms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_GPIO?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_GPIO
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_T1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_T1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_Key1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_Key1
+     73          
+     74          
+     75          
+     76          
+     77          
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     Delay_10us       0      0      0
+     Delayms          0      0      0
+     Init_GPIO        0      0      0
+     Init_Key1        0      0      0
+     Init_T1          0      0      0
+     SysClkSet32M     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     P1IFG                   1
+     PICTL                   1
+     P1IEN                   1
+     IEN2                    1
+     CLKCONSTA               1
+     _A_IEN0                 1
+     T1STAT                  1
+     CLKCONCMD               1
+     T1CNTL                  1
+     T1CNTH                  1
+     T1CTL                   1
+     P1DIR                   1
+     SysClkSet32M           15
+     Delay_10us              9
+     Delayms                20
+     Init_GPIO               9
+     Init_T1                15
+     Init_Key1              17
+     ??SysClkSet32M?relay    6
+     ??Delay_10us?relay      6
+     ??Delayms?relay         6
+     ??Init_GPIO?relay       6
+     ??Init_T1?relay         6
+     ??Init_Key1?relay       6
+
+ 
+ 85 bytes in segment BANKED_CODE
+ 36 bytes in segment BANK_RELAYS
+ 12 bytes in segment SFR_AN
+ 
+ 121 bytes of CODE memory
+   0 bytes of DATA memory (+ 12 bytes shared)
+
+Errors: none
+Warnings: none

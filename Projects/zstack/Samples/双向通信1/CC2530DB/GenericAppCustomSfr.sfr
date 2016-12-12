@@ -1,0 +1,53 @@
+[Sfr]
+sfr = "IEN1",	"SFR",	0xb8,	1,	base=16,	modified
+sfr = "S1CON",	"SFR",	0x9b,	1,	base=16,	modified
+sfr = "IP0",	"SFR",	0xa9,	1,	base=16,	modified
+sfr = "DPS",	"SFR",	0x92,	1,	base=16,	modified
+sfr = "MPAGE",	"SFR",	0x93,	1,	base=16,	modified
+sfr = "P2DIR",	"SFR",	0xff,	1,	base=16,	modified
+sfr = "RFERRF",	"SFR",	0xbf,	1,	base=16,	modified
+sfr = "FSMSTAT1",	"XData",	0x6193,	1,	base=16,	modified
+sfr = "RFIRQM1",	"XData",	0x61a4,	1,	base=16,	modified
+sfr = "MDMTEST0",	"XData",	0x61b8,	1,	base=16,	modified
+sfr = "IEN2.WDTIE",	"SFR",	0x9a,	1,	base=16,	modified
+sfr = "IEN2.UTX1IE",	"SFR",	0x9a,	1,	base=16,	modified
+sfr = "TCON",	"SFR",	0x88,	1,	base=16,	modified
+sfr = "TCON.URX1IF",	"SFR",	0x88,	1,	base=16,	modified
+sfr = "TCON.ADCIF",	"SFR",	0x88,	1,	base=16,	modified
+sfr = "S0CON",	"SFR",	0x98,	1,	base=16,	modified
+sfr = "S1CON.RFIF_1",	"SFR",	0x9b,	1,	base=16,	modified
+sfr = "S1CON.RFIF_0",	"SFR",	0x9b,	1,	base=16,	modified
+sfr = "IRCON.STIF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON.T4IF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON.T3IF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON.T2IF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON.T1IF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON.DMAIF",	"SFR",	0xc0,	1,	base=16,	modified
+sfr = "IRCON2",	"SFR",	0xe8,	1,	base=16,	modified
+sfr = "IRCON2.WDTIF",	"SFR",	0xe8,	1,	base=16,	modified
+sfr = "IRCON2.UTX0IF",	"SFR",	0xe8,	1,	base=16,	modified
+sfr = "IRCON2.P2IF",	"SFR",	0xe8,	1,	base=16,	modified
+sfr = "IP1",	"SFR",	0xb9,	1,	base=16,	modified
+sfr = "IP1.IP1_IPG5",	"SFR",	0xb9,	1,	base=16,	modified
+sfr = "IP1.IP1_IPG3",	"SFR",	0xb9,	1,	base=16,	modified
+sfr = "IP0.IP0_IPG3",	"SFR",	0xa9,	1,	base=16,	modified
+sfr = "P1SEL.SELP1_5",	"SFR",	0xf4,	1,	base=16,	modified
+sfr = "P2INP.PDUP1",	"SFR",	0xf7,	1,	base=16,	modified
+sfr = "P1DIR.DIRP1_6",	"SFR",	0xfe,	1,	base=16,	modified
+sfr = "P1DIR.DIRP1_2",	"SFR",	0xfe,	1,	base=16,	modified
+sfr = "P2DIR.DIRP2_0",	"SFR",	0xff,	1,	base=16,	modified
+sfr = "PMUX",	"SFR",	0xae,	1,	base=16,	modified
+sfr = "PMUX.CKOEN",	"SFR",	0xae,	1,	base=16,	modified
+sfr = "OBSSEL2.EN",	"XData",	0x6245,	1,	base=16,	modified
+sfr = "OBSSEL2.SEL",	"XData",	0x6245,	1,	base=16,	modified
+sfr = "RFIRQF0.FIFOP",	"SFR",	0xe9,	1,	base=16,	modified
+sfr = "T1CCTL0.CMP",	"SFR",	0xe5,	1,	base=16,	modified
+sfr = "TCON",	"SFR",	0x88,	1,	base=16,	modified
+sfr = "S0CON",	"SFR",	0x98,	1,	base=16,	modified
+sfr = "IP1",	"SFR",	0xb9,	1,	base=16,	modified
+sfr = "P1DIR.DIRP1_2",	"SFR",	0xfe,	1,	base=16,	modified
+
+
+[SfrGroupInfo]
+group = "Custom", "IEN1", "S1CON", "IP0"
+group = "Custom", "DPS", "MPAGE", "P2DIR", "RFERRF", "FSMSTAT1", "RFIRQM1", "MDMTEST0"

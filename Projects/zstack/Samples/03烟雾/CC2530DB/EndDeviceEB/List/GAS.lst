@@ -1,0 +1,718 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         25/Jul/2015  11:13:26 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\Source\GAS.c                                  #
+#    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \03ÑÌÎí\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev. #
+#                          cfg (-DCPU32MHZ -DROOT=__near_func                 #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\Tool #
+#                          s\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0   #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\03ÑÌÎí\Source\GAS.c -D        #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\03ÑÌÎí\CC2530DB\EndDeviceEB\Lis #
+#                          t\ -lA C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\03ÑÌÎí\CC2530DB\EndDeviceEB\List\             #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\EndDeviceEB\Obj\ -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \03ÑÌÎí\CC2530DB\ -I C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\03ÑÌÎí\CC2530DB\..\Source\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\ZMain\TI2530DB\ -I          #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\..\..\Components\hal\includ #
+#                          e\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\03ÑÌÎí\CC2530DB\..\..\..\..\..\Components\hal\ #
+#                          target\CC2530EB\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\ -I                          #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\..\..\Components\mac\high_l #
+#                          evel\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Components\m #
+#                          ac\low_level\srf04\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\low_level\srf04\single_chip\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\..\..\Components\mt\ -I     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\..\..\Components\osal\inclu #
+#                          de\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Components\ser #
+#                          vices\saddr\ -I C:\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\services\sdata\ -I                           #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\..\..\..\..\..\Components\stack\af\  #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \03ÑÌÎí\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\sapi\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstac #
+#                          k\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sec\ -I C:\ZStack-CC2530-2.5.1a\Projects\z #
+#                          stack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\stack\sys\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\zdo\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\03ÑÌÎí\CC2530DB\..\..\..\..\. #
+#                          .\Components\zmac\f8w\ -Ohz                        #
+#    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\EndDeviceEB\List\GAS.lst             #
+#    Object file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03 #
+#                          ÑÌÎí\CC2530DB\EndDeviceEB\Obj\GAS.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03ÑÌÎí\Source\GAS.c
+      1          /******************************************************************************
+      2            Filename:       GAS.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          #include <string.h>
+     69          //#include "Common.h"
+     70          #include "DebugTrace.h"
+     71          #include "GAS.h"
+     72          #include "MT.h"
+     73          
+     74          #if !defined( WIN32 )
+     75            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     76          #endif
+     77          
+     78          /* HAL */
+     79          #include "hal_lcd.h"
+     80          #include "hal_led.h"
+     81          #include "hal_key.h"
+     82          #include "hal_uart.h"
+     83          #include "mt_uart.h"
+     84          
+     85          /*********************************************************************
+     86           * MACROS
+     87           */
+     88          
+     89          /*********************************************************************
+     90           * CONSTANTS
+     91           */
+     92          
+     93          /*********************************************************************
+     94           * TYPEDEFS
+     95           */
+     96          
+     97          /*********************************************************************
+     98           * GLOBAL VARIABLES
+     99           */
+    100          // This list should be filled with Application specific Cluster IDs.
+    101          #define SEND_DATA_EVENT 0x01
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    102          unsigned char flag='0';
+   \                     flag:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for flag>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    103          const cId_t GAS_ClusterList[GAS_MAX_CLUSTERS] =
+   \                     GAS_ClusterList:
+   \   000000   0200         DW 2
+    104          {
+    105            GAS_CLUSTERID
+    106          };
+    107          
+    108          
+    109          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    110          const SimpleDescriptionFormat_t GAS_SimpleDesc =
+   \                     GAS_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   0000         DW 0H
+   \   000009   01           DB 1
+   \   00000A   ....         DW GAS_ClusterList
+    111          {
+    112            GAS_ENDPOINT,              //  int Endpoint;
+    113            GAS_PROFID,                //  uint16 AppProfId[2];
+    114            GAS_DEVICEID,              //  uint16 AppDeviceId[2];
+    115            GAS_DEVICE_VERSION,        //  int   AppDevVer:4;
+    116            GAS_FLAGS,                 //  int   AppFlags:4;
+    117            
+    118            
+    119            0,          //  byte  AppNumInClusters;
+    120            (cId_t *)NULL,  //  byte *pAppInClusterList;
+    121            GAS_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    122            (cId_t *)GAS_ClusterList   //  byte *pAppInClusterList;
+    123          };
+    124          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          unsigned char TempDATA;
+   \                     TempDATA:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    126          endPointDesc_t GAS_epDesc;
+   \                     GAS_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    127          byte GAS_TaskID;
+   \                     GAS_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    128          byte GAS_TransID;
+   \                     GAS_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    129          devStates_t GAS_NwkState;
+   \                     GAS_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    130          void GAS_MessageMSGCB(afIncomingMSGPacket_t *MSGpkt);
+    131          void GAS_SendTheMessage(void);
+    132          
+    133          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    134          void Scan()
+   \                     Scan:
+    135          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    136            P1SEL &= ~0x08;
+   \   000000   53F4F7       ANL     0xf4,#0xf7
+    137            P1DIR &= ~0x08;
+   \   000003   53FEF7       ANL     0xfe,#0xf7
+    138          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P1SEL
+   \   000009                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    139          void GAS_Init( byte task_id )
+   \                     GAS_Init:
+    140          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    141            halUARTCfg_t uartConfig;//´®¿Ú
+    142              
+    143            GAS_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#GAS_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    144            GAS_NwkState=DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#GAS_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    145            GAS_TransID = 0;
+   \   000010   90....       MOV     DPTR,#GAS_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    146          
+    147            
+    148            GAS_epDesc.endPoint = GAS_ENDPOINT;
+   \   000015   90....       MOV     DPTR,#GAS_epDesc
+   \   000018   740A         MOV     A,#0xa
+   \   00001A   F0           MOVX    @DPTR,A
+    149            GAS_epDesc.task_id = &GAS_TaskID;
+   \   00001B   A3           INC     DPTR
+   \   00001C   74..         MOV     A,#GAS_TaskID & 0xff
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   74..         MOV     A,#(GAS_TaskID >> 8) & 0xff
+   \   000022   F0           MOVX    @DPTR,A
+    150            GAS_epDesc.simpleDesc
+    151                      = (SimpleDescriptionFormat_t *)&GAS_SimpleDesc;
+   \   000023   A3           INC     DPTR
+   \   000024   74..         MOV     A,#GAS_SimpleDesc & 0xff
+   \   000026   F0           MOVX    @DPTR,A
+   \   000027   A3           INC     DPTR
+   \   000028   74..         MOV     A,#(GAS_SimpleDesc >> 8) & 0xff
+   \   00002A   F0           MOVX    @DPTR,A
+    152            
+    153            GAS_epDesc.latencyReq = noLatencyReqs;
+   \   00002B   A3           INC     DPTR
+   \   00002C   E4           CLR     A
+   \   00002D   F0           MOVX    @DPTR,A
+    154            afRegister( &GAS_epDesc ); 
+   \   00002E                ; Setup parameters for call to function afRegister
+   \   00002E   7A..         MOV     R2,#GAS_epDesc & 0xff
+   \   000030   7B..         MOV     R3,#(GAS_epDesc >> 8) & 0xff
+   \   000032   12....       LCALL   ??afRegister?relay
+    155            P1DIR &= ~(1<<3);
+   \   000035   53FEF7       ANL     0xfe,#0xf7
+    156          
+    157          }
+   \   000038   7F01         MOV     R7,#0x1
+   \   00003A   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00003D                REQUIRE P1DIR
+    158          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    159          UINT16 GAS_ProcessEvent( byte task_id, UINT16 events )
+   \                     GAS_ProcessEvent:
+    160          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    161            afIncomingMSGPacket_t *MSGpkt;
+    162          
+    163            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   604E         JZ      ??GAS_ProcessEvent_0
+    164            {
+    165              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GAS_TaskID );
+   \   00000D                ; Setup parameters for call to function osal_msg_receive
+   \   00000D   8032         SJMP    ??GAS_ProcessEvent_1
+    166              while ( MSGpkt )
+    167              {
+    168                switch ( MSGpkt->hdr.event )
+   \                     ??GAS_ProcessEvent_2:
+   \   00000F   85..82       MOV     DPL,?V0 + 0
+   \   000012   85..83       MOV     DPH,?V0 + 1
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   64D1         XRL     A,#0xd1
+   \   000018   7020         JNZ     ??GAS_ProcessEvent_3
+    169                {
+    170                 
+    171                    case ZDO_STATE_CHANGE:
+    172                      GAS_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   90....       MOV     DPTR,#GAS_NwkState
+   \   00001F   F0           MOVX    @DPTR,A
+    173                      if(GAS_NwkState==DEV_END_DEVICE)
+   \   000020   6406         XRL     A,#0x6
+   \   000022   7016         JNZ     ??GAS_ProcessEvent_3
+    174                      {
+    175                        P1_0=~P1_0;
+   \   000024   D2F0         SETB    B.0
+   \   000026   A290         MOV     C,0x90.0
+   \   000028   30F001       JNB     B.0,??GAS_ProcessEvent_4
+   \   00002B   B3           CPL     C
+   \                     ??GAS_ProcessEvent_4:
+   \   00002C   9290         MOV     0x90.0,C
+    176                        osal_set_event(GAS_TaskID,SEND_DATA_EVENT);
+   \   00002E                ; Setup parameters for call to function osal_set_event
+   \   00002E   7A01         MOV     R2,#0x1
+   \   000030   7B00         MOV     R3,#0x0
+   \   000032   90....       MOV     DPTR,#GAS_TaskID
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   F9           MOV     R1,A
+   \   000037   12....       LCALL   ??osal_set_event?relay
+    177                      }
+    178                      break;
+    179                      
+    180                    default:
+    181                      break;
+    182                }
+    183                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??GAS_ProcessEvent_3:
+   \   00003A                ; Setup parameters for call to function osal_msg_deallocate
+   \   00003A   AA..         MOV     R2,?V0 + 0
+   \   00003C   AB..         MOV     R3,?V0 + 1
+   \   00003E   12....       LCALL   ??osal_msg_deallocate?relay
+    184                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( GAS_TaskID );
+   \   000041                ; Setup parameters for call to function osal_msg_receive
+   \                     ??GAS_ProcessEvent_1:
+   \   000041   90....       MOV     DPTR,#GAS_TaskID
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F9           MOV     R1,A
+   \   000046   12....       LCALL   ??osal_msg_receive?relay
+   \   000049   8A..         MOV     ?V0 + 0,R2
+   \   00004B   8B..         MOV     ?V0 + 1,R3
+    185              }
+   \   00004D   E5..         MOV     A,?V0 + 0
+   \   00004F   45..         ORL     A,?V0 + 1
+   \   000051   70BC         JNZ     ??GAS_ProcessEvent_2
+    186              // return unprocessed events
+    187              return (events ^ SYS_EVENT_MSG);
+   \   000053   EE           MOV     A,R6
+   \   000054   FA           MOV     R2,A
+   \   000055   EF           MOV     A,R7
+   \   000056   6480         XRL     A,#0x80
+   \                     ??GAS_ProcessEvent_5:
+   \   000058   FB           MOV     R3,A
+   \   000059   8026         SJMP    ??GAS_ProcessEvent_6
+    188            }
+    189            if(events&SEND_DATA_EVENT)
+   \                     ??GAS_ProcessEvent_0:
+   \   00005B   EE           MOV     A,R6
+   \   00005C   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00005E   501D         JNC     ??GAS_ProcessEvent_7
+    190            {
+    191              Scan();
+   \   000060                ; Setup parameters for call to function Scan
+   \   000060   12....       LCALL   ??Scan?relay
+    192              GAS_SendTheMessage();
+   \   000063                ; Setup parameters for call to function GAS_SendTheMessage
+   \   000063   12....       LCALL   ??GAS_SendTheMessage?relay
+    193              osal_start_timerEx(GAS_TaskID,SEND_DATA_EVENT,3000);
+   \   000066                ; Setup parameters for call to function osal_start_timerEx
+   \   000066   7CB8         MOV     R4,#-0x48
+   \   000068   7D0B         MOV     R5,#0xb
+   \   00006A   7A01         MOV     R2,#0x1
+   \   00006C   7B00         MOV     R3,#0x0
+   \   00006E   90....       MOV     DPTR,#GAS_TaskID
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   F9           MOV     R1,A
+   \   000073   12....       LCALL   ??osal_start_timerEx?relay
+    194              return(events^SEND_DATA_EVENT);
+   \   000076   EE           MOV     A,R6
+   \   000077   6401         XRL     A,#0x1
+   \   000079   FA           MOV     R2,A
+   \   00007A   EF           MOV     A,R7
+   \   00007B   80DB         SJMP    ??GAS_ProcessEvent_5
+    195            }
+    196            return 0;
+   \                     ??GAS_ProcessEvent_7:
+   \   00007D   7A00         MOV     R2,#0x0
+   \   00007F   7B00         MOV     R3,#0x0
+   \                     ??GAS_ProcessEvent_6:
+   \   000081   7F04         MOV     R7,#0x4
+   \   000083   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000086                REQUIRE _A_P1
+    197          }
+    198          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    199          void GAS_SendTheMessage(void)
+   \                     GAS_SendTheMessage:
+    200          { 
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 22
+   \   000005   74EA         MOV     A,#-0x16
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    201            unsigned char theMessageData[10]="EndDevice";
+   \   00000A   90....       MOV     DPTR,#`?<Constant "EndDevice">`
+   \   00000D   C082         PUSH    DPL
+   \   00000F   740C         MOV     A,#0xc
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   AC82         MOV     R4,DPL
+   \   000016   AD83         MOV     R5,DPH
+   \   000018   7583..       MOV     DPH,#(`?<Constant "EndDevice">` >> 8) & 0xff
+   \   00001B   D082         POP     DPL
+   \   00001D   740A         MOV     A,#0xa
+   \   00001F   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    202          
+    203            afAddrType_t my_DstAddr;
+    204          
+    205            my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+   \   000022   7408         MOV     A,#0x8
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   7402         MOV     A,#0x2
+   \   000029   F0           MOVX    @DPTR,A
+    206            my_DstAddr.endPoint=GAS_ENDPOINT;
+   \   00002A   7409         MOV     A,#0x9
+   \   00002C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002F   740A         MOV     A,#0xa
+   \   000031   F0           MOVX    @DPTR,A
+    207            my_DstAddr.addr.shortAddr=0x0000; 
+   \   000032   85..82       MOV     DPL,?XSP + 0
+   \   000035   85..83       MOV     DPH,?XSP + 1
+   \   000038   E4           CLR     A
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   F0           MOVX    @DPTR,A
+    208          
+    209          
+    210            P1DIR &= ~(1<<3);
+   \   00003C   53FEF7       ANL     0xfe,#0xf7
+    211            
+    212            if(GASIN == 1)
+   \   00003F   A293         MOV     C,0x90.3
+   \   000041   740C         MOV     A,#0xc
+   \   000043   5007         JNC     ??GAS_SendTheMessage_0
+    213            {
+    214              theMessageData[0] = 'N';
+   \   000045   12....       LCALL   ?XSTACK_DISP0_8
+   \   000048   744E         MOV     A,#0x4e
+   \   00004A   8005         SJMP    ??GAS_SendTheMessage_1
+    215            } else {
+    216              theMessageData[0] = 'Y';
+   \                     ??GAS_SendTheMessage_0:
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   7459         MOV     A,#0x59
+   \                     ??GAS_SendTheMessage_1:
+   \   000051   F0           MOVX    @DPTR,A
+    217            }
+    218          
+    219            AF_DataRequest(&my_DstAddr
+    220            ,&GAS_epDesc
+    221            ,GAS_CLUSTERID
+    222            ,1
+    223            ,theMessageData
+    224            ,&GAS_TransID
+    225            ,AF_DISCV_ROUTE
+    226            ,AF_DEFAULT_RADIUS);
+   \   000052                ; Setup parameters for call to function AF_DataRequest
+   \   000052   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000055   78..         MOV     R0,#?V0 + 0
+   \   000057   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00005A   75....       MOV     ?V0 + 0,#GAS_TransID & 0xff
+   \   00005D   75....       MOV     ?V0 + 1,#(GAS_TransID >> 8) & 0xff
+   \   000060   78..         MOV     R0,#?V0 + 0
+   \   000062   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000065   740F         MOV     A,#0xf
+   \   000067   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006A   8582..       MOV     ?V0 + 0,DPL
+   \   00006D   8583..       MOV     ?V0 + 1,DPH
+   \   000070   78..         MOV     R0,#?V0 + 0
+   \   000072   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000075   75..01       MOV     ?V0 + 0,#0x1
+   \   000078   75..00       MOV     ?V0 + 1,#0x0
+   \   00007B   78..         MOV     R0,#?V0 + 0
+   \   00007D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000080   75..02       MOV     ?V0 + 0,#0x2
+   \   000083   78..         MOV     R0,#?V0 + 0
+   \   000085   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000088   7920         MOV     R1,#0x20
+   \   00008A   7C..         MOV     R4,#GAS_epDesc & 0xff
+   \   00008C   7D..         MOV     R5,#(GAS_epDesc >> 8) & 0xff
+   \   00008E   7409         MOV     A,#0x9
+   \   000090   12....       LCALL   ?XSTACK_DISP0_8
+   \   000093   AA82         MOV     R2,DPL
+   \   000095   AB83         MOV     R3,DPH
+   \   000097   12....       LCALL   ??AF_DataRequest?relay
+   \   00009A   7409         MOV     A,#0x9
+   \   00009C   12....       LCALL   ?DEALLOC_XSTACK8
+    227          }
+   \   00009F   7416         MOV     A,#0x16
+   \   0000A1   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000A4   7F02         MOV     R7,#0x2
+   \   0000A6   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000A9                REQUIRE P1DIR
+   \   0000A9                REQUIRE _A_P1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for flag>`:
+   \   000000   30           DB 48
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Scan?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Scan
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GAS_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GAS_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GAS_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GAS_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GAS_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GAS_SendTheMessage
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+    228          
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     GAS_Init                     0      0      9
+       -> afRegister              0      0     18
+     GAS_ProcessEvent             0      0     12
+       -> osal_msg_receive        0      0     24
+       -> osal_set_event          0      0     24
+       -> osal_msg_deallocate     0      0     24
+       -> osal_msg_receive        0      0     24
+       -> Scan                    0      0     24
+       -> GAS_SendTheMessage      0      0     24
+       -> osal_start_timerEx      0      0     24
+     GAS_SendTheMessage           2      0     53
+       -> AF_DataRequest          0      0     82
+     Scan                         0      0     12
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P1                         1
+     P1SEL                         1
+     P1DIR                         1
+     flag                          1
+     GAS_ClusterList               2
+     GAS_SimpleDesc               12
+     TempDATA                      1
+     GAS_epDesc                    6
+     GAS_TaskID                    1
+     GAS_TransID                   1
+     GAS_NwkState                  1
+     Scan                          9
+     GAS_Init                     61
+     GAS_ProcessEvent            134
+     GAS_SendTheMessage          169
+     ?<Initializer for flag>       1
+     ??Scan?relay                  6
+     ??GAS_Init?relay              6
+     ??GAS_ProcessEvent?relay      6
+     ??GAS_SendTheMessage?relay    6
+     ?<Constant "EndDevice">      10
+
+ 
+ 373 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+  24 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 398 bytes of CODE  memory
+  24 bytes of CONST memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+  11 bytes of XDATA memory
+
+Errors: none
+Warnings: none

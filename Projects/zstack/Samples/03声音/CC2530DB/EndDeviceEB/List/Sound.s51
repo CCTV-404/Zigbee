@@ -1,0 +1,1361 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        25/Jul/2015  11:09:14 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\Source\Sound.c                              /
+//    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\03…˘“Ù\CC2530DB\..\..\..\Tools\CC2530DB\f8wEnde /
+//                          v.cfg (-DCPU32MHZ -DROOT=__near_func              /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f C:\ZStack-CC2530-2.5.1a\Pr /
+//                          ojects\zstack\Samples\03…˘“Ù\CC2530DB\..\..\..\To /
+//                          ols\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO           /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00100000                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pr /
+//                          ojects\zstack\Samples\03…˘“Ù\Source\Sound.c -D    /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\EndDeviceEB\List\ -lA              /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\EndDeviceEB\List\ --diag_suppress  /
+//                          Pe001,Pa010 -o C:\ZStack-CC2530-2.5.1a\Projects\z /
+//                          stack\Samples\03…˘“Ù\CC2530DB\EndDeviceEB\Obj\    /
+//                          -e --no_code_motion --debug --core=plain          /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\ -I C:\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\03…˘“Ù\CC2530DB\..\Source\ -I   /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\ZMain\TI2530DB\ -I        /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\hal\incl /
+//                          ude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S /
+//                          amples\03…˘“Ù\CC2530DB\..\..\..\..\..\Components\ /
+//                          hal\target\CC2530EB\ -I                           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\mac\incl /
+//                          ude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S /
+//                          amples\03…˘“Ù\CC2530DB\..\..\..\..\..\Components\ /
+//                          mac\high_level\ -I C:\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\ /
+//                          Components\mac\low_level\srf04\ -I                /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\mac\low_ /
+//                          level\srf04\single_chip\ -I                       /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\mt\ -I   /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\osal\inc /
+//                          lude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\Components /
+//                          \services\saddr\ -I C:\ZStack-CC2530-2.5.1a\Proje /
+//                          cts\zstack\Samples\03…˘“Ù\CC2530DB\..\..\..\..\.. /
+//                          \Components\services\sdata\ -I                    /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\stack\af /
+//                          \ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samp /
+//                          les\03…˘“Ù\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\nwk\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstac /
+//                          k\Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\Componen /
+//                          ts\stack\sapi\ -I C:\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\C /
+//                          omponents\stack\sec\ -I                           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\..\..\..\..\..\Components\stack\sy /
+//                          s\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam /
+//                          ples\03…˘“Ù\CC2530DB\..\..\..\..\..\Components\st /
+//                          ack\zdo\ -I C:\ZStack-CC2530-2.5.1a\Projects\zsta /
+//                          ck\Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\zmac\ -I C:\ZStack-CC2530-2.5.1a\Projects\zst /
+//                          ack\Samples\03…˘“Ù\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\zmac\f8w\ -Ohz                               /
+//    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 /
+//                          3…˘“Ù\CC2530DB\EndDeviceEB\List\Sound.s51         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Sound
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?INTERRUPT_ENTER_XSP
+        EXTERN ?INTERRUPT_LEAVE_XSP
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??InitKey2?relay
+        FUNCTION ??InitKey2?relay,0203H
+        PUBLIC ??Sound_Init?relay
+        FUNCTION ??Sound_Init?relay,0203H
+        PUBLIC ??Sound_ProcessEvent?relay
+        FUNCTION ??Sound_ProcessEvent?relay,0203H
+        PUBLIC ??Sound_SendTheMessage?relay
+        FUNCTION ??Sound_SendTheMessage?relay,0203H
+        PUBWEAK `??halKeyPort1Isr??INTVEC 123`
+        PUBWEAK IEN2
+        PUBLIC InitKey2
+        FUNCTION InitKey2,0203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK PICTL
+        PUBLIC Sound_ClusterList
+        PUBLIC Sound_Init
+        FUNCTION Sound_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Sound_NwkState
+        PUBLIC Sound_ProcessEvent
+        FUNCTION Sound_ProcessEvent,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC Sound_SendTheMessage
+        FUNCTION Sound_SendTheMessage,021203H
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 41, STACK
+        PUBLIC Sound_SimpleDesc
+        PUBLIC Sound_TaskID
+        PUBLIC Sound_TransID
+        PUBLIC Sound_epDesc
+        PUBLIC TempDATA
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IRCON2
+        PUBWEAK _A_P1
+        PUBLIC flag
+        PUBLIC halKeyPort1Isr
+        FUNCTION halKeyPort1Isr,021233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+afRegister          SYMBOL "afRegister"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+osal_set_event      SYMBOL "osal_set_event"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+osal_strlen         SYMBOL "osal_strlen"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??afRegister?relay  SYMBOL "?relay", afRegister
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_strlen?relay SYMBOL "?relay", osal_strlen
+InitKey2            SYMBOL "InitKey2"
+??InitKey2?relay    SYMBOL "?relay", InitKey2
+Sound_Init          SYMBOL "Sound_Init"
+??Sound_Init?relay  SYMBOL "?relay", Sound_Init
+Sound_ProcessEvent  SYMBOL "Sound_ProcessEvent"
+??Sound_ProcessEvent?relay SYMBOL "?relay", Sound_ProcessEvent
+Sound_SendTheMessage SYMBOL "Sound_SendTheMessage"
+??Sound_SendTheMessage?relay SYMBOL "?relay", Sound_SendTheMessage
+halKeyPort1Isr      SYMBOL "halKeyPort1Isr"
+`??halKeyPort1Isr??INTVEC 123` SYMBOL "??INTVEC 123", halKeyPort1Isr
+
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_set_event
+        FUNCTION osal_set_event,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_strlen
+        FUNCTION osal_strlen,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 41, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??osal_msg_deallocate?relay
+        FUNCTION ??osal_msg_deallocate?relay,00H
+        EXTERN ??osal_msg_receive?relay
+        FUNCTION ??osal_msg_receive?relay,00H
+        EXTERN ??osal_set_event?relay
+        FUNCTION ??osal_set_event?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN ??osal_strlen?relay
+        FUNCTION ??osal_strlen?relay,00H
+
+// C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03…˘“Ù\Source\Sound.c
+//    1 /******************************************************************************
+//    2   Filename:       Sound.c
+//    3   Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+//    4   Revision:       $Revision: 29656 $
+//    5 
+//    6   Description:    Generic Application (no Profile).
+//    7 
+//    8 
+//    9   Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License"). You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product. Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED ìAS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 ******************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41   This application isn't intended to do anything useful, it is
+//   42   intended to be a simple example of an application's structure.
+//   43 
+//   44   This application sends "Hello World" to another "Generic"
+//   45   application every 5 seconds.  The application will also
+//   46   receives "Hello World" packets.
+//   47 
+//   48   The "Hello World" messages are sent/received as MSG type message.
+//   49 
+//   50   This applications doesn't have a profile, so it handles everything
+//   51   directly - itself.
+//   52 
+//   53   Key control:
+//   54     SW1:
+//   55     SW2:  initiates end device binding
+//   56     SW3:
+//   57     SW4:  initiates a match description request
+//   58 *********************************************************************/
+//   59 
+//   60 /*********************************************************************
+//   61  * INCLUDES
+//   62  */
+//   63 #include "OSAL.h"
+//   64 #include "AF.h"
+//   65 #include "ZDApp.h"
+//   66 #include "ZDObject.h"
+//   67 #include "ZDProfile.h"
+//   68 #include <string.h>
+//   69 //#include "Common.h"
+//   70 #include "DebugTrace.h"
+//   71 #include "Sound.h"
+//   72 #include "MT.h"
+//   73 
+//   74 #if !defined( WIN32 )
+//   75   #include "OnBoard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   76 #endif
+//   77 
+//   78 /* HAL */
+//   79 #include "hal_lcd.h"
+//   80 #include "hal_led.h"
+//   81 #include "hal_key.h"
+//   82 #include "hal_uart.h"
+//   83 #include "mt_uart.h"
+//   84 
+//   85 /*********************************************************************
+//   86  * MACROS
+//   87  */
+//   88 
+//   89 /*********************************************************************
+//   90  * CONSTANTS
+//   91  */
+//   92 
+//   93 /*********************************************************************
+//   94  * TYPEDEFS
+//   95  */
+//   96 
+//   97 /*********************************************************************
+//   98  * GLOBAL VARIABLES
+//   99  */
+//  100 // This list should be filled with Application specific Cluster IDs.
+//  101 
+//  102 /* SW_6 is at P0.1 */
+//  103 #define HAL_KEY_SW_7_PORT   P1
+//  104 #define HAL_KEY_SW_7_BIT    BV(3)
+//  105 #define HAL_KEY_SW_7_SEL    P1SEL
+//  106 #define HAL_KEY_SW_7_DIR    P1DIR
+//  107 
+//  108 /* edge interrupt */
+//  109 #define HAL_KEY_SW_7_EDGEBIT  BV(0)
+//  110 #define HAL_KEY_SW_7_EDGE     HAL_KEY_RISING_EDGE
+//  111 
+//  112 
+//  113 /* SW_6 interrupts */
+//  114 #define HAL_KEY_SW_7_IEN      IEN2  /* CPU interrupt mask register */
+//  115 #define HAL_KEY_SW_7_IENBIT   BV(4) /* Mask bit for all of Port_0 */
+//  116 #define HAL_KEY_SW_7_ICTL     P1IEN /* Port Interrupt Control register */
+//  117 #define HAL_KEY_SW_7_ICTLBIT  BV(3) /* P0IEN - P0.1 enable/disable bit */
+//  118 #define HAL_KEY_SW_7_PXIFG    P1IFG /* Interrupt flag at source */
+//  119 
+//  120 #include "OSAL.h"
+//  121 #include "AF.h"
+//  122 #include "ZDApp.h"
+//  123 #include "ZDObject.h"
+//  124 #include "ZDProfile.h"
+//  125 #include <string.h>
+//  126 //#include "Common.h"
+//  127 #include "DebugTrace.h"
+//  128 #include "Sound.h"
+//  129 #include "MT.h"
+//  130 
+//  131 #if !defined( WIN32 )
+//  132   #include "OnBoard.h"
+//  133 #endif
+//  134 
+//  135 /* HAL */
+//  136 #include "hal_lcd.h"
+//  137 #include "hal_led.h"
+//  138 #include "hal_key.h"
+//  139 #include "hal_uart.h"
+//  140 #include "mt_uart.h"
+//  141 
+//  142 
+//  143 #define SEND_DATA_EVENT 0x01
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  144 unsigned char flag='0';
+flag:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for flag>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  145 const cId_t Sound_ClusterList[Sound_MAX_CLUSTERS] =
+Sound_ClusterList:
+        DW 6
+//  146 {
+//  147   Sound_CLUSTERID
+//  148 };
+//  149 
+//  150 
+//  151 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  152 const SimpleDescriptionFormat_t Sound_SimpleDesc =
+Sound_SimpleDesc:
+        DB 10
+        DATA16
+        DW 3844
+        DW 1
+        DATA8
+        DB 0
+        DB 0
+        DATA16
+        DW 0H
+        DATA8
+        DB 1
+        DATA16
+        DW Sound_ClusterList
+//  153 {
+//  154   Sound_ENDPOINT,              //  int Endpoint;
+//  155   Sound_PROFID,                //  uint16 AppProfId[2];
+//  156   Sound_DEVICEID,              //  uint16 AppDeviceId[2];
+//  157   Sound_DEVICE_VERSION,        //  int   AppDevVer:4;
+//  158   Sound_FLAGS,                 //  int   AppFlags:4;
+//  159   
+//  160   
+//  161   0,          //  byte  AppNumInClusters;
+//  162   (cId_t *)NULL,  //  byte *pAppInClusterList;
+//  163   Sound_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+//  164   (cId_t *)Sound_ClusterList   //  byte *pAppInClusterList;
+//  165 };
+//  166 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  167 unsigned char TempDATA;
+TempDATA:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  168 endPointDesc_t Sound_epDesc;
+Sound_epDesc:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  169 byte Sound_TaskID;
+Sound_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  170 byte Sound_TransID;
+Sound_TransID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  171 devStates_t Sound_NwkState;
+Sound_NwkState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  172 void Sound_MessageMSGCB(afIncomingMSGPacket_t *MSGpkt);
+//  173 void Sound_SendTheMessage(void);
+//  174 
+//  175 
+//  176 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  177 void Sound_Init( byte task_id )
+Sound_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Sound_Init
+        CODE
+//  178 {
+        FUNCALL Sound_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  179   halUARTCfg_t uartConfig;//¥Æø⁄
+//  180     
+//  181   Sound_TaskID = task_id;
+        MOV     DPTR,#Sound_TaskID
+        MOVX    @DPTR,A
+//  182   Sound_NwkState=DEV_INIT;
+        MOV     DPTR,#Sound_NwkState
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  183   Sound_TransID = 0;
+        MOV     DPTR,#Sound_TransID
+        CLR     A
+        MOVX    @DPTR,A
+//  184  
+//  185   Sound_epDesc.endPoint = Sound_ENDPOINT;
+        MOV     DPTR,#Sound_epDesc
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  186   Sound_epDesc.task_id = &Sound_TaskID;
+        INC     DPTR
+        MOV     A,#Sound_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(Sound_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//  187   Sound_epDesc.simpleDesc
+//  188             = (SimpleDescriptionFormat_t *)&Sound_SimpleDesc;
+        INC     DPTR
+        MOV     A,#Sound_SimpleDesc & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(Sound_SimpleDesc >> 8) & 0xff
+        MOVX    @DPTR,A
+//  189   
+//  190   Sound_epDesc.latencyReq = noLatencyReqs;
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  191   afRegister( &Sound_epDesc ); 
+        ; Setup parameters for call to function afRegister
+        MOV     R2,#Sound_epDesc & 0xff
+        MOV     R3,#(Sound_epDesc >> 8) & 0xff
+        LCALL   ??afRegister?relay
+//  192 
+//  193 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+//  194 //KET1 Õ‚≤ø÷–∂œ∑Ω Ω
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  195 void InitKey2(void)
+InitKey2:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function InitKey2
+        CODE
+//  196 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  197   P1IEN |= 0X08;
+        ORL     0x8d,#0x8
+//  198   PICTL |= 0X2; // œ¬Ωµ—ÿ¥•∑¢   
+        ORL     0x8c,#0x2
+//  199   IEN2 |= 0X10;   // ‘ –ÌP1ø⁄÷–∂œ; 
+        ORL     0x9a,#0x10
+//  200   P1IFG = 0x08;   // ≥ı ºªØ÷–∂œ±Í÷æŒª
+        MOV     0x8a,#0x8
+//  201   P1DIR |= 0x13;
+        ORL     0xfe,#0x13
+//  202   EA = 1; 
+        SETB    0xa8.7
+//  203 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+        REQUIRE P1IEN
+        REQUIRE PICTL
+        REQUIRE IEN2
+        REQUIRE P1IFG
+        REQUIRE P1DIR
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  204 UINT16 Sound_ProcessEvent( byte task_id, UINT16 events )
+Sound_ProcessEvent:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Sound_ProcessEvent
+        CODE
+//  205 {
+        FUNCALL Sound_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, osal_set_event
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, InitKey2
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, Sound_SendTheMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  206   afIncomingMSGPacket_t *MSGpkt;
+//  207 
+//  208   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JZ      ??Sound_ProcessEvent_0
+//  209   {
+//  210     MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Sound_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        SJMP    ??Sound_ProcessEvent_1
+//  211     while ( MSGpkt )
+//  212     {
+//  213       switch ( MSGpkt->hdr.event )
+??Sound_ProcessEvent_2:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        XRL     A,#0xd1
+        JNZ     ??Sound_ProcessEvent_3
+//  214       {
+//  215        
+//  216           case ZDO_STATE_CHANGE:
+//  217             Sound_NwkState = (devStates_t)(MSGpkt->hdr.status);
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Sound_NwkState
+        MOVX    @DPTR,A
+//  218             if(Sound_NwkState==DEV_END_DEVICE)
+        XRL     A,#0x6
+        JNZ     ??Sound_ProcessEvent_3
+//  219             {
+//  220               P1_0=~P1_0;
+        SETB    B.0
+        MOV     C,0x90.0
+        JNB     B.0,??Sound_ProcessEvent_4
+        CPL     C
+??Sound_ProcessEvent_4:
+        MOV     0x90.0,C
+//  221               osal_set_event(Sound_TaskID,SEND_DATA_EVENT);
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#Sound_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+//  222             }
+//  223             break;
+//  224             
+//  225           default:
+//  226             break;
+//  227       }
+//  228       osal_msg_deallocate( (uint8 *)MSGpkt );
+??Sound_ProcessEvent_3:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+//  229       MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Sound_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+??Sound_ProcessEvent_1:
+        MOV     DPTR,#Sound_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+//  230     }
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JNZ     ??Sound_ProcessEvent_2
+//  231     // return unprocessed events
+//  232     return (events ^ SYS_EVENT_MSG);
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+??Sound_ProcessEvent_5:
+        MOV     R3,A
+        SJMP    ??Sound_ProcessEvent_6
+//  233   }
+//  234   if(events&SEND_DATA_EVENT)
+??Sound_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??Sound_ProcessEvent_7
+//  235   {
+//  236     flag='0';
+        MOV     DPTR,#flag
+        MOV     A,#0x30
+        MOVX    @DPTR,A
+//  237     InitKey2();
+        ; Setup parameters for call to function InitKey2
+        LCALL   ??InitKey2?relay
+//  238     Sound_SendTheMessage();
+        ; Setup parameters for call to function Sound_SendTheMessage
+        LCALL   ??Sound_SendTheMessage?relay
+//  239     osal_start_timerEx(Sound_TaskID,SEND_DATA_EVENT,3000);
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x48
+        MOV     R5,#0xb
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#Sound_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+//  240     return(events^SEND_DATA_EVENT);
+        MOV     A,R6
+        XRL     A,#0x1
+        MOV     R2,A
+        MOV     A,R7
+        SJMP    ??Sound_ProcessEvent_5
+//  241   }
+//  242   return 0;
+??Sound_ProcessEvent_7:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??Sound_ProcessEvent_6:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P1
+//  243 }
+//  244 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  245 void Sound_SendTheMessage(void)
+Sound_SendTheMessage:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Sound_SendTheMessage
+        CODE
+//  246 { 
+        FUNCALL Sound_SendTheMessage, osal_strlen
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 37, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Sound_SendTheMessage, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 41, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 41, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 22
+        MOV     A,#-0x16
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 32)
+//  247   unsigned char theMessageData[10]="EndDevice";
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant "EndDevice">` >> 8) & 0xff
+        MOV     DPL,#`?<Constant "EndDevice">` & 0xff
+        MOV     A,#0xa
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  248 
+//  249   afAddrType_t my_DstAddr;
+//  250 
+//  251   my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  252   my_DstAddr.endPoint=Sound_ENDPOINT;
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  253   my_DstAddr.addr.shortAddr=0x0000; 
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  254 
+//  255 
+//  256   theMessageData[0]=flag;
+        MOV     DPTR,#flag
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  257 
+//  258   AF_DataRequest(&my_DstAddr
+//  259   ,&Sound_epDesc
+//  260   ,Sound_CLUSTERID
+//  261   ,osal_strlen("EndDevice")+1
+//  262   ,theMessageData
+//  263   ,&Sound_TransID
+//  264   ,AF_DISCV_ROUTE
+//  265   ,AF_DEFAULT_RADIUS);
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 33)
+        MOV     ?V0 + 0,#Sound_TransID & 0xff
+        MOV     ?V0 + 1,#(Sound_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 35)
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 37)
+        ; Setup parameters for call to function osal_strlen
+        MOV     R2,#`?<Constant "EndDevice">_1` & 0xff
+        MOV     R3,#(`?<Constant "EndDevice">_1` >> 8) & 0xff
+        LCALL   ??osal_strlen?relay
+        MOV     A,R2
+        ADD     A,#0x1
+        MOV     ?V0 + 0,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 39)
+        MOV     ?V0 + 0,#0x6
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 41)
+        MOV     R1,#0x20
+        MOV     R4,#Sound_epDesc & 0xff
+        MOV     R5,#(Sound_epDesc >> 8) & 0xff
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 32)
+//  266 }
+        MOV     A,#0x16
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 10)
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  267 
+//  268 
+//  269 
+//  270 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  271 HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+halKeyPort1Isr:
+        CFI Block cfiBlock4 Using cfiCommon1
+        CFI Function halKeyPort1Isr
+        CODE
+//  272 {
+        FUNCALL halKeyPort1Isr, Sound_SendTheMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        MOV     A,#-0xe
+        LCALL   ?INTERRUPT_ENTER_XSP
+        CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+//  273   
+//  274   if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)
+        MOV     A,0x8a
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??halKeyPort1Isr_0
+//  275   {
+//  276     flag='1';
+        MOV     DPTR,#flag
+        MOV     A,#0x31
+        MOVX    @DPTR,A
+//  277     Sound_SendTheMessage( );
+        ; Setup parameters for call to function Sound_SendTheMessage
+        LCALL   ??Sound_SendTheMessage?relay
+//  278     flag='0';
+        MOV     DPTR,#flag
+        MOV     A,#0x30
+        MOVX    @DPTR,A
+//  279     P1IFG = 0;             //«Â÷–∂œ±Í÷æ 
+        MOV     0x8a,#0x0
+//  280     P1IF = 0;             //«Â÷–∂œ±Í÷æ 
+        CLR     0xe8.3
+//  281   }
+//  282 }
+??halKeyPort1Isr_0:
+        MOV     R7,#0x1
+        LJMP    ?INTERRUPT_LEAVE_XSP
+        CFI EndBlock cfiBlock4
+        REQUIRE P1IFG
+        REQUIRE _A_IRCON2
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 123
+`??halKeyPort1Isr??INTVEC 123`:
+        LJMP       (halKeyPort1Isr)
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for flag>`:
+        DATA8
+        DB 48
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Sound_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Sound_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitKey2?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitKey2
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Sound_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Sound_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Sound_SendTheMessage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Sound_SendTheMessage
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "EndDevice">`:
+        DB "EndDevice"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "EndDevice">_1`:
+        DB "EndDevice"
+
+        END
+// 
+// 389 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//   3 bytes in segment INTVEC
+//  38 bytes in segment NEAR_CODE
+//   8 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_I
+//   1 byte  in segment XDATA_ID
+//  34 bytes in segment XDATA_ROM_C
+//  10 bytes in segment XDATA_Z
+// 
+// 452 bytes of CODE  memory (+ 3 bytes shared)
+//  34 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//  11 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,936 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         25/Jul/2015  11:14:27 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\Source\Distance.c                           #
+#    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\..\..\..\Tools\CC2530DB\f8wEnde #
+#                          v.cfg (-DCPU32MHZ -DROOT=__near_func               #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\Source\Distance.c    #
+#                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D         #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC C:\ZStack-CC2530-2.5.1a\Proje #
+#                          cts\zstack\Samples\05³¬Éù²¨\CC2530DB\EndDeviceEB\L #
+#                          ist\ -lA C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\05³¬Éù²¨\CC2530DB\EndDeviceEB\List\         #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\Obj\ -e                #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\ -I C:\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\Source\  #
+#                          -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples #
+#                          \05³¬Éù²¨\CC2530DB\..\..\..\ZMain\TI2530DB\ -I     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\hal\incl #
+#                          ude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sa #
+#                          mples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\ #
+#                          hal\target\CC2530EB\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\. #
+#                          .\..\Components\mac\include\ -I                    #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mac\high #
+#                          _level\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack #
+#                          \Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\mac\low_level\srf04\ -I                         #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\ -I                        #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\mt\ -I   #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\osal\inc #
+#                          lude\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components #
+#                          \services\saddr\ -I C:\ZStack-CC2530-2.5.1a\Projec #
+#                          ts\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\.. #
+#                          \Components\services\sdata\ -I                     #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\stack\af #
+#                          \ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sampl #
+#                          es\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\nwk\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack #
+#                          \Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Componen #
+#                          ts\stack\sapi\ -I C:\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\C #
+#                          omponents\stack\sec\ -I C:\ZStack-CC2530-2.5.1a\Pr #
+#                          ojects\zstack\Samples\05³¬Éù²¨\CC2530DB\..\..\..\. #
+#                          .\..\Components\stack\sys\ -I                      #
+#                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\stack\zd #
+#                          o\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\05³¬Éù²¨\CC2530DB\..\..\..\..\..\Components\z #
+#                          mac\f8w\ -Ohz                                      #
+#    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\List\Distance.lst      #
+#    Object file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05 #
+#                          ³¬Éù²¨\CC2530DB\EndDeviceEB\Obj\Distance.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\05³¬Éù²¨\Source\Distance.c
+      1          /******************************************************************************
+      2            Filename:       Distance.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          #include <string.h>
+     69          //#include "Common.h"
+     70          #include "DebugTrace.h"
+     71          #include "Distance.h"
+     72          #include "MT.h"
+     73          
+     74          #if !defined( WIN32 )
+     75            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe2
+   \   unsigned char volatile __sfr T1CNTL
+   \                     T1CNTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe3
+   \   unsigned char volatile __sfr T1CNTH
+   \                     T1CNTH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+     76          #endif
+     77          
+     78          /* HAL */
+     79          #include "hal_lcd.h"
+     80          #include "hal_led.h"
+     81          #include "hal_key.h"
+     82          #include "hal_uart.h"
+     83          #include "mt_uart.h"
+     84          #include "HC_SR04.h"
+     85          
+     86          #define SEND_DATA_EVENT 0x01
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     87          float fDistance;
+   \                     fDistance:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     88          float  distance;
+   \                     distance:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     89          float s;
+   \                     `s`:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     90          int dis;
+   \                     dis:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     91          uint H;
+   \                     H:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     92          uint H1;
+   \                     H1:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     93          uint L;
+   \                     L:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     94          uint L1;
+   \                     L1:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     95          unsigned char theMessageData[10]="EndDevice";
+   \                     theMessageData:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for theMessageData>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     96          const cId_t Distance_ClusterList[Distance_MAX_CLUSTERS] =
+   \                     Distance_ClusterList:
+   \   000000   0500         DW 5
+     97          {
+     98            Distance_CLUSTERID
+     99          };
+    100          
+    101          
+    102          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    103          const SimpleDescriptionFormat_t Distance_SimpleDesc =
+   \                     Distance_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   0000         DW 0H
+   \   000009   01           DB 1
+   \   00000A   ....         DW Distance_ClusterList
+    104          {
+    105            Distance_ENDPOINT,              //  int Endpoint;
+    106            Distance_PROFID,                //  uint16 AppProfId[2];
+    107            Distance_DEVICEID,              //  uint16 AppDeviceId[2];
+    108            Distance_DEVICE_VERSION,        //  int   AppDevVer:4;
+    109            Distance_FLAGS,                 //  int   AppFlags:4;
+    110            
+    111            
+    112            0,          //  byte  AppNumInClusters;
+    113            (cId_t *)NULL,  //  byte *pAppInClusterList;
+    114            Distance_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    115            (cId_t *)Distance_ClusterList   //  byte *pAppInClusterList;
+    116          };
+    117          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    118          unsigned char TempDATA;
+   \                     TempDATA:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    119          endPointDesc_t Distance_epDesc;
+   \                     Distance_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    120          byte Distance_TaskID;
+   \                     Distance_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    121          byte Distance_TransID;
+   \                     Distance_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    122          devStates_t Distance_NwkState;
+   \                     Distance_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    123          void Distance_MessageMSGCB(afIncomingMSGPacket_t *MSGpkt);
+    124          void Distance_SendTheMessage(unsigned char *theMessageData);
+    125          
+    126          
+    127          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    128          void Distance_Init( byte task_id )
+   \                     Distance_Init:
+    129          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    130            halUARTCfg_t uartConfig;//´®¿Ú
+    131              
+    132            Distance_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Distance_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    133            Distance_NwkState=DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Distance_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    134            Distance_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Distance_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    135          
+    136            
+    137            Distance_epDesc.endPoint = Distance_ENDPOINT;
+   \   000015   90....       MOV     DPTR,#Distance_epDesc
+   \   000018   740A         MOV     A,#0xa
+   \   00001A   F0           MOVX    @DPTR,A
+    138            Distance_epDesc.task_id = &Distance_TaskID;
+   \   00001B   A3           INC     DPTR
+   \   00001C   74..         MOV     A,#Distance_TaskID & 0xff
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   74..         MOV     A,#(Distance_TaskID >> 8) & 0xff
+   \   000022   F0           MOVX    @DPTR,A
+    139            Distance_epDesc.simpleDesc
+    140                      = (SimpleDescriptionFormat_t *)&Distance_SimpleDesc;
+   \   000023   A3           INC     DPTR
+   \   000024   74..         MOV     A,#Distance_SimpleDesc & 0xff
+   \   000026   F0           MOVX    @DPTR,A
+   \   000027   A3           INC     DPTR
+   \   000028   74..         MOV     A,#(Distance_SimpleDesc >> 8) & 0xff
+   \   00002A   F0           MOVX    @DPTR,A
+    141            
+    142            Distance_epDesc.latencyReq = noLatencyReqs;
+   \   00002B   A3           INC     DPTR
+   \   00002C   E4           CLR     A
+   \   00002D   F0           MOVX    @DPTR,A
+    143            afRegister( &Distance_epDesc ); 
+   \   00002E                ; Setup parameters for call to function afRegister
+   \   00002E   7A..         MOV     R2,#Distance_epDesc & 0xff
+   \   000030   7B..         MOV     R3,#(Distance_epDesc >> 8) & 0xff
+   \   000032   12....       LCALL   ??afRegister?relay
+    144          
+    145          }
+   \   000035   7F01         MOV     R7,#0x1
+   \   000037   02....       LJMP    ?BANKED_LEAVE_XDATA
+    146          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    147          UINT16 Distance_ProcessEvent( byte task_id, UINT16 events )
+   \                     Distance_ProcessEvent:
+    148          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    149            afIncomingMSGPacket_t *MSGpkt;
+    150          
+    151            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   604E         JZ      ??Distance_ProcessEvent_0
+    152            {
+    153              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Distance_TaskID );
+   \   00000D                ; Setup parameters for call to function osal_msg_receive
+   \   00000D   8032         SJMP    ??Distance_ProcessEvent_1
+    154              while ( MSGpkt )
+    155              {
+    156                switch ( MSGpkt->hdr.event )
+   \                     ??Distance_ProcessEvent_2:
+   \   00000F   85..82       MOV     DPL,?V0 + 0
+   \   000012   85..83       MOV     DPH,?V0 + 1
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   64D1         XRL     A,#0xd1
+   \   000018   7020         JNZ     ??Distance_ProcessEvent_3
+    157                {
+    158                 
+    159                    case ZDO_STATE_CHANGE:
+    160                      Distance_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   90....       MOV     DPTR,#Distance_NwkState
+   \   00001F   F0           MOVX    @DPTR,A
+    161                      if(Distance_NwkState==DEV_END_DEVICE)
+   \   000020   6406         XRL     A,#0x6
+   \   000022   7016         JNZ     ??Distance_ProcessEvent_3
+    162                      {
+    163                        P1_0=~P1_0;
+   \   000024   D2F0         SETB    B.0
+   \   000026   A290         MOV     C,0x90.0
+   \   000028   30F001       JNB     B.0,??Distance_ProcessEvent_4
+   \   00002B   B3           CPL     C
+   \                     ??Distance_ProcessEvent_4:
+   \   00002C   9290         MOV     0x90.0,C
+    164                        osal_set_event(Distance_TaskID,SEND_DATA_EVENT);
+   \   00002E                ; Setup parameters for call to function osal_set_event
+   \   00002E   7A01         MOV     R2,#0x1
+   \   000030   7B00         MOV     R3,#0x0
+   \   000032   90....       MOV     DPTR,#Distance_TaskID
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   F9           MOV     R1,A
+   \   000037   12....       LCALL   ??osal_set_event?relay
+    165                      }
+    166                      break;
+    167                      
+    168                    default:
+    169                      break;
+    170                }
+    171                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??Distance_ProcessEvent_3:
+   \   00003A                ; Setup parameters for call to function osal_msg_deallocate
+   \   00003A   AA..         MOV     R2,?V0 + 0
+   \   00003C   AB..         MOV     R3,?V0 + 1
+   \   00003E   12....       LCALL   ??osal_msg_deallocate?relay
+    172                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Distance_TaskID );
+   \   000041                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Distance_ProcessEvent_1:
+   \   000041   90....       MOV     DPTR,#Distance_TaskID
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F9           MOV     R1,A
+   \   000046   12....       LCALL   ??osal_msg_receive?relay
+   \   000049   8A..         MOV     ?V0 + 0,R2
+   \   00004B   8B..         MOV     ?V0 + 1,R3
+    173              }
+   \   00004D   E5..         MOV     A,?V0 + 0
+   \   00004F   45..         ORL     A,?V0 + 1
+   \   000051   70BC         JNZ     ??Distance_ProcessEvent_2
+    174              // return unprocessed events
+    175              return (events ^ SYS_EVENT_MSG);
+   \   000053   EE           MOV     A,R6
+   \   000054   FA           MOV     R2,A
+   \   000055   EF           MOV     A,R7
+   \   000056   6480         XRL     A,#0x80
+   \                     ??Distance_ProcessEvent_5:
+   \   000058   FB           MOV     R3,A
+   \   000059   8034         SJMP    ??Distance_ProcessEvent_6
+    176            }
+    177            if(events&SEND_DATA_EVENT)
+   \                     ??Distance_ProcessEvent_0:
+   \   00005B   EE           MOV     A,R6
+   \   00005C   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00005E   502B         JNC     ??Distance_ProcessEvent_7
+    178            {
+    179              Init_GPIO();
+   \   000060                ; Setup parameters for call to function Init_GPIO
+   \   000060   12....       LCALL   ??Init_GPIO?relay
+    180              Init_Key1();
+   \   000063                ; Setup parameters for call to function Init_Key1
+   \   000063   12....       LCALL   ??Init_Key1?relay
+    181              TRIG =0;      //TRIG´¥·¢²â¾à
+   \   000066   C297         CLR     0x90.7
+    182              Delay_10us(); //¸øÖÁÉÙ10usµÄ¸ßµçÆ½ÐÅºÅ
+   \   000068                ; Setup parameters for call to function Delay_10us
+   \   000068   12....       LCALL   ??Delay_10us?relay
+    183              TRIG =1;      //TRIG´¥·¢ÖÕÖ¹
+   \   00006B   D297         SETB    0x90.7
+    184              Delayms(50);//ÑÓÊ±ÖÜÆÚ
+   \   00006D                ; Setup parameters for call to function Delayms
+   \   00006D   7A32         MOV     R2,#0x32
+   \   00006F   7B00         MOV     R3,#0x0
+   \   000071   12....       LCALL   ??Delayms?relay
+    185              osal_start_timerEx(Distance_TaskID,SEND_DATA_EVENT,3000);
+   \   000074                ; Setup parameters for call to function osal_start_timerEx
+   \   000074   7CB8         MOV     R4,#-0x48
+   \   000076   7D0B         MOV     R5,#0xb
+   \   000078   7A01         MOV     R2,#0x1
+   \   00007A   7B00         MOV     R3,#0x0
+   \   00007C   90....       MOV     DPTR,#Distance_TaskID
+   \   00007F   E0           MOVX    A,@DPTR
+   \   000080   F9           MOV     R1,A
+   \   000081   12....       LCALL   ??osal_start_timerEx?relay
+    186              return(events^SEND_DATA_EVENT);
+   \   000084   EE           MOV     A,R6
+   \   000085   6401         XRL     A,#0x1
+   \   000087   FA           MOV     R2,A
+   \   000088   EF           MOV     A,R7
+   \   000089   80CD         SJMP    ??Distance_ProcessEvent_5
+    187            }
+    188            return 0;
+   \                     ??Distance_ProcessEvent_7:
+   \   00008B   7A00         MOV     R2,#0x0
+   \   00008D   7B00         MOV     R3,#0x0
+   \                     ??Distance_ProcessEvent_6:
+   \   00008F   7F04         MOV     R7,#0x4
+   \   000091   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000094                REQUIRE _A_P1
+    189          }
+    190          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    191          void Distance_SendTheMessage(unsigned char *theMessageData)
+   \                     Distance_SendTheMessage:
+    192          { 
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    193            afAddrType_t my_DstAddr;
+    194            my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+   \   00000A   7408         MOV     A,#0x8
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   7402         MOV     A,#0x2
+   \   000011   F0           MOVX    @DPTR,A
+    195            my_DstAddr.endPoint=Distance_ENDPOINT;
+   \   000012   7409         MOV     A,#0x9
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   740A         MOV     A,#0xa
+   \   000019   F0           MOVX    @DPTR,A
+    196            my_DstAddr.addr.shortAddr=0x0000; 
+   \   00001A   85..82       MOV     DPL,?XSP + 0
+   \   00001D   85..83       MOV     DPH,?XSP + 1
+   \   000020   E4           CLR     A
+   \   000021   F0           MOVX    @DPTR,A
+   \   000022   A3           INC     DPTR
+   \   000023   F0           MOVX    @DPTR,A
+    197            AF_DataRequest(&my_DstAddr
+    198            ,&Distance_epDesc
+    199            ,Distance_CLUSTERID
+    200            ,osal_strlen("EndDevice")+1
+    201            ,theMessageData
+    202            ,&Distance_TransID
+    203            ,AF_DISCV_ROUTE
+    204            ,AF_DEFAULT_RADIUS);
+   \   000024                ; Setup parameters for call to function AF_DataRequest
+   \   000024   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000027   78..         MOV     R0,#?V0 + 0
+   \   000029   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00002C   75....       MOV     ?V0 + 0,#Distance_TransID & 0xff
+   \   00002F   75....       MOV     ?V0 + 1,#(Distance_TransID >> 8) & 0xff
+   \   000032   78..         MOV     R0,#?V0 + 0
+   \   000034   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000037   8A..         MOV     ?V0 + 0,R2
+   \   000039   8B..         MOV     ?V0 + 1,R3
+   \   00003B   78..         MOV     R0,#?V0 + 0
+   \   00003D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000040                ; Setup parameters for call to function osal_strlen
+   \   000040   7A..         MOV     R2,#`?<Constant "EndDevice">` & 0xff
+   \   000042   7B..         MOV     R3,#(`?<Constant "EndDevice">` >> 8) & 0xff
+   \   000044   12....       LCALL   ??osal_strlen?relay
+   \   000047   EA           MOV     A,R2
+   \   000048   2401         ADD     A,#0x1
+   \   00004A   F5..         MOV     ?V0 + 0,A
+   \   00004C   EB           MOV     A,R3
+   \   00004D   3400         ADDC    A,#0x0
+   \   00004F   F5..         MOV     ?V0 + 1,A
+   \   000051   78..         MOV     R0,#?V0 + 0
+   \   000053   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000056   75..05       MOV     ?V0 + 0,#0x5
+   \   000059   75..00       MOV     ?V0 + 1,#0x0
+   \   00005C   78..         MOV     R0,#?V0 + 0
+   \   00005E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000061   7920         MOV     R1,#0x20
+   \   000063   7C..         MOV     R4,#Distance_epDesc & 0xff
+   \   000065   7D..         MOV     R5,#(Distance_epDesc >> 8) & 0xff
+   \   000067   7409         MOV     A,#0x9
+   \   000069   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006C   AA82         MOV     R2,DPL
+   \   00006E   AB83         MOV     R3,DPH
+   \   000070   12....       LCALL   ??AF_DataRequest?relay
+   \   000073   7409         MOV     A,#0x9
+   \   000075   12....       LCALL   ?DEALLOC_XSTACK8
+    205          }
+   \   000078   740C         MOV     A,#0xc
+   \   00007A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00007D   7F02         MOV     R7,#0x2
+   \   00007F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    206          
+    207          /*********************************************************************
+    208           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    209          HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+   \                     halKeyPort1Isr:
+    210          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74EB         MOV     A,#-0x15
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 21
+   \   000007                ; Auto size: 0
+    211            
+    212            if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)
+   \   000007   E58A         MOV     A,0x8a
+   \   000009   A2E3         MOV     C,0xE0 /* A   */.3
+   \   00000B   4003         JC      $+5
+   \   00000D   02....       LJMP    ??halKeyPort1Isr_0
+    213            {
+    214              Init_T1();
+   \   000010                ; Setup parameters for call to function Init_T1
+   \   000010   12....       LCALL   ??Init_T1?relay
+    215              while(ECHO);
+   \                     ??halKeyPort1Isr_1:
+   \   000013   A293         MOV     C,0x90.3
+   \   000015   40FC         JC      ??halKeyPort1Isr_1
+    216              L=T1CNTL; 
+   \   000017   E5E2         MOV     A,0xe2
+   \   000019   90....       MOV     DPTR,#L
+   \   00001C   F0           MOVX    @DPTR,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E4           CLR     A
+   \   00001F   F0           MOVX    @DPTR,A
+    217              H=T1CNTH;
+   \   000020   E5E3         MOV     A,0xe3
+   \   000022   90....       MOV     DPTR,#H
+   \   000025   F0           MOVX    @DPTR,A
+   \   000026   A3           INC     DPTR
+   \   000027   E4           CLR     A
+   \   000028   F0           MOVX    @DPTR,A
+    218              s=256*H;
+   \   000029   90....       MOV     DPTR,#H
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F5..         MOV     ?V0 + 0,A
+   \   00002F   E4           CLR     A
+   \   000030   C5..         XCH     A,?V0 + 0
+   \   000032   F5..         MOV     ?V0 + 1,A
+   \   000034   E4           CLR     A
+   \   000035   F5..         MOV     ?V0 + 2,A
+   \   000037   F5..         MOV     ?V0 + 3,A
+   \   000039   78..         MOV     R0,#?V0 + 0
+   \   00003B   12....       LCALL   ?UL_TO_FLT
+   \   00003E   90....       MOV     DPTR,#`s`
+   \   000041   78..         MOV     R0,#?V0 + 0
+   \   000043   12....       LCALL   ?L_MOV_TO_X
+    219              distance=((s+L)*340)/30000.0;
+   \   000046   90....       MOV     DPTR,#L
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   F5..         MOV     ?V0 + 0,A
+   \   00004C   E4           CLR     A
+   \   00004D   F5..         MOV     ?V0 + 1,A
+   \   00004F   F5..         MOV     ?V0 + 2,A
+   \   000051   F5..         MOV     ?V0 + 3,A
+   \   000053   78..         MOV     R0,#?V0 + 0
+   \   000055   12....       LCALL   ?UL_TO_FLT
+   \   000058   90....       MOV     DPTR,#`s`
+   \   00005B   78..         MOV     R0,#?V0 + 4
+   \   00005D   12....       LCALL   ?L_MOV_X
+   \   000060   78..         MOV     R0,#?V0 + 0
+   \   000062   79..         MOV     R1,#?V0 + 4
+   \   000064   12....       LCALL   ?FLT_ADD
+   \   000067   90....       MOV     DPTR,#__Constant_43aa0000
+   \   00006A   78..         MOV     R0,#?V0 + 4
+   \   00006C   12....       LCALL   ?L_MOV_X
+   \   00006F   78..         MOV     R0,#?V0 + 0
+   \   000071   79..         MOV     R1,#?V0 + 4
+   \   000073   12....       LCALL   ?FLT_MUL
+   \   000076   90....       MOV     DPTR,#__Constant_46ea6000
+   \   000079   78..         MOV     R0,#?V0 + 4
+   \   00007B   12....       LCALL   ?L_MOV_X
+   \   00007E   78..         MOV     R0,#?V0 + 0
+   \   000080   79..         MOV     R1,#?V0 + 4
+   \   000082   12....       LCALL   ?FLT_DIV
+   \   000085   90....       MOV     DPTR,#distance
+   \   000088   78..         MOV     R0,#?V0 + 0
+   \   00008A   12....       LCALL   ?L_MOV_TO_X
+    220              fDistance=distance/2;
+   \   00008D   90....       MOV     DPTR,#distance
+   \   000090   78..         MOV     R0,#?V0 + 0
+   \   000092   12....       LCALL   ?L_MOV_X
+   \   000095   90....       MOV     DPTR,#__Constant_3f000000
+   \   000098   78..         MOV     R0,#?V0 + 4
+   \   00009A   12....       LCALL   ?L_MOV_X
+   \   00009D   78..         MOV     R0,#?V0 + 0
+   \   00009F   79..         MOV     R1,#?V0 + 4
+   \   0000A1   12....       LCALL   ?FLT_MUL
+   \   0000A4   90....       MOV     DPTR,#fDistance
+   \   0000A7   78..         MOV     R0,#?V0 + 0
+   \   0000A9   12....       LCALL   ?L_MOV_TO_X
+    221              theMessageData[0]='0'+(int)fDistance/100;
+   \   0000AC   90....       MOV     DPTR,#fDistance
+   \   0000AF   12....       LCALL   ?XLOAD_R2345
+   \   0000B2   12....       LCALL   ?R2345_FLT_TO_L
+   \   0000B5   AC..         MOV     R4,?V0 + 0
+   \   0000B7   AD..         MOV     R5,?V0 + 1
+   \   0000B9   EC           MOV     A,R4
+   \   0000BA   F8           MOV     R0,A
+   \   0000BB   ED           MOV     A,R5
+   \   0000BC   F9           MOV     R1,A
+   \   0000BD   7A64         MOV     R2,#0x64
+   \   0000BF   7B00         MOV     R3,#0x0
+   \   0000C1   12....       LCALL   ?S_DIV_MOD
+   \   0000C4   E8           MOV     A,R0
+   \   0000C5   2430         ADD     A,#0x30
+   \   0000C7   90....       MOV     DPTR,#theMessageData
+   \   0000CA   F0           MOVX    @DPTR,A
+    222              theMessageData[1]='0'+((int)fDistance-(int)fDistance/100*100)/10;
+   \   0000CB   E8           MOV     A,R0
+   \   0000CC   75F064       MOV     B,#0x64
+   \   0000CF   A4           MUL     AB
+   \   0000D0   F8           MOV     R0,A
+   \   0000D1   AAF0         MOV     R2,B
+   \   0000D3   75F064       MOV     B,#0x64
+   \   0000D6   E9           MOV     A,R1
+   \   0000D7   A4           MUL     AB
+   \   0000D8   2A           ADD     A,R2
+   \   0000D9   F9           MOV     R1,A
+   \   0000DA   EC           MOV     A,R4
+   \   0000DB   C3           CLR     C
+   \   0000DC   98           SUBB    A,R0
+   \   0000DD   F8           MOV     R0,A
+   \   0000DE   ED           MOV     A,R5
+   \   0000DF   99           SUBB    A,R1
+   \   0000E0   F9           MOV     R1,A
+   \   0000E1   7A0A         MOV     R2,#0xa
+   \   0000E3   7B00         MOV     R3,#0x0
+   \   0000E5   12....       LCALL   ?S_DIV_MOD
+   \   0000E8   E8           MOV     A,R0
+   \   0000E9   2430         ADD     A,#0x30
+   \   0000EB   A3           INC     DPTR
+   \   0000EC   F0           MOVX    @DPTR,A
+    223              theMessageData[2]='0'+(int)fDistance%10;
+   \   0000ED   EC           MOV     A,R4
+   \   0000EE   F8           MOV     R0,A
+   \   0000EF   ED           MOV     A,R5
+   \   0000F0   F9           MOV     R1,A
+   \   0000F1   7A0A         MOV     R2,#0xa
+   \   0000F3   7B00         MOV     R3,#0x0
+   \   0000F5   12....       LCALL   ?S_DIV_MOD
+   \   0000F8   EA           MOV     A,R2
+   \   0000F9   2430         ADD     A,#0x30
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   F0           MOVX    @DPTR,A
+    224              Distance_SendTheMessage(theMessageData);
+   \   0000FD                ; Setup parameters for call to function Distance_SendTheMessage
+   \   0000FD   7A..         MOV     R2,#theMessageData & 0xff
+   \   0000FF   7B..         MOV     R3,#(theMessageData >> 8) & 0xff
+   \   000101   12....       LCALL   ??Distance_SendTheMessage?relay
+    225              T1CNTL=0x0000;
+   \   000104   75E200       MOV     0xe2,#0x0
+    226              T1CNTH=0x0000;
+   \   000107   75E300       MOV     0xe3,#0x0
+    227              P1IFG = 0;             //ÇåÖÐ¶Ï±êÖ¾ 
+   \   00010A   758A00       MOV     0x8a,#0x0
+    228              P1IF = 0;             //ÇåÖÐ¶Ï±êÖ¾ 
+   \   00010D   C2EB         CLR     0xe8.3
+    229            }
+    230          }
+   \                     ??halKeyPort1Isr_0:
+   \   00010F   7F08         MOV     R7,#0x8
+   \   000111   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   000114                REQUIRE P1IFG
+   \   000114                REQUIRE _A_P1
+   \   000114                REQUIRE T1CNTL
+   \   000114                REQUIRE T1CNTH
+   \   000114                REQUIRE _A_IRCON2
+
+   \                                 In  segment INTVEC, offset 0x7b, root
+   \                     `??halKeyPort1Isr??INTVEC 123`:
+   \   00007B   02....       LJMP       (halKeyPort1Isr)
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for theMessageData>`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Distance_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Distance_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Distance_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Distance_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Distance_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Distance_SendTheMessage
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_43aa0000:
+   \   000000   0000AA43     DD 43AA0000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_46ea6000:
+   \   000000   0060EA46     DD 46EA6000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f000000:
+   \   000000   0000003F     DD 3F000000H
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     Distance_Init                    0      0      9
+       -> afRegister                  0      0     18
+     Distance_ProcessEvent            0      0     12
+       -> osal_msg_receive            0      0     24
+       -> osal_set_event              0      0     24
+       -> osal_msg_deallocate         0      0     24
+       -> osal_msg_receive            0      0     24
+       -> Init_GPIO                   0      0     24
+       -> Init_Key1                   0      0     24
+       -> Delay_10us                  0      0     24
+       -> Delayms                     0      0     24
+       -> osal_start_timerEx          0      0     24
+     Distance_SendTheMessage          0      0     52
+       -> osal_strlen                 0      0     54
+       -> AF_DataRequest              0      0     62
+     halKeyPort1Isr                   0      0     21
+       -> Init_T1                     0      0     42
+       -> Distance_SendTheMessage     0      0     42
+
+
+   Segment part sizes:
+
+     Function/Label                    Bytes
+     --------------                    -----
+     P1IFG                                1
+     _A_P1                                1
+     T1CNTL                               1
+     T1CNTH                               1
+     _A_IRCON2                            1
+     fDistance                            4
+     distance                             4
+     s                                    4
+     dis                                  2
+     H                                    2
+     H1                                   2
+     L                                    2
+     L1                                   2
+     theMessageData                      10
+     Distance_ClusterList                 2
+     Distance_SimpleDesc                 12
+     TempDATA                             1
+     Distance_epDesc                      6
+     Distance_TaskID                      1
+     Distance_TransID                     1
+     Distance_NwkState                    1
+     Distance_Init                       58
+     Distance_ProcessEvent              148
+     Distance_SendTheMessage            130
+     halKeyPort1Isr                     276
+     ??halKeyPort1Isr??INTVEC 123         3
+     ?<Initializer for theMessageData>   10
+     ??Distance_Init?relay                6
+     ??Distance_ProcessEvent?relay        6
+     ??Distance_SendTheMessage?relay      6
+     ?<Constant "EndDevice">             10
+     __Constant_43aa0000                  4
+     __Constant_46ea6000                  4
+     __Constant_3f000000                  4
+
+ 
+ 336 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+ 276 bytes in segment NEAR_CODE
+   5 bytes in segment SFR_AN
+  10 bytes in segment XDATA_I
+  10 bytes in segment XDATA_ID
+  36 bytes in segment XDATA_ROM_C
+  32 bytes in segment XDATA_Z
+ 
+ 640 bytes of CODE  memory (+  3 bytes shared)
+  24 bytes of CONST memory (+ 12 bytes shared)
+   0 bytes of DATA  memory (+  5 bytes shared)
+  42 bytes of XDATA memory
+
+Errors: none
+Warnings: none

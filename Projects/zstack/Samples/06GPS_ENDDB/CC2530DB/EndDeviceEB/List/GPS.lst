@@ -1,0 +1,3346 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         08/Mar/2014  10:17:13 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\Source\GPS.c                                   #
+#    Command line       =  -f "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          06GPS_ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f8wCo #
+#                          nfig.cfg" (-DZIGBEEPRO -DSECURE=0                  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          06GPS_ENDDB\Source\GPS.c" -D NWK_AUTO_POLL -D      #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC        #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\EndDeviceEB\List\" -lA                #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "C:\Users\OurEDA\Documents\Tencent  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\EndDeviceEB\Obj\" -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\" -I "C:\Users\OurEDA\Documents\Tence #
+#                          nt Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS #
+#                          _ENDDB\CC2530DB\..\Source\" -I                     #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "C:\Users\OurEDA\Documents\Tencent   #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\mac\include #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\mac\high_le #
+#                          vel\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\" -I "C:\Users\OurEDA\Documents\Tencent   #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\single_chip\" -I                          #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "C:\Users\OurEDA\Documents\Tencent          #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\services\sa #
+#                          ddr\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\services\sd #
+#                          ata\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\af\"  #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\nwk\" #
+#                           -I "C:\Users\OurEDA\Documents\Tencent             #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\sapi\ #
+#                          " -I "C:\Users\OurEDA\Documents\Tencent            #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\sec\" #
+#                           -I "C:\Users\OurEDA\Documents\Tencent             #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "C:\Users\OurEDA\Documents\Tencent             #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "C:\Users\OurEDA\Documents\Tencent             #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\EndDeviceEB\List\GPS.lst              #
+#    Object file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_EN #
+#                          DDB\CC2530DB\EndDeviceEB\Obj\GPS.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\OurEDA\Documents\Tencent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\06GPS_ENDDB\Source\GPS.c
+      1          /******************************************************************************
+      2            Filename:       Gps.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "Gps.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          #if !defined( WIN32 )
+     73            #include "OnBoard.h"
+     74          #endif
+     75          #include "MT.h"
+     76          #include "mt_uart.h"
+     77          /* HAL */
+     78          #include "hal_lcd.h"
+     79          #include "hal_led.h"
+     80          #include "hal_key.h"
+     81          #include "hal_uart.h"
+     82          
+     83          /* RTOS */
+     84          #if defined( IAR_ARMCM3_LM )
+     85          #include "RTOS_App.h"
+     86          #endif  
+     87          #include<ioCC2530.h>
+     88          #include <string.h>
+     89          #define uint unsigned int
+     90          #define uchar unsigned char
+     91          /*********************************************************************
+     92           * MACROS
+     93           */
+     94          /*********************************************************************
+     95           * DATA
+     96           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     97          uchar Recdata[300]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata:
+   \   000000                DS 300
+   \   00012C                REQUIRE `?<Initializer for Recdata>`
+   \   00012C                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     98          uchar Recdata_GPGGA[70]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata_GPGGA:
+   \   000000                DS 70
+   \   000046                REQUIRE `?<Initializer for Recdata_GPGGA>`
+   \   000046                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     99          uint Recdata_GPGGA_start=0;
+   \                     Recdata_GPGGA_start:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    100          uchar Recdata_GPGSV[70]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata_GPGSV:
+   \   000000                DS 70
+   \   000046                REQUIRE `?<Initializer for Recdata_GPGSV>`
+   \   000046                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    101          uint Recdata_GPGSV_start=0;
+   \                     Recdata_GPGSV_start:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    102          uchar Recdata_GPGSA[70]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata_GPGSA:
+   \   000000                DS 70
+   \   000046                REQUIRE `?<Initializer for Recdata_GPGSA>`
+   \   000046                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    103          uint Recdata_GPGSA_start=0;
+   \                     Recdata_GPGSA_start:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    104          uchar Recdata_GPRMC[70]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata_GPRMC:
+   \   000000                DS 70
+   \   000046                REQUIRE `?<Initializer for Recdata_GPRMC>`
+   \   000046                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    105          uint Recdata_GPRMC_start=0;
+   \                     Recdata_GPRMC_start:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    106          uchar Recdata_GPVTG[70]="CHENGDU JIAJIE TECH.INC";
+   \                     Recdata_GPVTG:
+   \   000000                DS 70
+   \   000046                REQUIRE `?<Initializer for Recdata_GPVTG>`
+   \   000046                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    107          uint Recdata_GPVTG_start=0;
+   \                     Recdata_GPVTG_start:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    108          uchar UTC[6]="hhmmss";
+   \                     UTC:
+   \   000000                DS 6
+   \   000006                REQUIRE `?<Initializer for UTC>`
+   \   000006                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    109          uchar JingDu[10]="aaaaa,bbbb";
+   \                     JingDu:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for JingDu>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    110          uchar WeiDu[9]="aaaa.bbbb";
+   \                     WeiDu:
+   \   000000                DS 9
+   \   000009                REQUIRE `?<Initializer for WeiDu>`
+   \   000009                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    111          uchar GaoDu[5]="mmm.m";
+   \                     GaoDu:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for GaoDu>`
+   \   000005                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    112          uchar WeiXing[1]="x";
+   \                     WeiXing:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for WeiXing>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    113          uchar JiBie[1]="y";
+   \                     JiBie:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for JiBie>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    114          uchar RXTXflag = 1;
+   \                     RXTXflag:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for RXTXflag>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    115          uchar temp;
+   \                     temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    116          uint  datanumber = 0;
+   \                     datanumber:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    117          uint  stringlen;
+   \                     stringlen:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    118          uint check=0;
+   \                     check:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    119          uint position=6;
+   \                     position:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for position>`
+   \   000002                REQUIRE __INIT_XDATA_I
+    120          /*********************************************************************
+    121           * CONSTANTS
+    122           */
+    123          
+    124          /*********************************************************************
+    125           * TYPEDEFS
+    126           */
+    127          
+    128          /*********************************************************************
+    129           * GLOBAL VARIABLES
+    130           */
+    131          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    132          const cId_t Gps_ClusterList[Gps_MAX_CLUSTERS] =
+   \                     Gps_ClusterList:
+   \   000000   0600         DW 6
+    133          {
+    134            Gps_CLUSTERID
+    135          };
+    136          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    137          const SimpleDescriptionFormat_t Gps_SimpleDesc =
+   \                     Gps_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW Gps_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW Gps_ClusterList
+    138          {
+    139            Gps_ENDPOINT,              //  int Endpoint;
+    140            Gps_PROFID,                //  uint16 AppProfId[2];
+    141            Gps_DEVICEID,              //  uint16 AppDeviceId[2];
+    142            Gps_DEVICE_VERSION,        //  int   AppDevVer:4;
+    143            Gps_FLAGS,                 //  int   AppFlags:4;
+    144            Gps_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    145            (cId_t *)Gps_ClusterList,  //  byte *pAppInClusterList;
+    146            Gps_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    147            (cId_t *)Gps_ClusterList   //  byte *pAppInClusterList;
+    148          };
+    149          
+    150          // This is the Endpoint/Interface description.  It is defined here, but
+    151          // filled-in in Gps_Init().  Another way to go would be to fill
+    152          // in the structure here and make it a "const" (in code space).  The
+    153          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    154          endPointDesc_t Gps_epDesc;
+   \                     Gps_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    155          
+    156          /*********************************************************************
+    157           * EXTERNAL VARIABLES
+    158           */
+    159          
+    160          /*********************************************************************
+    161           * EXTERNAL FUNCTIONS
+    162           */
+    163          
+    164          /*********************************************************************
+    165           * LOCAL VARIABLES
+    166           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    167          byte Gps_TaskID;   // Task ID for internal task/event processing
+   \                     Gps_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    168                                    // This variable will be received when
+    169                                    // Gps_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    170          devStates_t Gps_NwkState;
+   \                     Gps_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    171          
+    172          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    173          byte Gps_TransID;  // This is the unique message ID (counter)
+   \                     Gps_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    174          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    175          afAddrType_t Gps_DstAddr;
+   \                     Gps_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    176          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    177          byte GpsMeasurement_TaskID;
+   \                     GpsMeasurement_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    178          devStates_t GpsMeasurement_NwkState;
+   \                     GpsMeasurement_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    179          byte GpsMeasurement_TransID;
+   \                     GpsMeasurement_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    180          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    181          float fGps;
+   \                     fGps:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+    182          //uchar Recdata[300]="CHENGDU JIAJIE TECH.INC";
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    183          unsigned int flag=0;
+   \                     flag:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    184          
+    185          /*********************************************************************
+    186           * LOCAL FUNCTIONS
+    187           */
+    188          static void Gps_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    189          static void Gps_HandleKeys( byte shift, byte keys );
+    190          static void Gps_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    191          static void Gps_SendTheMessage( void );
+    192          
+    193          void handle();
+    194          #if defined( IAR_ARMCM3_LM )
+    195          static void Gps_ProcessRtosMessage( void );
+    196          #endif
+    197          
+    198          /*********************************************************************
+    199           * NETWORK LAYER CALLBACKS
+    200           */
+    201          
+    202          /*********************************************************************
+    203           * PUBLIC FUNCTIONS
+    204           */
+    205          
+    206          /*********************************************************************
+    207           * @fn      Gps_Init
+    208           *
+    209           * @brief   Initialization function for the Generic App Task.
+    210           *          This is called during initialization and should contain
+    211           *          any application specific initialization (ie. hardware
+    212           *          initialization/setup, table initialization, power up
+    213           *          notificaiton ... ).
+    214           *
+    215           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    216           *                    used to send messages and set timers.
+    217           *
+    218           * @return  none
+    219           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    220          void Gps_Init( uint8 task_id )
+   \                     Gps_Init:
+    221          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 29
+   \   000005   74E3         MOV     A,#-0x1d
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    222            halUARTCfg_t uartConfig;
+    223            Gps_TaskID = task_id;
+   \   00000C   90....       MOV     DPTR,#Gps_TaskID
+   \   00000F   F0           MOVX    @DPTR,A
+    224            Gps_NwkState = DEV_INIT;
+   \   000010   90....       MOV     DPTR,#Gps_NwkState
+   \   000013   7401         MOV     A,#0x1
+   \   000015   F0           MOVX    @DPTR,A
+    225            Gps_TransID = 0;
+   \   000016   90....       MOV     DPTR,#Gps_TransID
+   \   000019   E4           CLR     A
+   \   00001A   F0           MOVX    @DPTR,A
+    226            
+    227            MT_UartInit();
+   \   00001B                ; Setup parameters for call to function MT_UartInit
+   \   00001B   12....       LCALL   ??MT_UartInit?relay
+    228            //initUARTSEND();
+    229            MT_UartRegisterTaskID(task_id);
+   \   00001E                ; Setup parameters for call to function MT_UartRegisterTaskID
+   \   00001E   EE           MOV     A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??MT_UartRegisterTaskID?relay
+    230          
+    231            // Device hardware initialization can be added here or in main() (Zmain.c).
+    232            // If the hardware is application specific - add it here.
+    233            // If the hardware is other parts of the device add it in main().
+    234          
+    235            Gps_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000023   90....       MOV     DPTR,#Gps_DstAddr + 8
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+    236            Gps_DstAddr.endPoint = 0;
+   \   000028   A3           INC     DPTR
+   \   000029   F0           MOVX    @DPTR,A
+    237            Gps_DstAddr.addr.shortAddr = 0;
+   \   00002A   90....       MOV     DPTR,#Gps_DstAddr
+   \   00002D   F0           MOVX    @DPTR,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   F0           MOVX    @DPTR,A
+    238          
+    239            // Fill out the endpoint description.
+    240            Gps_epDesc.endPoint = Gps_ENDPOINT;
+   \   000030   90....       MOV     DPTR,#Gps_epDesc
+   \   000033   740A         MOV     A,#0xa
+   \   000035   F0           MOVX    @DPTR,A
+    241            Gps_epDesc.task_id = &Gps_TaskID;
+   \   000036   A3           INC     DPTR
+   \   000037   74..         MOV     A,#Gps_TaskID & 0xff
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   74..         MOV     A,#(Gps_TaskID >> 8) & 0xff
+   \   00003D   F0           MOVX    @DPTR,A
+    242            Gps_epDesc.simpleDesc
+    243                      = (SimpleDescriptionFormat_t *)&Gps_SimpleDesc;
+   \   00003E   A3           INC     DPTR
+   \   00003F   74..         MOV     A,#Gps_SimpleDesc & 0xff
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   74..         MOV     A,#(Gps_SimpleDesc >> 8) & 0xff
+   \   000045   F0           MOVX    @DPTR,A
+    244            Gps_epDesc.latencyReq = noLatencyReqs;
+   \   000046   A3           INC     DPTR
+   \   000047   E4           CLR     A
+   \   000048   F0           MOVX    @DPTR,A
+    245          
+    246            // Register the endpoint description with the AF
+    247            afRegister( &Gps_epDesc );
+   \   000049                ; Setup parameters for call to function afRegister
+   \   000049   7A..         MOV     R2,#Gps_epDesc & 0xff
+   \   00004B   7B..         MOV     R3,#(Gps_epDesc >> 8) & 0xff
+   \   00004D   12....       LCALL   ??afRegister?relay
+    248          
+    249            // Register for all key events - This app will handle all key events
+    250            RegisterForKeys( Gps_TaskID );
+   \   000050                ; Setup parameters for call to function RegisterForKeys
+   \   000050   90....       MOV     DPTR,#Gps_TaskID
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   F9           MOV     R1,A
+   \   000055   12....       LCALL   ??RegisterForKeys?relay
+    251          
+    252            uartConfig.configured = TRUE;
+   \   000058   85..82       MOV     DPL,?XSP + 0
+   \   00005B   85..83       MOV     DPH,?XSP + 1
+   \   00005E   7401         MOV     A,#0x1
+   \   000060   F0           MOVX    @DPTR,A
+    253            uartConfig.baudRate = HAL_UART_BR_9600;
+   \   000061   12....       LCALL   ?XSTACK_DISP0_8
+   \   000064   E4           CLR     A
+   \   000065   F0           MOVX    @DPTR,A
+    254            uartConfig.flowControl = FALSE;
+   \   000066   7402         MOV     A,#0x2
+   \   000068   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006B   E4           CLR     A
+   \   00006C   12....       LCALL   ?Subroutine8 & 0xFFFF
+    255            //uartConfig.callBackFunc         = rxCB;
+    256            HalUARTOpen(0,&uartConfig);
+   \                     ??CrossCallReturnLabel_15:
+   \   00006F   AA82         MOV     R2,DPL
+   \   000071   AB83         MOV     R3,DPH
+   \   000073   F9           MOV     R1,A
+   \   000074   12....       LCALL   ??HalUARTOpen?relay
+    257            // Update the display
+    258          #if defined ( LCD_SUPPORTED )
+    259            HalLcdWriteString( "Gps", HAL_LCD_LINE_1 );
+   \   000077                ; Setup parameters for call to function HalLcdWriteString
+   \   000077   7901         MOV     R1,#0x1
+   \   000079   7A..         MOV     R2,#`?<Constant "Gps">` & 0xff
+   \   00007B   7B..         MOV     R3,#(`?<Constant "Gps">` >> 8) & 0xff
+   \   00007D   12....       LCALL   ??HalLcdWriteString?relay
+    260          #endif
+    261          
+    262            ZDO_RegisterForZDOMsg( Gps_TaskID, End_Device_Bind_rsp );
+   \   000080                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000080   7A20         MOV     R2,#0x20
+   \   000082   7B80         MOV     R3,#-0x80
+   \   000084   90....       MOV     DPTR,#Gps_TaskID
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   F9           MOV     R1,A
+   \   000089   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    263            ZDO_RegisterForZDOMsg( Gps_TaskID, Match_Desc_rsp );
+   \   00008C                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00008C   7A06         MOV     R2,#0x6
+   \   00008E   7B80         MOV     R3,#-0x80
+   \   000090   90....       MOV     DPTR,#Gps_TaskID
+   \   000093   E0           MOVX    A,@DPTR
+   \   000094   F9           MOV     R1,A
+   \   000095   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    264          
+    265          #if defined( IAR_ARMCM3_LM )
+    266            // Register this task with RTOS task initiator
+    267            RTOS_RegisterApp( task_id, Gps_RTOS_MSG_EVT );
+    268          #endif
+    269          }
+   \   000098   741D         MOV     A,#0x1d
+   \   00009A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00009D                REQUIRE ?Subroutine0
+   \   00009D                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function HalUARTOpen
+   \   000001   85..82       MOV     DPL,?XSP + 0
+   \   000004   85..83       MOV     DPH,?XSP + 1
+   \   000007   22           RET
+    270          
+    271          /*********************************************************************
+    272           * @fn      Gps_ProcessEvent
+    273           *
+    274           * @brief   Generic Application Task event processor.  This function
+    275           *          is called to process all events for the task.  Events
+    276           *          include timers, messages and any other user defined events.
+    277           *
+    278           * @param   task_id  - The OSAL assigned task ID.
+    279           * @param   events - events to process.  This is a bit map and can
+    280           *                   contain more than one event.
+    281           *
+    282           * @return  none
+    283           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    284          uint16 Gps_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Gps_ProcessEvent:
+    285          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    286            afIncomingMSGPacket_t *MSGpkt;
+    287            afDataConfirm_t *afDataConfirm;
+    288          
+    289            // Data Confirmation message fields
+    290            byte sentEP;
+    291            ZStatus_t sentStatus;
+    292            byte sentTransID;       // This should match the value sent
+    293            (void)task_id;  // Intentionally unreferenced parameter
+    294          
+    295            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL     A,#0x80
+   \   000010   7003         JNZ     $+5
+   \   000012   02....       LJMP    ??Gps_ProcessEvent_0 & 0xFFFF
+    296            {
+    297              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Gps_TaskID );
+   \   000015                ; Setup parameters for call to function osal_msg_receive
+   \   000015   801E         SJMP    ??Gps_ProcessEvent_1
+    298              while ( MSGpkt )
+    299              {
+    300                switch ( MSGpkt->hdr.event )
+    301                {
+    302                  case ZDO_CB_MSG:
+    303                    Gps_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    304                    break;
+    305          
+    306                  case KEY_CHANGE:
+    307                    Gps_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    308                    break;
+    309          
+    310                  case AF_DATA_CONFIRM_CMD:
+    311                    // This message is received as a confirmation of a data packet sent.
+    312                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    313                    // The message fields are defined in AF.h
+    314                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    315                    sentEP = afDataConfirm->endpoint;
+    316                    sentStatus = afDataConfirm->hdr.status;
+    317                    sentTransID = afDataConfirm->transID;
+    318                    (void)sentEP;
+    319                    (void)sentTransID;
+    320          
+    321                    // Action taken when confirmation is received.
+    322                    if ( sentStatus != ZSuccess )
+    323                    {
+    324                      // The data wasn't delivered -- Do something
+    325                    }
+    326                    break;
+    327          
+    328                  case AF_INCOMING_MSG_CMD:
+    329                    Gps_MessageMSGCB( MSGpkt );
+    330                    break;
+    331          
+    332                  case ZDO_STATE_CHANGE:
+    333                    Gps_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??Gps_ProcessEvent_2:
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   90....       MOV     DPTR,#Gps_NwkState
+   \   00001C   F0           MOVX    @DPTR,A
+    334                    if ( (Gps_NwkState == DEV_ZB_COORD)
+    335                        || (Gps_NwkState == DEV_ROUTER)
+    336                        || (Gps_NwkState == DEV_END_DEVICE) )
+   \   00001D   6409         XRL     A,#0x9
+   \   00001F   600A         JZ      ??Gps_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6407         XRL     A,#0x7
+   \   000024   6005         JZ      ??Gps_ProcessEvent_3
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6406         XRL     A,#0x6
+   \   000029   7003         JNZ     ??CrossCallReturnLabel_97
+    337                    {
+    338                      // Start sending "the" message in a regular interval.
+    339                      osal_start_timerEx( Gps_TaskID,
+    340                                          Gps_SEND_MSG_EVT,
+    341                                          Gps_SEND_MSG_TIMEOUT );
+   \                     ??Gps_ProcessEvent_3:
+   \   00002B                ; Setup parameters for call to function osal_start_timerEx
+   \   00002B   12....       LCALL   ?Subroutine19 & 0xFFFF
+    342                    }
+    343                    break;
+    344          
+    345                  default:
+    346                    break;
+    347                }
+    348          
+    349                // Release the memory
+    350                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??CrossCallReturnLabel_97:
+   \   00002E                ; Setup parameters for call to function osal_msg_deallocate
+   \   00002E   AA..         MOV     R2,?V0 + 0
+   \   000030   AB..         MOV     R3,?V0 + 1
+   \   000032   12....       LCALL   ??osal_msg_deallocate?relay
+    351          
+    352                // Next
+    353                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Gps_TaskID );
+   \   000035                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Gps_ProcessEvent_1:
+   \   000035   90....       MOV     DPTR,#Gps_TaskID
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F9           MOV     R1,A
+   \   00003A   12....       LCALL   ??osal_msg_receive?relay
+   \   00003D   8A..         MOV     ?V0 + 0,R2
+   \   00003F   8B..         MOV     ?V0 + 1,R3
+   \   000041   E5..         MOV     A,?V0 + 0
+   \   000043   45..         ORL     A,?V0 + 1
+   \   000045   7003         JNZ     $+5
+   \   000047   02....       LJMP    ??Gps_ProcessEvent_4 & 0xFFFF
+   \   00004A   85..82       MOV     DPL,?V0 + 0
+   \   00004D   85..83       MOV     DPH,?V0 + 1
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   24E6         ADD     A,#-0x1a
+   \   000053   7003         JNZ     $+5
+   \   000055   02....       LJMP    ??Gps_ProcessEvent_5 & 0xFFFF
+   \   000058   245A         ADD     A,#0x5a
+   \   00005A   7003         JNZ     $+5
+   \   00005C   02....       LJMP    ??Gps_ProcessEvent_6 & 0xFFFF
+   \   00005F   24EF         ADD     A,#-0x11
+   \   000061   60B4         JZ      ??Gps_ProcessEvent_2
+   \   000063   24FE         ADD     A,#-0x2
+   \   000065   70C7         JNZ     ??CrossCallReturnLabel_97
+   \   000067   E5..         MOV     A,?V0 + 0
+   \   000069   240C         ADD     A,#0xc
+   \   00006B   12....       LCALL   ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_94:
+   \   00006E   F5..         MOV     ?V0 + 2,A
+   \   000070   A3           INC     DPTR
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   F5..         MOV     ?V0 + 3,A
+   \   000074   78..         MOV     R0,#?V0 + 2
+   \   000076   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for Gps_ProcessEvent>_0`:
+   \   000079   0000         DW        0
+   \   00007B   0200         DW        2
+   \   00007D   0680         DW        32774
+   \   00007F   ....         DW        ??Gps_ProcessEvent_7
+   \   000081   2080         DW        32800
+   \   000083   ....         DW        ??Gps_ProcessEvent_8
+   \   000085   ....         DW        ??CrossCallReturnLabel_97
+   \                     ??Gps_ProcessEvent_7:
+   \   000087                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   000087   AA..         MOV     R2,?V0 + 0
+   \   000089   AB..         MOV     R3,?V0 + 1
+   \   00008B   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   00008E   8A..         MOV     ?V0 + 2,R2
+   \   000090   8B..         MOV     ?V0 + 3,R3
+   \   000092   EA           MOV     A,R2
+   \   000093   45..         ORL     A,?V0 + 3
+   \   000095   6097         JZ      ??CrossCallReturnLabel_97
+   \   000097   8A82         MOV     DPL,R2
+   \   000099   8B83         MOV     DPH,R3
+   \   00009B   E0           MOVX    A,@DPTR
+   \   00009C   7032         JNZ     ??Gps_ProcessEvent_9
+   \   00009E   A3           INC     DPTR
+   \   00009F   A3           INC     DPTR
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   602C         JZ      ??Gps_ProcessEvent_9
+   \   0000A4   90....       MOV     DPTR,#Gps_DstAddr + 8
+   \   0000A7   7402         MOV     A,#0x2
+   \   0000A9   F0           MOVX    @DPTR,A
+   \   0000AA   8A82         MOV     DPL,R2
+   \   0000AC   8B83         MOV     DPH,R3
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   E0           MOVX    A,@DPTR
+   \   0000B0   F8           MOV     R0,A
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   F9           MOV     R1,A
+   \   0000B4   90....       MOV     DPTR,#Gps_DstAddr
+   \   0000B7   E8           MOV     A,R0
+   \   0000B8   F0           MOVX    @DPTR,A
+   \   0000B9   A3           INC     DPTR
+   \   0000BA   E9           MOV     A,R1
+   \   0000BB   F0           MOVX    @DPTR,A
+   \   0000BC   8A82         MOV     DPL,R2
+   \   0000BE   8B83         MOV     DPH,R3
+   \   0000C0   A3           INC     DPTR
+   \   0000C1   A3           INC     DPTR
+   \   0000C2   A3           INC     DPTR
+   \   0000C3   A3           INC     DPTR
+   \   0000C4   E0           MOVX    A,@DPTR
+   \   0000C5   90....       MOV     DPTR,#Gps_DstAddr + 9
+   \   0000C8   F0           MOVX    @DPTR,A
+   \   0000C9                ; Setup parameters for call to function HalLedSet
+   \   0000C9   7A01         MOV     R2,#0x1
+   \   0000CB   7908         MOV     R1,#0x8
+   \   0000CD   12....       LCALL   ??HalLedSet?relay
+   \                     ??Gps_ProcessEvent_9:
+   \   0000D0                ; Setup parameters for call to function osal_mem_free
+   \   0000D0   AA..         MOV     R2,?V0 + 2
+   \   0000D2   AB..         MOV     R3,?V0 + 3
+   \   0000D4   12....       LCALL   ??osal_mem_free?relay
+   \   0000D7   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \                     ??Gps_ProcessEvent_8:
+   \   0000DA   E5..         MOV     A,?V0 + 0
+   \   0000DC   2413         ADD     A,#0x13
+   \   0000DE   12....       LCALL   ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_95:
+   \   0000E1   F8           MOV     R0,A
+   \   0000E2   A3           INC     DPTR
+   \   0000E3   E0           MOVX    A,@DPTR
+   \   0000E4   F583         MOV     DPH,A
+   \   0000E6   8882         MOV     DPL,R0
+   \   0000E8   E0           MOVX    A,@DPTR
+   \   0000E9   700A         JNZ     ??Gps_ProcessEvent_10
+   \   0000EB                ; Setup parameters for call to function HalLedSet
+   \   0000EB   7A01         MOV     R2,#0x1
+   \                     ??Gps_ProcessEvent_11:
+   \   0000ED   7908         MOV     R1,#0x8
+   \   0000EF   12....       LCALL   ??HalLedSet?relay
+   \   0000F2   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \                     ??Gps_ProcessEvent_10:
+   \   0000F5                ; Setup parameters for call to function HalLedSet
+   \   0000F5   7A04         MOV     R2,#0x4
+   \   0000F7   80F4         SJMP    ??Gps_ProcessEvent_11
+   \                     ??Gps_ProcessEvent_6:
+   \   0000F9   A3           INC     DPTR
+   \   0000FA   A3           INC     DPTR
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   E0           MOVX    A,@DPTR
+   \   0000FD   F5..         MOV     ?V0 + 4,A
+   \   0000FF   85..82       MOV     DPL,?V0 + 0
+   \   000102   85..83       MOV     DPH,?V0 + 1
+   \   000105   A3           INC     DPTR
+   \   000106   A3           INC     DPTR
+   \   000107   E0           MOVX    A,@DPTR
+   \   000108   6003         JZ      $+5
+   \   00010A   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \   00010D   E5..         MOV     A,?V0 + 4
+   \   00010F   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000111   5069         JNC     ??Gps_ProcessEvent_12
+   \   000113                ; Setup parameters for call to function HalLedSet
+   \   000113   7A00         MOV     R2,#0x0
+   \   000115   7908         MOV     R1,#0x8
+   \   000117   12....       LCALL   ??HalLedSet?relay
+   \   00011A   7408         MOV     A,#0x8
+   \   00011C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00011F   7402         MOV     A,#0x2
+   \   000121   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000124   E4           CLR     A
+   \   000125   F0           MOVX    @DPTR,A
+   \   000126   A3           INC     DPTR
+   \   000127   F0           MOVX    @DPTR,A
+   \   000128                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000128   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00012B   8A..         MOV     ?V0 + 2,R2
+   \   00012D   8B..         MOV     ?V0 + 3,R3
+   \   00012F   AC..         MOV     R4,?V0 + 2
+   \   000131   AD..         MOV     R5,?V0 + 3
+   \   000133   75....       MOV     ?V0 + 2,#Gps_ClusterList & 0xff
+   \   000136   75....       MOV     ?V0 + 3,#(Gps_ClusterList >> 8) & 0xff
+   \   000139                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   000139   75..00       MOV     ?V0 + 5,#0x0
+   \   00013C   78..         MOV     R0,#?V0 + 5
+   \   00013E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000141   78..         MOV     R0,#?V0 + 2
+   \   000143   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000146   75..01       MOV     ?V0 + 5,#0x1
+   \   000149   78..         MOV     R0,#?V0 + 5
+   \   00014B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00014E   78..         MOV     R0,#?V0 + 2
+   \   000150   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000153   75..01       MOV     ?V0 + 2,#0x1
+   \   000156   78..         MOV     R0,#?V0 + 2
+   \   000158   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00015B   75..04       MOV     ?V0 + 2,#0x4
+   \   00015E   75..0F       MOV     ?V0 + 3,#0xf
+   \   000161   78..         MOV     R0,#?V0 + 2
+   \   000163   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000166   90....       MOV     DPTR,#Gps_epDesc
+   \   000169   E0           MOVX    A,@DPTR
+   \   00016A   F9           MOV     R1,A
+   \   00016B   7409         MOV     A,#0x9
+   \   00016D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000170   AA82         MOV     R2,DPL
+   \   000172   AB83         MOV     R3,DPH
+   \   000174   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000177   7409         MOV     A,#0x9
+   \   000179   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??Gps_ProcessEvent_12:
+   \   00017C   E5..         MOV     A,?V0 + 4
+   \   00017E   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000180   4003         JC      $+5
+   \   000182   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \   000185                ; Setup parameters for call to function HalLedSet
+   \   000185   7A00         MOV     R2,#0x0
+   \   000187   7908         MOV     R1,#0x8
+   \   000189   12....       LCALL   ??HalLedSet?relay
+   \   00018C   7408         MOV     A,#0x8
+   \   00018E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000191   740F         MOV     A,#0xf
+   \   000193   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000196   74FF         MOV     A,#-0x1
+   \   000198   F0           MOVX    @DPTR,A
+   \   000199   A3           INC     DPTR
+   \   00019A   F0           MOVX    @DPTR,A
+   \   00019B   75....       MOV     ?V0 + 2,#Gps_ClusterList & 0xff
+   \   00019E   75....       MOV     ?V0 + 3,#(Gps_ClusterList >> 8) & 0xff
+   \   0001A1                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0001A1   75..00       MOV     ?V0 + 4,#0x0
+   \   0001A4   78..         MOV     R0,#?V0 + 4
+   \   0001A6   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001A9   78..         MOV     R0,#?V0 + 2
+   \   0001AB   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001AE   75..01       MOV     ?V0 + 4,#0x1
+   \   0001B1   78..         MOV     R0,#?V0 + 4
+   \   0001B3   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001B6   78..         MOV     R0,#?V0 + 2
+   \   0001B8   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001BB   75..04       MOV     ?V0 + 2,#0x4
+   \   0001BE   75..0F       MOV     ?V0 + 3,#0xf
+   \   0001C1   78..         MOV     R0,#?V0 + 2
+   \   0001C3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001C6   7901         MOV     R1,#0x1
+   \   0001C8   7CFF         MOV     R4,#-0x1
+   \   0001CA   7DFF         MOV     R5,#-0x1
+   \   0001CC   7408         MOV     A,#0x8
+   \   0001CE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001D1   AA82         MOV     R2,DPL
+   \   0001D3   AB83         MOV     R3,DPH
+   \   0001D5   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0001D8   7408         MOV     A,#0x8
+   \   0001DA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001DD   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \                     ??Gps_ProcessEvent_5:
+   \   0001E0   A3           INC     DPTR
+   \   0001E1   A3           INC     DPTR
+   \   0001E2   A3           INC     DPTR
+   \   0001E3   A3           INC     DPTR
+   \   0001E4   E0           MOVX    A,@DPTR
+   \   0001E5   6406         XRL     A,#0x6
+   \   0001E7   7002         JNZ     ??Gps_ProcessEvent_13
+   \   0001E9   A3           INC     DPTR
+   \   0001EA   E0           MOVX    A,@DPTR
+   \                     ??Gps_ProcessEvent_13:
+   \   0001EB   6003         JZ      $+5
+   \   0001ED   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+   \   0001F0                ; Setup parameters for call to function HalLcdWriteScreen
+   \   0001F0   7C..         MOV     R4,#`?<Constant "rcvd">` & 0xff
+   \   0001F2   7D..         MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+   \   0001F4   E5..         MOV     A,?V0 + 0
+   \   0001F6   2422         ADD     A,#0x22
+   \   0001F8   12....       LCALL   ?Subroutine20 & 0xFFFF
+    354              }
+   \                     ??CrossCallReturnLabel_96:
+   \   0001FB   FA           MOV     R2,A
+   \   0001FC   A3           INC     DPTR
+   \   0001FD   E0           MOVX    A,@DPTR
+   \   0001FE   FB           MOV     R3,A
+   \   0001FF   12....       LCALL   ??HalLcdWriteScreen?relay
+   \   000202   02....       LJMP    ??CrossCallReturnLabel_97 & 0xFFFF
+    355          
+    356              // return unprocessed events
+    357              return (events ^ SYS_EVENT_MSG);
+   \                     ??Gps_ProcessEvent_4:
+   \   000205   EE           MOV     A,R6
+   \   000206   FA           MOV     R2,A
+   \   000207   EF           MOV     A,R7
+   \   000208   6480         XRL     A,#0x80
+   \                     ??Gps_ProcessEvent_14:
+   \   00020A   FB           MOV     R3,A
+   \   00020B   8016         SJMP    ??Gps_ProcessEvent_15
+    358            }
+    359          
+    360            // Send a message out - This event is generated by a timer
+    361            //  (setup in Gps_Init()).
+    362            if ( events & Gps_SEND_MSG_EVT )
+   \                     ??Gps_ProcessEvent_0:
+   \   00020D   EE           MOV     A,R6
+   \   00020E   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000210   500D         JNC     ??Gps_ProcessEvent_16
+    363            {
+    364              // Send "the" message
+    365              Gps_SendTheMessage();
+   \   000212                ; Setup parameters for call to function Gps_SendTheMessage
+   \   000212   12....       LCALL   ??Gps_SendTheMessage?relay
+    366          
+    367              // Setup to send message again
+    368              osal_start_timerEx( Gps_TaskID,
+    369                                  Gps_SEND_MSG_EVT,
+    370                                  Gps_SEND_MSG_TIMEOUT );
+   \   000215                ; Setup parameters for call to function osal_start_timerEx
+   \   000215   12....       LCALL   ?Subroutine19 & 0xFFFF
+    371          
+    372              // return unprocessed events
+    373              return (events ^ Gps_SEND_MSG_EVT);
+   \                     ??CrossCallReturnLabel_98:
+   \   000218   EE           MOV     A,R6
+   \   000219   6401         XRL     A,#0x1
+   \   00021B   FA           MOV     R2,A
+   \   00021C   EF           MOV     A,R7
+   \   00021D   80EB         SJMP    ??Gps_ProcessEvent_14
+    374            }
+    375          
+    376            
+    377          #if defined( IAR_ARMCM3_LM )
+    378            // Receive a message from the RTOS queue
+    379            if ( events & Gps_RTOS_MSG_EVT )
+    380            {
+    381              // Process message from RTOS queue
+    382              Gps_ProcessRtosMessage();
+    383          
+    384              // return unprocessed events
+    385              return (events ^ Gps_RTOS_MSG_EVT);
+    386            }
+    387          #endif
+    388          
+    389            // Discard unknown events
+    390            return 0;
+   \                     ??Gps_ProcessEvent_16:
+   \   00021F   7A00         MOV     R2,#0x0
+   \   000221   7B00         MOV     R3,#0x0
+   \                     ??Gps_ProcessEvent_15:
+   \   000223   7409         MOV     A,#0x9
+   \   000225   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000228   7F06         MOV     R7,#0x6
+   \   00022A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    391          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   F582         MOV     DPL,A
+   \   000002   E5..         MOV     A,?V0 + 1
+   \   000004                REQUIRE ??Subroutine36_0
+   \   000004                ; // Fall through to label ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine36_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   7CE8         MOV     R4,#-0x18
+   \   000002   7D03         MOV     R5,#0x3
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   90....       MOV     DPTR,#Gps_TaskID
+   \   00000B                REQUIRE ??Subroutine37_0
+   \   00000B                ; // Fall through to label ??Subroutine37_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine37_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F9           MOV     R1,A
+   \   000002   12....       LCALL   ??osal_start_timerEx?relay
+   \   000005   22           RET
+    392          
+    393          /*********************************************************************
+    394           * Event Generation Functions
+    395           */
+    396          
+    397          /*********************************************************************
+    398           * @fn      Gps_ProcessZDOMsgs()
+    399           *
+    400           * @brief   Process response messages
+    401           *
+    402           * @param   none
+    403           *
+    404           * @return  none
+    405           */
+    406          static void Gps_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    407          {
+    408            switch ( inMsg->clusterID )
+    409            {
+    410              case End_Device_Bind_rsp:
+    411                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    412                {
+    413                  // Gps LED
+    414                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    415                }
+    416          #if defined( BLINK_LEDS )
+    417                else
+    418                {
+    419                  // Flash LED to show failure
+    420                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    421                }
+    422          #endif
+    423                break;
+    424          
+    425              case Match_Desc_rsp:
+    426                {
+    427                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    428                  if ( pRsp )
+    429                  {
+    430                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    431                    {
+    432                      Gps_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    433                      Gps_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    434                      // Take the first endpoint, Can be changed to search through endpoints
+    435                      Gps_DstAddr.endPoint = pRsp->epList[0];
+    436          
+    437                      // Gps LED
+    438                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    439                    }
+    440                    osal_mem_free( pRsp );
+    441                  }
+    442                }
+    443                break;
+    444            }
+    445          }
+    446          
+    447          /*********************************************************************
+    448           * @fn      Gps_HandleKeys
+    449           *
+    450           * @brief   Handles all key events for this device.
+    451           *
+    452           * @param   shift - true if in shift/alt.
+    453           * @param   keys - bit field for key events. Valid entries:
+    454           *                 HAL_KEY_SW_4
+    455           *                 HAL_KEY_SW_3
+    456           *                 HAL_KEY_SW_2
+    457           *                 HAL_KEY_SW_1
+    458           *
+    459           * @return  none
+    460           */
+    461          static void Gps_HandleKeys( uint8 shift, uint8 keys )
+    462          {
+    463            zAddrType_t dstAddr;
+    464          
+    465            // Shift is used to make each button/switch dual purpose.
+    466            if ( shift )
+    467            {
+    468              if ( keys & HAL_KEY_SW_1 )
+    469              {
+    470              }
+    471              if ( keys & HAL_KEY_SW_2 )
+    472              {
+    473              }
+    474              if ( keys & HAL_KEY_SW_3 )
+    475              {
+    476              }
+    477              if ( keys & HAL_KEY_SW_4 )
+    478              {
+    479              }
+    480            }
+    481            else
+    482            {
+    483              if ( keys & HAL_KEY_SW_1 )
+    484              {
+    485                // Since SW1 isn't used for anything else in this application...
+    486          #if defined( SWITCH1_BIND )
+    487                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    488                keys |= HAL_KEY_SW_2;
+    489          #elif defined( SWITCH1_MATCH )
+    490                // or use SW1 to simulate SW4 for devices that only have one switch
+    491                keys |= HAL_KEY_SW_4;
+    492          #endif
+    493              }
+    494          
+    495              if ( keys & HAL_KEY_SW_2 )
+    496              {
+    497                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    498          
+    499                // Initiate an End Device Bind Request for the mandatory endpoint
+    500                dstAddr.addrMode = Addr16Bit;
+    501                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    502                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    503                                      Gps_epDesc.endPoint,
+    504                                      Gps_PROFID,
+    505                                      Gps_MAX_CLUSTERS, (cId_t *)Gps_ClusterList,
+    506                                      Gps_MAX_CLUSTERS, (cId_t *)Gps_ClusterList,
+    507                                      FALSE );
+    508              }
+    509          
+    510              if ( keys & HAL_KEY_SW_3 )
+    511              {
+    512              }
+    513          
+    514              if ( keys & HAL_KEY_SW_4 )
+    515              {
+    516                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    517                // Initiate a Match Description Request (Service Discovery)
+    518                dstAddr.addrMode = AddrBroadcast;
+    519                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    520                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    521                                  Gps_PROFID,
+    522                                  Gps_MAX_CLUSTERS, (cId_t *)Gps_ClusterList,
+    523                                  Gps_MAX_CLUSTERS, (cId_t *)Gps_ClusterList,
+    524                                  FALSE );
+    525              }
+    526            }
+    527          }
+    528          
+    529          /*********************************************************************
+    530           * LOCAL FUNCTIONS
+    531           */
+    532          
+    533          /*********************************************************************
+    534           * @fn      Gps_MessageMSGCB
+    535           *
+    536           * @brief   Data message processor callback.  This function processes
+    537           *          any incoming data - probably from other devices.  So, based
+    538           *          on cluster ID, perform the intended action.
+    539           *
+    540           * @param   none
+    541           *
+    542           * @return  none
+    543           */
+    544          static void Gps_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    545          {
+    546            switch ( pkt->clusterId )
+    547            {
+    548              case Gps_CLUSTERID:
+    549                // "the" message
+    550          #if defined( LCD_SUPPORTED )
+    551                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    552          #elif defined( WIN32 )
+    553                WPRINTSTR( pkt->cmd.Data );
+    554          #endif
+    555                break;
+    556            }
+    557          }
+    558          
+    559          /*********************************************************************
+    560           * @fn      Gps_SendTheMessage
+    561           *
+    562           * @brief   Send "the" message.
+    563           *
+    564           * @param   none
+    565           *
+    566           * @return  none
+    567           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    568          static void Gps_SendTheMessage( void )
+   \                     Gps_SendTheMessage:
+    569          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 33
+   \   000005   74DF         MOV     A,#-0x21
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    570            unsigned char theMessageData[33] = "Gps:";
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant "Gps:">` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant "Gps:">` & 0xff
+   \   00001A   7421         MOV     A,#0x21
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    571            for (unsigned char i=0;i<6;i++)
+   \   00001F   FA           MOV     R2,A
+    572              theMessageData[i]=UTC[i];
+   \                     ??Gps_SendTheMessage_0:
+   \   000020   8A82         MOV     DPL,R2
+   \   000022   A882         MOV     R0,DPL
+   \   000024   74..         MOV     A,#UTC & 0xff
+   \   000026   28           ADD     A,R0
+   \   000027   F582         MOV     DPL,A
+   \   000029   74..         MOV     A,#(UTC >> 8) & 0xff
+   \   00002B   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_88:
+   \   00002E   C0E0         PUSH    A
+   \   000030   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_104:
+   \   000033   D0E0         POP     A
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   0A           INC     R2
+   \   000037   EA           MOV     A,R2
+   \   000038   C3           CLR     C
+   \   000039   9406         SUBB    A,#0x6
+   \   00003B   40E3         JC      ??Gps_SendTheMessage_0
+    573            for (unsigned char i=0;i<9;i++)
+   \   00003D   7A00         MOV     R2,#0x0
+    574              theMessageData[i+6]=WeiDu[i];
+   \                     ??Gps_SendTheMessage_1:
+   \   00003F   8A82         MOV     DPL,R2
+   \   000041   A882         MOV     R0,DPL
+   \   000043   74..         MOV     A,#WeiDu & 0xff
+   \   000045   28           ADD     A,R0
+   \   000046   F582         MOV     DPL,A
+   \   000048   74..         MOV     A,#(WeiDu >> 8) & 0xff
+   \   00004A   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_89:
+   \   00004D   C0E0         PUSH    A
+   \   00004F   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_105:
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   A3           INC     DPTR
+   \   000056   A3           INC     DPTR
+   \   000057   A3           INC     DPTR
+   \   000058   D0E0         POP     A
+   \   00005A   F0           MOVX    @DPTR,A
+   \   00005B   0A           INC     R2
+   \   00005C   EA           MOV     A,R2
+   \   00005D   C3           CLR     C
+   \   00005E   9409         SUBB    A,#0x9
+   \   000060   40DD         JC      ??Gps_SendTheMessage_1
+    575            for (unsigned char i=0;i<10;i++)
+   \   000062   7A00         MOV     R2,#0x0
+    576              theMessageData[i+15]=JingDu[i];
+   \                     ??Gps_SendTheMessage_2:
+   \   000064   8A82         MOV     DPL,R2
+   \   000066   A882         MOV     R0,DPL
+   \   000068   74..         MOV     A,#JingDu & 0xff
+   \   00006A   28           ADD     A,R0
+   \   00006B   F582         MOV     DPL,A
+   \   00006D   74..         MOV     A,#(JingDu >> 8) & 0xff
+   \   00006F   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_90:
+   \   000072   C0E0         PUSH    A
+   \   000074   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_51:
+   \   000077   240F         ADD     A,#0xf
+   \   000079   F582         MOV     DPL,A
+   \   00007B   E9           MOV     A,R1
+   \   00007C   12....       LCALL   ??Subroutine39_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_100:
+   \   00007F   D0E0         POP     A
+   \   000081   F0           MOVX    @DPTR,A
+   \   000082   0A           INC     R2
+   \   000083   EA           MOV     A,R2
+   \   000084   C3           CLR     C
+   \   000085   940A         SUBB    A,#0xa
+   \   000087   40DB         JC      ??Gps_SendTheMessage_2
+    577            for (unsigned char i=0;i<1;i++)
+    578              theMessageData[i+25]=JiBie[i];
+   \   000089   90....       MOV     DPTR,#JiBie
+   \   00008C   E0           MOVX    A,@DPTR
+   \   00008D   C0E0         PUSH    A
+   \   00008F   7419         MOV     A,#0x19
+   \   000091   12....       LCALL   ?XSTACK_DISP0_8
+   \   000094   D0E0         POP     A
+   \   000096   F0           MOVX    @DPTR,A
+    579            for (unsigned char i=0;i<2;i++)
+   \   000097   7A00         MOV     R2,#0x0
+    580              theMessageData[i+26]=WeiXing[i];
+   \                     ??Gps_SendTheMessage_3:
+   \   000099   8A82         MOV     DPL,R2
+   \   00009B   A882         MOV     R0,DPL
+   \   00009D   74..         MOV     A,#WeiXing & 0xff
+   \   00009F   28           ADD     A,R0
+   \   0000A0   F582         MOV     DPL,A
+   \   0000A2   74..         MOV     A,#(WeiXing >> 8) & 0xff
+   \   0000A4   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_91:
+   \   0000A7   C0E0         PUSH    A
+   \   0000A9   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_52:
+   \   0000AC   241A         ADD     A,#0x1a
+   \   0000AE   F582         MOV     DPL,A
+   \   0000B0   E9           MOV     A,R1
+   \   0000B1   12....       LCALL   ??Subroutine39_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_101:
+   \   0000B4   D0E0         POP     A
+   \   0000B6   F0           MOVX    @DPTR,A
+   \   0000B7   0A           INC     R2
+   \   0000B8   EA           MOV     A,R2
+   \   0000B9   C3           CLR     C
+   \   0000BA   9402         SUBB    A,#0x2
+   \   0000BC   40DB         JC      ??Gps_SendTheMessage_3
+    581            for (unsigned char i=0;i<5;i++)
+   \   0000BE   7A00         MOV     R2,#0x0
+    582              theMessageData[i+28]=GaoDu[i];
+   \                     ??Gps_SendTheMessage_4:
+   \   0000C0   8A82         MOV     DPL,R2
+   \   0000C2   A882         MOV     R0,DPL
+   \   0000C4   74..         MOV     A,#GaoDu & 0xff
+   \   0000C6   28           ADD     A,R0
+   \   0000C7   F582         MOV     DPL,A
+   \   0000C9   74..         MOV     A,#(GaoDu >> 8) & 0xff
+   \   0000CB   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_92:
+   \   0000CE   C0E0         PUSH    A
+   \   0000D0   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_53:
+   \   0000D3   241C         ADD     A,#0x1c
+   \   0000D5   F582         MOV     DPL,A
+   \   0000D7   E9           MOV     A,R1
+   \   0000D8   12....       LCALL   ??Subroutine39_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_102:
+   \   0000DB   D0E0         POP     A
+   \   0000DD   F0           MOVX    @DPTR,A
+   \   0000DE   0A           INC     R2
+   \   0000DF   EA           MOV     A,R2
+   \   0000E0   C3           CLR     C
+   \   0000E1   9405         SUBB    A,#0x5
+   \   0000E3   40DB         JC      ??Gps_SendTheMessage_4
+    583            
+    584            /*_ltoa( (uint32)(UTC), &theMessageData[4], 10 );
+    585            _ltoa( (uint32)(WeiDu), &theMessageData[10], 10 );
+    586            _ltoa( (uint32)(JingDu), &theMessageData[19], 10 );
+    587            _ltoa( (uint32)(JiBie), &theMessageData[29], 10 );
+    588            _ltoa( (uint32)(WeiXing), &theMessageData[30], 10 );
+    589            _ltoa( (uint32)(GaoDu), &theMessageData[32], 10 );*/
+    590            
+    591            for (unsigned char i=0; i<50-1; i++)
+   \   0000E5   7800         MOV     R0,#0x0
+    592            {
+    593              if (theMessageData[i] == 0x00 )
+   \                     ??Gps_SendTheMessage_5:
+   \   0000E7   88..         MOV     ?V0 + 0,R0
+   \   0000E9   85..82       MOV     DPL,?XSP + 0
+   \   0000EC   85..83       MOV     DPH,?XSP + 1
+   \   0000EF   E582         MOV     A,DPL
+   \   0000F1   25..         ADD     A,?V0 + 0
+   \   0000F3   F582         MOV     DPL,A
+   \   0000F5   E583         MOV     A,DPH
+   \   0000F7   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_93:
+   \   0000FA   7010         JNZ     ??Gps_SendTheMessage_6
+    594              {
+    595                theMessageData[i] = ' ';
+   \   0000FC   85..82       MOV     DPL,?XSP + 0
+   \   0000FF   85..83       MOV     DPH,?XSP + 1
+   \   000102   E582         MOV     A,DPL
+   \   000104   25..         ADD     A,?V0 + 0
+   \   000106   12....       LCALL   ??Subroutine38_0 & 0xFFFF
+    596              }
+    597            }
+   \                     ??CrossCallReturnLabel_103:
+   \   000109   7420         MOV     A,#0x20
+   \   00010B   F0           MOVX    @DPTR,A
+   \                     ??Gps_SendTheMessage_6:
+   \   00010C   08           INC     R0
+   \   00010D   E8           MOV     A,R0
+   \   00010E   C3           CLR     C
+   \   00010F   9431         SUBB    A,#0x31
+   \   000111   40D4         JC      ??Gps_SendTheMessage_5
+    598          
+    599            if ( AF_DataRequest( &Gps_DstAddr, &Gps_epDesc,
+    600                                 Gps_CLUSTERID,
+    601                                 (byte)osal_strlen( theMessageData ),
+                                                           ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char *"
+    602                                 (byte *)&theMessageData,
+    603                                 &Gps_TransID,
+    604                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   000113                ; Setup parameters for call to function AF_DataRequest
+   \   000113   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000116   78..         MOV     R0,#?V0 + 0
+   \   000118   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00011B   75....       MOV     ?V0 + 0,#Gps_TransID & 0xff
+   \   00011E   75....       MOV     ?V0 + 1,#(Gps_TransID >> 8) & 0xff
+   \   000121   78..         MOV     R0,#?V0 + 0
+   \   000123   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000126   7403         MOV     A,#0x3
+   \   000128   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012B   8582..       MOV     ?V0 + 0,DPL
+   \   00012E   8583..       MOV     ?V0 + 1,DPH
+   \   000131   78..         MOV     R0,#?V0 + 0
+   \   000133   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000136                ; Setup parameters for call to function osal_strlen
+   \   000136   7405         MOV     A,#0x5
+   \   000138   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013B   AA82         MOV     R2,DPL
+   \   00013D   AB83         MOV     R3,DPH
+   \   00013F   12....       LCALL   ??osal_strlen?relay
+   \   000142   8A..         MOV     ?V0 + 0,R2
+   \   000144   75..00       MOV     ?V0 + 1,#0x0
+   \   000147   78..         MOV     R0,#?V0 + 0
+   \   000149   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00014C   75..06       MOV     ?V0 + 0,#0x6
+   \   00014F   78..         MOV     R0,#?V0 + 0
+   \   000151   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000154   7920         MOV     R1,#0x20
+   \   000156   7C..         MOV     R4,#Gps_epDesc & 0xff
+   \   000158   7D..         MOV     R5,#(Gps_epDesc >> 8) & 0xff
+   \   00015A   7A..         MOV     R2,#Gps_DstAddr & 0xff
+   \   00015C   7B..         MOV     R3,#(Gps_DstAddr >> 8) & 0xff
+   \   00015E   12....       LCALL   ??AF_DataRequest?relay
+   \   000161   7409         MOV     A,#0x9
+   \   000163   12....       LCALL   ?DEALLOC_XSTACK8
+    605            {
+    606              // Successfully requested to be sent.
+    607            }
+    608            else
+    609            {
+    610              // Error occurred in request to send.
+    611            }
+    612          }
+   \   000166   7421         MOV     A,#0x21
+   \   000168   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00016B   7F02         MOV     R7,#0x2
+   \   00016D   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   85..82       MOV     DPL,?XSP + 0
+   \   000003   85..83       MOV     DPH,?XSP + 1
+   \   000006   E582         MOV     A,DPL
+   \   000008   28           ADD     A,R0
+   \   000009   F8           MOV     R0,A
+   \   00000A   E583         MOV     A,DPH
+   \   00000C   3400         ADDC    A,#0x0
+   \   00000E   F9           MOV     R1,A
+   \   00000F   E8           MOV     A,R0
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   85..82       MOV     DPL,?XSP + 0
+   \   000003   85..83       MOV     DPH,?XSP + 1
+   \   000006   E582         MOV     A,DPL
+   \   000008   28           ADD     A,R0
+   \   000009                REQUIRE ??Subroutine38_0
+   \   000009                ; // Fall through to label ??Subroutine38_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine38_0:
+   \   000000   F582         MOV     DPL,A
+   \   000002   E583         MOV     A,DPH
+   \   000004                REQUIRE ??Subroutine39_0
+   \   000004                ; // Fall through to label ??Subroutine39_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine39_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   22           RET
+    613          
+    614          #if defined( IAR_ARMCM3_LM )
+    615          /*********************************************************************
+    616           * @fn      Gps_ProcessRtosMessage
+    617           *
+    618           * @brief   Receive message from RTOS queue, send response back.
+    619           *
+    620           * @param   none
+    621           *
+    622           * @return  none
+    623           */
+    624          static void Gps_ProcessRtosMessage( void )
+    625          {
+    626            osalQueue_t inMsg;
+    627          
+    628            if ( osal_queue_receive( OsalQueue, &inMsg, 0 ) == pdPASS )
+    629            {
+    630              uint8 cmndId = inMsg.cmnd;
+    631              uint32 counter = osal_build_uint32( inMsg.cbuf, 4 );
+    632          
+    633              switch ( cmndId )
+    634              {
+    635                case CMD_INCR:
+    636                  counter += 1;  /* Increment the incoming counter */
+    637                                 /* Intentionally fall through next case */
+    638          
+    639                case CMD_ECHO:
+    640                {
+    641                  userQueue_t outMsg;
+    642          
+    643                  outMsg.resp = RSP_CODE | cmndId;  /* Response ID */
+    644                  osal_buffer_uint32( outMsg.rbuf, counter );    /* Increment counter */
+    645                  osal_queue_send( UserQueue1, &outMsg, 0 );  /* Send back to UserTask */
+    646                  break;
+    647                }
+    648                
+    649                default:
+    650                  break;  /* Ignore unknown command */    
+    651              }
+    652            }
+    653          }
+    654          
+    655          #endif
+    656          
+    657          //***********************************************************************************
+    658          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    659          uint16 GpsMeasurement_ProcessEvent( uint8 task_id, uint16 events )
+   \                     GpsMeasurement_ProcessEvent:
+    660          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    661            if ( events & GPSMEASUREMENT_EVT )
+   \   000009   EE           MOV     A,R6
+   \   00000A   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000C   502C         JNC     ??GpsMeasurement_ProcessEvent_0
+    662            {
+    663              osal_start_timerEx( GpsMeasurement_TaskID,
+    664                                  GPSMEASUREMENT_EVT,
+    665                                  GPSMEASUREMENT_TIMEOUT );
+   \   00000E                ; Setup parameters for call to function osal_start_timerEx
+   \   00000E   7CE8         MOV     R4,#-0x18
+   \   000010   7D03         MOV     R5,#0x3
+   \   000012   7A01         MOV     R2,#0x1
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   90....       MOV     DPTR,#GpsMeasurement_TaskID
+   \   000019   12....       LCALL   ??Subroutine37_0 & 0xFFFF
+    666            
+    667              HalUARTRead(0, Recdata, 300);
+   \                     ??CrossCallReturnLabel_99:
+   \   00001C                ; Setup parameters for call to function HalUARTRead
+   \   00001C   7C2C         MOV     R4,#0x2c
+   \   00001E   7D01         MOV     R5,#0x1
+   \   000020   7A..         MOV     R2,#Recdata & 0xff
+   \   000022   7B..         MOV     R3,#(Recdata >> 8) & 0xff
+   \   000024   7900         MOV     R1,#0x0
+   \   000026   12....       LCALL   ??HalUARTRead?relay
+    668              handle();
+   \   000029                ; Setup parameters for call to function handle
+   \   000029   12....       LCALL   ??handle?relay
+    669              flag++;
+   \   00002C   90....       MOV     DPTR,#flag
+   \   00002F   12....       LCALL   ?Subroutine11 & 0xFFFF
+    670              // return unprocessed events
+    671              return (events ^ GPSMEASUREMENT_EVT);
+   \                     ??CrossCallReturnLabel_22:
+   \   000032   EE           MOV     A,R6
+   \   000033   6401         XRL     A,#0x1
+   \   000035   FA           MOV     R2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   FB           MOV     R3,A
+   \   000038   8004         SJMP    ??GpsMeasurement_ProcessEvent_1
+    672            }
+    673          
+    674            // Discard unknown events
+    675            return 0;
+   \                     ??GpsMeasurement_ProcessEvent_0:
+   \   00003A   7A00         MOV     R2,#0x0
+   \   00003C   7B00         MOV     R3,#0x0
+   \                     ??GpsMeasurement_ProcessEvent_1:
+   \   00003E   02....       LJMP    ?Subroutine0 & 0xFFFF
+    676          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   12....       LCALL   ?Subroutine35 & 0xFFFF
+   \                     ??CrossCallReturnLabel_86:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine35:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   2401         ADD     A,#0x1
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   A3           INC     DPTR
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   22           RET
+    677          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    678          void GpsMeasurement_Init( uint8 task_id )
+   \                     GpsMeasurement_Init:
+    679          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    680            GpsMeasurement_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#GpsMeasurement_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    681            GpsMeasurement_TransID = 0;
+   \   00000A   90....       MOV     DPTR,#GpsMeasurement_TransID
+   \   00000D   E4           CLR     A
+   \   00000E   F0           MOVX    @DPTR,A
+    682            
+    683            osal_start_timerEx( GpsMeasurement_TaskID,
+    684                                  GPSMEASUREMENT_EVT,
+    685                                  GPSMEASUREMENT_TIMEOUT );
+   \   00000F                ; Setup parameters for call to function osal_start_timerEx
+   \   00000F   7CE8         MOV     R4,#-0x18
+   \   000011   7D03         MOV     R5,#0x3
+   \   000013   7A01         MOV     R2,#0x1
+   \   000015   FB           MOV     R3,A
+   \   000016   12....       LCALL   ??osal_start_timerEx?relay
+    686            
+    687            RegisterForKeys( GpsMeasurement_TaskID );  
+   \   000019                ; Setup parameters for call to function RegisterForKeys
+   \   000019   90....       MOV     DPTR,#GpsMeasurement_TaskID
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??RegisterForKeys?relay
+    688          }
+   \   000021   02....       LJMP    ?Subroutine0 & 0xFFFF
+    689          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    690          void handle()
+   \                     handle:
+    691          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    692            check=0;
+   \   000004   90....       MOV     DPTR,#check
+   \   000007   12....       LCALL   ?Subroutine9 & 0xFFFF
+    693            Recdata_GPGGA_start=0;
+    694            Recdata_GPGSV_start=0;
+   \                     ??CrossCallReturnLabel_18:
+   \   00000A   90....       MOV     DPTR,#Recdata_GPGSV_start
+   \   00000D   12....       LCALL   ??Subroutine40_0 & 0xFFFF
+    695            Recdata_GPGSA_start=0;
+    696            Recdata_GPRMC_start=0;
+    697            Recdata_GPVTG_start=0;
+   \                     ??CrossCallReturnLabel_108:
+   \   000010   F0           MOVX    @DPTR,A
+    698            while(check<295)
+    699            {
+    700                if(Recdata[check]=='$'&&Recdata[check+1]=='G'&&Recdata[check+2]=='P'
+    701                  &&Recdata[check+3]=='G'&&Recdata[check+4]=='G'&&Recdata[check+5]=='A')
+   \                     ??handle_0:
+   \   000011   90....       MOV     DPTR,#check
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   24..         ADD     A,#Recdata & 0xff
+   \   000017   F8           MOV     R0,A
+   \   000018   A3           INC     DPTR
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   34..         ADDC    A,#(Recdata >> 8) & 0xff
+   \   00001C   F9           MOV     R1,A
+   \   00001D   8882         MOV     DPL,R0
+   \   00001F   8983         MOV     DPH,R1
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6424         XRL     A,#0x24
+   \   000024   6003         JZ      $+5
+   \   000026   02....       LJMP    ??handle_1 & 0xFFFF
+   \   000029   90....       MOV     DPTR,#check
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   24..         ADD     A,#(Recdata + 1) & 0xff
+   \   00002F   08           INC     R0
+   \   000030   A3           INC     DPTR
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   34..         ADDC    A,#((Recdata + 1) >> 8) & 0xff
+   \   000034   F9           MOV     R1,A
+   \   000035   8882         MOV     DPL,R0
+   \   000037   8983         MOV     DPH,R1
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   6447         XRL     A,#0x47
+   \   00003C   6003         JZ      $+5
+   \   00003E   02....       LJMP    ??handle_1 & 0xFFFF
+   \   000041   90....       MOV     DPTR,#check
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   24..         ADD     A,#(Recdata + 2) & 0xff
+   \   000047   08           INC     R0
+   \   000048   A3           INC     DPTR
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   34..         ADDC    A,#((Recdata + 2) >> 8) & 0xff
+   \   00004C   F9           MOV     R1,A
+   \   00004D   8882         MOV     DPL,R0
+   \   00004F   8983         MOV     DPH,R1
+   \   000051   E0           MOVX    A,@DPTR
+   \   000052   6450         XRL     A,#0x50
+   \   000054   6003         JZ      $+5
+   \   000056   02....       LJMP    ??handle_1 & 0xFFFF
+   \   000059   90....       MOV     DPTR,#check
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   24..         ADD     A,#(Recdata + 3) & 0xff
+   \   00005F   08           INC     R0
+   \   000060   A3           INC     DPTR
+   \   000061   E0           MOVX    A,@DPTR
+   \   000062   34..         ADDC    A,#((Recdata + 3) >> 8) & 0xff
+   \   000064   F9           MOV     R1,A
+   \   000065   8882         MOV     DPL,R0
+   \   000067   8983         MOV     DPH,R1
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   6447         XRL     A,#0x47
+   \   00006C   6003         JZ      $+5
+   \   00006E   02....       LJMP    ??handle_2 & 0xFFFF
+   \   000071   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000074   6447         XRL     A,#0x47
+   \   000076   6003         JZ      $+5
+   \   000078   02....       LJMP    ??handle_3 & 0xFFFF
+   \   00007B   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   00007E   6441         XRL     A,#0x41
+   \   000080   6003         JZ      $+5
+   \   000082   02....       LJMP    ??handle_1 & 0xFFFF
+    702                {
+    703                   position=check+6;
+   \   000085   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   000088   8021         SJMP    ??CrossCallReturnLabel_106
+    704                   while(Recdata_GPGGA_start<70&&Recdata[position++]!='$')
+    705                   {
+    706                     Recdata_GPGGA[Recdata_GPGGA_start++]=Recdata[position-1];
+   \                     ??handle_4:
+   \   00008A   12....       LCALL   ?Subroutine15 & 0xFFFF
+    707                     Recdata_GPGSV_start=0;
+    708                     Recdata_GPGSA_start=0;
+    709                     Recdata_GPRMC_start=0;
+    710                     Recdata_GPVTG_start=0;
+    711                   }
+   \                     ??CrossCallReturnLabel_34:
+   \   00008D   C0E0         PUSH    A
+   \   00008F   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   24..         ADD     A,#Recdata_GPGGA & 0xff
+   \   000095   F8           MOV     R0,A
+   \   000096   A3           INC     DPTR
+   \   000097   E0           MOVX    A,@DPTR
+   \   000098   34..         ADDC    A,#(Recdata_GPGGA >> 8) & 0xff
+   \   00009A   F9           MOV     R1,A
+   \   00009B   8882         MOV     DPL,R0
+   \   00009D   8983         MOV     DPH,R1
+   \   00009F   D0E0         POP     A
+   \   0000A1   F0           MOVX    @DPTR,A
+   \   0000A2   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   0000A5   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   0000A8   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_106:
+   \   0000AB   F0           MOVX    @DPTR,A
+   \   0000AC   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   0000AF   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_46:
+   \   0000B2   5005         JNC     ??handle_5
+   \   0000B4   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   0000B7   70D1         JNZ     ??handle_4
+    712                   //uint GaoDu_count=0;
+    713                   
+    714                   
+    715                   for (uint i=0;i<6;i++)
+   \                     ??handle_5:
+   \   0000B9   7800         MOV     R0,#0x0
+   \   0000BB   7900         MOV     R1,#0x0
+    716                     UTC[i]=Recdata_GPGGA[i+1];
+   \                     ??handle_6:
+   \   0000BD   74..         MOV     A,#(Recdata_GPGGA + 1) & 0xff
+   \   0000BF   28           ADD     A,R0
+   \   0000C0   F582         MOV     DPL,A
+   \   0000C2   74..         MOV     A,#((Recdata_GPGGA + 1) >> 8) & 0xff
+   \   0000C4   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_64:
+   \   0000C7   C0E0         PUSH    A
+   \   0000C9   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_56:
+   \   0000CC   D0E0         POP     A
+   \   0000CE   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000D1   40EA         JC      ??handle_6
+    717                   if (Recdata_GPGGA[12]==',')
+   \   0000D3   90....       MOV     DPTR,#Recdata_GPGGA + 12
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   642C         XRL     A,#0x2c
+   \   0000D9   702F         JNZ     ??handle_7
+    718                   {
+    719                     for (uint i=0;i<9;i++)
+    720                       WeiDu[i]='*';
+   \   0000DB   742A         MOV     A,#0x2a
+   \   0000DD   90....       MOV     DPTR,#WeiDu
+   \   0000E0   7809         MOV     R0,#0x9
+   \                     ??handle_8:
+   \   0000E2   F0           MOVX    @DPTR,A
+   \   0000E3   A3           INC     DPTR
+   \   0000E4   D8FC         DJNZ    R0,??handle_8
+    721                     for (uint i=0;i<10;i++)
+    722                       JingDu[i]='*';
+   \   0000E6   90....       MOV     DPTR,#JingDu
+   \   0000E9   780A         MOV     R0,#0xa
+   \                     ??handle_9:
+   \   0000EB   F0           MOVX    @DPTR,A
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   D8FC         DJNZ    R0,??handle_9
+    723                     for (uint i=0;i<2;i++)
+   \   0000EF   7800         MOV     R0,#0x0
+   \   0000F1   7900         MOV     R1,#0x0
+    724                       WeiXing[i]='*';
+   \                     ??handle_10:
+   \   0000F3   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_62:
+   \   0000F6   742A         MOV     A,#0x2a
+   \   0000F8   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0000FB   40F6         JC      ??handle_10
+    725                     for (uint i=0;i<5;i++)
+    726                       GaoDu[i]='*';
+   \   0000FD   742A         MOV     A,#0x2a
+   \   0000FF   90....       MOV     DPTR,#GaoDu
+   \   000102   7805         MOV     R0,#0x5
+   \                     ??handle_11:
+   \   000104   F0           MOVX    @DPTR,A
+   \   000105   A3           INC     DPTR
+   \   000106   D8FC         DJNZ    R0,??handle_11
+   \   000108   8034         SJMP    ??handle_12
+    727                   }
+    728                   else
+    729                   {
+    730                     for (uint i=0;i<9;i++)
+   \                     ??handle_7:
+   \   00010A   7800         MOV     R0,#0x0
+   \   00010C   7900         MOV     R1,#0x0
+    731                       WeiDu[i]=Recdata_GPGGA[i+12];
+   \                     ??handle_13:
+   \   00010E   74..         MOV     A,#(Recdata_GPGGA + 12) & 0xff
+   \   000110   28           ADD     A,R0
+   \   000111   F582         MOV     DPL,A
+   \   000113   74..         MOV     A,#((Recdata_GPGGA + 12) >> 8) & 0xff
+   \   000115   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_65:
+   \   000118   C0E0         PUSH    A
+   \   00011A   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   00011D   D0E0         POP     A
+   \   00011F   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000122   40EA         JC      ??handle_13
+    732                     for (uint i=0;i<10;i++)
+   \   000124   7800         MOV     R0,#0x0
+   \   000126   7900         MOV     R1,#0x0
+    733                       JingDu[i]=Recdata_GPGGA[i+24];
+   \                     ??handle_14:
+   \   000128   74..         MOV     A,#(Recdata_GPGGA + 24) & 0xff
+   \   00012A   28           ADD     A,R0
+   \   00012B   F582         MOV     DPL,A
+   \   00012D   74..         MOV     A,#((Recdata_GPGGA + 24) >> 8) & 0xff
+   \   00012F   12....       LCALL   ?Subroutine28 & 0xFFFF
+    734                   }
+   \                     ??CrossCallReturnLabel_66:
+   \   000132   C0E0         PUSH    A
+   \   000134   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_60:
+   \   000137   D0E0         POP     A
+   \   000139   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   00013C   40EA         JC      ??handle_14
+    735                   uint GaoDu_count=0;
+   \                     ??handle_12:
+   \   00013E   7800         MOV     R0,#0x0
+   \   000140   7900         MOV     R1,#0x0
+   \   000142   8011         SJMP    ??handle_15
+    736                   while(Recdata_GPGGA[GaoDu_count]!='M')
+    737                   {
+    738                     if(GaoDu_count<70)
+   \                     ??handle_16:
+   \   000144   C3           CLR     C
+   \   000145   E8           MOV     A,R0
+   \   000146   9446         SUBB    A,#0x46
+   \   000148   E9           MOV     A,R1
+   \   000149   9400         SUBB    A,#0x0
+   \   00014B   50F7         JNC     ??handle_16
+    739                       GaoDu_count++;
+   \   00014D   E8           MOV     A,R0
+   \   00014E   2401         ADD     A,#0x1
+   \   000150   08           INC     R0
+   \   000151   E9           MOV     A,R1
+   \   000152   3400         ADDC    A,#0x0
+   \   000154   F9           MOV     R1,A
+    740                   }
+   \                     ??handle_15:
+   \   000155   74..         MOV     A,#Recdata_GPGGA & 0xff
+   \   000157   28           ADD     A,R0
+   \   000158   F582         MOV     DPL,A
+   \   00015A   74..         MOV     A,#(Recdata_GPGGA >> 8) & 0xff
+   \   00015C   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_67:
+   \   00015F   644D         XRL     A,#0x4d
+   \   000161   70E1         JNZ     ??handle_16
+    741                   if(Recdata_GPGGA[GaoDu_count]=='M')
+    742                   {
+    743                     if(Recdata_GPGGA[GaoDu_count-6]>'0'&&Recdata_GPGGA[GaoDu_count-6]<='9')
+   \   000163   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_54:
+   \   000166   24CF         ADD     A,#-0x31
+   \   000168   C3           CLR     C
+   \   000169   9409         SUBB    A,#0x9
+   \   00016B   503D         JNC     ??handle_17
+    744                     {
+    745                       GaoDu[0]=Recdata_GPGGA[GaoDu_count-6];
+   \   00016D   74..         MOV     A,#Recdata_GPGGA & 0xff
+   \   00016F   28           ADD     A,R0
+   \   000170   F8           MOV     R0,A
+   \   000171   74..         MOV     A,#(Recdata_GPGGA >> 8) & 0xff
+   \   000173   39           ADDC    A,R1
+   \   000174   F9           MOV     R1,A
+   \   000175   E8           MOV     A,R0
+   \   000176   24FA         ADD     A,#-0x6
+   \   000178   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_73:
+   \   00017B   90....       MOV     DPTR,#GaoDu
+   \   00017E   F0           MOVX    @DPTR,A
+    746                       GaoDu[1]=Recdata_GPGGA[GaoDu_count-5];
+   \                     ??handle_18:
+   \   00017F   E8           MOV     A,R0
+   \   000180   24FB         ADD     A,#-0x5
+   \   000182   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_74:
+   \   000185   90....       MOV     DPTR,#GaoDu + 1
+   \   000188   F0           MOVX    @DPTR,A
+    747                       GaoDu[2]=Recdata_GPGGA[GaoDu_count-4];
+   \                     ??handle_19:
+   \   000189   E8           MOV     A,R0
+   \   00018A   24FC         ADD     A,#-0x4
+   \   00018C   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_75:
+   \   00018F   90....       MOV     DPTR,#GaoDu + 2
+   \   000192   F0           MOVX    @DPTR,A
+    748                       GaoDu[3]=Recdata_GPGGA[GaoDu_count-3];
+   \   000193   E8           MOV     A,R0
+   \   000194   24FD         ADD     A,#-0x3
+   \   000196   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_76:
+   \   000199   90....       MOV     DPTR,#GaoDu + 3
+   \   00019C   F0           MOVX    @DPTR,A
+    749                       GaoDu[4]=Recdata_GPGGA[GaoDu_count-2];
+   \   00019D   E8           MOV     A,R0
+   \   00019E   24FE         ADD     A,#-0x2
+   \   0001A0   12....       LCALL   ?Subroutine29 & 0xFFFF
+    750                     }
+   \                     ??CrossCallReturnLabel_77:
+   \   0001A3   90....       MOV     DPTR,#GaoDu + 4
+   \                     ??handle_20:
+   \   0001A6   F0           MOVX    @DPTR,A
+   \   0001A7   02....       LJMP    ??handle_1 & 0xFFFF
+    751                     else if(Recdata_GPGGA[GaoDu_count-5]>'0'&&Recdata_GPGGA[GaoDu_count-6]<='9')
+   \                     ??handle_17:
+   \   0001AA   74..         MOV     A,#(Recdata_GPGGA + 251) & 0xff
+   \   0001AC   28           ADD     A,R0
+   \   0001AD   F582         MOV     DPL,A
+   \   0001AF   74..         MOV     A,#((Recdata_GPGGA - 5) >> 8) & 0xff
+   \   0001B1   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_68:
+   \   0001B4   C3           CLR     C
+   \   0001B5   9431         SUBB    A,#0x31
+   \   0001B7   4012         JC      ??handle_21
+   \   0001B9   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   0001BC   C3           CLR     C
+   \   0001BD   943A         SUBB    A,#0x3a
+   \   0001BF   500A         JNC     ??handle_21
+    752                     {
+    753                       GaoDu[0]='0';
+   \   0001C1   90....       MOV     DPTR,#GaoDu
+   \   0001C4   7430         MOV     A,#0x30
+   \   0001C6   12....       LCALL   ?Subroutine12 & 0xFFFF
+    754                       GaoDu[1]=Recdata_GPGGA[GaoDu_count-5];
+    755                       GaoDu[2]=Recdata_GPGGA[GaoDu_count-4];
+    756                       GaoDu[3]=Recdata_GPGGA[GaoDu_count-3];
+    757                       GaoDu[4]=Recdata_GPGGA[GaoDu_count-2];
+    758                     }
+   \                     ??CrossCallReturnLabel_25:
+   \   0001C9   80B4         SJMP    ??handle_18
+    759                     else 
+    760                     {
+    761                       GaoDu[0]='0';
+   \                     ??handle_21:
+   \   0001CB   90....       MOV     DPTR,#GaoDu
+   \   0001CE   7430         MOV     A,#0x30
+   \   0001D0   F0           MOVX    @DPTR,A
+    762                       GaoDu[1]='0';
+   \   0001D1   A3           INC     DPTR
+   \   0001D2   12....       LCALL   ?Subroutine12 & 0xFFFF
+    763                       GaoDu[2]=Recdata_GPGGA[GaoDu_count-4];
+    764                       GaoDu[3]=Recdata_GPGGA[GaoDu_count-3];
+    765                       GaoDu[4]=Recdata_GPGGA[GaoDu_count-2];
+    766                     }
+    767                   }
+    768                }
+   \                     ??CrossCallReturnLabel_26:
+   \   0001D5   80B2         SJMP    ??handle_19
+   \                     ??handle_3:
+   \   0001D7   E0           MOVX    A,@DPTR
+   \   0001D8   6453         XRL     A,#0x53
+   \   0001DA   6003         JZ      $+5
+   \   0001DC   02....       LJMP    ??handle_1 & 0xFFFF
+   \   0001DF   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   0001E2   6456         XRL     A,#0x56
+   \   0001E4   7056         JNZ     ??handle_22
+    769                else if(Recdata[check]=='$'&&Recdata[check+1]=='G'&&Recdata[check+2]=='P'
+    770                   &&Recdata[check+3]=='G'&&Recdata[check+4]=='S'&&Recdata[check+5]=='V')
+    771                {
+    772                   position=check+6;
+   \   0001E6   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   0001E9   8024         SJMP    ??CrossCallReturnLabel_107
+    773                   while(Recdata[position++]!='$'&&Recdata_GPGSV_start<70)
+    774                   {
+    775                     Recdata_GPGSV[Recdata_GPGSV_start++]=Recdata[position-1];
+   \                     ??handle_23:
+   \   0001EB   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   0001EE   C0E0         PUSH    A
+   \   0001F0   90....       MOV     DPTR,#Recdata_GPGSV_start
+   \   0001F3   E0           MOVX    A,@DPTR
+   \   0001F4   24..         ADD     A,#Recdata_GPGSV & 0xff
+   \   0001F6   F8           MOV     R0,A
+   \   0001F7   A3           INC     DPTR
+   \   0001F8   E0           MOVX    A,@DPTR
+   \   0001F9   34..         ADDC    A,#(Recdata_GPGSV >> 8) & 0xff
+   \   0001FB   F9           MOV     R1,A
+   \   0001FC   8882         MOV     DPL,R0
+   \   0001FE   8983         MOV     DPH,R1
+   \   000200   D0E0         POP     A
+   \   000202   F0           MOVX    @DPTR,A
+   \   000203   90....       MOV     DPTR,#Recdata_GPGSV_start
+   \   000206   12....       LCALL   ?Subroutine11 & 0xFFFF
+    776                     Recdata_GPGGA_start=0;
+   \                     ??CrossCallReturnLabel_23:
+   \   000209   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   00020C   12....       LCALL   ?Subroutine2 & 0xFFFF
+    777                     Recdata_GPGSA_start=0;
+    778                     Recdata_GPRMC_start=0;
+    779                     Recdata_GPVTG_start=0;
+    780                   }
+   \                     ??CrossCallReturnLabel_107:
+   \   00020F   F0           MOVX    @DPTR,A
+   \   000210   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000213   6008         JZ      ??handle_24
+   \   000215   90....       MOV     DPTR,#Recdata_GPGSV_start
+   \   000218   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   00021B   40CE         JC      ??handle_23
+    781          		 for (uint i=0;i<2;i++)
+   \                     ??handle_24:
+   \   00021D   7800         MOV     R0,#0x0
+   \   00021F   7900         MOV     R1,#0x0
+    782                     WeiXing[i]=Recdata_GPGSV[i+5];
+   \                     ??handle_25:
+   \   000221   74..         MOV     A,#(Recdata_GPGSV + 5) & 0xff
+   \   000223   28           ADD     A,R0
+   \   000224   F582         MOV     DPL,A
+   \   000226   74..         MOV     A,#((Recdata_GPGSV + 5) >> 8) & 0xff
+   \   000228   12....       LCALL   ?Subroutine28 & 0xFFFF
+    783                }
+   \                     ??CrossCallReturnLabel_69:
+   \   00022B   C0E0         PUSH    A
+   \   00022D   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_63:
+   \   000230   D0E0         POP     A
+   \   000232   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000235   4003         JC      $+5
+   \   000237   02....       LJMP    ??handle_1 & 0xFFFF
+   \   00023A   80E5         SJMP    ??handle_25
+   \                     ??handle_22:
+   \   00023C   E0           MOVX    A,@DPTR
+   \   00023D   6441         XRL     A,#0x41
+   \   00023F   6003         JZ      $+5
+   \   000241   02....       LJMP    ??handle_1 & 0xFFFF
+    784                else if(Recdata[check]=='$'&&Recdata[check+1]=='G'&&Recdata[check+2]=='P'
+    785                    &&Recdata[check+3]=='G'&&Recdata[check+4]=='S'&&Recdata[check+5]=='A')
+    786                {
+    787                    position=check+6;
+   \   000244   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000247   8027         SJMP    ??CrossCallReturnLabel_27
+    788                    while(Recdata_GPGSA_start<70&&Recdata[position++]!='$')
+    789                    {
+    790                      Recdata_GPGSA[Recdata_GPGSA_start++]=Recdata[position-1];
+   \                     ??handle_26:
+   \   000249   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   00024C   C0E0         PUSH    A
+   \   00024E   90....       MOV     DPTR,#Recdata_GPGSA_start
+   \   000251   E0           MOVX    A,@DPTR
+   \   000252   24..         ADD     A,#Recdata_GPGSA & 0xff
+   \   000254   F8           MOV     R0,A
+   \   000255   A3           INC     DPTR
+   \   000256   E0           MOVX    A,@DPTR
+   \   000257   34..         ADDC    A,#(Recdata_GPGSA >> 8) & 0xff
+   \   000259   F9           MOV     R1,A
+   \   00025A   8882         MOV     DPL,R0
+   \   00025C   8983         MOV     DPH,R1
+   \   00025E   D0E0         POP     A
+   \   000260   F0           MOVX    @DPTR,A
+   \   000261   90....       MOV     DPTR,#Recdata_GPGSA_start
+   \   000264   12....       LCALL   ?Subroutine10 & 0xFFFF
+    791                      Recdata_GPGSV_start=0;
+   \                     ??CrossCallReturnLabel_21:
+   \   000267   12....       LCALL   ?Subroutine9 & 0xFFFF
+    792                      Recdata_GPGGA_start=0;
+    793                      Recdata_GPRMC_start=0;
+   \                     ??CrossCallReturnLabel_19:
+   \   00026A   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   00026D   12....       LCALL   ?Subroutine13 & 0xFFFF
+    794                      Recdata_GPVTG_start=0;
+    795                    }
+   \                     ??CrossCallReturnLabel_27:
+   \   000270   F0           MOVX    @DPTR,A
+   \   000271   90....       MOV     DPTR,#Recdata_GPGSA_start
+   \   000274   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000277   5005         JNC     ??handle_27
+   \   000279   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   00027C   70CB         JNZ     ??handle_26
+    796                    JiBie[0]=Recdata_GPGSA[3];
+   \                     ??handle_27:
+   \   00027E   90....       MOV     DPTR,#Recdata_GPGSA + 3
+   \   000281   E0           MOVX    A,@DPTR
+   \   000282   90....       MOV     DPTR,#JiBie
+   \   000285   02....       LJMP    ??handle_20 & 0xFFFF
+    797                }
+   \                     ??handle_2:
+   \   000288   E0           MOVX    A,@DPTR
+   \   000289   6452         XRL     A,#0x52
+   \   00028B   6003         JZ      $+5
+   \   00028D   02....       LJMP    ??handle_28 & 0xFFFF
+   \   000290   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   000293   644D         XRL     A,#0x4d
+   \   000295   6003         JZ      $+5
+   \   000297   02....       LJMP    ??handle_1 & 0xFFFF
+   \   00029A   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   00029D   6443         XRL     A,#0x43
+   \   00029F   6003         JZ      $+5
+   \   0002A1   02....       LJMP    ??handle_1 & 0xFFFF
+    798                else if(Recdata[check]=='$'&&Recdata[check+1]=='G'&&Recdata[check+2]=='P'
+    799                     &&Recdata[check+3]=='R'&&Recdata[check+4]=='M'&&Recdata[check+5]=='C')
+    800                {
+    801                    position=check+6;
+   \   0002A4   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   0002A7   8024         SJMP    ??CrossCallReturnLabel_28
+    802                    while(Recdata_GPRMC_start<70&&Recdata[position++]!='$')
+    803                    {
+    804                      Recdata_GPRMC[Recdata_GPRMC_start++]=Recdata[position-1];
+   \                     ??handle_29:
+   \   0002A9   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   0002AC   C0E0         PUSH    A
+   \   0002AE   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   0002B1   E0           MOVX    A,@DPTR
+   \   0002B2   24..         ADD     A,#Recdata_GPRMC & 0xff
+   \   0002B4   F8           MOV     R0,A
+   \   0002B5   A3           INC     DPTR
+   \   0002B6   E0           MOVX    A,@DPTR
+   \   0002B7   34..         ADDC    A,#(Recdata_GPRMC >> 8) & 0xff
+   \   0002B9   F9           MOV     R1,A
+   \   0002BA   8882         MOV     DPL,R0
+   \   0002BC   8983         MOV     DPH,R1
+   \   0002BE   D0E0         POP     A
+   \   0002C0   F0           MOVX    @DPTR,A
+   \   0002C1   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   0002C4   12....       LCALL   ?Subroutine3 & 0xFFFF
+    805                      Recdata_GPGSV_start=0;
+    806                      Recdata_GPGSA_start=0;
+    807                      Recdata_GPGGA_start=0;
+   \                     ??CrossCallReturnLabel_5:
+   \   0002C7   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   0002CA   12....       LCALL   ?Subroutine13 & 0xFFFF
+    808                      Recdata_GPVTG_start=0;
+    809                    }
+   \                     ??CrossCallReturnLabel_28:
+   \   0002CD   F0           MOVX    @DPTR,A
+   \   0002CE   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   0002D1   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   0002D4   5005         JNC     ??handle_30
+   \   0002D6   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0002D9   70CE         JNZ     ??handle_29
+    810                    for (uint i=0;i<6;i++)
+   \                     ??handle_30:
+   \   0002DB   7800         MOV     R0,#0x0
+   \   0002DD   7900         MOV     R1,#0x0
+    811                      UTC[i]=Recdata_GPRMC[i+1];
+   \                     ??handle_31:
+   \   0002DF   74..         MOV     A,#(Recdata_GPRMC + 1) & 0xff
+   \   0002E1   28           ADD     A,R0
+   \   0002E2   F582         MOV     DPL,A
+   \   0002E4   74..         MOV     A,#((Recdata_GPRMC + 1) >> 8) & 0xff
+   \   0002E6   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_70:
+   \   0002E9   C0E0         PUSH    A
+   \   0002EB   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   0002EE   D0E0         POP     A
+   \   0002F0   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   0002F3   40EA         JC      ??handle_31
+    812                    if (Recdata_GPRMC[14]==',')
+   \   0002F5   90....       MOV     DPTR,#Recdata_GPRMC + 14
+   \   0002F8   E0           MOVX    A,@DPTR
+   \   0002F9   642C         XRL     A,#0x2c
+   \   0002FB   7017         JNZ     ??handle_32
+    813                    {
+    814                      for (uint i=0;i<9;i++)
+    815                        WeiDu[i]='*';
+   \   0002FD   742A         MOV     A,#0x2a
+   \   0002FF   90....       MOV     DPTR,#WeiDu
+   \   000302   7809         MOV     R0,#0x9
+   \                     ??handle_33:
+   \   000304   F0           MOVX    @DPTR,A
+   \   000305   A3           INC     DPTR
+   \   000306   D8FC         DJNZ    R0,??handle_33
+    816                      for (uint i=0;i<10;i++)
+    817                        JingDu[i]='*';
+   \   000308   90....       MOV     DPTR,#JingDu
+   \   00030B   780A         MOV     R0,#0xa
+   \                     ??handle_34:
+   \   00030D   F0           MOVX    @DPTR,A
+   \   00030E   A3           INC     DPTR
+   \   00030F   D8FC         DJNZ    R0,??handle_34
+   \   000311   02....       LJMP    ??handle_1 & 0xFFFF
+    818                    }
+    819                    else
+    820                    {
+    821                      for (uint i=0;i<9;i++)
+   \                     ??handle_32:
+   \   000314   7800         MOV     R0,#0x0
+   \   000316   7900         MOV     R1,#0x0
+    822                        WeiDu[i]=Recdata_GPRMC[i+14];
+   \                     ??handle_35:
+   \   000318   74..         MOV     A,#(Recdata_GPRMC + 14) & 0xff
+   \   00031A   28           ADD     A,R0
+   \   00031B   F582         MOV     DPL,A
+   \   00031D   74..         MOV     A,#((Recdata_GPRMC + 14) >> 8) & 0xff
+   \   00031F   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_71:
+   \   000322   C0E0         PUSH    A
+   \   000324   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   000327   D0E0         POP     A
+   \   000329   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00032C   40EA         JC      ??handle_35
+    823                      for (uint i=0;i<10;i++)
+   \   00032E   7800         MOV     R0,#0x0
+   \   000330   7900         MOV     R1,#0x0
+    824                        JingDu[i]=Recdata_GPRMC[i+26];
+   \                     ??handle_36:
+   \   000332   74..         MOV     A,#(Recdata_GPRMC + 26) & 0xff
+   \   000334   28           ADD     A,R0
+   \   000335   F582         MOV     DPL,A
+   \   000337   74..         MOV     A,#((Recdata_GPRMC + 26) >> 8) & 0xff
+   \   000339   12....       LCALL   ?Subroutine28 & 0xFFFF
+    825                    }
+    826                }
+   \                     ??CrossCallReturnLabel_72:
+   \   00033C   C0E0         PUSH    A
+   \   00033E   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_61:
+   \   000341   D0E0         POP     A
+   \   000343   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000346   504C         JNC     ??handle_1
+   \   000348   80E8         SJMP    ??handle_36
+   \                     ??handle_28:
+   \   00034A   E0           MOVX    A,@DPTR
+   \   00034B   6456         XRL     A,#0x56
+   \   00034D   7045         JNZ     ??handle_1
+   \   00034F   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   000352   6454         XRL     A,#0x54
+   \   000354   703E         JNZ     ??handle_1
+   \   000356   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000359   6447         XRL     A,#0x47
+   \   00035B   7037         JNZ     ??handle_1
+    827                else if(Recdata[check]=='$'&&Recdata[check+1]=='G'&&Recdata[check+2]=='P'
+    828                     &&Recdata[check+3]=='V'&&Recdata[check+4]=='T'&&Recdata[check+5]=='G')
+    829                {
+    830                    position=check+6;
+   \   00035D   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   000360   8024         SJMP    ??CrossCallReturnLabel_84
+    831                    while(Recdata_GPVTG_start<70&&Recdata[position++]!='$')
+    832                    {
+    833                      Recdata_GPVTG[Recdata_GPVTG_start++]=Recdata[position-1];
+   \                     ??handle_37:
+   \   000362   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_38:
+   \   000365   C0E0         PUSH    A
+   \   000367   90....       MOV     DPTR,#Recdata_GPVTG_start
+   \   00036A   E0           MOVX    A,@DPTR
+   \   00036B   24..         ADD     A,#Recdata_GPVTG & 0xff
+   \   00036D   F8           MOV     R0,A
+   \   00036E   A3           INC     DPTR
+   \   00036F   E0           MOVX    A,@DPTR
+   \   000370   34..         ADDC    A,#(Recdata_GPVTG >> 8) & 0xff
+   \   000372   F9           MOV     R1,A
+   \   000373   8882         MOV     DPL,R0
+   \   000375   8983         MOV     DPH,R1
+   \   000377   D0E0         POP     A
+   \   000379   F0           MOVX    @DPTR,A
+   \   00037A   90....       MOV     DPTR,#Recdata_GPVTG_start
+   \   00037D   12....       LCALL   ?Subroutine3 & 0xFFFF
+    834                      Recdata_GPGSV_start=0;
+    835                      Recdata_GPGSA_start=0;
+    836                      Recdata_GPRMC_start=0;
+   \                     ??CrossCallReturnLabel_6:
+   \   000380   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   000383   12....       LCALL   ?Subroutine33 & 0xFFFF
+    837                      Recdata_GPGGA_start=0;
+    838                    }
+   \                     ??CrossCallReturnLabel_84:
+   \   000386   F0           MOVX    @DPTR,A
+   \   000387   90....       MOV     DPTR,#Recdata_GPVTG_start
+   \   00038A   12....       LCALL   ?Subroutine18 & 0xFFFF
+    839                }
+   \                     ??CrossCallReturnLabel_50:
+   \   00038D   5005         JNC     ??handle_1
+   \   00038F   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000392   70CE         JNZ     ??handle_37
+    840                check=check+1;
+   \                     ??handle_1:
+   \   000394   90....       MOV     DPTR,#check
+   \   000397   12....       LCALL   ?Subroutine11 & 0xFFFF
+    841            } 	  
+   \                     ??CrossCallReturnLabel_24:
+   \   00039A   90....       MOV     DPTR,#check
+   \   00039D   C3           CLR     C
+   \   00039E   E0           MOVX    A,@DPTR
+   \   00039F   9427         SUBB    A,#0x27
+   \   0003A1   A3           INC     DPTR
+   \   0003A2   E0           MOVX    A,@DPTR
+   \   0003A3   9401         SUBB    A,#0x1
+   \   0003A5   5003         JNC     $+5
+   \   0003A7   02....       LJMP    ??handle_0 & 0xFFFF
+    842          }
+   \   0003AA   D083         POP     DPH
+   \   0003AC   D082         POP     DPL
+   \   0003AE   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine29:
+   \   000000   F582         MOV     DPL,A
+   \   000002   E9           MOV     A,R1
+   \   000003   34FF         ADDC    A,#-0x1
+   \   000005   F583         MOV     DPH,A
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine28:
+   \   000000   39           ADDC    A,R1
+   \   000001   F583         MOV     DPH,A
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine27:
+   \   000000   74..         MOV     A,#WeiXing & 0xff
+   \   000002   28           ADD     A,R0
+   \   000003   F582         MOV     DPL,A
+   \   000005   74..         MOV     A,#(WeiXing >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F583         MOV     DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine26:
+   \   000000   74..         MOV     A,#JingDu & 0xff
+   \   000002   28           ADD     A,R0
+   \   000003   F582         MOV     DPL,A
+   \   000005   74..         MOV     A,#(JingDu >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F583         MOV     DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine25:
+   \   000000   74..         MOV     A,#WeiDu & 0xff
+   \   000002   28           ADD     A,R0
+   \   000003   F582         MOV     DPL,A
+   \   000005   74..         MOV     A,#(WeiDu >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F583         MOV     DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine24:
+   \   000000   74..         MOV     A,#UTC & 0xff
+   \   000002   28           ADD     A,R0
+   \   000003   F582         MOV     DPL,A
+   \   000005   74..         MOV     A,#(UTC >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F583         MOV     DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine23:
+   \   000000   74..         MOV     A,#(Recdata_GPGGA + 250) & 0xff
+   \   000002   28           ADD     A,R0
+   \   000003   F582         MOV     DPL,A
+   \   000005   74..         MOV     A,#((Recdata_GPGGA - 6) >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F583         MOV     DPH,A
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   C3           CLR     C
+   \   000001   E0           MOVX    A,@DPTR
+   \   000002   9446         SUBB    A,#0x46
+   \   000004   A3           INC     DPTR
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   90....       MOV     DPTR,#check
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   24..         ADD     A,#(Recdata + 4) & 0xff
+   \   000006   08           INC     R0
+   \   000007   A3           INC     DPTR
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   34..         ADDC    A,#((Recdata + 4) >> 8) & 0xff
+   \   00000B   F9           MOV     R1,A
+   \   00000C   8882         MOV     DPL,R0
+   \   00000E   8983         MOV     DPH,R1
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   90....       MOV     DPTR,#check
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   24..         ADD     A,#(Recdata + 5) & 0xff
+   \   000006   08           INC     R0
+   \   000007   A3           INC     DPTR
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   34..         ADDC    A,#((Recdata + 5) >> 8) & 0xff
+   \   00000B   F9           MOV     R1,A
+   \   00000C   8882         MOV     DPL,R0
+   \   00000E   8983         MOV     DPH,R1
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   90....       MOV     DPTR,#position
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   24..         ADD     A,#(Recdata + 255) & 0xff
+   \   000006   F8           MOV     R0,A
+   \   000007   A3           INC     DPTR
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   34..         ADDC    A,#((Recdata - 1) >> 8) & 0xff
+   \   00000B   F9           MOV     R1,A
+   \   00000C   8882         MOV     DPL,R0
+   \   00000E   8983         MOV     DPH,R1
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   90....       MOV     DPTR,#check
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   2406         ADD     A,#0x6
+   \   000006   F8           MOV     R0,A
+   \   000007   A3           INC     DPTR
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   3400         ADDC    A,#0x0
+   \   00000B   F9           MOV     R1,A
+   \   00000C   90....       MOV     DPTR,#position
+   \   00000F   E8           MOV     A,R0
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   E9           MOV     A,R1
+   \   000013   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   12....       LCALL   ?Subroutine34 & 0xFFFF
+   \                     ??CrossCallReturnLabel_111:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   74..         MOV     A,#Recdata_GPGGA & 0xff
+   \   000003   28           ADD     A,R0
+   \   000004   F8           MOV     R0,A
+   \   000005   74..         MOV     A,#(Recdata_GPGGA >> 8) & 0xff
+   \   000007   39           ADDC    A,R1
+   \   000008   F9           MOV     R1,A
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   12....       LCALL   ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_82:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine32:
+   \   000000   12....       LCALL   ?Subroutine35 & 0xFFFF
+   \                     ??CrossCallReturnLabel_87:
+   \   000003   90....       MOV     DPTR,#Recdata_GPGSV_start
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   E4           CLR     A
+   \   000001   12....       LCALL   ?Subroutine33 & 0xFFFF
+   \                     ??CrossCallReturnLabel_85:
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine33:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   90....       MOV     DPTR,#Recdata_GPGGA_start
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   A3           INC     DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_78:
+   \   000003   940A         SUBB    A,#0xa
+   \   000005   E9           MOV     A,R1
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_79:
+   \   000003   9409         SUBB    A,#0x9
+   \   000005   E9           MOV     A,R1
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_80:
+   \   000003   9402         SUBB    A,#0x2
+   \   000005   E9           MOV     A,R1
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine30:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   E8           MOV     A,R0
+   \   000002   2401         ADD     A,#0x1
+   \   000004   08           INC     R0
+   \   000005   E9           MOV     A,R1
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F9           MOV     R1,A
+   \   000009   C3           CLR     C
+   \   00000A   E8           MOV     A,R0
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_81:
+   \   000003   9406         SUBB    A,#0x6
+   \   000005   E9           MOV     A,R1
+   \   000006   9400         SUBB    A,#0x0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ?Subroutine32 & 0xFFFF
+   \                     ??CrossCallReturnLabel_83:
+   \   000003   E4           CLR     A
+   \   000004   12....       LCALL   ?Subroutine31 & 0xFFFF
+   \                     ??CrossCallReturnLabel_109:
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine31:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   90....       MOV     DPTR,#Recdata_GPGSA_start
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   A3           INC     DPTR
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   E4           CLR     A
+   \   000001                REQUIRE ??Subroutine40_0
+   \   000001                ; // Fall through to label ??Subroutine40_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine40_0:
+   \   000000   12....       LCALL   ?Subroutine31 & 0xFFFF
+   \                     ??CrossCallReturnLabel_110:
+   \   000003   90....       MOV     DPTR,#Recdata_GPRMC_start
+   \   000006   12....       LCALL   ?Subroutine34 & 0xFFFF
+   \                     ??CrossCallReturnLabel_112:
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine34:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   90....       MOV     DPTR,#Recdata_GPVTG_start
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   A3           INC     DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV     DPTR,#position
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F8           MOV     R0,A
+   \   000005   A3           INC     DPTR
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F9           MOV     R1,A
+   \   000008   E8           MOV     A,R0
+   \   000009   2401         ADD     A,#0x1
+   \   00000B   FA           MOV     R2,A
+   \   00000C   E9           MOV     A,R1
+   \   00000D   3400         ADDC    A,#0x0
+   \   00000F   FB           MOV     R3,A
+   \   000010   90....       MOV     DPTR,#position
+   \   000013   EA           MOV     A,R2
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   A3           INC     DPTR
+   \   000016   EB           MOV     A,R3
+   \   000017   F0           MOVX    @DPTR,A
+   \   000018   74..         MOV     A,#Recdata & 0xff
+   \   00001A   28           ADD     A,R0
+   \   00001B   F582         MOV     DPL,A
+   \   00001D   74..         MOV     A,#(Recdata >> 8) & 0xff
+   \   00001F   39           ADDC    A,R1
+   \   000020   F583         MOV     DPH,A
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   6424         XRL     A,#0x24
+   \   000025   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000048   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000050   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000058   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000060   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000068   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000070   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000078   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000080   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000088   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000090   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000098   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000A0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000A8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000B0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000B8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000C0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000C8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000D0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000D8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000E0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000E8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000F0   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   0000F8   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000100   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000108   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000110   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000118   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000120   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000128   00000000     DB 0, 0, 0, 0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata_GPGGA>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata_GPGSV>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata_GPGSA>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata_GPRMC>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Recdata_GPVTG>`:
+   \   000000   4348454E     DB "CHENGDU JIAJIE TECH.INC"
+   \            47445520
+   \            4A49414A
+   \            49452054
+   \            4543482E
+   \            494E4300
+   \   000018   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000020   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000028   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000030   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000038   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000040   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for UTC>`:
+   \   000000   68686D6D     DB 68H, 68H, 6DH, 6DH, 73H, 73H
+   \            7373    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for JingDu>`:
+   \   000000   61616161     DB 61H, 61H, 61H, 61H, 61H, 2CH, 62H, 62H
+   \            612C6262
+   \   000008   6262         DB 62H, 62H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for WeiDu>`:
+   \   000000   61616161     DB 61H, 61H, 61H, 61H, 2EH, 62H, 62H, 62H
+   \            2E626262
+   \   000008   62           DB 62H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for GaoDu>`:
+   \   000000   6D6D6D2E     DB 6DH, 6DH, 6DH, 2EH, 6DH
+   \            6D      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for WeiXing>`:
+   \   000000   78           DB 78H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for JiBie>`:
+   \   000000   79           DB 79H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for RXTXflag>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for position>`:
+   \   000000   0600         DW 6
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Gps_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Gps_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Gps_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Gps_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Gps_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Gps_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GpsMeasurement_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GpsMeasurement_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GpsMeasurement_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GpsMeasurement_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??handle?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    handle
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Gps">`:
+   \   000000   47707300     DB "Gps"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "rcvd">`:
+   \   000000   72637664     DB "rcvd"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Gps:">`:
+   \   000000   4770733A     DB "Gps:"
+   \            00      
+   \   000005   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00000D   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000015   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00001D   00000000     DB 0, 0, 0, 0
+    843          
+    844          
+    845          /*********************************************************************
+    846           */
+
+   Maximum stack usage in bytes:
+
+     Function                    ISTACK PSTACK XSTACK
+     --------                    ------ ------ ------
+     GpsMeasurement_Init             0      0      9
+       -> osal_start_timerEx         0      0     18
+       -> RegisterForKeys            0      0     18
+     GpsMeasurement_ProcessEvent     0      0      9
+       -> osal_start_timerEx         0      0     18
+       -> HalUARTRead                0      0     18
+       -> handle                     0      0     18
+     Gps_Init                        0      0     38
+       -> MT_UartInit                0      0     76
+       -> MT_UartRegisterTaskID      0      0     76
+       -> afRegister                 0      0     76
+       -> RegisterForKeys            0      0     76
+       -> HalUARTOpen                0      0     76
+       -> HalLcdWriteString          0      0     76
+       -> ZDO_RegisterForZDOMsg      0      0     76
+       -> ZDO_RegisterForZDOMsg      0      0     76
+     Gps_ProcessEvent                0      0     32
+       -> osal_msg_receive           0      0     46
+       -> osal_start_timerEx         0      0     46
+       -> osal_msg_deallocate        0      0     46
+       -> osal_msg_receive           0      0     46
+       -> ZDO_ParseEPListRsp         0      0     46
+       -> HalLedSet                  0      0     46
+       -> osal_mem_free              0      0     46
+       -> HalLedSet                  0      0     46
+       -> HalLedSet                  0      0     46
+       -> HalLedSet                  0      0     46
+       -> NLME_GetShortAddr          0      0     46
+       -> ZDP_EndDeviceBindReq       0      0     64
+       -> HalLedSet                  0      0     46
+       -> ZDP_MatchDescReq           0      0     62
+       -> HalLcdWriteScreen          0      0     46
+       -> Gps_SendTheMessage         0      0     46
+       -> osal_start_timerEx         0      0     46
+     Gps_SendTheMessage              2      0     75
+       -> osal_strlen                0      0     96
+       -> AF_DataRequest             0      0    104
+     handle                          3      0      9
+
+
+   Segment part sizes:
+
+     Function/Label                      Bytes
+     --------------                      -----
+     Recdata                              300
+     Recdata_GPGGA                         70
+     Recdata_GPGGA_start                    2
+     Recdata_GPGSV                         70
+     Recdata_GPGSV_start                    2
+     Recdata_GPGSA                         70
+     Recdata_GPGSA_start                    2
+     Recdata_GPRMC                         70
+     Recdata_GPRMC_start                    2
+     Recdata_GPVTG                         70
+     Recdata_GPVTG_start                    2
+     UTC                                    6
+     JingDu                                10
+     WeiDu                                  9
+     GaoDu                                  5
+     WeiXing                                1
+     JiBie                                  1
+     RXTXflag                               1
+     temp                                   1
+     datanumber                             2
+     stringlen                              2
+     check                                  2
+     position                               2
+     Gps_ClusterList                        2
+     Gps_SimpleDesc                        12
+     Gps_epDesc                             6
+     Gps_TaskID                             1
+     Gps_NwkState                           1
+     Gps_TransID                            1
+     Gps_DstAddr                           12
+     GpsMeasurement_TaskID                  1
+     GpsMeasurement_NwkState                1
+     GpsMeasurement_TransID                 1
+     fGps                                   4
+     flag                                   2
+     Gps_Init                             157
+     ?Subroutine0                           5
+     ?Subroutine8                           8
+     Gps_ProcessEvent                     557
+     ?Subroutine20                          4
+     ??Subroutine36_0                       6
+     ?Subroutine19                         11
+     ??Subroutine37_0                       6
+     Gps_SendTheMessage                   368
+     ?Subroutine22                         17
+     ?Subroutine21                          9
+     ??Subroutine38_0                       4
+     ??Subroutine39_0                       5
+     GpsMeasurement_ProcessEvent           65
+     ?Subroutine11                          4
+     ?Subroutine35                         10
+     GpsMeasurement_Init                   36
+     handle                               945
+     ?Subroutine29                          9
+     ?Subroutine28                          5
+     ?Subroutine27                         11
+     ?Subroutine26                         11
+     ?Subroutine25                         11
+     ?Subroutine24                         11
+     ?Subroutine23                         12
+     ?Subroutine18                          9
+     ?Subroutine17                         18
+     ?Subroutine16                         18
+     ?Subroutine15                         18
+     ?Subroutine14                         20
+     ?Subroutine13                          4
+     ?Subroutine12                         10
+     ?Subroutine10                          4
+     ?Subroutine32                          7
+     ?Subroutine9                           6
+     ?Subroutine33                          9
+     ?Subroutine7                           9
+     ?Subroutine6                           9
+     ?Subroutine5                           9
+     ?Subroutine30                         12
+     ?Subroutine4                           9
+     ?Subroutine3                           8
+     ?Subroutine31                         10
+     ?Subroutine2                           1
+     ??Subroutine40_0                      10
+     ?Subroutine34                          9
+     ?Subroutine1                          38
+     ?<Initializer for Recdata>           300
+     ?<Initializer for Recdata_GPGGA>      70
+     ?<Initializer for Recdata_GPGSV>      70
+     ?<Initializer for Recdata_GPGSA>      70
+     ?<Initializer for Recdata_GPRMC>      70
+     ?<Initializer for Recdata_GPVTG>      70
+     ?<Initializer for UTC>                 6
+     ?<Initializer for JingDu>             10
+     ?<Initializer for WeiDu>               9
+     ?<Initializer for GaoDu>               5
+     ?<Initializer for WeiXing>             1
+     ?<Initializer for JiBie>               1
+     ?<Initializer for RXTXflag>            1
+     ?<Initializer for position>            2
+     ??Gps_Init?relay                       6
+     ??Gps_ProcessEvent?relay               6
+     ??Gps_SendTheMessage?relay             6
+     ??GpsMeasurement_ProcessEvent?relay    6
+     ??GpsMeasurement_Init?relay            6
+     ??handle?relay                         6
+     ?<Constant "Gps">                      4
+     ?<Constant "rcvd">                     5
+     ?<Constant "Gps:">                    33
+
+ 
+ 2 534 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+   685 bytes in segment XDATA_I
+   685 bytes in segment XDATA_ID
+    56 bytes in segment XDATA_ROM_C
+    47 bytes in segment XDATA_Z
+ 
+ 3 255 bytes of CODE  memory
+    56 bytes of CONST memory
+   732 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

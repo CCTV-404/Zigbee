@@ -1,0 +1,8 @@
+[Sfr]
+sfr = "DPS",	"SFR",	0x92,	1,	base=16,	modified
+sfr = "P0IFG",	"SFR",	0x89,	1,	base=16,	modified
+sfr = "T1CC4L",	"XData",	0x62ae,	1,	base=16,	modified
+
+
+[SfrGroupInfo]
+group = "Custom", "DPS", "P0IFG", "T1CC4L"

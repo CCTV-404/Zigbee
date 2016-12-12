@@ -1,0 +1,713 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        01/Feb/2015  20:15:58 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\ZMain\TI2 /
+//                          530DB\ZMain.c                                     /
+//    Command line       =  -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\Tools\CC /
+//                          2530DB\f8wCoord.cfg (-DCPU32MHZ                   /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8     /
+//                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)   /
+//                          -f C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sample /
+//                          s\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\Tools\CC /
+//                          2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00100000                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 C:\ZStack-CC2530-2.5.1a\Pr /
+//                          ojects\zstack\ZMain\TI2530DB\ZMain.c -D ZTOOL_P1  /
+//                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D       /
+//                          LCD_SUPPORTED=DEBUG -lC                           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\CoordinatorEB\List\  /
+//                          -lA C:\ZStack-CC2530-2.5.1a\Projects\zstack\Sampl /
+//                          es\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\CoordinatorEB\Li /
+//                          st\ --diag_suppress Pe001,Pa010 -o                /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\CoordinatorEB\Obj\   /
+//                          -e --no_code_motion --debug --core=plain          /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\ -I                  /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\Source\ -I        /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\ZMain\TI253 /
+//                          0DB\ -I C:\ZStack-CC2530-2.5.1a\Projects\zstack\S /
+//                          amples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\ /
+//                          ..\Components\hal\include\ -I                     /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\hal\target\CC2530EB\ -I                     /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mac\include\ -I C:\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530D /
+//                          B\..\..\..\..\..\Components\mac\high_level\ -I    /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mac\low_level\srf04\ -I                     /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mac\low_level\srf04\single_chip\ -I         /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mt\ -I C:\ZStack-CC2530-2.5.1a\Projects\zst /
+//                          ack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\. /
+//                          .\..\..\Components\osal\include\ -I               /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\services\saddr\ -I                          /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\services\sdata\ -I                          /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\af\ -I C:\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\. /
+//                          .\..\..\..\..\Components\stack\nwk\ -I            /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\sapi\ -I C:\ZStack-CC2530-2.5.1a\Proj /
+//                          ects\zstack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB /
+//                          \..\..\..\..\..\Components\stack\sec\ -I          /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\sys\ -I C:\ZStack-CC2530-2.5.1a\Proje /
+//                          cts\zstack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\ /
+//                          ..\..\..\..\..\Components\stack\zdo\ -I           /
+//                          C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\zmac\ -I C:\ZStack-CC2530-2.5.1a\Projects\z /
+//                          stack\Samples\Òº¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\..\.. /
+//                          \..\..\..\Components\zmac\f8w\ -Ohz               /
+//                          --require_prototypes                              /
+//    List file          =  C:\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\Ò /
+//                          º¾§ÏÔÊ¾Ä£×é¿ØÖÆÊµ¼ù\CC2530DB\CoordinatorEB\List\Z /
+//                          Main.s51                                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ZMain
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+
+        PUBLIC ??main?relay
+        FUNCTION ??main?relay,0203H
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P1DIR
+        PUBWEAK SLEEPCMD
+        PUBWEAK SLEEPSTA
+        PUBWEAK _A_P0
+        PUBLIC main
+        FUNCTION main,0a03H
+        ARGFRAME XSTACK, 0, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+main                SYMBOL "main"
+??main?relay        SYMBOL "?relay", main
+
+// C:\ZStack-CC2530-2.5.1a\Projects\zstack\ZMain\TI2530DB\ZMain.c
+//    1 /**************************************************************************************************
+//    2   Filename:       ZMain.c
+//    3   Revised:        $Date: 2010-09-17 16:25:30 -0700 (Fri, 17 Sep 2010) $
+//    4   Revision:       $Revision: 23835 $
+//    5 
+//    6   Description:    Startup and shutdown code for ZStack
+//    7   Notes:          This version targets the Chipcon CC2530
+//    8 
+//    9 
+//   10   Copyright 2005-2010 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /*********************************************************************
+//   42  * INCLUDES
+//   43  */
+//   44 
+//   45 #ifndef NONWK
+//   46 #include "AF.h"
+//   47 #endif
+//   48 #include "hal_adc.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr SLEEPSTA
+SLEEPSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEPCMD
+SLEEPCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   49 #include "hal_flash.h"
+//   50 #include "hal_lcd.h"
+//   51 #include "hal_led.h"
+//   52 #include "hal_drivers.h"
+//   53 #include "OnBoard.h"
+//   54 #include "OSAL.h"
+//   55 #include "OSAL_Nv.h"
+//   56 #include "ZComDef.h"
+//   57 #include "ZMAC.h"
+//   58 
+//   59 
+//   60 /*********************************************************************
+//   61  * LOCAL FUNCTIONS
+//   62  */
+//   63 
+//   64 static void zmain_ext_addr( void );
+//   65 #if defined ZCL_KEY_ESTABLISH
+//   66 static void zmain_cert_init( void );
+//   67 #endif
+//   68 static void zmain_dev_info( void );
+//   69 static void zmain_vdd_check( void );
+//   70 
+//   71 #ifdef LCD_SUPPORTED
+//   72 static void zmain_lcd_init( void );
+//   73 #endif
+//   74 
+//   75 /*********************************************************************
+//   76  * @fn      main
+//   77  * @brief   First function called after startup.
+//   78  * @return  don't care
+//   79  */     
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   80 int main( void )  
+main:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function main
+        CODE
+//   81 {
+        ; Auto size: 0
+//   82         
+//   83         
+//   84         P0DIR |= ((0x01<<2) + (0x01<<3) + (0x01<<4));
+        ORL     0xfd,#0x1c
+//   85         P0_4 = 0;
+        CLR     0x80.4
+//   86         P0_2 = 1;
+        SETB    0x80.2
+//   87         P0_3 = 1;
+        SETB    0x80.3
+//   88         
+//   89         while(1);
+??main_0:
+        SJMP    ??main_0
+        CFI EndBlock cfiBlock0
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+        REQUIRE SLEEPCMD
+        REQUIRE SLEEPSTA
+        REQUIRE CLKCONCMD
+        REQUIRE CLKCONSTA
+        REQUIRE P1DIR
+        REQUIRE P0INP
+//   90         
+//   91   // Turn off interrupts
+//   92   osal_int_disable( INTS_ALL );
+//   93 
+//   94   // Initialization for board related stuff such as LEDs
+//   95   HAL_BOARD_INIT();
+//   96 
+//   97   // Make sure supply voltage is high enough to run
+//   98   zmain_vdd_check();
+//   99 
+//  100   // Initialize board I/O
+//  101   InitBoard( OB_COLD );    
+//  102 
+//  103   // Initialze HAL drivers
+//  104   HalDriverInit();
+//  105 
+//  106   // Initialize NV System
+//  107   osal_nv_init( NULL );
+//  108 
+//  109   // Initialize the MAC
+//  110   ZMacInit();
+//  111 
+//  112   // Determine the extended address
+//  113   zmain_ext_addr();
+//  114 
+//  115 #if defined ZCL_KEY_ESTABLISH
+//  116   // Initialize the Certicom certificate information.
+//  117   zmain_cert_init();
+//  118 #endif
+//  119 
+//  120   // Initialize basic NV items
+//  121   zgInit();
+//  122 
+//  123 #ifndef NONWK
+//  124   // Since the AF isn't a task, call it's initialization routine
+//  125   afInit();
+//  126 #endif
+//  127 
+//  128   // Initialize the operating system
+//  129   osal_init_system();
+//  130 
+//  131   // Allow interrupts
+//  132   osal_int_enable( INTS_ALL );
+//  133 
+//  134   // Final board initialization
+//  135   InitBoard( OB_READY );
+//  136 
+//  137   // Display information about this device
+//  138   zmain_dev_info();
+//  139 
+//  140   /* Display the device info on the LCD */
+//  141 #ifdef LCD_SUPPORTED
+//  142   zmain_lcd_init();
+//  143 #endif
+//  144 
+//  145 #ifdef WDT_IN_PM1
+//  146   /* If WDT is used, this is a good place to enable it. */
+//  147   WatchDogEnable( WDTIMX );
+//  148 #endif
+//  149 
+//  150   osal_start_system(); // No Return from here
+//  151 
+//  152   return 0;  // Shouldn't get here.
+//  153 } // main()
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??main?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    main
+
+        END
+//  154 
+//  155 /*********************************************************************
+//  156  * @fn      zmain_vdd_check
+//  157  * @brief   Check if the Vdd is OK to run the processor.
+//  158  * @return  Return if Vdd is ok; otherwise, flash LED, then reset
+//  159  *********************************************************************/
+//  160 static void zmain_vdd_check( void )
+//  161 {
+//  162   uint8 cnt = 16;
+//  163   
+//  164   do {
+//  165     while (!HalAdcCheckVdd(VDD_MIN_RUN));
+//  166   } while (--cnt);
+//  167 }
+//  168 
+//  169 /**************************************************************************************************
+//  170  * @fn          zmain_ext_addr
+//  171  *
+//  172  * @brief       Execute a prioritized search for a valid extended address and write the results
+//  173  *              into the OSAL NV system for use by the system. Temporary address not saved to NV.
+//  174  *
+//  175  * input parameters
+//  176  *
+//  177  * None.
+//  178  *
+//  179  * output parameters
+//  180  *
+//  181  * None.
+//  182  *
+//  183  * @return      None.
+//  184  **************************************************************************************************
+//  185  */
+//  186 static void zmain_ext_addr(void)
+//  187 {
+//  188   uint8 nullAddr[Z_EXTADDR_LEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+//  189   uint8 writeNV = TRUE;
+//  190 
+//  191   // First check whether a non-erased extended address exists in the OSAL NV.
+//  192   if ((SUCCESS != osal_nv_item_init(ZCD_NV_EXTADDR, Z_EXTADDR_LEN, NULL))  ||
+//  193       (SUCCESS != osal_nv_read(ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, aExtendedAddress)) ||
+//  194       (osal_memcmp(aExtendedAddress, nullAddr, Z_EXTADDR_LEN)))
+//  195   {
+//  196     // Attempt to read the extended address from the location on the lock bits page
+//  197     // where the programming tools know to reserve it.
+//  198     HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_IEEE_OSET, aExtendedAddress, Z_EXTADDR_LEN);
+//  199 
+//  200     if (osal_memcmp(aExtendedAddress, nullAddr, Z_EXTADDR_LEN))
+//  201     {
+//  202       // Attempt to read the extended address from the designated location in the Info Page.
+//  203       if (!osal_memcmp((uint8 *)(P_INFOPAGE+HAL_INFOP_IEEE_OSET), nullAddr, Z_EXTADDR_LEN))
+//  204       {
+//  205         osal_memcpy(aExtendedAddress, (uint8 *)(P_INFOPAGE+HAL_INFOP_IEEE_OSET), Z_EXTADDR_LEN);
+//  206       }
+//  207       else  // No valid extended address was found.
+//  208       {
+//  209         uint8 idx;
+//  210         
+//  211 #if !defined ( NV_RESTORE )
+//  212         writeNV = FALSE;  // Make this a temporary IEEE address
+//  213 #endif
+//  214 
+//  215         /* Attempt to create a sufficiently random extended address for expediency.
+//  216          * Note: this is only valid/legal in a test environment and
+//  217          *       must never be used for a commercial product.
+//  218          */
+//  219         for (idx = 0; idx < (Z_EXTADDR_LEN - 2);)
+//  220         {
+//  221           uint16 randy = osal_rand();
+//  222           aExtendedAddress[idx++] = LO_UINT16(randy);
+//  223           aExtendedAddress[idx++] = HI_UINT16(randy);
+//  224         }
+//  225         // Next-to-MSB identifies ZigBee devicetype.
+//  226 #if ZG_BUILD_COORDINATOR_TYPE && !ZG_BUILD_JOINING_TYPE
+//  227         aExtendedAddress[idx++] = 0x10;
+//  228 #elif ZG_BUILD_RTRONLY_TYPE
+//  229         aExtendedAddress[idx++] = 0x20;
+//  230 #else
+//  231         aExtendedAddress[idx++] = 0x30;
+//  232 #endif
+//  233         // MSB has historical signficance.
+//  234         aExtendedAddress[idx] = 0xF8;
+//  235       }
+//  236     }
+//  237 
+//  238     if (writeNV)
+//  239     {
+//  240       (void)osal_nv_write(ZCD_NV_EXTADDR, 0, Z_EXTADDR_LEN, aExtendedAddress);
+//  241     }
+//  242   }
+//  243 
+//  244   // Set the MAC PIB extended address according to results from above.
+//  245   (void)ZMacSetReq(MAC_EXTENDED_ADDRESS, aExtendedAddress);
+//  246 }
+//  247 
+//  248 #if defined ZCL_KEY_ESTABLISH
+//  249 /**************************************************************************************************
+//  250  * @fn          zmain_cert_init
+//  251  *
+//  252  * @brief       Initialize the Certicom certificate information.
+//  253  *
+//  254  * input parameters
+//  255  *
+//  256  * None.
+//  257  *
+//  258  * output parameters
+//  259  *
+//  260  * None.
+//  261  *
+//  262  * @return      None.
+//  263  **************************************************************************************************
+//  264  */
+//  265 static void zmain_cert_init(void)
+//  266 {
+//  267   uint8 certData[ZCL_KE_IMPLICIT_CERTIFICATE_LEN];
+//  268   uint8 nullData[ZCL_KE_IMPLICIT_CERTIFICATE_LEN] = {
+//  269     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+//  270     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+//  271     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+//  272     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+//  273     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+//  274     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+//  275   };
+//  276 
+//  277   (void)osal_nv_item_init(ZCD_NV_IMPLICIT_CERTIFICATE, ZCL_KE_IMPLICIT_CERTIFICATE_LEN, NULL);
+//  278   (void)osal_nv_item_init(ZCD_NV_DEVICE_PRIVATE_KEY, ZCL_KE_DEVICE_PRIVATE_KEY_LEN, NULL);
+//  279 
+//  280   // First check whether non-null certificate data exists in the OSAL NV. To save on code space,
+//  281   // just use the ZCD_NV_CA_PUBLIC_KEY as the bellwether for all three.
+//  282   if ((SUCCESS != osal_nv_item_init(ZCD_NV_CA_PUBLIC_KEY, ZCL_KE_CA_PUBLIC_KEY_LEN, NULL))    ||
+//  283       (SUCCESS != osal_nv_read(ZCD_NV_CA_PUBLIC_KEY, 0, ZCL_KE_CA_PUBLIC_KEY_LEN, certData))  ||
+//  284       (osal_memcmp(certData, nullData, ZCL_KE_CA_PUBLIC_KEY_LEN)))
+//  285   {
+//  286     // Attempt to read the certificate data from its corresponding location on the lock bits page.
+//  287     HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_CA_PUBLIC_KEY_OSET, certData,
+//  288                                          ZCL_KE_CA_PUBLIC_KEY_LEN);
+//  289     // If the certificate data is not NULL, use it to update the corresponding NV items.
+//  290     if (!osal_memcmp(certData, nullData, ZCL_KE_CA_PUBLIC_KEY_LEN))
+//  291     {
+//  292       (void)osal_nv_write(ZCD_NV_CA_PUBLIC_KEY, 0, ZCL_KE_CA_PUBLIC_KEY_LEN, certData);
+//  293       HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_IMPLICIT_CERT_OSET, certData,
+//  294                                            ZCL_KE_IMPLICIT_CERTIFICATE_LEN);
+//  295       (void)osal_nv_write(ZCD_NV_IMPLICIT_CERTIFICATE, 0,
+//  296                           ZCL_KE_IMPLICIT_CERTIFICATE_LEN, certData);
+//  297       HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_DEV_PRIVATE_KEY_OSET, certData,
+//  298                                         ZCL_KE_DEVICE_PRIVATE_KEY_LEN);
+//  299       (void)osal_nv_write(ZCD_NV_DEVICE_PRIVATE_KEY, 0, ZCL_KE_DEVICE_PRIVATE_KEY_LEN, certData);
+//  300     }
+//  301   }
+//  302 }
+//  303 #endif
+//  304 
+//  305 /**************************************************************************************************
+//  306  * @fn          zmain_dev_info
+//  307  *
+//  308  * @brief       This displays the IEEE (MSB to LSB) on the LCD.
+//  309  *
+//  310  * input parameters
+//  311  *
+//  312  * None.
+//  313  *
+//  314  * output parameters
+//  315  *
+//  316  * None.
+//  317  *
+//  318  * @return      None.
+//  319  **************************************************************************************************
+//  320  */
+//  321 static void zmain_dev_info(void)
+//  322 {
+//  323 #ifdef LCD_SUPPORTED
+//  324   uint8 i;
+//  325   uint8 *xad;
+//  326   uint8 lcd_buf[Z_EXTADDR_LEN*2+1];
+//  327 
+//  328   // Display the extended address.
+//  329   xad = aExtendedAddress + Z_EXTADDR_LEN - 1;
+//  330 
+//  331   for (i = 0; i < Z_EXTADDR_LEN*2; xad--)
+//  332   {
+//  333     uint8 ch;
+//  334     ch = (*xad >> 4) & 0x0F;
+//  335     lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+//  336     ch = *xad & 0x0F;
+//  337     lcd_buf[i++] = ch + (( ch < 10 ) ? '0' : '7');
+//  338   }
+//  339   lcd_buf[Z_EXTADDR_LEN*2] = '\0';
+//  340   HalLcdWriteString( "IEEE: ", HAL_LCD_LINE_1 );
+//  341   HalLcdWriteString( (char*)lcd_buf, HAL_LCD_LINE_2 );
+//  342 #endif
+//  343 }
+//  344 
+//  345 #ifdef LCD_SUPPORTED
+//  346 /*********************************************************************
+//  347  * @fn      zmain_lcd_init
+//  348  * @brief   Initialize LCD at start up.
+//  349  * @return  none
+//  350  *********************************************************************/
+//  351 static void zmain_lcd_init ( void )
+//  352 {
+//  353 #ifdef SERIAL_DEBUG_SUPPORTED
+//  354   {
+//  355     HalLcdWriteString( "TexasInstruments", HAL_LCD_LINE_1 );
+//  356 
+//  357 #if defined( MT_MAC_FUNC )
+//  358 #if defined( ZDO_COORDINATOR )
+//  359       HalLcdWriteString( "MAC-MT Coord", HAL_LCD_LINE_2 );
+//  360 #else
+//  361       HalLcdWriteString( "MAC-MT Device", HAL_LCD_LINE_2 );
+//  362 #endif // ZDO
+//  363 #elif defined( MT_NWK_FUNC )
+//  364 #if defined( ZDO_COORDINATOR )
+//  365       HalLcdWriteString( "NWK Coordinator", HAL_LCD_LINE_2 );
+//  366 #else
+//  367       HalLcdWriteString( "NWK Device", HAL_LCD_LINE_2 );
+//  368 #endif // ZDO
+//  369 #endif // MT_FUNC
+//  370   }
+//  371 #endif // SERIAL_DEBUG_SUPPORTED
+//  372 }
+//  373 #endif
+//  374 
+//  375 /*********************************************************************
+//  376 *********************************************************************/
+// 
+// 11 bytes in segment BANKED_CODE
+//  6 bytes in segment BANK_RELAYS
+//  8 bytes in segment SFR_AN
+// 
+// 17 bytes of CODE memory
+//  0 bytes of DATA memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: 1

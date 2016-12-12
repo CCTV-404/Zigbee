@@ -1,0 +1,1744 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         14/Feb/2014  16:31:38 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\Source\Sound.c                               #
+#    Command line       =  -f "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func                  #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          03Sound_ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f8w #
+#                          Config.cfg" (-DZIGBEEPRO -DSECURE=0                #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          03Sound_ENDDB\Source\Sound.c" -D NWK_AUTO_POLL -D  #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC        #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\EndDeviceEB\List\" -lA              #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\EndDeviceEB\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\OurEDA\Documents\Tencent  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\EndDeviceEB\Obj\" -e                #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\" -I "C:\Users\OurEDA\Documents\Ten #
+#                          cent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1 #
+#                          a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03S #
+#                          ound_ENDDB\CC2530DB\..\Source\" -I                 #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\ZMain\TI2530DB\" -I        #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\hal\inclu #
+#                          de\" -I "C:\Users\OurEDA\Documents\Tencent         #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\hal\targe #
+#                          t\CC2530EB\" -I "C:\Users\OurEDA\Documents\Tencent #
+#                           Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS #
+#                          tack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound #
+#                          _ENDDB\CC2530DB\..\..\..\..\..\Components\mac\incl #
+#                          ude\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\mac\high_ #
+#                          level\" -I "C:\Users\OurEDA\Documents\Tencent      #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\mac\low_l #
+#                          evel\srf04\" -I "C:\Users\OurEDA\Documents\Tencent #
+#                           Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZS #
+#                          tack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound #
+#                          _ENDDB\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\" -I                       #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\mt\" -I   #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\osal\incl #
+#                          ude\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          saddr\" -I "C:\Users\OurEDA\Documents\Tencent      #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\services\ #
+#                          sdata\" -I "C:\Users\OurEDA\Documents\Tencent      #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\af\ #
+#                          " -I "C:\Users\OurEDA\Documents\Tencent            #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\nwk #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "C:\Users\OurEDA\Documents\Tencent          #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\sec #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\sys #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\stack\zdo #
+#                          \" -I "C:\Users\OurEDA\Documents\Tencent           #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\zmac\"    #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\..\..\..\..\..\Components\zmac\f8w\ #
+#                          " -Ohz                                             #
+#    List file          =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\EndDeviceEB\List\Sound.lst          #
+#    Object file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ #
+#                          ENDDB\CC2530DB\EndDeviceEB\Obj\Sound.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\OurEDA\Documents\Tencent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\03Sound_ENDDB\Source\Sound.c
+      1          /******************************************************************************
+      2            Filename:       Sound.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "Sound.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          #if !defined( WIN32 )
+     73            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr P1IEN
+   \                     P1IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     74          #endif
+     75          
+     76          /* HAL */
+     77          #include "hal_lcd.h"
+     78          #include "hal_led.h"
+     79          #include "hal_key.h"
+     80          #include "hal_uart.h"
+     81          
+     82          /* RTOS */
+     83          #if defined( IAR_ARMCM3_LM )
+     84          #include "RTOS_App.h"
+     85          #endif  
+     86          
+     87          /*********************************************************************
+     88           * MACROS
+     89           */
+     90          
+     91          /*********************************************************************
+     92           * CONSTANTS
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * TYPEDEFS
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * GLOBAL VARIABLES
+    101           */
+    102          // This list should be filled with Application specific Cluster IDs.
+    103          
+    104          /* SW_6 is at P0.1 */
+    105          #define HAL_KEY_SW_7_PORT   P1
+    106          #define HAL_KEY_SW_7_BIT    BV(3)
+    107          #define HAL_KEY_SW_7_SEL    P1SEL
+    108          #define HAL_KEY_SW_7_DIR    P1DIR
+    109          
+    110          /* edge interrupt */
+    111          #define HAL_KEY_SW_7_EDGEBIT  BV(0)
+    112          #define HAL_KEY_SW_7_EDGE     HAL_KEY_RISING_EDGE
+    113          
+    114          
+    115          /* SW_6 interrupts */
+    116          #define HAL_KEY_SW_7_IEN      IEN2  /* CPU interrupt mask register */
+    117          #define HAL_KEY_SW_7_IENBIT   BV(4) /* Mask bit for all of Port_0 */
+    118          #define HAL_KEY_SW_7_ICTL     P1IEN /* Port Interrupt Control register */
+    119          #define HAL_KEY_SW_7_ICTLBIT  BV(3) /* P0IEN - P0.1 enable/disable bit */
+    120          #define HAL_KEY_SW_7_PXIFG    P1IFG /* Interrupt flag at source */
+    121          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    122          const cId_t Sound_ClusterList[Sound_MAX_CLUSTERS] =
+   \                     Sound_ClusterList:
+   \   000000   0300         DW 3
+    123          {
+    124            Sound_CLUSTERID
+    125          };
+    126          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    127          const SimpleDescriptionFormat_t Sound_SimpleDesc =
+   \                     Sound_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW Sound_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW Sound_ClusterList
+    128          {
+    129            Sound_ENDPOINT,              //  int Endpoint;
+    130            Sound_PROFID,                //  uint16 AppProfId[2];
+    131            Sound_DEVICEID,              //  uint16 AppDeviceId[2];
+    132            Sound_DEVICE_VERSION,        //  int   AppDevVer:4;
+    133            Sound_FLAGS,                 //  int   AppFlags:4;
+    134            Sound_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    135            (cId_t *)Sound_ClusterList,  //  byte *pAppInClusterList;
+    136            Sound_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    137            (cId_t *)Sound_ClusterList   //  byte *pAppInClusterList;
+    138          };
+    139          
+    140          // This is the Endpoint/Interface description.  It is defined here, but
+    141          // filled-in in Sound_Init().  Another way to go would be to fill
+    142          // in the structure here and make it a "const" (in code space).  The
+    143          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    144          endPointDesc_t Sound_epDesc;
+   \                     Sound_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    145          
+    146          /*********************************************************************
+    147           * EXTERNAL VARIABLES
+    148           */
+    149          
+    150          /*********************************************************************
+    151           * EXTERNAL FUNCTIONS
+    152           */
+    153          
+    154          /*********************************************************************
+    155           * LOCAL VARIABLES
+    156           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    157          byte Sound_TaskID;   // Task ID for internal task/event processing
+   \                     Sound_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    158                                    // This variable will be received when
+    159                                    // Sound_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    160          devStates_t Sound_NwkState;
+   \                     Sound_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    161          
+    162          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    163          byte Sound_TransID;  // This is the unique message ID (counter)
+   \                     Sound_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    164          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    165          afAddrType_t Sound_DstAddr;
+   \                     Sound_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    166          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    167          byte SoundMeasurement_TaskID;
+   \                     SoundMeasurement_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    168          devStates_t SoundMeasurement_NwkState;
+   \                     SoundMeasurement_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    169          byte SoundMeasurement_TransID;
+   \                     SoundMeasurement_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    170          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    171          unsigned int isound=0;
+   \                     isound:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    172          
+    173          /*********************************************************************
+    174           * LOCAL FUNCTIONS
+    175           */
+    176          static void Sound_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    177          static void Sound_HandleKeys( byte shift, byte keys );
+    178          static void Sound_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    179          static void Sound_SendTheMessage( void );
+    180          
+    181          #if defined( IAR_ARMCM3_LM )
+    182          static void Sound_ProcessRtosMessage( void );
+    183          #endif
+    184          
+    185          /*********************************************************************
+    186           * NETWORK LAYER CALLBACKS
+    187           */
+    188          
+    189          /*********************************************************************
+    190           * PUBLIC FUNCTIONS
+    191           */
+    192          
+    193          /*********************************************************************
+    194           * @fn      Sound_Init
+    195           *
+    196           * @brief   Initialization function for the Generic App Task.
+    197           *          This is called during initialization and should contain
+    198           *          any application specific initialization (ie. hardware
+    199           *          initialization/setup, table initialization, power up
+    200           *          notificaiton ... ).
+    201           *
+    202           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    203           *                    used to send messages and set timers.
+    204           *
+    205           * @return  none
+    206           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    207          void Sound_Init( uint8 task_id )
+   \                     Sound_Init:
+    208          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    209            Sound_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Sound_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    210            Sound_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Sound_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    211            Sound_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Sound_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    212          
+    213            // Device hardware initialization can be added here or in main() (Zmain.c).
+    214            // If the hardware is application specific - add it here.
+    215            // If the hardware is other parts of the device add it in main().
+    216          
+    217            Sound_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000015   90....       MOV     DPTR,#Sound_DstAddr + 8
+   \   000018   F0           MOVX    @DPTR,A
+    218            Sound_DstAddr.endPoint = 0;
+   \   000019   A3           INC     DPTR
+   \   00001A   F0           MOVX    @DPTR,A
+    219            Sound_DstAddr.addr.shortAddr = 0;
+   \   00001B   90....       MOV     DPTR,#Sound_DstAddr
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   F0           MOVX    @DPTR,A
+    220          
+    221            // Fill out the endpoint description.
+    222            Sound_epDesc.endPoint = Sound_ENDPOINT;
+   \   000021   90....       MOV     DPTR,#Sound_epDesc
+   \   000024   740A         MOV     A,#0xa
+   \   000026   F0           MOVX    @DPTR,A
+    223            Sound_epDesc.task_id = &Sound_TaskID;
+   \   000027   A3           INC     DPTR
+   \   000028   74..         MOV     A,#Sound_TaskID & 0xff
+   \   00002A   F0           MOVX    @DPTR,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   74..         MOV     A,#(Sound_TaskID >> 8) & 0xff
+   \   00002E   F0           MOVX    @DPTR,A
+    224            Sound_epDesc.simpleDesc
+    225                      = (SimpleDescriptionFormat_t *)&Sound_SimpleDesc;
+   \   00002F   A3           INC     DPTR
+   \   000030   74..         MOV     A,#Sound_SimpleDesc & 0xff
+   \   000032   F0           MOVX    @DPTR,A
+   \   000033   A3           INC     DPTR
+   \   000034   74..         MOV     A,#(Sound_SimpleDesc >> 8) & 0xff
+   \   000036   F0           MOVX    @DPTR,A
+    226            Sound_epDesc.latencyReq = noLatencyReqs;
+   \   000037   A3           INC     DPTR
+   \   000038   E4           CLR     A
+   \   000039   F0           MOVX    @DPTR,A
+    227          
+    228            // Register the endpoint description with the AF
+    229            afRegister( &Sound_epDesc );
+   \   00003A                ; Setup parameters for call to function afRegister
+   \   00003A   7A..         MOV     R2,#Sound_epDesc & 0xff
+   \   00003C   7B..         MOV     R3,#(Sound_epDesc >> 8) & 0xff
+   \   00003E   12....       LCALL   ??afRegister?relay
+    230          
+    231            // Register for all key events - This app will handle all key events
+    232            RegisterForKeys( Sound_TaskID );
+   \   000041                ; Setup parameters for call to function RegisterForKeys
+   \   000041   90....       MOV     DPTR,#Sound_TaskID
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F9           MOV     R1,A
+   \   000046   12....       LCALL   ??RegisterForKeys?relay
+    233          
+    234            // Update the display
+    235          #if defined ( LCD_SUPPORTED )
+    236            HalLcdWriteString( "Sound", HAL_LCD_LINE_1 );
+   \   000049                ; Setup parameters for call to function HalLcdWriteString
+   \   000049   7901         MOV     R1,#0x1
+   \   00004B   7A..         MOV     R2,#`?<Constant "Sound">` & 0xff
+   \   00004D   7B..         MOV     R3,#(`?<Constant "Sound">` >> 8) & 0xff
+   \   00004F   12....       LCALL   ??HalLcdWriteString?relay
+    237          #endif
+    238          
+    239            ZDO_RegisterForZDOMsg( Sound_TaskID, End_Device_Bind_rsp );
+   \   000052                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000052   7A20         MOV     R2,#0x20
+   \   000054   7B80         MOV     R3,#-0x80
+   \   000056   90....       MOV     DPTR,#Sound_TaskID
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F9           MOV     R1,A
+   \   00005B   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    240            ZDO_RegisterForZDOMsg( Sound_TaskID, Match_Desc_rsp );
+   \   00005E                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00005E   7A06         MOV     R2,#0x6
+   \   000060   7B80         MOV     R3,#-0x80
+   \   000062   90....       MOV     DPTR,#Sound_TaskID
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   F9           MOV     R1,A
+   \   000067   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    241          
+    242          #if defined( IAR_ARMCM3_LM )
+    243            // Register this task with RTOS task initiator
+    244            RTOS_RegisterApp( task_id, Sound_RTOS_MSG_EVT );
+    245          #endif
+    246          }
+   \   00006A                REQUIRE ?Subroutine0
+   \   00006A                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    247          
+    248          /*********************************************************************
+    249           * @fn      Sound_ProcessEvent
+    250           *
+    251           * @brief   Generic Application Task event processor.  This function
+    252           *          is called to process all events for the task.  Events
+    253           *          include timers, messages and any other user defined events.
+    254           *
+    255           * @param   task_id  - The OSAL assigned task ID.
+    256           * @param   events - events to process.  This is a bit map and can
+    257           *                   contain more than one event.
+    258           *
+    259           * @return  none
+    260           */
+    261          //KET1 外部中断方式
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    262          void InitKey2(void)
+   \                     InitKey2:
+    263          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    264            P1IEN |= 0X08;
+   \   000000   438D08       ORL     0x8d,#0x8
+    265            PICTL |= 0X2; // 下降沿触发   
+   \   000003   438C02       ORL     0x8c,#0x2
+    266            IEN2 |= 0X10;   // 允许P1口中断; 
+   \   000006   439A10       ORL     0x9a,#0x10
+    267            P1IFG = 0x08;   // 初始化中断标志位
+   \   000009   758A08       MOV     0x8a,#0x8
+    268            P1DIR |= 0x13;
+   \   00000C   43FE13       ORL     0xfe,#0x13
+    269            EA = 1; 
+   \   00000F   D2AF         SETB    0xa8.7
+    270          }
+   \   000011   02....       LJMP    ?BRET
+   \   000014                REQUIRE P1IEN
+   \   000014                REQUIRE PICTL
+   \   000014                REQUIRE IEN2
+   \   000014                REQUIRE P1IFG
+   \   000014                REQUIRE P1DIR
+   \   000014                REQUIRE _A_IEN0
+    271          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    272          uint16 Sound_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Sound_ProcessEvent:
+    273          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    274            afIncomingMSGPacket_t *MSGpkt;
+    275            afDataConfirm_t *afDataConfirm;
+    276          
+    277            // Data Confirmation message fields
+    278            byte sentEP;
+    279            ZStatus_t sentStatus;
+    280            byte sentTransID;       // This should match the value sent
+    281            (void)task_id;  // Intentionally unreferenced parameter
+    282          
+    283            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL     A,#0x80
+   \   000010   7003         JNZ     $+5
+   \   000012   02....       LJMP    ??Sound_ProcessEvent_0 & 0xFFFF
+    284            {
+    285              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Sound_TaskID );
+   \   000015                ; Setup parameters for call to function osal_msg_receive
+   \   000015   801E         SJMP    ??Sound_ProcessEvent_1
+    286              while ( MSGpkt )
+    287              {
+    288                switch ( MSGpkt->hdr.event )
+    289                {
+    290                  case ZDO_CB_MSG:
+    291                    Sound_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    292                    break;
+    293          
+    294                  case KEY_CHANGE:
+    295                    Sound_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    296                    break;
+    297          
+    298                  case AF_DATA_CONFIRM_CMD:
+    299                    // This message is received as a confirmation of a data packet sent.
+    300                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    301                    // The message fields are defined in AF.h
+    302                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    303                    sentEP = afDataConfirm->endpoint;
+    304                    sentStatus = afDataConfirm->hdr.status;
+    305                    sentTransID = afDataConfirm->transID;
+    306                    (void)sentEP;
+    307                    (void)sentTransID;
+    308          
+    309                    // Action taken when confirmation is received.
+    310                    if ( sentStatus != ZSuccess )
+    311                    {
+    312                      // The data wasn't delivered -- Do something
+    313                    }
+    314                    break;
+    315          
+    316                  case AF_INCOMING_MSG_CMD:
+    317                    Sound_MessageMSGCB( MSGpkt );
+    318                    break;
+    319          
+    320                  case ZDO_STATE_CHANGE:
+    321                    Sound_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??Sound_ProcessEvent_2:
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   90....       MOV     DPTR,#Sound_NwkState
+   \   00001C   F0           MOVX    @DPTR,A
+    322                    if ( (Sound_NwkState == DEV_ZB_COORD)
+    323                        || (Sound_NwkState == DEV_ROUTER)
+    324                        || (Sound_NwkState == DEV_END_DEVICE) )
+   \   00001D   6409         XRL     A,#0x9
+   \   00001F   600A         JZ      ??Sound_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6407         XRL     A,#0x7
+   \   000024   6005         JZ      ??Sound_ProcessEvent_3
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6406         XRL     A,#0x6
+   \   000029   7003         JNZ     ??CrossCallReturnLabel_2
+    325                    {
+    326                      // Start sending "the" message in a regular interval.
+    327                      osal_start_timerEx( Sound_TaskID,
+    328                                          Sound_SEND_MSG_EVT,
+    329                                          Sound_SEND_MSG_TIMEOUT );
+   \                     ??Sound_ProcessEvent_3:
+   \   00002B                ; Setup parameters for call to function osal_start_timerEx
+   \   00002B   12....       LCALL   ?Subroutine2 & 0xFFFF
+    330                    }
+    331                    break;
+    332          
+    333                  default:
+    334                    break;
+    335                }
+    336          
+    337                // Release the memory
+    338                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??CrossCallReturnLabel_2:
+   \   00002E                ; Setup parameters for call to function osal_msg_deallocate
+   \   00002E   AA..         MOV     R2,?V0 + 0
+   \   000030   AB..         MOV     R3,?V0 + 1
+   \   000032   12....       LCALL   ??osal_msg_deallocate?relay
+    339          
+    340                // Next
+    341                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Sound_TaskID );
+   \   000035                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Sound_ProcessEvent_1:
+   \   000035   90....       MOV     DPTR,#Sound_TaskID
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F9           MOV     R1,A
+   \   00003A   12....       LCALL   ??osal_msg_receive?relay
+   \   00003D   8A..         MOV     ?V0 + 0,R2
+   \   00003F   8B..         MOV     ?V0 + 1,R3
+   \   000041   E5..         MOV     A,?V0 + 0
+   \   000043   45..         ORL     A,?V0 + 1
+   \   000045   7003         JNZ     $+5
+   \   000047   02....       LJMP    ??Sound_ProcessEvent_4 & 0xFFFF
+   \   00004A   85..82       MOV     DPL,?V0 + 0
+   \   00004D   85..83       MOV     DPH,?V0 + 1
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   24E6         ADD     A,#-0x1a
+   \   000053   7003         JNZ     $+5
+   \   000055   02....       LJMP    ??Sound_ProcessEvent_5 & 0xFFFF
+   \   000058   245A         ADD     A,#0x5a
+   \   00005A   7003         JNZ     $+5
+   \   00005C   02....       LJMP    ??Sound_ProcessEvent_6 & 0xFFFF
+   \   00005F   24EF         ADD     A,#-0x11
+   \   000061   60B4         JZ      ??Sound_ProcessEvent_2
+   \   000063   24FE         ADD     A,#-0x2
+   \   000065   70C7         JNZ     ??CrossCallReturnLabel_2
+   \   000067   E5..         MOV     A,?V0 + 0
+   \   000069   240C         ADD     A,#0xc
+   \   00006B   F582         MOV     DPL,A
+   \   00006D   E5..         MOV     A,?V0 + 1
+   \   00006F   3400         ADDC    A,#0x0
+   \   000071   F583         MOV     DPH,A
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F5..         MOV     ?V0 + 2,A
+   \   000076   A3           INC     DPTR
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   F5..         MOV     ?V0 + 3,A
+   \   00007A   78..         MOV     R0,#?V0 + 2
+   \   00007C   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for Sound_ProcessEvent>_0`:
+   \   00007F   0000         DW        0
+   \   000081   0200         DW        2
+   \   000083   0680         DW        32774
+   \   000085   ....         DW        ??Sound_ProcessEvent_7
+   \   000087   2080         DW        32800
+   \   000089   ....         DW        ??Sound_ProcessEvent_8
+   \   00008B   ....         DW        ??CrossCallReturnLabel_2
+   \                     ??Sound_ProcessEvent_7:
+   \   00008D                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   00008D   AA..         MOV     R2,?V0 + 0
+   \   00008F   AB..         MOV     R3,?V0 + 1
+   \   000091   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   000094   8A..         MOV     ?V0 + 2,R2
+   \   000096   8B..         MOV     ?V0 + 3,R3
+   \   000098   EA           MOV     A,R2
+   \   000099   45..         ORL     A,?V0 + 3
+   \   00009B   6091         JZ      ??CrossCallReturnLabel_2
+   \   00009D   8A82         MOV     DPL,R2
+   \   00009F   8B83         MOV     DPH,R3
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   7032         JNZ     ??Sound_ProcessEvent_9
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   A3           INC     DPTR
+   \   0000A7   E0           MOVX    A,@DPTR
+   \   0000A8   602C         JZ      ??Sound_ProcessEvent_9
+   \   0000AA   90....       MOV     DPTR,#Sound_DstAddr + 8
+   \   0000AD   7402         MOV     A,#0x2
+   \   0000AF   F0           MOVX    @DPTR,A
+   \   0000B0   8A82         MOV     DPL,R2
+   \   0000B2   8B83         MOV     DPH,R3
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   F8           MOV     R0,A
+   \   0000B7   A3           INC     DPTR
+   \   0000B8   E0           MOVX    A,@DPTR
+   \   0000B9   F9           MOV     R1,A
+   \   0000BA   90....       MOV     DPTR,#Sound_DstAddr
+   \   0000BD   E8           MOV     A,R0
+   \   0000BE   F0           MOVX    @DPTR,A
+   \   0000BF   A3           INC     DPTR
+   \   0000C0   E9           MOV     A,R1
+   \   0000C1   F0           MOVX    @DPTR,A
+   \   0000C2   8A82         MOV     DPL,R2
+   \   0000C4   8B83         MOV     DPH,R3
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   A3           INC     DPTR
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   E0           MOVX    A,@DPTR
+   \   0000CB   90....       MOV     DPTR,#Sound_DstAddr + 9
+   \   0000CE   F0           MOVX    @DPTR,A
+   \   0000CF                ; Setup parameters for call to function HalLedSet
+   \   0000CF   7A01         MOV     R2,#0x1
+   \   0000D1   7908         MOV     R1,#0x8
+   \   0000D3   12....       LCALL   ??HalLedSet?relay
+   \                     ??Sound_ProcessEvent_9:
+   \   0000D6                ; Setup parameters for call to function osal_mem_free
+   \   0000D6   AA..         MOV     R2,?V0 + 2
+   \   0000D8   AB..         MOV     R3,?V0 + 3
+   \   0000DA   12....       LCALL   ??osal_mem_free?relay
+   \   0000DD   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \                     ??Sound_ProcessEvent_8:
+   \   0000E0   E5..         MOV     A,?V0 + 0
+   \   0000E2   2413         ADD     A,#0x13
+   \   0000E4   F582         MOV     DPL,A
+   \   0000E6   E5..         MOV     A,?V0 + 1
+   \   0000E8   3400         ADDC    A,#0x0
+   \   0000EA   F583         MOV     DPH,A
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   F8           MOV     R0,A
+   \   0000EE   A3           INC     DPTR
+   \   0000EF   E0           MOVX    A,@DPTR
+   \   0000F0   F583         MOV     DPH,A
+   \   0000F2   8882         MOV     DPL,R0
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   700A         JNZ     ??Sound_ProcessEvent_10
+   \   0000F7                ; Setup parameters for call to function HalLedSet
+   \   0000F7   7A01         MOV     R2,#0x1
+   \                     ??Sound_ProcessEvent_11:
+   \   0000F9   7908         MOV     R1,#0x8
+   \   0000FB   12....       LCALL   ??HalLedSet?relay
+   \   0000FE   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \                     ??Sound_ProcessEvent_10:
+   \   000101                ; Setup parameters for call to function HalLedSet
+   \   000101   7A04         MOV     R2,#0x4
+   \   000103   80F4         SJMP    ??Sound_ProcessEvent_11
+   \                     ??Sound_ProcessEvent_6:
+   \   000105   A3           INC     DPTR
+   \   000106   A3           INC     DPTR
+   \   000107   A3           INC     DPTR
+   \   000108   E0           MOVX    A,@DPTR
+   \   000109   F5..         MOV     ?V0 + 4,A
+   \   00010B   85..82       MOV     DPL,?V0 + 0
+   \   00010E   85..83       MOV     DPH,?V0 + 1
+   \   000111   A3           INC     DPTR
+   \   000112   A3           INC     DPTR
+   \   000113   E0           MOVX    A,@DPTR
+   \   000114   6003         JZ      $+5
+   \   000116   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \   000119   E5..         MOV     A,?V0 + 4
+   \   00011B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00011D   506D         JNC     ??Sound_ProcessEvent_12
+   \   00011F                ; Setup parameters for call to function HalLedSet
+   \   00011F   7A00         MOV     R2,#0x0
+   \   000121   7908         MOV     R1,#0x8
+   \   000123   12....       LCALL   ??HalLedSet?relay
+   \   000126   7408         MOV     A,#0x8
+   \   000128   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012B   7402         MOV     A,#0x2
+   \   00012D   F0           MOVX    @DPTR,A
+   \   00012E   85..82       MOV     DPL,?XSP + 0
+   \   000131   85..83       MOV     DPH,?XSP + 1
+   \   000134   E4           CLR     A
+   \   000135   F0           MOVX    @DPTR,A
+   \   000136   A3           INC     DPTR
+   \   000137   F0           MOVX    @DPTR,A
+   \   000138                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000138   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00013B   8A..         MOV     ?V0 + 2,R2
+   \   00013D   8B..         MOV     ?V0 + 3,R3
+   \   00013F   AC..         MOV     R4,?V0 + 2
+   \   000141   AD..         MOV     R5,?V0 + 3
+   \   000143   75....       MOV     ?V0 + 2,#Sound_ClusterList & 0xff
+   \   000146   75....       MOV     ?V0 + 3,#(Sound_ClusterList >> 8) & 0xff
+   \   000149                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   000149   75..00       MOV     ?V0 + 5,#0x0
+   \   00014C   78..         MOV     R0,#?V0 + 5
+   \   00014E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000151   78..         MOV     R0,#?V0 + 2
+   \   000153   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000156   75..01       MOV     ?V0 + 5,#0x1
+   \   000159   78..         MOV     R0,#?V0 + 5
+   \   00015B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00015E   78..         MOV     R0,#?V0 + 2
+   \   000160   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000163   75..01       MOV     ?V0 + 2,#0x1
+   \   000166   78..         MOV     R0,#?V0 + 2
+   \   000168   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00016B   75..04       MOV     ?V0 + 2,#0x4
+   \   00016E   75..0F       MOV     ?V0 + 3,#0xf
+   \   000171   78..         MOV     R0,#?V0 + 2
+   \   000173   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000176   90....       MOV     DPTR,#Sound_epDesc
+   \   000179   E0           MOVX    A,@DPTR
+   \   00017A   F9           MOV     R1,A
+   \   00017B   7409         MOV     A,#0x9
+   \   00017D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000180   AA82         MOV     R2,DPL
+   \   000182   AB83         MOV     R3,DPH
+   \   000184   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000187   7409         MOV     A,#0x9
+   \   000189   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??Sound_ProcessEvent_12:
+   \   00018C   E5..         MOV     A,?V0 + 4
+   \   00018E   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000190   4003         JC      $+5
+   \   000192   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \   000195                ; Setup parameters for call to function HalLedSet
+   \   000195   7A00         MOV     R2,#0x0
+   \   000197   7908         MOV     R1,#0x8
+   \   000199   12....       LCALL   ??HalLedSet?relay
+   \   00019C   7408         MOV     A,#0x8
+   \   00019E   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A1   740F         MOV     A,#0xf
+   \   0001A3   F0           MOVX    @DPTR,A
+   \   0001A4   85..82       MOV     DPL,?XSP + 0
+   \   0001A7   85..83       MOV     DPH,?XSP + 1
+   \   0001AA   74FF         MOV     A,#-0x1
+   \   0001AC   F0           MOVX    @DPTR,A
+   \   0001AD   A3           INC     DPTR
+   \   0001AE   F0           MOVX    @DPTR,A
+   \   0001AF   75....       MOV     ?V0 + 2,#Sound_ClusterList & 0xff
+   \   0001B2   75....       MOV     ?V0 + 3,#(Sound_ClusterList >> 8) & 0xff
+   \   0001B5                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0001B5   75..00       MOV     ?V0 + 4,#0x0
+   \   0001B8   78..         MOV     R0,#?V0 + 4
+   \   0001BA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001BD   78..         MOV     R0,#?V0 + 2
+   \   0001BF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001C2   75..01       MOV     ?V0 + 4,#0x1
+   \   0001C5   78..         MOV     R0,#?V0 + 4
+   \   0001C7   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001CA   78..         MOV     R0,#?V0 + 2
+   \   0001CC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001CF   75..04       MOV     ?V0 + 2,#0x4
+   \   0001D2   75..0F       MOV     ?V0 + 3,#0xf
+   \   0001D5   78..         MOV     R0,#?V0 + 2
+   \   0001D7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001DA   7901         MOV     R1,#0x1
+   \   0001DC   7CFF         MOV     R4,#-0x1
+   \   0001DE   7DFF         MOV     R5,#-0x1
+   \   0001E0   7408         MOV     A,#0x8
+   \   0001E2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E5   AA82         MOV     R2,DPL
+   \   0001E7   AB83         MOV     R3,DPH
+   \   0001E9   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0001EC   7408         MOV     A,#0x8
+   \   0001EE   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001F1   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \                     ??Sound_ProcessEvent_5:
+   \   0001F4   A3           INC     DPTR
+   \   0001F5   A3           INC     DPTR
+   \   0001F6   A3           INC     DPTR
+   \   0001F7   A3           INC     DPTR
+   \   0001F8   E0           MOVX    A,@DPTR
+   \   0001F9   6403         XRL     A,#0x3
+   \   0001FB   7002         JNZ     ??Sound_ProcessEvent_13
+   \   0001FD   A3           INC     DPTR
+   \   0001FE   E0           MOVX    A,@DPTR
+   \                     ??Sound_ProcessEvent_13:
+   \   0001FF   6003         JZ      $+5
+   \   000201   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+   \   000204                ; Setup parameters for call to function HalLcdWriteScreen
+   \   000204   7C..         MOV     R4,#`?<Constant "rcvd">` & 0xff
+   \   000206   7D..         MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+   \   000208   E5..         MOV     A,?V0 + 0
+   \   00020A   2422         ADD     A,#0x22
+   \   00020C   F582         MOV     DPL,A
+   \   00020E   E5..         MOV     A,?V0 + 1
+   \   000210   3400         ADDC    A,#0x0
+   \   000212   F583         MOV     DPH,A
+   \   000214   E0           MOVX    A,@DPTR
+   \   000215   FA           MOV     R2,A
+   \   000216   A3           INC     DPTR
+   \   000217   E0           MOVX    A,@DPTR
+   \   000218   FB           MOV     R3,A
+   \   000219   12....       LCALL   ??HalLcdWriteScreen?relay
+   \   00021C   02....       LJMP    ??CrossCallReturnLabel_2 & 0xFFFF
+    342              }
+    343          
+    344              // return unprocessed events
+    345              return (events ^ SYS_EVENT_MSG);
+   \                     ??Sound_ProcessEvent_4:
+   \   00021F   EE           MOV     A,R6
+   \   000220   FA           MOV     R2,A
+   \   000221   EF           MOV     A,R7
+   \   000222   6480         XRL     A,#0x80
+   \                     ??Sound_ProcessEvent_14:
+   \   000224   FB           MOV     R3,A
+   \   000225   8016         SJMP    ??Sound_ProcessEvent_15
+    346            }
+    347          
+    348            // Send a message out - This event is generated by a timer
+    349            //  (setup in Sound_Init()).
+    350            if ( events & Sound_SEND_MSG_EVT )
+   \                     ??Sound_ProcessEvent_0:
+   \   000227   EE           MOV     A,R6
+   \   000228   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00022A   500D         JNC     ??Sound_ProcessEvent_16
+    351            {
+    352              // Send "the" message
+    353              Sound_SendTheMessage();
+   \   00022C                ; Setup parameters for call to function Sound_SendTheMessage
+   \   00022C   12....       LCALL   ??Sound_SendTheMessage?relay
+    354          
+    355              // Setup to send message again
+    356              osal_start_timerEx( Sound_TaskID,
+    357                                  Sound_SEND_MSG_EVT,
+    358                                  Sound_SEND_MSG_TIMEOUT );
+   \   00022F                ; Setup parameters for call to function osal_start_timerEx
+   \   00022F   12....       LCALL   ?Subroutine2 & 0xFFFF
+    359          
+    360              // return unprocessed events
+    361              return (events ^ Sound_SEND_MSG_EVT);
+   \                     ??CrossCallReturnLabel_3:
+   \   000232   EE           MOV     A,R6
+   \   000233   6401         XRL     A,#0x1
+   \   000235   FA           MOV     R2,A
+   \   000236   EF           MOV     A,R7
+   \   000237   80EB         SJMP    ??Sound_ProcessEvent_14
+    362            }
+    363          
+    364            
+    365          #if defined( IAR_ARMCM3_LM )
+    366            // Receive a message from the RTOS queue
+    367            if ( events & Sound_RTOS_MSG_EVT )
+    368            {
+    369              // Process message from RTOS queue
+    370              Sound_ProcessRtosMessage();
+    371          
+    372              // return unprocessed events
+    373              return (events ^ Sound_RTOS_MSG_EVT);
+    374            }
+    375          #endif
+    376          
+    377            // Discard unknown events
+    378            return 0;
+   \                     ??Sound_ProcessEvent_16:
+   \   000239   7A00         MOV     R2,#0x0
+   \   00023B   7B00         MOV     R3,#0x0
+   \                     ??Sound_ProcessEvent_15:
+   \   00023D   7409         MOV     A,#0x9
+   \   00023F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000242   7F06         MOV     R7,#0x6
+   \   000244   02....       LJMP    ?BANKED_LEAVE_XDATA
+    379          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7C88         MOV     R4,#-0x78
+   \   000002   7D13         MOV     R5,#0x13
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   90....       MOV     DPTR,#Sound_TaskID
+   \   00000B                REQUIRE ??Subroutine3_0
+   \   00000B                ; // Fall through to label ??Subroutine3_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine3_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F9           MOV     R1,A
+   \   000002   12....       LCALL   ??osal_start_timerEx?relay
+   \   000005   22           RET
+    380          
+    381          /*********************************************************************
+    382           * Event Generation Functions
+    383           */
+    384          
+    385          /*********************************************************************
+    386           * @fn      Sound_ProcessZDOMsgs()
+    387           *
+    388           * @brief   Process response messages
+    389           *
+    390           * @param   none
+    391           *
+    392           * @return  none
+    393           */
+    394          static void Sound_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    395          {
+    396            switch ( inMsg->clusterID )
+    397            {
+    398              case End_Device_Bind_rsp:
+    399                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    400                {
+    401                  // Sound LED
+    402                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    403                }
+    404          #if defined( BLINK_LEDS )
+    405                else
+    406                {
+    407                  // Flash LED to show failure
+    408                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    409                }
+    410          #endif
+    411                break;
+    412          
+    413              case Match_Desc_rsp:
+    414                {
+    415                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    416                  if ( pRsp )
+    417                  {
+    418                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    419                    {
+    420                      Sound_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    421                      Sound_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    422                      // Take the first endpoint, Can be changed to search through endpoints
+    423                      Sound_DstAddr.endPoint = pRsp->epList[0];
+    424          
+    425                      // Sound LED
+    426                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    427                    }
+    428                    osal_mem_free( pRsp );
+    429                  }
+    430                }
+    431                break;
+    432            }
+    433          }
+    434          
+    435          /*********************************************************************
+    436           * @fn      Sound_HandleKeys
+    437           *
+    438           * @brief   Handles all key events for this device.
+    439           *
+    440           * @param   shift - true if in shift/alt.
+    441           * @param   keys - bit field for key events. Valid entries:
+    442           *                 HAL_KEY_SW_4
+    443           *                 HAL_KEY_SW_3
+    444           *                 HAL_KEY_SW_2
+    445           *                 HAL_KEY_SW_1
+    446           *
+    447           * @return  none
+    448           */
+    449          static void Sound_HandleKeys( uint8 shift, uint8 keys )
+    450          {
+    451            zAddrType_t dstAddr;
+    452          
+    453            // Shift is used to make each button/switch dual purpose.
+    454            if ( shift )
+    455            {
+    456              if ( keys & HAL_KEY_SW_1 )
+    457              {
+    458              }
+    459              if ( keys & HAL_KEY_SW_2 )
+    460              {
+    461              }
+    462              if ( keys & HAL_KEY_SW_3 )
+    463              {
+    464              }
+    465              if ( keys & HAL_KEY_SW_4 )
+    466              {
+    467              }
+    468            }
+    469            else
+    470            {
+    471              if ( keys & HAL_KEY_SW_1 )
+    472              {
+    473                // Since SW1 isn't used for anything else in this application...
+    474          #if defined( SWITCH1_BIND )
+    475                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    476                keys |= HAL_KEY_SW_2;
+    477          #elif defined( SWITCH1_MATCH )
+    478                // or use SW1 to simulate SW4 for devices that only have one switch
+    479                keys |= HAL_KEY_SW_4;
+    480          #endif
+    481              }
+    482          
+    483              if ( keys & HAL_KEY_SW_2 )
+    484              {
+    485                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    486          
+    487                // Initiate an End Device Bind Request for the mandatory endpoint
+    488                dstAddr.addrMode = Addr16Bit;
+    489                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    490                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    491                                      Sound_epDesc.endPoint,
+    492                                      Sound_PROFID,
+    493                                      Sound_MAX_CLUSTERS, (cId_t *)Sound_ClusterList,
+    494                                      Sound_MAX_CLUSTERS, (cId_t *)Sound_ClusterList,
+    495                                      FALSE );
+    496              }
+    497          
+    498              if ( keys & HAL_KEY_SW_3 )
+    499              {
+    500              }
+    501          
+    502              if ( keys & HAL_KEY_SW_4 )
+    503              {
+    504                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    505                // Initiate a Match Description Request (Service Discovery)
+    506                dstAddr.addrMode = AddrBroadcast;
+    507                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    508                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    509                                  Sound_PROFID,
+    510                                  Sound_MAX_CLUSTERS, (cId_t *)Sound_ClusterList,
+    511                                  Sound_MAX_CLUSTERS, (cId_t *)Sound_ClusterList,
+    512                                  FALSE );
+    513              }
+    514            }
+    515          }
+    516          
+    517          /*********************************************************************
+    518           * LOCAL FUNCTIONS
+    519           */
+    520          
+    521          /*********************************************************************
+    522           * @fn      Sound_MessageMSGCB
+    523           *
+    524           * @brief   Data message processor callback.  This function processes
+    525           *          any incoming data - probably from other devices.  So, based
+    526           *          on cluster ID, perform the intended action.
+    527           *
+    528           * @param   none
+    529           *
+    530           * @return  none
+    531           */
+    532          static void Sound_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    533          {
+    534            switch ( pkt->clusterId )
+    535            {
+    536              case Sound_CLUSTERID:
+    537                // "the" message
+    538          #if defined( LCD_SUPPORTED )
+    539                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    540          #elif defined( WIN32 )
+    541                WPRINTSTR( pkt->cmd.Data );
+    542          #endif
+    543                break;
+    544            }
+    545          }
+    546          
+    547          /*********************************************************************
+    548           * @fn      Sound_SendTheMessage
+    549           *
+    550           * @brief   Send "the" message.
+    551           *
+    552           * @param   none
+    553           *
+    554           * @return  none
+    555           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    556          static void Sound_SendTheMessage( void )
+   \                     Sound_SendTheMessage:
+    557          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 15
+   \   000005   74F1         MOV     A,#-0xf
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    558            unsigned char theMessageData[15] = "Sound:";
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant "Sound:">` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant "Sound:">` & 0xff
+   \   00001A   740F         MOV     A,#0xf
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    559            
+    560            _ltoa( (uint32)(isound), &theMessageData[6], 10 );
+   \   00001F                ; Setup parameters for call to function _ltoa
+   \   00001F   7406         MOV     A,#0x6
+   \   000021   12....       LCALL   ?XSTACK_DISP0_8
+   \   000024   8582..       MOV     ?V0 + 0,DPL
+   \   000027   8583..       MOV     ?V0 + 1,DPH
+   \   00002A   78..         MOV     R0,#?V0 + 0
+   \   00002C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002F   790A         MOV     R1,#0xa
+   \   000031   90....       MOV     DPTR,#isound
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F5..         MOV     ?V0 + 0,A
+   \   000037   A3           INC     DPTR
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   AA..         MOV     R2,?V0 + 0
+   \   00003B   FB           MOV     R3,A
+   \   00003C   E4           CLR     A
+   \   00003D   FC           MOV     R4,A
+   \   00003E   FD           MOV     R5,A
+   \   00003F   12....       LCALL   ??_ltoa?relay
+   \   000042   7402         MOV     A,#0x2
+   \   000044   12....       LCALL   ?DEALLOC_XSTACK8
+    561            
+    562            for (unsigned char i=0; i<15-1; i++)
+   \   000047   7800         MOV     R0,#0x0
+    563            {
+    564              if (theMessageData[i] == 0x00 )
+   \                     ??Sound_SendTheMessage_0:
+   \   000049   88..         MOV     ?V0 + 0,R0
+   \   00004B   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00004E   E0           MOVX    A,@DPTR
+   \   00004F   7006         JNZ     ??Sound_SendTheMessage_1
+    565              {
+    566                theMessageData[i] = ' ';
+   \   000051   12....       LCALL   ?Subroutine1 & 0xFFFF
+    567              }
+    568            }
+   \                     ??CrossCallReturnLabel_1:
+   \   000054   7420         MOV     A,#0x20
+   \   000056   F0           MOVX    @DPTR,A
+   \                     ??Sound_SendTheMessage_1:
+   \   000057   08           INC     R0
+   \   000058   E8           MOV     A,R0
+   \   000059   C3           CLR     C
+   \   00005A   940E         SUBB    A,#0xe
+   \   00005C   40EB         JC      ??Sound_SendTheMessage_0
+    569          
+    570            if ( AF_DataRequest( &Sound_DstAddr, &Sound_epDesc,
+    571                                 Sound_CLUSTERID,
+    572                                 (byte)osal_strlen( theMessageData ) + 1,
+                                                           ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char *"
+    573                                 (byte *)&theMessageData,
+    574                                 &Sound_TransID,
+    575                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00005E                ; Setup parameters for call to function AF_DataRequest
+   \   00005E   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000061   78..         MOV     R0,#?V0 + 0
+   \   000063   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000066   75....       MOV     ?V0 + 0,#Sound_TransID & 0xff
+   \   000069   75....       MOV     ?V0 + 1,#(Sound_TransID >> 8) & 0xff
+   \   00006C   78..         MOV     R0,#?V0 + 0
+   \   00006E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000071   7403         MOV     A,#0x3
+   \   000073   12....       LCALL   ?XSTACK_DISP0_8
+   \   000076   8582..       MOV     ?V0 + 0,DPL
+   \   000079   8583..       MOV     ?V0 + 1,DPH
+   \   00007C   78..         MOV     R0,#?V0 + 0
+   \   00007E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000081                ; Setup parameters for call to function osal_strlen
+   \   000081   7405         MOV     A,#0x5
+   \   000083   12....       LCALL   ?XSTACK_DISP0_8
+   \   000086   AA82         MOV     R2,DPL
+   \   000088   AB83         MOV     R3,DPH
+   \   00008A   12....       LCALL   ??osal_strlen?relay
+   \   00008D   EA           MOV     A,R2
+   \   00008E   2401         ADD     A,#0x1
+   \   000090   F5..         MOV     ?V0 + 0,A
+   \   000092   E4           CLR     A
+   \   000093   3400         ADDC    A,#0x0
+   \   000095   F5..         MOV     ?V0 + 1,A
+   \   000097   78..         MOV     R0,#?V0 + 0
+   \   000099   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00009C   75..03       MOV     ?V0 + 0,#0x3
+   \   00009F   75..00       MOV     ?V0 + 1,#0x0
+   \   0000A2   78..         MOV     R0,#?V0 + 0
+   \   0000A4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A7   7920         MOV     R1,#0x20
+   \   0000A9   7C..         MOV     R4,#Sound_epDesc & 0xff
+   \   0000AB   7D..         MOV     R5,#(Sound_epDesc >> 8) & 0xff
+   \   0000AD   7A..         MOV     R2,#Sound_DstAddr & 0xff
+   \   0000AF   7B..         MOV     R3,#(Sound_DstAddr >> 8) & 0xff
+   \   0000B1   12....       LCALL   ??AF_DataRequest?relay
+   \   0000B4   7409         MOV     A,#0x9
+   \   0000B6   12....       LCALL   ?DEALLOC_XSTACK8
+    576            {
+    577              // Successfully requested to be sent.
+    578            }
+    579            else
+    580            {
+    581              // Error occurred in request to send.
+    582            }
+    583          }
+   \   0000B9   740F         MOV     A,#0xf
+   \   0000BB   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000BE   7F02         MOV     R7,#0x2
+   \   0000C0   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   85..82       MOV     DPL,?XSP + 0
+   \   000003   85..83       MOV     DPH,?XSP + 1
+   \   000006   E582         MOV     A,DPL
+   \   000008   25..         ADD     A,?V0 + 0
+   \   00000A   F582         MOV     DPL,A
+   \   00000C   E583         MOV     A,DPH
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   F583         MOV     DPH,A
+   \   000012   22           RET
+    584          
+    585          #if defined( IAR_ARMCM3_LM )
+    586          /*********************************************************************
+    587           * @fn      Sound_ProcessRtosMessage
+    588           *
+    589           * @brief   Receive message from RTOS queue, send response back.
+    590           *
+    591           * @param   none
+    592           *
+    593           * @return  none
+    594           */
+    595          static void Sound_ProcessRtosMessage( void )
+    596          {
+    597            osalQueue_t inMsg;
+    598          
+    599            if ( osal_queue_receive( OsalQueue, &inMsg, 0 ) == pdPASS )
+    600            {
+    601              uint8 cmndId = inMsg.cmnd;
+    602              uint32 counter = osal_build_uint32( inMsg.cbuf, 4 );
+    603          
+    604              switch ( cmndId )
+    605              {
+    606                case CMD_INCR:
+    607                  counter += 1;  /* Increment the incoming counter */
+    608                                 /* Intentionally fall through next case */
+    609          
+    610                case CMD_ECHO:
+    611                {
+    612                  userQueue_t outMsg;
+    613          
+    614                  outMsg.resp = RSP_CODE | cmndId;  /* Response ID */
+    615                  osal_buffer_uint32( outMsg.rbuf, counter );    /* Increment counter */
+    616                  osal_queue_send( UserQueue1, &outMsg, 0 );  /* Send back to UserTask */
+    617                  break;
+    618                }
+    619                
+    620                default:
+    621                  break;  /* Ignore unknown command */    
+    622              }
+    623            }
+    624          }
+    625          
+    626          #endif
+    627          
+    628          //***********************************************************************************
+    629          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    630          uint16 SoundMeasurement_ProcessEvent( uint8 task_id, uint16 events )
+   \                     SoundMeasurement_ProcessEvent:
+    631          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    632            if ( events & SOUNDMEASUREMENT_EVT )
+   \   000009   EE           MOV     A,R6
+   \   00000A   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000C   5019         JNC     ??SoundMeasurement_ProcessEvent_0
+    633            {
+    634            osal_start_timerEx( SoundMeasurement_TaskID,
+    635                                  SOUNDMEASUREMENT_EVT,
+    636                                  SOUNDMEASUREMENT_TIMEOUT );
+   \   00000E                ; Setup parameters for call to function osal_start_timerEx
+   \   00000E   7CA0         MOV     R4,#-0x60
+   \   000010   7D0F         MOV     R5,#0xf
+   \   000012   7A01         MOV     R2,#0x1
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   90....       MOV     DPTR,#SoundMeasurement_TaskID
+   \   000019   12....       LCALL   ??Subroutine3_0 & 0xFFFF
+    637          
+    638              InitKey2();
+   \                     ??CrossCallReturnLabel_4:
+   \   00001C                ; Setup parameters for call to function InitKey2
+   \   00001C   12....       LCALL   ??InitKey2?relay
+    639              return (events ^ SOUNDMEASUREMENT_EVT);
+   \   00001F   EE           MOV     A,R6
+   \   000020   6401         XRL     A,#0x1
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   FB           MOV     R3,A
+   \   000025   8004         SJMP    ??SoundMeasurement_ProcessEvent_1
+    640            }
+    641          
+    642            // Discard unknown events
+    643            return 0;
+   \                     ??SoundMeasurement_ProcessEvent_0:
+   \   000027   7A00         MOV     R2,#0x0
+   \   000029   7B00         MOV     R3,#0x0
+   \                     ??SoundMeasurement_ProcessEvent_1:
+   \   00002B   02....       LJMP    ?Subroutine0 & 0xFFFF
+    644          }
+    645          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    646          void SoundMeasurement_Init( uint8 task_id )
+   \                     SoundMeasurement_Init:
+    647          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    648            SoundMeasurement_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#SoundMeasurement_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    649            SoundMeasurement_TransID = 0;
+   \   00000A   90....       MOV     DPTR,#SoundMeasurement_TransID
+   \   00000D   E4           CLR     A
+   \   00000E   F0           MOVX    @DPTR,A
+    650            
+    651            osal_start_timerEx( SoundMeasurement_TaskID,
+    652                                  SOUNDMEASUREMENT_EVT,
+    653                                  SOUNDMEASUREMENT_TIMEOUT );
+   \   00000F                ; Setup parameters for call to function osal_start_timerEx
+   \   00000F   7CA0         MOV     R4,#-0x60
+   \   000011   7D0F         MOV     R5,#0xf
+   \   000013   7A01         MOV     R2,#0x1
+   \   000015   FB           MOV     R3,A
+   \   000016   12....       LCALL   ??osal_start_timerEx?relay
+    654            
+    655            RegisterForKeys( SoundMeasurement_TaskID );  
+   \   000019                ; Setup parameters for call to function RegisterForKeys
+   \   000019   90....       MOV     DPTR,#SoundMeasurement_TaskID
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??RegisterForKeys?relay
+    656          }
+   \   000021   02....       LJMP    ?Subroutine0 & 0xFFFF
+    657          
+    658          
+    659          /*********************************************************************
+    660           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    661          HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+   \                     halKeyPort1Isr:
+    662          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+    663            
+    664            if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)
+   \   000007   E58A         MOV     A,0x8a
+   \   000009   A2E3         MOV     C,0xE0 /* A   */.3
+   \   00000B   5018         JNC     ??halKeyPort1Isr_0
+    665            {
+    666              isound=1;
+   \   00000D   90....       MOV     DPTR,#isound
+   \   000010   7401         MOV     A,#0x1
+   \   000012   F0           MOVX    @DPTR,A
+   \   000013   A3           INC     DPTR
+   \   000014   E4           CLR     A
+   \   000015   F0           MOVX    @DPTR,A
+    667              Sound_SendTheMessage( );
+   \   000016                ; Setup parameters for call to function Sound_SendTheMessage
+   \   000016   12....       LCALL   ??Sound_SendTheMessage?relay
+    668              isound=0;
+   \   000019   90....       MOV     DPTR,#isound
+   \   00001C   E4           CLR     A
+   \   00001D   F0           MOVX    @DPTR,A
+   \   00001E   A3           INC     DPTR
+   \   00001F   F0           MOVX    @DPTR,A
+    669              P1IFG = 0;             //清中断标志 
+   \   000020   758A00       MOV     0x8a,#0x0
+    670              P1IF = 0;             //清中断标志 
+   \   000023   C2EB         CLR     0xe8.3
+    671            }
+    672          }
+   \                     ??halKeyPort1Isr_0:
+   \   000025   7F01         MOV     R7,#0x1
+   \   000027   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   00002A                REQUIRE P1IFG
+   \   00002A                REQUIRE _A_IRCON2
+
+   \                                 In  segment INTVEC, offset 0x7b, root
+   \                     `??halKeyPort1Isr??INTVEC 123`:
+   \   00007B   02....       LJMP       (halKeyPort1Isr)
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Sound_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Sound_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitKey2?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitKey2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Sound_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Sound_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Sound_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Sound_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SoundMeasurement_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SoundMeasurement_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SoundMeasurement_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SoundMeasurement_Init
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Sound">`:
+   \   000000   536F756E     DB "Sound"
+   \            6400    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "rcvd">`:
+   \   000000   72637664     DB "rcvd"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Sound:">`:
+   \   000000   536F756E     DB "Sound:"
+   \            643A00  
+   \   000007   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+
+   Maximum stack usage in bytes:
+
+     Function                      ISTACK PSTACK XSTACK
+     --------                      ------ ------ ------
+     InitKey2                          0      0      9
+     SoundMeasurement_Init             0      0      9
+       -> osal_start_timerEx           0      0     18
+       -> RegisterForKeys              0      0     18
+     SoundMeasurement_ProcessEvent     0      0      9
+       -> osal_start_timerEx           0      0     18
+       -> InitKey2                     0      0     18
+     Sound_Init                        0      0      9
+       -> afRegister                   0      0     18
+       -> RegisterForKeys              0      0     18
+       -> HalLcdWriteString            0      0     18
+       -> ZDO_RegisterForZDOMsg        0      0     18
+       -> ZDO_RegisterForZDOMsg        0      0     18
+     Sound_ProcessEvent                0      0     32
+       -> osal_msg_receive             0      0     46
+       -> osal_start_timerEx           0      0     46
+       -> osal_msg_deallocate          0      0     46
+       -> osal_msg_receive             0      0     46
+       -> ZDO_ParseEPListRsp           0      0     46
+       -> HalLedSet                    0      0     46
+       -> osal_mem_free                0      0     46
+       -> HalLedSet                    0      0     46
+       -> HalLedSet                    0      0     46
+       -> HalLedSet                    0      0     46
+       -> NLME_GetShortAddr            0      0     46
+       -> ZDP_EndDeviceBindReq         0      0     64
+       -> HalLedSet                    0      0     46
+       -> ZDP_MatchDescReq             0      0     62
+       -> HalLcdWriteScreen            0      0     46
+       -> Sound_SendTheMessage         0      0     46
+       -> osal_start_timerEx           0      0     46
+     Sound_SendTheMessage              2      0     57
+       -> _ltoa                        0      0     54
+       -> osal_strlen                  0      0     60
+       -> AF_DataRequest               0      0     68
+     halKeyPort1Isr                    0      0     14
+       -> Sound_SendTheMessage         0      0     28
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     P1IFG                                    1
+     PICTL                                    1
+     P1IEN                                    1
+     IEN2                                     1
+     _A_IEN0                                  1
+     _A_IRCON2                                1
+     P1DIR                                    1
+     Sound_ClusterList                        2
+     Sound_SimpleDesc                        12
+     Sound_epDesc                             6
+     Sound_TaskID                             1
+     Sound_NwkState                           1
+     Sound_TransID                            1
+     Sound_DstAddr                           12
+     SoundMeasurement_TaskID                  1
+     SoundMeasurement_NwkState                1
+     SoundMeasurement_TransID                 1
+     isound                                   2
+     Sound_Init                             106
+     ?Subroutine0                             5
+     InitKey2                                20
+     Sound_ProcessEvent                     583
+     ?Subroutine2                            11
+     ??Subroutine3_0                          6
+     Sound_SendTheMessage                   195
+     ?Subroutine1                            19
+     SoundMeasurement_ProcessEvent           46
+     SoundMeasurement_Init                   36
+     halKeyPort1Isr                          42
+     ??halKeyPort1Isr??INTVEC 123             3
+     ??Sound_Init?relay                       6
+     ??InitKey2?relay                         6
+     ??Sound_ProcessEvent?relay               6
+     ??Sound_SendTheMessage?relay             6
+     ??SoundMeasurement_ProcessEvent?relay    6
+     ??SoundMeasurement_Init?relay            6
+     ?<Constant "Sound">                      6
+     ?<Constant "rcvd">                       5
+     ?<Constant "Sound:">                    15
+
+ 
+ 1 027 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+     3 bytes in segment INTVEC
+    42 bytes in segment NEAR_CODE
+     7 bytes in segment SFR_AN
+    40 bytes in segment XDATA_ROM_C
+    26 bytes in segment XDATA_Z
+ 
+ 1 105 bytes of CODE  memory (+ 3 bytes shared)
+    40 bytes of CONST memory
+     0 bytes of DATA  memory (+ 7 bytes shared)
+    26 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

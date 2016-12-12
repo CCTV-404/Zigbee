@@ -1,0 +1,2317 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         19/Feb/2014  10:59:00 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\Source\Posture.c                           #
+#    Command line       =  -f "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev. #
+#                          cfg" (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          04Posture_ENDDB\CC2530DB\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\OurEDA\Documents\ #
+#                          Tencent Files\1534143789\FileRecv\ZStack-CC2530-2. #
+#                          5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\ #
+#                          04Posture_ENDDB\Source\Posture.c" -D               #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC "C:\Users\OurEDA\Documents\Te #
+#                          ncent Files\1534143789\FileRecv\ZStack-CC2530-2.5. #
+#                          1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04 #
+#                          Posture_ENDDB\CC2530DB\EndDeviceEB\List\" -lA      #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\EndDeviceEB\List\"                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\EndDeviceEB\Obj\" -e              #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\" -I "C:\Users\OurEDA\Documents\T #
+#                          encent Files\1534143789\FileRecv\ZStack-CC2530-2.5 #
+#                          .1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 #
+#                          4Posture_ENDDB\CC2530DB\..\Source\" -I             #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\ZMain\TI2530DB\" -I      #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\hal\inc #
+#                          lude\" -I "C:\Users\OurEDA\Documents\Tencent       #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\hal\tar #
+#                          get\CC2530EB\" -I "C:\Users\OurEDA\Documents\Tence #
+#                          nt Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04Pos #
+#                          ture_ENDDB\CC2530DB\..\..\..\..\..\Components\mac\ #
+#                          include\" -I "C:\Users\OurEDA\Documents\Tencent    #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\mac\hig #
+#                          h_level\" -I "C:\Users\OurEDA\Documents\Tencent    #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\mac\low #
+#                          _level\srf04\" -I "C:\Users\OurEDA\Documents\Tence #
+#                          nt Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04Pos #
+#                          ture_ENDDB\CC2530DB\..\..\..\..\..\Components\mac\ #
+#                          low_level\srf04\single_chip\" -I                   #
+#                          "C:\Users\OurEDA\Documents\Tencent                 #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\mt\"    #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\osal\in #
+#                          clude\" -I "C:\Users\OurEDA\Documents\Tencent      #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\service #
+#                          s\saddr\" -I "C:\Users\OurEDA\Documents\Tencent    #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\service #
+#                          s\sdata\" -I "C:\Users\OurEDA\Documents\Tencent    #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\a #
+#                          f\" -I "C:\Users\OurEDA\Documents\Tencent          #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\" -I "C:\Users\OurEDA\Documents\Tencent         #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\s #
+#                          api\" -I "C:\Users\OurEDA\Documents\Tencent        #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\s #
+#                          ec\" -I "C:\Users\OurEDA\Documents\Tencent         #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\s #
+#                          ys\" -I "C:\Users\OurEDA\Documents\Tencent         #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\stack\z #
+#                          do\" -I "C:\Users\OurEDA\Documents\Tencent         #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\zmac\"  #
+#                          -I "C:\Users\OurEDA\Documents\Tencent              #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\..\..\..\..\..\Components\zmac\f8 #
+#                          w\" -Ohz                                           #
+#    List file          =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\EndDeviceEB\List\Posture.lst      #
+#    Object file        =  C:\Users\OurEDA\Documents\Tencent                  #
+#                          Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\04Postur #
+#                          e_ENDDB\CC2530DB\EndDeviceEB\Obj\Posture.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\OurEDA\Documents\Tencent Files\1534143789\FileRecv\ZStack-CC2530-2.5.1a\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\04Posture_ENDDB\Source\Posture.c
+      1          /******************************************************************************
+      2            Filename:       Posture.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "Posture.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          #include "MPU.h"
+     73          
+     74          #if !defined( WIN32 )
+     75            #include "OnBoard.h"
+     76          #endif
+     77          
+     78          /* HAL */
+     79          #include "hal_lcd.h"
+     80          #include "hal_led.h"
+     81          #include "hal_key.h"
+     82          #include "hal_uart.h"
+     83          
+     84          /* RTOS */
+     85          #if defined( IAR_ARMCM3_LM )
+     86          #include "RTOS_App.h"
+     87          #endif  
+     88          
+     89          /*********************************************************************
+     90           * MACROS
+     91           */
+     92          
+     93          /*********************************************************************
+     94           * CONSTANTS
+     95           */
+     96          
+     97          /*********************************************************************
+     98           * TYPEDEFS
+     99           */
+    100          
+    101          /*********************************************************************
+    102           * GLOBAL VARIABLES
+    103           */
+    104          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    105          const cId_t Posture_ClusterList[Posture_MAX_CLUSTERS] =
+   \                     Posture_ClusterList:
+   \   000000   0400         DW 4
+    106          {
+    107            Posture_CLUSTERID
+    108          };
+    109          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    110          const SimpleDescriptionFormat_t Posture_SimpleDesc =
+   \                     Posture_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW Posture_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW Posture_ClusterList
+    111          {
+    112            Posture_ENDPOINT,              //  int Endpoint;
+    113            Posture_PROFID,                //  uint16 AppProfId[2];
+    114            Posture_DEVICEID,              //  uint16 AppDeviceId[2];
+    115            Posture_DEVICE_VERSION,        //  int   AppDevVer:4;
+    116            Posture_FLAGS,                 //  int   AppFlags:4;
+    117            Posture_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    118            (cId_t *)Posture_ClusterList,  //  byte *pAppInClusterList;
+    119            Posture_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    120            (cId_t *)Posture_ClusterList   //  byte *pAppInClusterList;
+    121          };
+    122          
+    123          // This is the Endpoint/Interface description.  It is defined here, but
+    124          // filled-in in Posture_Init().  Another way to go would be to fill
+    125          // in the structure here and make it a "const" (in code space).  The
+    126          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    127          endPointDesc_t Posture_epDesc;
+   \                     Posture_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    128          
+    129          /*********************************************************************
+    130           * EXTERNAL VARIABLES
+    131           */
+    132          
+    133          /*********************************************************************
+    134           * EXTERNAL FUNCTIONS
+    135           */
+    136          
+    137          /*********************************************************************
+    138           * LOCAL VARIABLES
+    139           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    140          byte Posture_TaskID;   // Task ID for internal task/event processing
+   \                     Posture_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    141                                    // This variable will be received when
+    142                                    // Posture_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    143          devStates_t Posture_NwkState;
+   \                     Posture_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    144          
+    145          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    146          byte Posture_TransID;  // This is the unique message ID (counter)
+   \                     Posture_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    147          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    148          afAddrType_t Posture_DstAddr;
+   \                     Posture_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    149          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    150          byte PostureMeasurement_TaskID;
+   \                     PostureMeasurement_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    151          devStates_t PostureMeasurement_NwkState;
+   \                     PostureMeasurement_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    152          byte PostureMeasurement_TransID;
+   \                     PostureMeasurement_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    153          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    154          float fPosture;
+   \                     fPosture:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    155          unsigned int flag=0;
+   \                     flag:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    156          
+    157          /*********************************************************************
+    158           * LOCAL FUNCTIONS
+    159           */
+    160          static void Posture_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    161          static void Posture_HandleKeys( byte shift, byte keys );
+    162          static void Posture_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    163          static void Posture_SendTheMessage( void );
+    164          
+    165          #if defined( IAR_ARMCM3_LM )
+    166          static void Posture_ProcessRtosMessage( void );
+    167          #endif
+    168          
+    169          /*********************************************************************
+    170           * NETWORK LAYER CALLBACKS
+    171           */
+    172          
+    173          /*********************************************************************
+    174           * PUBLIC FUNCTIONS
+    175           */
+    176          
+    177          /*********************************************************************
+    178           * @fn      Posture_Init
+    179           *
+    180           * @brief   Initialization function for the Generic App Task.
+    181           *          This is called during initialization and should contain
+    182           *          any application specific initialization (ie. hardware
+    183           *          initialization/setup, table initialization, power up
+    184           *          notificaiton ... ).
+    185           *
+    186           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    187           *                    used to send messages and set timers.
+    188           *
+    189           * @return  none
+    190           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    191          void Posture_Init( uint8 task_id )
+   \                     Posture_Init:
+    192          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    193            Posture_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Posture_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    194            Posture_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Posture_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    195            Posture_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Posture_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    196          
+    197            // Device hardware initialization can be added here or in main() (Zmain.c).
+    198            // If the hardware is application specific - add it here.
+    199            // If the hardware is other parts of the device add it in main().
+    200          
+    201            Posture_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000015   90....       MOV     DPTR,#Posture_DstAddr + 8
+   \   000018   F0           MOVX    @DPTR,A
+    202            Posture_DstAddr.endPoint = 0;
+   \   000019   A3           INC     DPTR
+   \   00001A   F0           MOVX    @DPTR,A
+    203            Posture_DstAddr.addr.shortAddr = 0;
+   \   00001B   90....       MOV     DPTR,#Posture_DstAddr
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   F0           MOVX    @DPTR,A
+    204          
+    205            // Fill out the endpoint description.
+    206            Posture_epDesc.endPoint = Posture_ENDPOINT;
+   \   000021   90....       MOV     DPTR,#Posture_epDesc
+   \   000024   740A         MOV     A,#0xa
+   \   000026   F0           MOVX    @DPTR,A
+    207            Posture_epDesc.task_id = &Posture_TaskID;
+   \   000027   A3           INC     DPTR
+   \   000028   74..         MOV     A,#Posture_TaskID & 0xff
+   \   00002A   F0           MOVX    @DPTR,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   74..         MOV     A,#(Posture_TaskID >> 8) & 0xff
+   \   00002E   F0           MOVX    @DPTR,A
+    208            Posture_epDesc.simpleDesc
+    209                      = (SimpleDescriptionFormat_t *)&Posture_SimpleDesc;
+   \   00002F   A3           INC     DPTR
+   \   000030   74..         MOV     A,#Posture_SimpleDesc & 0xff
+   \   000032   F0           MOVX    @DPTR,A
+   \   000033   A3           INC     DPTR
+   \   000034   74..         MOV     A,#(Posture_SimpleDesc >> 8) & 0xff
+   \   000036   F0           MOVX    @DPTR,A
+    210            Posture_epDesc.latencyReq = noLatencyReqs;
+   \   000037   A3           INC     DPTR
+   \   000038   E4           CLR     A
+   \   000039   F0           MOVX    @DPTR,A
+    211          
+    212            // Register the endpoint description with the AF
+    213            afRegister( &Posture_epDesc );
+   \   00003A                ; Setup parameters for call to function afRegister
+   \   00003A   7A..         MOV     R2,#Posture_epDesc & 0xff
+   \   00003C   7B..         MOV     R3,#(Posture_epDesc >> 8) & 0xff
+   \   00003E   12....       LCALL   ??afRegister?relay
+    214          
+    215            // Register for all key events - This app will handle all key events
+    216            RegisterForKeys( Posture_TaskID );
+   \   000041                ; Setup parameters for call to function RegisterForKeys
+   \   000041   90....       MOV     DPTR,#Posture_TaskID
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F9           MOV     R1,A
+   \   000046   12....       LCALL   ??RegisterForKeys?relay
+    217          
+    218            // Update the display
+    219          #if defined ( LCD_SUPPORTED )
+    220            HalLcdWriteString( "Posture", HAL_LCD_LINE_1 );
+   \   000049                ; Setup parameters for call to function HalLcdWriteString
+   \   000049   7901         MOV     R1,#0x1
+   \   00004B   7A..         MOV     R2,#`?<Constant "Posture">` & 0xff
+   \   00004D   7B..         MOV     R3,#(`?<Constant "Posture">` >> 8) & 0xff
+   \   00004F   12....       LCALL   ??HalLcdWriteString?relay
+    221          #endif
+    222          
+    223            ZDO_RegisterForZDOMsg( Posture_TaskID, End_Device_Bind_rsp );
+   \   000052                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000052   7A20         MOV     R2,#0x20
+   \   000054   7B80         MOV     R3,#-0x80
+   \   000056   90....       MOV     DPTR,#Posture_TaskID
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F9           MOV     R1,A
+   \   00005B   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    224            ZDO_RegisterForZDOMsg( Posture_TaskID, Match_Desc_rsp );
+   \   00005E                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00005E   7A06         MOV     R2,#0x6
+   \   000060   7B80         MOV     R3,#-0x80
+   \   000062   90....       MOV     DPTR,#Posture_TaskID
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   F9           MOV     R1,A
+   \   000067   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    225          
+    226          #if defined( IAR_ARMCM3_LM )
+    227            // Register this task with RTOS task initiator
+    228            RTOS_RegisterApp( task_id, Posture_RTOS_MSG_EVT );
+    229          #endif
+    230          }
+   \   00006A                REQUIRE ?Subroutine0
+   \   00006A                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    231          
+    232          /*********************************************************************
+    233           * @fn      Posture_ProcessEvent
+    234           *
+    235           * @brief   Generic Application Task event processor.  This function
+    236           *          is called to process all events for the task.  Events
+    237           *          include timers, messages and any other user defined events.
+    238           *
+    239           * @param   task_id  - The OSAL assigned task ID.
+    240           * @param   events - events to process.  This is a bit map and can
+    241           *                   contain more than one event.
+    242           *
+    243           * @return  none
+    244           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    245          uint16 Posture_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Posture_ProcessEvent:
+    246          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    247            afIncomingMSGPacket_t *MSGpkt;
+    248            afDataConfirm_t *afDataConfirm;
+    249          
+    250            // Data Confirmation message fields
+    251            byte sentEP;
+    252            ZStatus_t sentStatus;
+    253            byte sentTransID;       // This should match the value sent
+    254            (void)task_id;  // Intentionally unreferenced parameter
+    255          
+    256            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL     A,#0x80
+   \   000010   7003         JNZ     $+5
+   \   000012   02....       LJMP    ??Posture_ProcessEvent_0 & 0xFFFF
+    257            {
+    258              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Posture_TaskID );
+   \   000015                ; Setup parameters for call to function osal_msg_receive
+   \   000015   801E         SJMP    ??Posture_ProcessEvent_1
+    259              while ( MSGpkt )
+    260              {
+    261                switch ( MSGpkt->hdr.event )
+    262                {
+    263                  case ZDO_CB_MSG:
+    264                    Posture_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    265                    break;
+    266          
+    267                  case KEY_CHANGE:
+    268                    Posture_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    269                    break;
+    270          
+    271                  case AF_DATA_CONFIRM_CMD:
+    272                    // This message is received as a confirmation of a data packet sent.
+    273                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    274                    // The message fields are defined in AF.h
+    275                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    276                    sentEP = afDataConfirm->endpoint;
+    277                    sentStatus = afDataConfirm->hdr.status;
+    278                    sentTransID = afDataConfirm->transID;
+    279                    (void)sentEP;
+    280                    (void)sentTransID;
+    281          
+    282                    // Action taken when confirmation is received.
+    283                    if ( sentStatus != ZSuccess )
+    284                    {
+    285                      // The data wasn't delivered -- Do something
+    286                    }
+    287                    break;
+    288          
+    289                  case AF_INCOMING_MSG_CMD:
+    290                    Posture_MessageMSGCB( MSGpkt );
+    291                    break;
+    292          
+    293                  case ZDO_STATE_CHANGE:
+    294                    Posture_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??Posture_ProcessEvent_2:
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   90....       MOV     DPTR,#Posture_NwkState
+   \   00001C   F0           MOVX    @DPTR,A
+    295                    if ( (Posture_NwkState == DEV_ZB_COORD)
+    296                        || (Posture_NwkState == DEV_ROUTER)
+    297                        || (Posture_NwkState == DEV_END_DEVICE) )
+   \   00001D   6409         XRL     A,#0x9
+   \   00001F   600A         JZ      ??Posture_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6407         XRL     A,#0x7
+   \   000024   6005         JZ      ??Posture_ProcessEvent_3
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6406         XRL     A,#0x6
+   \   000029   7003         JNZ     ??CrossCallReturnLabel_18
+    298                    {
+    299                      // Start sending "the" message in a regular interval.
+    300                      osal_start_timerEx( Posture_TaskID,
+    301                                          Posture_SEND_MSG_EVT,
+    302                                          Posture_SEND_MSG_TIMEOUT );
+   \                     ??Posture_ProcessEvent_3:
+   \   00002B                ; Setup parameters for call to function osal_start_timerEx
+   \   00002B   12....       LCALL   ?Subroutine2 & 0xFFFF
+    303                    }
+    304                    break;
+    305          
+    306                  default:
+    307                    break;
+    308                }
+    309          
+    310                // Release the memory
+    311                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??CrossCallReturnLabel_18:
+   \   00002E                ; Setup parameters for call to function osal_msg_deallocate
+   \   00002E   AA..         MOV     R2,?V0 + 0
+   \   000030   AB..         MOV     R3,?V0 + 1
+   \   000032   12....       LCALL   ??osal_msg_deallocate?relay
+    312          
+    313                // Next
+    314                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Posture_TaskID );
+   \   000035                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Posture_ProcessEvent_1:
+   \   000035   90....       MOV     DPTR,#Posture_TaskID
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F9           MOV     R1,A
+   \   00003A   12....       LCALL   ??osal_msg_receive?relay
+   \   00003D   8A..         MOV     ?V0 + 0,R2
+   \   00003F   8B..         MOV     ?V0 + 1,R3
+   \   000041   E5..         MOV     A,?V0 + 0
+   \   000043   45..         ORL     A,?V0 + 1
+   \   000045   7003         JNZ     $+5
+   \   000047   02....       LJMP    ??Posture_ProcessEvent_4 & 0xFFFF
+   \   00004A   85..82       MOV     DPL,?V0 + 0
+   \   00004D   85..83       MOV     DPH,?V0 + 1
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   24E6         ADD     A,#-0x1a
+   \   000053   7003         JNZ     $+5
+   \   000055   02....       LJMP    ??Posture_ProcessEvent_5 & 0xFFFF
+   \   000058   245A         ADD     A,#0x5a
+   \   00005A   7003         JNZ     $+5
+   \   00005C   02....       LJMP    ??Posture_ProcessEvent_6 & 0xFFFF
+   \   00005F   24EF         ADD     A,#-0x11
+   \   000061   60B4         JZ      ??Posture_ProcessEvent_2
+   \   000063   24FE         ADD     A,#-0x2
+   \   000065   70C7         JNZ     ??CrossCallReturnLabel_18
+   \   000067   E5..         MOV     A,?V0 + 0
+   \   000069   240C         ADD     A,#0xc
+   \   00006B   F582         MOV     DPL,A
+   \   00006D   E5..         MOV     A,?V0 + 1
+   \   00006F   3400         ADDC    A,#0x0
+   \   000071   F583         MOV     DPH,A
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F5..         MOV     ?V0 + 2,A
+   \   000076   A3           INC     DPTR
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   F5..         MOV     ?V0 + 3,A
+   \   00007A   78..         MOV     R0,#?V0 + 2
+   \   00007C   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for Posture_ProcessEvent>_0`:
+   \   00007F   0000         DW        0
+   \   000081   0200         DW        2
+   \   000083   0680         DW        32774
+   \   000085   ....         DW        ??Posture_ProcessEvent_7
+   \   000087   2080         DW        32800
+   \   000089   ....         DW        ??Posture_ProcessEvent_8
+   \   00008B   ....         DW        ??CrossCallReturnLabel_18
+   \                     ??Posture_ProcessEvent_7:
+   \   00008D                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   00008D   AA..         MOV     R2,?V0 + 0
+   \   00008F   AB..         MOV     R3,?V0 + 1
+   \   000091   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   000094   8A..         MOV     ?V0 + 2,R2
+   \   000096   8B..         MOV     ?V0 + 3,R3
+   \   000098   EA           MOV     A,R2
+   \   000099   45..         ORL     A,?V0 + 3
+   \   00009B   6091         JZ      ??CrossCallReturnLabel_18
+   \   00009D   8A82         MOV     DPL,R2
+   \   00009F   8B83         MOV     DPH,R3
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   7032         JNZ     ??Posture_ProcessEvent_9
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   A3           INC     DPTR
+   \   0000A7   E0           MOVX    A,@DPTR
+   \   0000A8   602C         JZ      ??Posture_ProcessEvent_9
+   \   0000AA   90....       MOV     DPTR,#Posture_DstAddr + 8
+   \   0000AD   7402         MOV     A,#0x2
+   \   0000AF   F0           MOVX    @DPTR,A
+   \   0000B0   8A82         MOV     DPL,R2
+   \   0000B2   8B83         MOV     DPH,R3
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   F8           MOV     R0,A
+   \   0000B7   A3           INC     DPTR
+   \   0000B8   E0           MOVX    A,@DPTR
+   \   0000B9   F9           MOV     R1,A
+   \   0000BA   90....       MOV     DPTR,#Posture_DstAddr
+   \   0000BD   E8           MOV     A,R0
+   \   0000BE   F0           MOVX    @DPTR,A
+   \   0000BF   A3           INC     DPTR
+   \   0000C0   E9           MOV     A,R1
+   \   0000C1   F0           MOVX    @DPTR,A
+   \   0000C2   8A82         MOV     DPL,R2
+   \   0000C4   8B83         MOV     DPH,R3
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   A3           INC     DPTR
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   E0           MOVX    A,@DPTR
+   \   0000CB   90....       MOV     DPTR,#Posture_DstAddr + 9
+   \   0000CE   F0           MOVX    @DPTR,A
+   \   0000CF                ; Setup parameters for call to function HalLedSet
+   \   0000CF   7A01         MOV     R2,#0x1
+   \   0000D1   7908         MOV     R1,#0x8
+   \   0000D3   12....       LCALL   ??HalLedSet?relay
+   \                     ??Posture_ProcessEvent_9:
+   \   0000D6                ; Setup parameters for call to function osal_mem_free
+   \   0000D6   AA..         MOV     R2,?V0 + 2
+   \   0000D8   AB..         MOV     R3,?V0 + 3
+   \   0000DA   12....       LCALL   ??osal_mem_free?relay
+   \   0000DD   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \                     ??Posture_ProcessEvent_8:
+   \   0000E0   E5..         MOV     A,?V0 + 0
+   \   0000E2   2413         ADD     A,#0x13
+   \   0000E4   F582         MOV     DPL,A
+   \   0000E6   E5..         MOV     A,?V0 + 1
+   \   0000E8   3400         ADDC    A,#0x0
+   \   0000EA   F583         MOV     DPH,A
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   F8           MOV     R0,A
+   \   0000EE   A3           INC     DPTR
+   \   0000EF   E0           MOVX    A,@DPTR
+   \   0000F0   F583         MOV     DPH,A
+   \   0000F2   8882         MOV     DPL,R0
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   700A         JNZ     ??Posture_ProcessEvent_10
+   \   0000F7                ; Setup parameters for call to function HalLedSet
+   \   0000F7   7A01         MOV     R2,#0x1
+   \                     ??Posture_ProcessEvent_11:
+   \   0000F9   7908         MOV     R1,#0x8
+   \   0000FB   12....       LCALL   ??HalLedSet?relay
+   \   0000FE   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \                     ??Posture_ProcessEvent_10:
+   \   000101                ; Setup parameters for call to function HalLedSet
+   \   000101   7A04         MOV     R2,#0x4
+   \   000103   80F4         SJMP    ??Posture_ProcessEvent_11
+   \                     ??Posture_ProcessEvent_6:
+   \   000105   A3           INC     DPTR
+   \   000106   A3           INC     DPTR
+   \   000107   A3           INC     DPTR
+   \   000108   E0           MOVX    A,@DPTR
+   \   000109   F5..         MOV     ?V0 + 4,A
+   \   00010B   85..82       MOV     DPL,?V0 + 0
+   \   00010E   85..83       MOV     DPH,?V0 + 1
+   \   000111   A3           INC     DPTR
+   \   000112   A3           INC     DPTR
+   \   000113   E0           MOVX    A,@DPTR
+   \   000114   6003         JZ      $+5
+   \   000116   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \   000119   E5..         MOV     A,?V0 + 4
+   \   00011B   A2E1         MOV     C,0xE0 /* A   */.1
+   \   00011D   506D         JNC     ??Posture_ProcessEvent_12
+   \   00011F                ; Setup parameters for call to function HalLedSet
+   \   00011F   7A00         MOV     R2,#0x0
+   \   000121   7908         MOV     R1,#0x8
+   \   000123   12....       LCALL   ??HalLedSet?relay
+   \   000126   7408         MOV     A,#0x8
+   \   000128   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012B   7402         MOV     A,#0x2
+   \   00012D   F0           MOVX    @DPTR,A
+   \   00012E   85..82       MOV     DPL,?XSP + 0
+   \   000131   85..83       MOV     DPH,?XSP + 1
+   \   000134   E4           CLR     A
+   \   000135   F0           MOVX    @DPTR,A
+   \   000136   A3           INC     DPTR
+   \   000137   F0           MOVX    @DPTR,A
+   \   000138                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000138   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00013B   8A..         MOV     ?V0 + 2,R2
+   \   00013D   8B..         MOV     ?V0 + 3,R3
+   \   00013F   AC..         MOV     R4,?V0 + 2
+   \   000141   AD..         MOV     R5,?V0 + 3
+   \   000143   75....       MOV     ?V0 + 2,#Posture_ClusterList & 0xff
+   \   000146   75....       MOV     ?V0 + 3,#(Posture_ClusterList >> 8) & 0xff
+   \   000149                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   000149   75..00       MOV     ?V0 + 5,#0x0
+   \   00014C   78..         MOV     R0,#?V0 + 5
+   \   00014E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000151   78..         MOV     R0,#?V0 + 2
+   \   000153   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000156   75..01       MOV     ?V0 + 5,#0x1
+   \   000159   78..         MOV     R0,#?V0 + 5
+   \   00015B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00015E   78..         MOV     R0,#?V0 + 2
+   \   000160   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000163   75..01       MOV     ?V0 + 2,#0x1
+   \   000166   78..         MOV     R0,#?V0 + 2
+   \   000168   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00016B   75..04       MOV     ?V0 + 2,#0x4
+   \   00016E   75..0F       MOV     ?V0 + 3,#0xf
+   \   000171   78..         MOV     R0,#?V0 + 2
+   \   000173   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000176   90....       MOV     DPTR,#Posture_epDesc
+   \   000179   E0           MOVX    A,@DPTR
+   \   00017A   F9           MOV     R1,A
+   \   00017B   7409         MOV     A,#0x9
+   \   00017D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000180   AA82         MOV     R2,DPL
+   \   000182   AB83         MOV     R3,DPH
+   \   000184   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000187   7409         MOV     A,#0x9
+   \   000189   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??Posture_ProcessEvent_12:
+   \   00018C   E5..         MOV     A,?V0 + 4
+   \   00018E   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000190   4003         JC      $+5
+   \   000192   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \   000195                ; Setup parameters for call to function HalLedSet
+   \   000195   7A00         MOV     R2,#0x0
+   \   000197   7908         MOV     R1,#0x8
+   \   000199   12....       LCALL   ??HalLedSet?relay
+   \   00019C   7408         MOV     A,#0x8
+   \   00019E   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A1   740F         MOV     A,#0xf
+   \   0001A3   F0           MOVX    @DPTR,A
+   \   0001A4   85..82       MOV     DPL,?XSP + 0
+   \   0001A7   85..83       MOV     DPH,?XSP + 1
+   \   0001AA   74FF         MOV     A,#-0x1
+   \   0001AC   F0           MOVX    @DPTR,A
+   \   0001AD   A3           INC     DPTR
+   \   0001AE   F0           MOVX    @DPTR,A
+   \   0001AF   75....       MOV     ?V0 + 2,#Posture_ClusterList & 0xff
+   \   0001B2   75....       MOV     ?V0 + 3,#(Posture_ClusterList >> 8) & 0xff
+   \   0001B5                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0001B5   75..00       MOV     ?V0 + 4,#0x0
+   \   0001B8   78..         MOV     R0,#?V0 + 4
+   \   0001BA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001BD   78..         MOV     R0,#?V0 + 2
+   \   0001BF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001C2   75..01       MOV     ?V0 + 4,#0x1
+   \   0001C5   78..         MOV     R0,#?V0 + 4
+   \   0001C7   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001CA   78..         MOV     R0,#?V0 + 2
+   \   0001CC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001CF   75..04       MOV     ?V0 + 2,#0x4
+   \   0001D2   75..0F       MOV     ?V0 + 3,#0xf
+   \   0001D5   78..         MOV     R0,#?V0 + 2
+   \   0001D7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001DA   7901         MOV     R1,#0x1
+   \   0001DC   7CFF         MOV     R4,#-0x1
+   \   0001DE   7DFF         MOV     R5,#-0x1
+   \   0001E0   7408         MOV     A,#0x8
+   \   0001E2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E5   AA82         MOV     R2,DPL
+   \   0001E7   AB83         MOV     R3,DPH
+   \   0001E9   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0001EC   7408         MOV     A,#0x8
+   \   0001EE   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001F1   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \                     ??Posture_ProcessEvent_5:
+   \   0001F4   A3           INC     DPTR
+   \   0001F5   A3           INC     DPTR
+   \   0001F6   A3           INC     DPTR
+   \   0001F7   A3           INC     DPTR
+   \   0001F8   E0           MOVX    A,@DPTR
+   \   0001F9   6404         XRL     A,#0x4
+   \   0001FB   7002         JNZ     ??Posture_ProcessEvent_13
+   \   0001FD   A3           INC     DPTR
+   \   0001FE   E0           MOVX    A,@DPTR
+   \                     ??Posture_ProcessEvent_13:
+   \   0001FF   6003         JZ      $+5
+   \   000201   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+   \   000204                ; Setup parameters for call to function HalLcdWriteScreen
+   \   000204   7C..         MOV     R4,#`?<Constant "rcvd">` & 0xff
+   \   000206   7D..         MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+   \   000208   E5..         MOV     A,?V0 + 0
+   \   00020A   2422         ADD     A,#0x22
+   \   00020C   F582         MOV     DPL,A
+   \   00020E   E5..         MOV     A,?V0 + 1
+   \   000210   3400         ADDC    A,#0x0
+   \   000212   F583         MOV     DPH,A
+   \   000214   E0           MOVX    A,@DPTR
+   \   000215   FA           MOV     R2,A
+   \   000216   A3           INC     DPTR
+   \   000217   E0           MOVX    A,@DPTR
+   \   000218   FB           MOV     R3,A
+   \   000219   12....       LCALL   ??HalLcdWriteScreen?relay
+   \   00021C   02....       LJMP    ??CrossCallReturnLabel_18 & 0xFFFF
+    315              }
+    316          
+    317              // return unprocessed events
+    318              return (events ^ SYS_EVENT_MSG);
+   \                     ??Posture_ProcessEvent_4:
+   \   00021F   EE           MOV     A,R6
+   \   000220   FA           MOV     R2,A
+   \   000221   EF           MOV     A,R7
+   \   000222   6480         XRL     A,#0x80
+   \                     ??Posture_ProcessEvent_14:
+   \   000224   FB           MOV     R3,A
+   \   000225   8016         SJMP    ??Posture_ProcessEvent_15
+    319            }
+    320          
+    321            // Send a message out - This event is generated by a timer
+    322            //  (setup in Posture_Init()).
+    323            if ( events & Posture_SEND_MSG_EVT )
+   \                     ??Posture_ProcessEvent_0:
+   \   000227   EE           MOV     A,R6
+   \   000228   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00022A   500D         JNC     ??Posture_ProcessEvent_16
+    324            {
+    325              // Send "the" message
+    326              Posture_SendTheMessage();
+   \   00022C                ; Setup parameters for call to function Posture_SendTheMessage
+   \   00022C   12....       LCALL   ??Posture_SendTheMessage?relay
+    327          
+    328              // Setup to send message again
+    329              osal_start_timerEx( Posture_TaskID,
+    330                                  Posture_SEND_MSG_EVT,
+    331                                  Posture_SEND_MSG_TIMEOUT );
+   \   00022F                ; Setup parameters for call to function osal_start_timerEx
+   \   00022F   12....       LCALL   ?Subroutine2 & 0xFFFF
+    332          
+    333              // return unprocessed events
+    334              return (events ^ Posture_SEND_MSG_EVT);
+   \                     ??CrossCallReturnLabel_19:
+   \   000232   EE           MOV     A,R6
+   \   000233   6401         XRL     A,#0x1
+   \   000235   FA           MOV     R2,A
+   \   000236   EF           MOV     A,R7
+   \   000237   80EB         SJMP    ??Posture_ProcessEvent_14
+    335            }
+    336          
+    337            
+    338          #if defined( IAR_ARMCM3_LM )
+    339            // Receive a message from the RTOS queue
+    340            if ( events & Posture_RTOS_MSG_EVT )
+    341            {
+    342              // Process message from RTOS queue
+    343              Posture_ProcessRtosMessage();
+    344          
+    345              // return unprocessed events
+    346              return (events ^ Posture_RTOS_MSG_EVT);
+    347            }
+    348          #endif
+    349          
+    350            // Discard unknown events
+    351            return 0;
+   \                     ??Posture_ProcessEvent_16:
+   \   000239   7A00         MOV     R2,#0x0
+   \   00023B   7B00         MOV     R3,#0x0
+   \                     ??Posture_ProcessEvent_15:
+   \   00023D   7409         MOV     A,#0x9
+   \   00023F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000242   7F06         MOV     R7,#0x6
+   \   000244   02....       LJMP    ?BANKED_LEAVE_XDATA
+    352          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7CE8         MOV     R4,#-0x18
+   \   000002   7D03         MOV     R5,#0x3
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   90....       MOV     DPTR,#Posture_TaskID
+   \   00000B                REQUIRE ??Subroutine5_0
+   \   00000B                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F9           MOV     R1,A
+   \   000002   12....       LCALL   ??osal_start_timerEx?relay
+   \   000005   22           RET
+    353          
+    354          /*********************************************************************
+    355           * Event Generation Functions
+    356           */
+    357          
+    358          /*********************************************************************
+    359           * @fn      Posture_ProcessZDOMsgs()
+    360           *
+    361           * @brief   Process response messages
+    362           *
+    363           * @param   none
+    364           *
+    365           * @return  none
+    366           */
+    367          static void Posture_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+    368          {
+    369            switch ( inMsg->clusterID )
+    370            {
+    371              case End_Device_Bind_rsp:
+    372                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+    373                {
+    374                  // Posture LED
+    375                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    376                }
+    377          #if defined( BLINK_LEDS )
+    378                else
+    379                {
+    380                  // Flash LED to show failure
+    381                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+    382                }
+    383          #endif
+    384                break;
+    385          
+    386              case Match_Desc_rsp:
+    387                {
+    388                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+    389                  if ( pRsp )
+    390                  {
+    391                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+    392                    {
+    393                      Posture_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    394                      Posture_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+    395                      // Take the first endpoint, Can be changed to search through endpoints
+    396                      Posture_DstAddr.endPoint = pRsp->epList[0];
+    397          
+    398                      // Posture LED
+    399                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+    400                    }
+    401                    osal_mem_free( pRsp );
+    402                  }
+    403                }
+    404                break;
+    405            }
+    406          }
+    407          
+    408          /*********************************************************************
+    409           * @fn      Posture_HandleKeys
+    410           *
+    411           * @brief   Handles all key events for this device.
+    412           *
+    413           * @param   shift - true if in shift/alt.
+    414           * @param   keys - bit field for key events. Valid entries:
+    415           *                 HAL_KEY_SW_4
+    416           *                 HAL_KEY_SW_3
+    417           *                 HAL_KEY_SW_2
+    418           *                 HAL_KEY_SW_1
+    419           *
+    420           * @return  none
+    421           */
+    422          static void Posture_HandleKeys( uint8 shift, uint8 keys )
+    423          {
+    424            zAddrType_t dstAddr;
+    425          
+    426            // Shift is used to make each button/switch dual purpose.
+    427            if ( shift )
+    428            {
+    429              if ( keys & HAL_KEY_SW_1 )
+    430              {
+    431              }
+    432              if ( keys & HAL_KEY_SW_2 )
+    433              {
+    434              }
+    435              if ( keys & HAL_KEY_SW_3 )
+    436              {
+    437              }
+    438              if ( keys & HAL_KEY_SW_4 )
+    439              {
+    440              }
+    441            }
+    442            else
+    443            {
+    444              if ( keys & HAL_KEY_SW_1 )
+    445              {
+    446                // Since SW1 isn't used for anything else in this application...
+    447          #if defined( SWITCH1_BIND )
+    448                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    449                keys |= HAL_KEY_SW_2;
+    450          #elif defined( SWITCH1_MATCH )
+    451                // or use SW1 to simulate SW4 for devices that only have one switch
+    452                keys |= HAL_KEY_SW_4;
+    453          #endif
+    454              }
+    455          
+    456              if ( keys & HAL_KEY_SW_2 )
+    457              {
+    458                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    459          
+    460                // Initiate an End Device Bind Request for the mandatory endpoint
+    461                dstAddr.addrMode = Addr16Bit;
+    462                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+    463                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    464                                      Posture_epDesc.endPoint,
+    465                                      Posture_PROFID,
+    466                                      Posture_MAX_CLUSTERS, (cId_t *)Posture_ClusterList,
+    467                                      Posture_MAX_CLUSTERS, (cId_t *)Posture_ClusterList,
+    468                                      FALSE );
+    469              }
+    470          
+    471              if ( keys & HAL_KEY_SW_3 )
+    472              {
+    473              }
+    474          
+    475              if ( keys & HAL_KEY_SW_4 )
+    476              {
+    477                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+    478                // Initiate a Match Description Request (Service Discovery)
+    479                dstAddr.addrMode = AddrBroadcast;
+    480                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+    481                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    482                                  Posture_PROFID,
+    483                                  Posture_MAX_CLUSTERS, (cId_t *)Posture_ClusterList,
+    484                                  Posture_MAX_CLUSTERS, (cId_t *)Posture_ClusterList,
+    485                                  FALSE );
+    486              }
+    487            }
+    488          }
+    489          
+    490          /*********************************************************************
+    491           * LOCAL FUNCTIONS
+    492           */
+    493          
+    494          /*********************************************************************
+    495           * @fn      Posture_MessageMSGCB
+    496           *
+    497           * @brief   Data message processor callback.  This function processes
+    498           *          any incoming data - probably from other devices.  So, based
+    499           *          on cluster ID, perform the intended action.
+    500           *
+    501           * @param   none
+    502           *
+    503           * @return  none
+    504           */
+    505          static void Posture_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    506          {
+    507            switch ( pkt->clusterId )
+    508            {
+    509              case Posture_CLUSTERID:
+    510                // "the" message
+    511          #if defined( LCD_SUPPORTED )
+    512                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+    513          #elif defined( WIN32 )
+    514                WPRINTSTR( pkt->cmd.Data );
+    515          #endif
+    516                break;
+    517            }
+    518          }
+    519          
+    520          /*********************************************************************
+    521           * @fn      Posture_SendTheMessage
+    522           *
+    523           * @brief   Send "the" message.
+    524           *
+    525           * @param   none
+    526           *
+    527           * @return  none
+    528           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    529          static void Posture_SendTheMessage( void )
+   \                     Posture_SendTheMessage:
+    530          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 24
+   \   000005   74E8         MOV     A,#-0x18
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    531            
+    532            //unsigned char theMessageData[15] = "Pos:";
+    533            extern double ax,ay,az,jx,jy,jz; 
+    534            unsigned char theMessageData[24]="EndDevice";
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant "EndDevice">` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant "EndDevice">` & 0xff
+   \   00001A   7418         MOV     A,#0x18
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    535          
+    536            afAddrType_t my_DstAddr;
+                                ^
+Warning[Pe550]: variable "my_DstAddr" was set but never used
+    537            if(ax<0)
+   \   00001F   90....       MOV     DPTR,#ax
+   \   000022   78..         MOV     R0,#?V0 + 0
+   \   000024   12....       LCALL   ?L_MOV_X
+   \   000027   90....       MOV     DPTR,#__Constant_0
+   \   00002A   78..         MOV     R0,#?V0 + 4
+   \   00002C   12....       LCALL   ?L_MOV_X
+   \   00002F   78..         MOV     R0,#?V0 + 0
+   \   000031   79..         MOV     R1,#?V0 + 4
+   \   000033   12....       LCALL   ?FLT_LT
+   \   000036   7412         MOV     A,#0x12
+   \   000038   501E         JNC     ??Posture_SendTheMessage_0
+    538            {
+    539              theMessageData[18]='0';
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   7430         MOV     A,#0x30
+   \   00003F   F0           MOVX    @DPTR,A
+    540              ax=-ax;
+   \   000040   90....       MOV     DPTR,#ax
+   \   000043   78..         MOV     R0,#?V0 + 0
+   \   000045   12....       LCALL   ?L_MOV_X
+   \   000048   E5..         MOV     A,?V0 + 3
+   \   00004A   B2E7         CPL     0xE0 /* A   */.7
+   \   00004C   F5..         MOV     ?V0 + 3,A
+   \   00004E   90....       MOV     DPTR,#ax
+   \   000051   78..         MOV     R0,#?V0 + 0
+   \   000053   12....       LCALL   ?L_MOV_TO_X
+   \   000056   8006         SJMP    ??Posture_SendTheMessage_1
+    541            }
+    542            else
+    543            {
+    544              theMessageData[18]='1';
+   \                     ??Posture_SendTheMessage_0:
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   7431         MOV     A,#0x31
+   \   00005D   F0           MOVX    @DPTR,A
+    545            }
+    546            if(ay<0)
+   \                     ??Posture_SendTheMessage_1:
+   \   00005E   90....       MOV     DPTR,#ay
+   \   000061   78..         MOV     R0,#?V0 + 0
+   \   000063   12....       LCALL   ?L_MOV_X
+   \   000066   90....       MOV     DPTR,#__Constant_0
+   \   000069   78..         MOV     R0,#?V0 + 4
+   \   00006B   12....       LCALL   ?L_MOV_X
+   \   00006E   78..         MOV     R0,#?V0 + 0
+   \   000070   79..         MOV     R1,#?V0 + 4
+   \   000072   12....       LCALL   ?FLT_LT
+   \   000075   7413         MOV     A,#0x13
+   \   000077   501E         JNC     ??Posture_SendTheMessage_2
+    547            {
+    548              theMessageData[19]='0';
+   \   000079   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007C   7430         MOV     A,#0x30
+   \   00007E   F0           MOVX    @DPTR,A
+    549              ay=-ay;
+   \   00007F   90....       MOV     DPTR,#ay
+   \   000082   78..         MOV     R0,#?V0 + 0
+   \   000084   12....       LCALL   ?L_MOV_X
+   \   000087   E5..         MOV     A,?V0 + 3
+   \   000089   B2E7         CPL     0xE0 /* A   */.7
+   \   00008B   F5..         MOV     ?V0 + 3,A
+   \   00008D   90....       MOV     DPTR,#ay
+   \   000090   78..         MOV     R0,#?V0 + 0
+   \   000092   12....       LCALL   ?L_MOV_TO_X
+   \   000095   8006         SJMP    ??Posture_SendTheMessage_3
+    550            }
+    551            else
+    552            {
+    553              theMessageData[19]='1';
+   \                     ??Posture_SendTheMessage_2:
+   \   000097   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009A   7431         MOV     A,#0x31
+   \   00009C   F0           MOVX    @DPTR,A
+    554            }
+    555            if(az<0)
+   \                     ??Posture_SendTheMessage_3:
+   \   00009D   90....       MOV     DPTR,#az
+   \   0000A0   78..         MOV     R0,#?V0 + 0
+   \   0000A2   12....       LCALL   ?L_MOV_X
+   \   0000A5   90....       MOV     DPTR,#__Constant_0
+   \   0000A8   78..         MOV     R0,#?V0 + 4
+   \   0000AA   12....       LCALL   ?L_MOV_X
+   \   0000AD   78..         MOV     R0,#?V0 + 0
+   \   0000AF   79..         MOV     R1,#?V0 + 4
+   \   0000B1   12....       LCALL   ?FLT_LT
+   \   0000B4   7414         MOV     A,#0x14
+   \   0000B6   501E         JNC     ??Posture_SendTheMessage_4
+    556            {
+    557              theMessageData[20]='0';
+   \   0000B8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BB   7430         MOV     A,#0x30
+   \   0000BD   F0           MOVX    @DPTR,A
+    558              az=-az;
+   \   0000BE   90....       MOV     DPTR,#az
+   \   0000C1   78..         MOV     R0,#?V0 + 0
+   \   0000C3   12....       LCALL   ?L_MOV_X
+   \   0000C6   E5..         MOV     A,?V0 + 3
+   \   0000C8   B2E7         CPL     0xE0 /* A   */.7
+   \   0000CA   F5..         MOV     ?V0 + 3,A
+   \   0000CC   90....       MOV     DPTR,#az
+   \   0000CF   78..         MOV     R0,#?V0 + 0
+   \   0000D1   12....       LCALL   ?L_MOV_TO_X
+   \   0000D4   8006         SJMP    ??Posture_SendTheMessage_5
+    559            }
+    560            else
+    561            {
+    562              theMessageData[20]='1';
+   \                     ??Posture_SendTheMessage_4:
+   \   0000D6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D9   7431         MOV     A,#0x31
+   \   0000DB   F0           MOVX    @DPTR,A
+    563            }
+    564            if(jx<0)
+   \                     ??Posture_SendTheMessage_5:
+   \   0000DC   90....       MOV     DPTR,#jx
+   \   0000DF   78..         MOV     R0,#?V0 + 0
+   \   0000E1   12....       LCALL   ?L_MOV_X
+   \   0000E4   90....       MOV     DPTR,#__Constant_0
+   \   0000E7   78..         MOV     R0,#?V0 + 4
+   \   0000E9   12....       LCALL   ?L_MOV_X
+   \   0000EC   78..         MOV     R0,#?V0 + 0
+   \   0000EE   79..         MOV     R1,#?V0 + 4
+   \   0000F0   12....       LCALL   ?FLT_LT
+   \   0000F3   7415         MOV     A,#0x15
+   \   0000F5   501E         JNC     ??Posture_SendTheMessage_6
+    565            {
+    566              theMessageData[21]='0';
+   \   0000F7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FA   7430         MOV     A,#0x30
+   \   0000FC   F0           MOVX    @DPTR,A
+    567              jx=-jx;
+   \   0000FD   90....       MOV     DPTR,#jx
+   \   000100   78..         MOV     R0,#?V0 + 0
+   \   000102   12....       LCALL   ?L_MOV_X
+   \   000105   E5..         MOV     A,?V0 + 3
+   \   000107   B2E7         CPL     0xE0 /* A   */.7
+   \   000109   F5..         MOV     ?V0 + 3,A
+   \   00010B   90....       MOV     DPTR,#jx
+   \   00010E   78..         MOV     R0,#?V0 + 0
+   \   000110   12....       LCALL   ?L_MOV_TO_X
+   \   000113   8006         SJMP    ??Posture_SendTheMessage_7
+    568            }
+    569            else
+    570            {
+    571              theMessageData[21]='1';
+   \                     ??Posture_SendTheMessage_6:
+   \   000115   12....       LCALL   ?XSTACK_DISP0_8
+   \   000118   7431         MOV     A,#0x31
+   \   00011A   F0           MOVX    @DPTR,A
+    572            }
+    573            if(jy<0)
+   \                     ??Posture_SendTheMessage_7:
+   \   00011B   90....       MOV     DPTR,#jy
+   \   00011E   78..         MOV     R0,#?V0 + 0
+   \   000120   12....       LCALL   ?L_MOV_X
+   \   000123   90....       MOV     DPTR,#__Constant_0
+   \   000126   78..         MOV     R0,#?V0 + 4
+   \   000128   12....       LCALL   ?L_MOV_X
+   \   00012B   78..         MOV     R0,#?V0 + 0
+   \   00012D   79..         MOV     R1,#?V0 + 4
+   \   00012F   12....       LCALL   ?FLT_LT
+   \   000132   7416         MOV     A,#0x16
+   \   000134   501E         JNC     ??Posture_SendTheMessage_8
+    574            {
+    575              theMessageData[22]='0';
+   \   000136   12....       LCALL   ?XSTACK_DISP0_8
+   \   000139   7430         MOV     A,#0x30
+   \   00013B   F0           MOVX    @DPTR,A
+    576              jy=-jy;
+   \   00013C   90....       MOV     DPTR,#jy
+   \   00013F   78..         MOV     R0,#?V0 + 0
+   \   000141   12....       LCALL   ?L_MOV_X
+   \   000144   E5..         MOV     A,?V0 + 3
+   \   000146   B2E7         CPL     0xE0 /* A   */.7
+   \   000148   F5..         MOV     ?V0 + 3,A
+   \   00014A   90....       MOV     DPTR,#jy
+   \   00014D   78..         MOV     R0,#?V0 + 0
+   \   00014F   12....       LCALL   ?L_MOV_TO_X
+   \   000152   8006         SJMP    ??Posture_SendTheMessage_9
+    577            }
+    578            else
+    579            {
+    580              theMessageData[22]='1';
+   \                     ??Posture_SendTheMessage_8:
+   \   000154   12....       LCALL   ?XSTACK_DISP0_8
+   \   000157   7431         MOV     A,#0x31
+   \   000159   F0           MOVX    @DPTR,A
+    581            }
+    582            if(jz<0)
+   \                     ??Posture_SendTheMessage_9:
+   \   00015A   90....       MOV     DPTR,#`jz`
+   \   00015D   78..         MOV     R0,#?V0 + 0
+   \   00015F   12....       LCALL   ?L_MOV_X
+   \   000162   90....       MOV     DPTR,#__Constant_0
+   \   000165   78..         MOV     R0,#?V0 + 4
+   \   000167   12....       LCALL   ?L_MOV_X
+   \   00016A   78..         MOV     R0,#?V0 + 0
+   \   00016C   79..         MOV     R1,#?V0 + 4
+   \   00016E   12....       LCALL   ?FLT_LT
+   \   000171   7417         MOV     A,#0x17
+   \   000173   501E         JNC     ??Posture_SendTheMessage_10
+    583            {
+    584              theMessageData[23]='0';
+   \   000175   12....       LCALL   ?XSTACK_DISP0_8
+   \   000178   7430         MOV     A,#0x30
+   \   00017A   F0           MOVX    @DPTR,A
+    585              jz=-jz;
+   \   00017B   90....       MOV     DPTR,#`jz`
+   \   00017E   78..         MOV     R0,#?V0 + 0
+   \   000180   12....       LCALL   ?L_MOV_X
+   \   000183   E5..         MOV     A,?V0 + 3
+   \   000185   B2E7         CPL     0xE0 /* A   */.7
+   \   000187   F5..         MOV     ?V0 + 3,A
+   \   000189   90....       MOV     DPTR,#`jz`
+   \   00018C   78..         MOV     R0,#?V0 + 0
+   \   00018E   12....       LCALL   ?L_MOV_TO_X
+   \   000191   8006         SJMP    ??Posture_SendTheMessage_11
+    586            }
+    587            else
+    588            {
+    589              theMessageData[23]='1';
+   \                     ??Posture_SendTheMessage_10:
+   \   000193   12....       LCALL   ?XSTACK_DISP0_8
+   \   000196   7431         MOV     A,#0x31
+   \   000198   F0           MOVX    @DPTR,A
+    590            }
+    591            theMessageData[0]='0'+(int)ax/10;
+   \                     ??Posture_SendTheMessage_11:
+   \   000199   90....       MOV     DPTR,#ax
+   \   00019C   12....       LCALL   ?XLOAD_R2345
+   \   00019F   12....       LCALL   ?R2345_FLT_TO_L
+   \   0001A2   AC..         MOV     R4,?V0 + 0
+   \   0001A4   AD..         MOV     R5,?V0 + 1
+   \   0001A6   EC           MOV     A,R4
+   \   0001A7   F8           MOV     R0,A
+   \   0001A8   ED           MOV     A,R5
+   \   0001A9   F9           MOV     R1,A
+   \   0001AA   7A0A         MOV     R2,#0xa
+   \   0001AC   7B00         MOV     R3,#0x0
+   \   0001AE   12....       LCALL   ?S_DIV_MOD
+   \   0001B1   E8           MOV     A,R0
+   \   0001B2   2430         ADD     A,#0x30
+   \   0001B4   85..82       MOV     DPL,?XSP + 0
+   \   0001B7   85..83       MOV     DPH,?XSP + 1
+   \   0001BA   12....       LCALL   ?Subroutine1 & 0xFFFF
+    592            theMessageData[1]='0'+(int)ax%10;
+   \                     ??CrossCallReturnLabel_0:
+   \   0001BD   12....       LCALL   ?S_DIV_MOD
+   \   0001C0   8A..         MOV     ?V0 + 0,R2
+   \   0001C2   8B..         MOV     ?V0 + 1,R3
+   \   0001C4   EA           MOV     A,R2
+   \   0001C5   2430         ADD     A,#0x30
+   \   0001C7   C0E0         PUSH    A
+   \   0001C9   7401         MOV     A,#0x1
+   \   0001CB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001CE   D0E0         POP     A
+   \   0001D0   F0           MOVX    @DPTR,A
+    593            theMessageData[2]='0'+(int)((ax-(int)(ax/10)*10-(int)ax%10)/0.1);
+   \   0001D1   90....       MOV     DPTR,#ax
+   \   0001D4   78..         MOV     R0,#?V0 + 8
+   \   0001D6   12....       LCALL   ?L_MOV_X
+   \   0001D9   90....       MOV     DPTR,#ax
+   \   0001DC   78..         MOV     R0,#?V0 + 4
+   \   0001DE   12....       LCALL   ?L_MOV_X
+   \   0001E1   90....       MOV     DPTR,#__Constant_41200000
+   \   0001E4   78..         MOV     R0,#?V0 + 12
+   \   0001E6   12....       LCALL   ?L_MOV_X
+   \   0001E9   78..         MOV     R0,#?V0 + 4
+   \   0001EB   79..         MOV     R1,#?V0 + 12
+   \   0001ED   12....       LCALL   ?FLT_DIV
+   \   0001F0   78..         MOV     R0,#?V0 + 4
+   \   0001F2   12....       LCALL   ?FLT_TO_L
+   \   0001F5   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   0001F8   12....       LCALL   ?L_TO_FLT
+   \   0001FB   78..         MOV     R0,#?V0 + 8
+   \   0001FD   79..         MOV     R1,#?V0 + 4
+   \   0001FF   12....       LCALL   ?FLT_SUB
+   \   000202   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000205   12....       LCALL   ?L_TO_FLT
+   \   000208   78..         MOV     R0,#?V0 + 8
+   \   00020A   79..         MOV     R1,#?V0 + 0
+   \   00020C   12....       LCALL   ?FLT_SUB
+   \   00020F   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   000212   78..         MOV     R0,#?V0 + 0
+   \   000214   12....       LCALL   ?L_MOV_X
+   \   000217   78..         MOV     R0,#?V0 + 8
+   \   000219   79..         MOV     R1,#?V0 + 0
+   \   00021B   12....       LCALL   ?FLT_DIV
+   \   00021E   78..         MOV     R0,#?V0 + 8
+   \   000220   12....       LCALL   ?FLT_TO_L
+   \   000223   E5..         MOV     A,?V0 + 8
+   \   000225   2430         ADD     A,#0x30
+   \   000227   C0E0         PUSH    A
+   \   000229   7402         MOV     A,#0x2
+   \   00022B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00022E   D0E0         POP     A
+   \   000230   F0           MOVX    @DPTR,A
+    594            theMessageData[3]='0'+(int)ay/10;
+   \   000231   90....       MOV     DPTR,#ay
+   \   000234   12....       LCALL   ?XLOAD_R2345
+   \   000237   12....       LCALL   ?R2345_FLT_TO_L
+   \   00023A   AC..         MOV     R4,?V0 + 0
+   \   00023C   AD..         MOV     R5,?V0 + 1
+   \   00023E   EC           MOV     A,R4
+   \   00023F   F8           MOV     R0,A
+   \   000240   ED           MOV     A,R5
+   \   000241   F9           MOV     R1,A
+   \   000242   7A0A         MOV     R2,#0xa
+   \   000244   7B00         MOV     R3,#0x0
+   \   000246   12....       LCALL   ?S_DIV_MOD
+   \   000249   E8           MOV     A,R0
+   \   00024A   2430         ADD     A,#0x30
+   \   00024C   C0E0         PUSH    A
+   \   00024E   7403         MOV     A,#0x3
+   \   000250   12....       LCALL   ?XSTACK_DISP0_8
+   \   000253   D0E0         POP     A
+   \   000255   12....       LCALL   ?Subroutine1 & 0xFFFF
+    595            theMessageData[4]='0'+(int)ay%10;
+   \                     ??CrossCallReturnLabel_1:
+   \   000258   12....       LCALL   ?S_DIV_MOD
+   \   00025B   8A..         MOV     ?V0 + 0,R2
+   \   00025D   8B..         MOV     ?V0 + 1,R3
+   \   00025F   EA           MOV     A,R2
+   \   000260   2430         ADD     A,#0x30
+   \   000262   C0E0         PUSH    A
+   \   000264   7404         MOV     A,#0x4
+   \   000266   12....       LCALL   ?XSTACK_DISP0_8
+   \   000269   D0E0         POP     A
+   \   00026B   F0           MOVX    @DPTR,A
+    596            theMessageData[5]='0'+(int)((ay-(int)(ay/10)*10-(int)ay%10)/0.1);
+   \   00026C   90....       MOV     DPTR,#ay
+   \   00026F   78..         MOV     R0,#?V0 + 8
+   \   000271   12....       LCALL   ?L_MOV_X
+   \   000274   90....       MOV     DPTR,#ay
+   \   000277   78..         MOV     R0,#?V0 + 4
+   \   000279   12....       LCALL   ?L_MOV_X
+   \   00027C   90....       MOV     DPTR,#__Constant_41200000
+   \   00027F   78..         MOV     R0,#?V0 + 12
+   \   000281   12....       LCALL   ?L_MOV_X
+   \   000284   78..         MOV     R0,#?V0 + 4
+   \   000286   79..         MOV     R1,#?V0 + 12
+   \   000288   12....       LCALL   ?FLT_DIV
+   \   00028B   78..         MOV     R0,#?V0 + 4
+   \   00028D   12....       LCALL   ?FLT_TO_L
+   \   000290   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000293   12....       LCALL   ?L_TO_FLT
+   \   000296   78..         MOV     R0,#?V0 + 8
+   \   000298   79..         MOV     R1,#?V0 + 4
+   \   00029A   12....       LCALL   ?FLT_SUB
+   \   00029D   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   0002A0   12....       LCALL   ?L_TO_FLT
+   \   0002A3   78..         MOV     R0,#?V0 + 8
+   \   0002A5   79..         MOV     R1,#?V0 + 0
+   \   0002A7   12....       LCALL   ?FLT_SUB
+   \   0002AA   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   0002AD   78..         MOV     R0,#?V0 + 0
+   \   0002AF   12....       LCALL   ?L_MOV_X
+   \   0002B2   78..         MOV     R0,#?V0 + 8
+   \   0002B4   79..         MOV     R1,#?V0 + 0
+   \   0002B6   12....       LCALL   ?FLT_DIV
+   \   0002B9   78..         MOV     R0,#?V0 + 8
+   \   0002BB   12....       LCALL   ?FLT_TO_L
+   \   0002BE   E5..         MOV     A,?V0 + 8
+   \   0002C0   2430         ADD     A,#0x30
+   \   0002C2   C0E0         PUSH    A
+   \   0002C4   7405         MOV     A,#0x5
+   \   0002C6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002C9   D0E0         POP     A
+   \   0002CB   F0           MOVX    @DPTR,A
+    597            theMessageData[6]='0'+(int)az/10;
+   \   0002CC   90....       MOV     DPTR,#az
+   \   0002CF   12....       LCALL   ?XLOAD_R2345
+   \   0002D2   12....       LCALL   ?R2345_FLT_TO_L
+   \   0002D5   AC..         MOV     R4,?V0 + 0
+   \   0002D7   AD..         MOV     R5,?V0 + 1
+   \   0002D9   EC           MOV     A,R4
+   \   0002DA   F8           MOV     R0,A
+   \   0002DB   ED           MOV     A,R5
+   \   0002DC   F9           MOV     R1,A
+   \   0002DD   7A0A         MOV     R2,#0xa
+   \   0002DF   7B00         MOV     R3,#0x0
+   \   0002E1   12....       LCALL   ?S_DIV_MOD
+   \   0002E4   E8           MOV     A,R0
+   \   0002E5   2430         ADD     A,#0x30
+   \   0002E7   C0E0         PUSH    A
+   \   0002E9   7406         MOV     A,#0x6
+   \   0002EB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002EE   D0E0         POP     A
+   \   0002F0   12....       LCALL   ?Subroutine1 & 0xFFFF
+    598            theMessageData[7]='0'+(int)az%10;
+   \                     ??CrossCallReturnLabel_2:
+   \   0002F3   12....       LCALL   ?S_DIV_MOD
+   \   0002F6   8A..         MOV     ?V0 + 0,R2
+   \   0002F8   8B..         MOV     ?V0 + 1,R3
+   \   0002FA   EA           MOV     A,R2
+   \   0002FB   2430         ADD     A,#0x30
+   \   0002FD   C0E0         PUSH    A
+   \   0002FF   7407         MOV     A,#0x7
+   \   000301   12....       LCALL   ?XSTACK_DISP0_8
+   \   000304   D0E0         POP     A
+   \   000306   F0           MOVX    @DPTR,A
+    599            theMessageData[8]='0'+(int)((az-(int)(az/10)*10-(int)az%10)/0.1);
+   \   000307   90....       MOV     DPTR,#az
+   \   00030A   78..         MOV     R0,#?V0 + 8
+   \   00030C   12....       LCALL   ?L_MOV_X
+   \   00030F   90....       MOV     DPTR,#az
+   \   000312   78..         MOV     R0,#?V0 + 4
+   \   000314   12....       LCALL   ?L_MOV_X
+   \   000317   90....       MOV     DPTR,#__Constant_41200000
+   \   00031A   78..         MOV     R0,#?V0 + 12
+   \   00031C   12....       LCALL   ?L_MOV_X
+   \   00031F   78..         MOV     R0,#?V0 + 4
+   \   000321   79..         MOV     R1,#?V0 + 12
+   \   000323   12....       LCALL   ?FLT_DIV
+   \   000326   78..         MOV     R0,#?V0 + 4
+   \   000328   12....       LCALL   ?FLT_TO_L
+   \   00032B   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00032E   12....       LCALL   ?L_TO_FLT
+   \   000331   78..         MOV     R0,#?V0 + 8
+   \   000333   79..         MOV     R1,#?V0 + 4
+   \   000335   12....       LCALL   ?FLT_SUB
+   \   000338   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00033B   12....       LCALL   ?L_TO_FLT
+   \   00033E   78..         MOV     R0,#?V0 + 8
+   \   000340   79..         MOV     R1,#?V0 + 0
+   \   000342   12....       LCALL   ?FLT_SUB
+   \   000345   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   000348   78..         MOV     R0,#?V0 + 0
+   \   00034A   12....       LCALL   ?L_MOV_X
+   \   00034D   78..         MOV     R0,#?V0 + 8
+   \   00034F   79..         MOV     R1,#?V0 + 0
+   \   000351   12....       LCALL   ?FLT_DIV
+   \   000354   78..         MOV     R0,#?V0 + 8
+   \   000356   12....       LCALL   ?FLT_TO_L
+   \   000359   E5..         MOV     A,?V0 + 8
+   \   00035B   2430         ADD     A,#0x30
+   \   00035D   C0E0         PUSH    A
+   \   00035F   7408         MOV     A,#0x8
+   \   000361   12....       LCALL   ?XSTACK_DISP0_8
+   \   000364   D0E0         POP     A
+   \   000366   F0           MOVX    @DPTR,A
+    600            theMessageData[9]='0'+(int)jx/10;
+   \   000367   90....       MOV     DPTR,#jx
+   \   00036A   12....       LCALL   ?XLOAD_R2345
+   \   00036D   12....       LCALL   ?R2345_FLT_TO_L
+   \   000370   AC..         MOV     R4,?V0 + 0
+   \   000372   AD..         MOV     R5,?V0 + 1
+   \   000374   EC           MOV     A,R4
+   \   000375   F8           MOV     R0,A
+   \   000376   ED           MOV     A,R5
+   \   000377   F9           MOV     R1,A
+   \   000378   7A0A         MOV     R2,#0xa
+   \   00037A   7B00         MOV     R3,#0x0
+   \   00037C   12....       LCALL   ?S_DIV_MOD
+   \   00037F   E8           MOV     A,R0
+   \   000380   2430         ADD     A,#0x30
+   \   000382   C0E0         PUSH    A
+   \   000384   7409         MOV     A,#0x9
+   \   000386   12....       LCALL   ?XSTACK_DISP0_8
+   \   000389   D0E0         POP     A
+   \   00038B   12....       LCALL   ?Subroutine1 & 0xFFFF
+    601            theMessageData[10]='0'+(int)jx%10;
+   \                     ??CrossCallReturnLabel_3:
+   \   00038E   12....       LCALL   ?S_DIV_MOD
+   \   000391   8A..         MOV     ?V0 + 0,R2
+   \   000393   8B..         MOV     ?V0 + 1,R3
+   \   000395   EA           MOV     A,R2
+   \   000396   2430         ADD     A,#0x30
+   \   000398   C0E0         PUSH    A
+   \   00039A   740A         MOV     A,#0xa
+   \   00039C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00039F   D0E0         POP     A
+   \   0003A1   F0           MOVX    @DPTR,A
+    602            theMessageData[11]='0'+(int)((jx-(int)(jx/10)*10-(int)jx%10)/0.1);
+   \   0003A2   90....       MOV     DPTR,#jx
+   \   0003A5   78..         MOV     R0,#?V0 + 8
+   \   0003A7   12....       LCALL   ?L_MOV_X
+   \   0003AA   90....       MOV     DPTR,#jx
+   \   0003AD   78..         MOV     R0,#?V0 + 4
+   \   0003AF   12....       LCALL   ?L_MOV_X
+   \   0003B2   90....       MOV     DPTR,#__Constant_41200000
+   \   0003B5   78..         MOV     R0,#?V0 + 12
+   \   0003B7   12....       LCALL   ?L_MOV_X
+   \   0003BA   78..         MOV     R0,#?V0 + 4
+   \   0003BC   79..         MOV     R1,#?V0 + 12
+   \   0003BE   12....       LCALL   ?FLT_DIV
+   \   0003C1   78..         MOV     R0,#?V0 + 4
+   \   0003C3   12....       LCALL   ?FLT_TO_L
+   \   0003C6   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0003C9   12....       LCALL   ?L_TO_FLT
+   \   0003CC   78..         MOV     R0,#?V0 + 8
+   \   0003CE   79..         MOV     R1,#?V0 + 4
+   \   0003D0   12....       LCALL   ?FLT_SUB
+   \   0003D3   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   0003D6   12....       LCALL   ?L_TO_FLT
+   \   0003D9   78..         MOV     R0,#?V0 + 8
+   \   0003DB   79..         MOV     R1,#?V0 + 0
+   \   0003DD   12....       LCALL   ?FLT_SUB
+   \   0003E0   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   0003E3   78..         MOV     R0,#?V0 + 0
+   \   0003E5   12....       LCALL   ?L_MOV_X
+   \   0003E8   78..         MOV     R0,#?V0 + 8
+   \   0003EA   79..         MOV     R1,#?V0 + 0
+   \   0003EC   12....       LCALL   ?FLT_DIV
+   \   0003EF   78..         MOV     R0,#?V0 + 8
+   \   0003F1   12....       LCALL   ?FLT_TO_L
+   \   0003F4   E5..         MOV     A,?V0 + 8
+   \   0003F6   2430         ADD     A,#0x30
+   \   0003F8   C0E0         PUSH    A
+   \   0003FA   740B         MOV     A,#0xb
+   \   0003FC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003FF   D0E0         POP     A
+   \   000401   F0           MOVX    @DPTR,A
+    603            theMessageData[12]='0'+(int)jy/10;
+   \   000402   90....       MOV     DPTR,#jy
+   \   000405   12....       LCALL   ?XLOAD_R2345
+   \   000408   12....       LCALL   ?R2345_FLT_TO_L
+   \   00040B   AC..         MOV     R4,?V0 + 0
+   \   00040D   AD..         MOV     R5,?V0 + 1
+   \   00040F   EC           MOV     A,R4
+   \   000410   F8           MOV     R0,A
+   \   000411   ED           MOV     A,R5
+   \   000412   F9           MOV     R1,A
+   \   000413   7A0A         MOV     R2,#0xa
+   \   000415   7B00         MOV     R3,#0x0
+   \   000417   12....       LCALL   ?S_DIV_MOD
+   \   00041A   E8           MOV     A,R0
+   \   00041B   2430         ADD     A,#0x30
+   \   00041D   C0E0         PUSH    A
+   \   00041F   740C         MOV     A,#0xc
+   \   000421   12....       LCALL   ?XSTACK_DISP0_8
+   \   000424   D0E0         POP     A
+   \   000426   12....       LCALL   ?Subroutine1 & 0xFFFF
+    604            theMessageData[13]='0'+(int)jy%10;
+   \                     ??CrossCallReturnLabel_4:
+   \   000429   12....       LCALL   ?S_DIV_MOD
+   \   00042C   8A..         MOV     ?V0 + 0,R2
+   \   00042E   8B..         MOV     ?V0 + 1,R3
+   \   000430   EA           MOV     A,R2
+   \   000431   2430         ADD     A,#0x30
+   \   000433   C0E0         PUSH    A
+   \   000435   740D         MOV     A,#0xd
+   \   000437   12....       LCALL   ?XSTACK_DISP0_8
+   \   00043A   D0E0         POP     A
+   \   00043C   F0           MOVX    @DPTR,A
+    605            theMessageData[14]='0'+(int)((jy-(int)(jy/10)*10-(int)jy%10)/0.1);
+   \   00043D   90....       MOV     DPTR,#jy
+   \   000440   78..         MOV     R0,#?V0 + 8
+   \   000442   12....       LCALL   ?L_MOV_X
+   \   000445   90....       MOV     DPTR,#jy
+   \   000448   78..         MOV     R0,#?V0 + 4
+   \   00044A   12....       LCALL   ?L_MOV_X
+   \   00044D   90....       MOV     DPTR,#__Constant_41200000
+   \   000450   78..         MOV     R0,#?V0 + 12
+   \   000452   12....       LCALL   ?L_MOV_X
+   \   000455   78..         MOV     R0,#?V0 + 4
+   \   000457   79..         MOV     R1,#?V0 + 12
+   \   000459   12....       LCALL   ?FLT_DIV
+   \   00045C   78..         MOV     R0,#?V0 + 4
+   \   00045E   12....       LCALL   ?FLT_TO_L
+   \   000461   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000464   12....       LCALL   ?L_TO_FLT
+   \   000467   78..         MOV     R0,#?V0 + 8
+   \   000469   79..         MOV     R1,#?V0 + 4
+   \   00046B   12....       LCALL   ?FLT_SUB
+   \   00046E   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000471   12....       LCALL   ?L_TO_FLT
+   \   000474   78..         MOV     R0,#?V0 + 8
+   \   000476   79..         MOV     R1,#?V0 + 0
+   \   000478   12....       LCALL   ?FLT_SUB
+   \   00047B   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   00047E   78..         MOV     R0,#?V0 + 0
+   \   000480   12....       LCALL   ?L_MOV_X
+   \   000483   78..         MOV     R0,#?V0 + 8
+   \   000485   79..         MOV     R1,#?V0 + 0
+   \   000487   12....       LCALL   ?FLT_DIV
+   \   00048A   78..         MOV     R0,#?V0 + 8
+   \   00048C   12....       LCALL   ?FLT_TO_L
+   \   00048F   E5..         MOV     A,?V0 + 8
+   \   000491   2430         ADD     A,#0x30
+   \   000493   C0E0         PUSH    A
+   \   000495   740E         MOV     A,#0xe
+   \   000497   12....       LCALL   ?XSTACK_DISP0_8
+   \   00049A   D0E0         POP     A
+   \   00049C   F0           MOVX    @DPTR,A
+    606            theMessageData[15]='0'+(int)jz/10;
+   \   00049D   90....       MOV     DPTR,#`jz`
+   \   0004A0   12....       LCALL   ?XLOAD_R2345
+   \   0004A3   12....       LCALL   ?R2345_FLT_TO_L
+   \   0004A6   AC..         MOV     R4,?V0 + 0
+   \   0004A8   AD..         MOV     R5,?V0 + 1
+   \   0004AA   EC           MOV     A,R4
+   \   0004AB   F8           MOV     R0,A
+   \   0004AC   ED           MOV     A,R5
+   \   0004AD   F9           MOV     R1,A
+   \   0004AE   7A0A         MOV     R2,#0xa
+   \   0004B0   7B00         MOV     R3,#0x0
+   \   0004B2   12....       LCALL   ?S_DIV_MOD
+   \   0004B5   E8           MOV     A,R0
+   \   0004B6   2430         ADD     A,#0x30
+   \   0004B8   C0E0         PUSH    A
+   \   0004BA   740F         MOV     A,#0xf
+   \   0004BC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004BF   D0E0         POP     A
+   \   0004C1   12....       LCALL   ?Subroutine1 & 0xFFFF
+    607            theMessageData[16]='0'+(int)jz%10;
+   \                     ??CrossCallReturnLabel_5:
+   \   0004C4   12....       LCALL   ?S_DIV_MOD
+   \   0004C7   8A..         MOV     ?V0 + 0,R2
+   \   0004C9   8B..         MOV     ?V0 + 1,R3
+   \   0004CB   EA           MOV     A,R2
+   \   0004CC   2430         ADD     A,#0x30
+   \   0004CE   C0E0         PUSH    A
+   \   0004D0   7410         MOV     A,#0x10
+   \   0004D2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0004D5   D0E0         POP     A
+   \   0004D7   F0           MOVX    @DPTR,A
+    608            theMessageData[17]='0'+(int)((jz-(int)(jz/10)*10-(int)jz%10)/0.1);
+   \   0004D8   90....       MOV     DPTR,#`jz`
+   \   0004DB   78..         MOV     R0,#?V0 + 8
+   \   0004DD   12....       LCALL   ?L_MOV_X
+   \   0004E0   90....       MOV     DPTR,#`jz`
+   \   0004E3   78..         MOV     R0,#?V0 + 4
+   \   0004E5   12....       LCALL   ?L_MOV_X
+   \   0004E8   90....       MOV     DPTR,#__Constant_41200000
+   \   0004EB   78..         MOV     R0,#?V0 + 12
+   \   0004ED   12....       LCALL   ?L_MOV_X
+   \   0004F0   78..         MOV     R0,#?V0 + 4
+   \   0004F2   79..         MOV     R1,#?V0 + 12
+   \   0004F4   12....       LCALL   ?FLT_DIV
+   \   0004F7   78..         MOV     R0,#?V0 + 4
+   \   0004F9   12....       LCALL   ?FLT_TO_L
+   \   0004FC   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   0004FF   12....       LCALL   ?L_TO_FLT
+   \   000502   78..         MOV     R0,#?V0 + 8
+   \   000504   79..         MOV     R1,#?V0 + 4
+   \   000506   12....       LCALL   ?FLT_SUB
+   \   000509   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   00050C   12....       LCALL   ?L_TO_FLT
+   \   00050F   78..         MOV     R0,#?V0 + 8
+   \   000511   79..         MOV     R1,#?V0 + 0
+   \   000513   12....       LCALL   ?FLT_SUB
+   \   000516   90....       MOV     DPTR,#__Constant_3dcccccd
+   \   000519   78..         MOV     R0,#?V0 + 0
+   \   00051B   12....       LCALL   ?L_MOV_X
+   \   00051E   78..         MOV     R0,#?V0 + 8
+   \   000520   79..         MOV     R1,#?V0 + 0
+   \   000522   12....       LCALL   ?FLT_DIV
+   \   000525   78..         MOV     R0,#?V0 + 8
+   \   000527   12....       LCALL   ?FLT_TO_L
+   \   00052A   E5..         MOV     A,?V0 + 8
+   \   00052C   2430         ADD     A,#0x30
+   \   00052E   C0E0         PUSH    A
+   \   000530   7411         MOV     A,#0x11
+   \   000532   12....       LCALL   ?XSTACK_DISP0_8
+   \   000535   D0E0         POP     A
+   \   000537   F0           MOVX    @DPTR,A
+    609          
+    610          
+    611            my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+    612            //my_DstAddr.endPoint=GENERICAPP_ENDPOINT;
+    613            my_DstAddr.addr.shortAddr=0x0000; 
+    614          
+    615          
+    616            AF_DataRequest(&Posture_DstAddr
+    617            ,&Posture_epDesc
+    618            ,Posture_CLUSTERID
+    619            ,24
+    620            ,theMessageData
+    621            ,&Posture_TransID
+    622            ,AF_DISCV_ROUTE
+    623            ,AF_DEFAULT_RADIUS);
+   \   000538                ; Setup parameters for call to function AF_DataRequest
+   \   000538   75..1E       MOV     ?V0 + 0,#0x1e
+   \   00053B   78..         MOV     R0,#?V0 + 0
+   \   00053D   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000540   75....       MOV     ?V0 + 0,#Posture_TransID & 0xff
+   \   000543   75....       MOV     ?V0 + 1,#(Posture_TransID >> 8) & 0xff
+   \   000546   78..         MOV     R0,#?V0 + 0
+   \   000548   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00054B   7403         MOV     A,#0x3
+   \   00054D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000550   8582..       MOV     ?V0 + 0,DPL
+   \   000553   8583..       MOV     ?V0 + 1,DPH
+   \   000556   78..         MOV     R0,#?V0 + 0
+   \   000558   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00055B   75..18       MOV     ?V0 + 0,#0x18
+   \   00055E   75..00       MOV     ?V0 + 1,#0x0
+   \   000561   78..         MOV     R0,#?V0 + 0
+   \   000563   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000566   75..04       MOV     ?V0 + 0,#0x4
+   \   000569   78..         MOV     R0,#?V0 + 0
+   \   00056B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00056E   7920         MOV     R1,#0x20
+   \   000570   7C..         MOV     R4,#Posture_epDesc & 0xff
+   \   000572   7D..         MOV     R5,#(Posture_epDesc >> 8) & 0xff
+   \   000574   7A..         MOV     R2,#Posture_DstAddr & 0xff
+   \   000576   7B..         MOV     R3,#(Posture_DstAddr >> 8) & 0xff
+   \   000578   12....       LCALL   ??AF_DataRequest?relay
+   \   00057B   7409         MOV     A,#0x9
+   \   00057D   12....       LCALL   ?DEALLOC_XSTACK8
+    624            /*if (ax<0)
+    625              ax=-ax;
+    626            if (ay<0)
+    627              ay=-ay;
+    628            if (az<0)
+    629              az=-az;
+    630            _ltoa( (uint32)(ax), &theMessageData[4], 10 );
+    631            _ltoa( (uint32)(ay), &theMessageData[7], 10 );
+    632            _ltoa( (uint32)(az),  &theMessageData[10], 10 );
+    633            
+    634            for (unsigned char i=0; i<15-1; i++)
+    635            {
+    636              if (theMessageData[i] == 0x00 )
+    637              {
+    638                theMessageData[i] = ' ';
+    639              }
+    640            }
+    641          
+    642            if ( AF_DataRequest( &Posture_DstAddr, &Posture_epDesc,
+    643                                 Posture_CLUSTERID,
+    644                                 (byte)osal_strlen( theMessageData ) + 1,
+    645                                 (byte *)&theMessageData,
+    646                                 &Posture_TransID,
+    647                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+    648            {
+    649              // Successfully requested to be sent.
+    650            }
+    651            else
+    652            {
+    653              // Error occurred in request to send.
+    654            }*/
+    655          }
+   \   000580   7418         MOV     A,#0x18
+   \   000582   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000585   7F10         MOV     R7,#0x10
+   \   000587   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   EB           MOV     A,R3
+   \   000001   33           RLC     A
+   \   000002   95E0         SUBB    A,0xE0 /* A   */
+   \   000004   F5..         MOV     ?V0 + 2,A
+   \   000006   F5..         MOV     ?V0 + 3,A
+   \   000008   78..         MOV     R0,#?V0 + 0
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E5..         MOV     A,?V0 + 4
+   \   000002   75F00A       MOV     B,#0xa
+   \   000005   A4           MUL     AB
+   \   000006   F5..         MOV     ?V0 + 4,A
+   \   000008   A8F0         MOV     R0,B
+   \   00000A   75F00A       MOV     B,#0xa
+   \   00000D   E5..         MOV     A,?V0 + 5
+   \   00000F   A4           MUL     AB
+   \   000010   28           ADD     A,R0
+   \   000011   F5..         MOV     ?V0 + 5,A
+   \   000013   33           RLC     A
+   \   000014   95E0         SUBB    A,0xE0 /* A   */
+   \   000016   F5..         MOV     ?V0 + 6,A
+   \   000018   F5..         MOV     ?V0 + 7,A
+   \   00001A   78..         MOV     R0,#?V0 + 4
+   \   00001C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   EC           MOV     A,R4
+   \   000002   F8           MOV     R0,A
+   \   000003   ED           MOV     A,R5
+   \   000004   F9           MOV     R1,A
+   \   000005   7A0A         MOV     R2,#0xa
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   22           RET
+    656          
+    657          #if defined( IAR_ARMCM3_LM )
+    658          /*********************************************************************
+    659           * @fn      Posture_ProcessRtosMessage
+    660           *
+    661           * @brief   Receive message from RTOS queue, send response back.
+    662           *
+    663           * @param   none
+    664           *
+    665           * @return  none
+    666           */
+    667          static void Posture_ProcessRtosMessage( void )
+    668          {
+    669            osalQueue_t inMsg;
+    670          
+    671            if ( osal_queue_receive( OsalQueue, &inMsg, 0 ) == pdPASS )
+    672            {
+    673              uint8 cmndId = inMsg.cmnd;
+    674              uint32 counter = osal_build_uint32( inMsg.cbuf, 4 );
+    675          
+    676              switch ( cmndId )
+    677              {
+    678                case CMD_INCR:
+    679                  counter += 1;  /* Increment the incoming counter */
+    680                                 /* Intentionally fall through next case */
+    681          
+    682                case CMD_ECHO:
+    683                {
+    684                  userQueue_t outMsg;
+    685          
+    686                  outMsg.resp = RSP_CODE | cmndId;  /* Response ID */
+    687                  osal_buffer_uint32( outMsg.rbuf, counter );    /* Increment counter */
+    688                  osal_queue_send( UserQueue1, &outMsg, 0 );  /* Send back to UserTask */
+    689                  break;
+    690                }
+    691                
+    692                default:
+    693                  break;  /* Ignore unknown command */    
+    694              }
+    695            }
+    696          }
+    697          
+    698          #endif
+    699          
+    700          //***********************************************************************************
+    701          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    702          uint16 PostureMeasurement_ProcessEvent( uint8 task_id, uint16 events )
+   \                     PostureMeasurement_ProcessEvent:
+    703          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    704            if ( events & POSTUREMEASUREMENT_EVT )
+   \   000009   EE           MOV     A,R6
+   \   00000A   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000C   502B         JNC     ??PostureMeasurement_ProcessEvent_0
+    705            {
+    706            osal_start_timerEx( PostureMeasurement_TaskID,
+    707                                  POSTUREMEASUREMENT_EVT,
+    708                                  POSTUREMEASUREMENT_TIMEOUT );
+   \   00000E                ; Setup parameters for call to function osal_start_timerEx
+   \   00000E   7CF4         MOV     R4,#-0xc
+   \   000010   7D01         MOV     R5,#0x1
+   \   000012   7A01         MOV     R2,#0x1
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   90....       MOV     DPTR,#PostureMeasurement_TaskID
+   \   000019   12....       LCALL   ??Subroutine5_0 & 0xFFFF
+    709          
+    710              _MPU_Init();
+   \                     ??CrossCallReturnLabel_20:
+   \   00001C                ; Setup parameters for call to function _MPU_Init
+   \   00001C   12....       LCALL   ??_MPU_Init?relay
+    711              NOP();
+   \   00001F                ; Setup parameters for call to function NOP
+   \   00001F   12....       LCALL   ??NOP?relay
+    712              read();
+   \   000022                ; Setup parameters for call to function read
+   \   000022   12....       LCALL   ??read?relay
+    713              flag++;
+   \   000025   90....       MOV     DPTR,#flag
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   2401         ADD     A,#0x1
+   \   00002B   F0           MOVX    @DPTR,A
+   \   00002C   A3           INC     DPTR
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   3400         ADDC    A,#0x0
+   \   000030   F0           MOVX    @DPTR,A
+    714              
+    715              //HalLedSet ( HAL_LED_2, HAL_LED_MODE_TOGGLE );
+    716          
+    717              // return unprocessed events
+    718              return (events ^ POSTUREMEASUREMENT_EVT);
+   \   000031   EE           MOV     A,R6
+   \   000032   6401         XRL     A,#0x1
+   \   000034   FA           MOV     R2,A
+   \   000035   EF           MOV     A,R7
+   \   000036   FB           MOV     R3,A
+   \   000037   8004         SJMP    ??PostureMeasurement_ProcessEvent_1
+    719            }
+    720          
+    721            // Discard unknown events
+    722            return 0;
+   \                     ??PostureMeasurement_ProcessEvent_0:
+   \   000039   7A00         MOV     R2,#0x0
+   \   00003B   7B00         MOV     R3,#0x0
+   \                     ??PostureMeasurement_ProcessEvent_1:
+   \   00003D   02....       LJMP    ?Subroutine0 & 0xFFFF
+    723          }
+    724          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    725          void PostureMeasurement_Init( uint8 task_id )
+   \                     PostureMeasurement_Init:
+    726          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    727            PostureMeasurement_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#PostureMeasurement_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    728            PostureMeasurement_TransID = 0;
+   \   00000A   90....       MOV     DPTR,#PostureMeasurement_TransID
+   \   00000D   E4           CLR     A
+   \   00000E   F0           MOVX    @DPTR,A
+    729            
+    730            osal_start_timerEx( PostureMeasurement_TaskID,
+    731                                  POSTUREMEASUREMENT_EVT,
+    732                                  POSTUREMEASUREMENT_TIMEOUT );
+   \   00000F                ; Setup parameters for call to function osal_start_timerEx
+   \   00000F   7CF4         MOV     R4,#-0xc
+   \   000011   7D01         MOV     R5,#0x1
+   \   000013   7A01         MOV     R2,#0x1
+   \   000015   FB           MOV     R3,A
+   \   000016   12....       LCALL   ??osal_start_timerEx?relay
+    733            
+    734            RegisterForKeys( PostureMeasurement_TaskID );  
+   \   000019                ; Setup parameters for call to function RegisterForKeys
+   \   000019   90....       MOV     DPTR,#PostureMeasurement_TaskID
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??RegisterForKeys?relay
+    735          }
+   \   000021   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Posture_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Posture_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Posture_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Posture_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Posture_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Posture_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??PostureMeasurement_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    PostureMeasurement_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??PostureMeasurement_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    PostureMeasurement_Init
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Posture">`:
+   \   000000   506F7374     DB "Posture"
+   \            75726500
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "rcvd">`:
+   \   000000   72637664     DB "rcvd"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+   \   00000A   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000012   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_41200000:
+   \   000000   00002041     DD 41200000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3dcccccd:
+   \   000000   CDCCCC3D     DD 3DCCCCCDH
+    736          
+    737          
+    738          /*********************************************************************
+    739           */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     PostureMeasurement_Init            0      0      9
+       -> osal_start_timerEx            0      0     18
+       -> RegisterForKeys               0      0     18
+     PostureMeasurement_ProcessEvent
+                                        0      0      9
+       -> osal_start_timerEx            0      0     18
+       -> _MPU_Init                     0      0     18
+       -> NOP                           0      0     18
+       -> read                          0      0     18
+     Posture_Init                       0      0      9
+       -> afRegister                    0      0     18
+       -> RegisterForKeys               0      0     18
+       -> HalLcdWriteString             0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+     Posture_ProcessEvent               0      0     32
+       -> osal_msg_receive              0      0     46
+       -> osal_start_timerEx            0      0     46
+       -> osal_msg_deallocate           0      0     46
+       -> osal_msg_receive              0      0     46
+       -> ZDO_ParseEPListRsp            0      0     46
+       -> HalLedSet                     0      0     46
+       -> osal_mem_free                 0      0     46
+       -> HalLedSet                     0      0     46
+       -> HalLedSet                     0      0     46
+       -> HalLedSet                     0      0     46
+       -> NLME_GetShortAddr             0      0     46
+       -> ZDP_EndDeviceBindReq          0      0     64
+       -> HalLedSet                     0      0     46
+       -> ZDP_MatchDescReq              0      0     62
+       -> HalLcdWriteScreen             0      0     46
+       -> Posture_SendTheMessage        0      0     46
+       -> osal_start_timerEx            0      0     46
+     Posture_SendTheMessage             2      0     80
+       -> AF_DataRequest                0      0    114
+
+
+   Segment part sizes:
+
+     Function/Label                          Bytes
+     --------------                          -----
+     Posture_ClusterList                        2
+     Posture_SimpleDesc                        12
+     Posture_epDesc                             6
+     Posture_TaskID                             1
+     Posture_NwkState                           1
+     Posture_TransID                            1
+     Posture_DstAddr                           12
+     PostureMeasurement_TaskID                  1
+     PostureMeasurement_NwkState                1
+     PostureMeasurement_TransID                 1
+     fPosture                                   4
+     flag                                       2
+     Posture_Init                             106
+     ?Subroutine0                               5
+     Posture_ProcessEvent                     583
+     ?Subroutine2                              11
+     ??Subroutine5_0                            6
+     Posture_SendTheMessage                  1418
+     ?Subroutine4                              11
+     ?Subroutine3                              29
+     ?Subroutine1                              10
+     PostureMeasurement_ProcessEvent
+                                               64
+     PostureMeasurement_Init                   36
+     ??Posture_Init?relay                       6
+     ??Posture_ProcessEvent?relay               6
+     ??Posture_SendTheMessage?relay             6
+     ??PostureMeasurement_ProcessEvent?relay    6
+     ??PostureMeasurement_Init?relay            6
+     ?<Constant "Posture">                      8
+     ?<Constant "rcvd">                         5
+     ?<Constant "EndDevice">                   24
+     __Constant_0                               4
+     __Constant_41200000                        4
+     __Constant_3dcccccd                        4
+
+ 
+ 2 279 bytes in segment BANKED_CODE
+    30 bytes in segment BANK_RELAYS
+    63 bytes in segment XDATA_ROM_C
+    30 bytes in segment XDATA_Z
+ 
+ 2 309 bytes of CODE  memory
+    51 bytes of CONST memory (+ 12 bytes shared)
+    30 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

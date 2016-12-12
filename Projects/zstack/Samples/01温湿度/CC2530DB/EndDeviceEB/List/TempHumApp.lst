@@ -1,0 +1,828 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Dec/2016  15:50:21 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\Source\Tem #
+#                          pHumApp.c                                          #
+#    Command line       =  -f E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC25 #
+#                          30-2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wEndev.cfg             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\Lib\micro-electromechani #
+#                          cal\Ê±ÑÓ\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\01ÎÂÊª¶È\CC2530DB\..\..\..\Tools\CC2530DB\f8wC #
+#                          onfig.cfg (-DZIGBEEPRO -DSECURE=0                  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00100000                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\Lib\micro-electromechani #
+#                          cal\Ê±ÑÓ\ZStack-CC2530-2.5.1a\Projects\zstack\Samp #
+#                          les\01ÎÂÊª¶È\Source\TempHumApp.c -D NWK_AUTO_POLL  #
+#                          -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D              #
+#                          xPOWER_SAVING -lC E:\Lib\micro-electromechanical\Ê #
+#                          ±ÑÓ\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\0 #
+#                          1ÎÂÊª¶È\CC2530DB\EndDeviceEB\List\ -lA             #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\E #
+#                          ndDeviceEB\List\ --diag_suppress Pe001,Pa010 -o    #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\E #
+#                          ndDeviceEB\Obj\ -e --no_code_motion --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\Lib\micro-electromechan #
+#                          ical\Ê±ÑÓ\ZStack-CC2530-2.5.1a\Projects\zstack\Sam #
+#                          ples\01ÎÂÊª¶È\CC2530DB\ -I                         #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\Source\ -I E:\Lib\micro-electromechanical\Ê±ÑÓ\Z #
+#                          Stack-CC2530-2.5.1a\Projects\zstack\Samples\01ÎÂÊª #
+#                          ¶È\CC2530DB\..\..\..\ZMain\TI2530DB\ -I            #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\include\ -I           #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\target\CC2530EB\ -I   #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\include\ -I           #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\high_level\ -I        #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\ -I   #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\singl #
+#                          e_chip\ -I E:\Lib\micro-electromechanical\Ê±ÑÓ\ZSt #
+#                          ack-CC2530-2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È #
+#                          \CC2530DB\..\..\..\..\..\Components\mt\ -I         #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\osal\include\ -I          #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\saddr\ -I        #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\sdata\ -I        #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\af\ -I              #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\nwk\ -I             #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\sapi\ -I            #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\sec\ -I             #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\sys\ -I             #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\zdo\ -I             #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\zmac\ -I                  #
+#                          E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\. #
+#                          .\..\..\..\..\Components\zmac\f8w\ -Ohz            #
+#    List file          =  E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\E #
+#                          ndDeviceEB\List\TempHumApp.lst                     #
+#    Object file        =  E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\CC2530DB\E #
+#                          ndDeviceEB\Obj\TempHumApp.r51                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\Lib\micro-electromechanical\Ê±ÑÓ\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\01ÎÂÊª¶È\Source\TempHumApp.c
+      1          #include "OSAL.h"
+      2          #include "AF.h"
+      3          #include "ZDApp.h"
+      4          #include "ZDObject.h"
+      5          #include "ZDProfile.h"
+      6          #include <string.h>
+      7          //#include "Common.h"
+      8          #include "DebugTrace.h"
+      9          #include "TempHumApp.h"
+     10          #include "MT.h"
+     11          
+     12          #if !defined( WIN32 )
+     13            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     14          #endif
+     15          
+     16          /* HAL */
+     17          #include "hal_lcd.h"
+     18          #include "hal_led.h"
+     19          #include "hal_key.h"
+     20          #include "hal_uart.h"
+     21          #include "mt_uart.h"
+     22          
+     23          
+     24          #define SEND_DATA_EVENT 0x01
+     25          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     26          const cId_t TempHumApp_ClusterList[TempHumApp_MAX_CLUSTERS] =
+   \                     TempHumApp_ClusterList:
+   \   000000   0100         DW 1
+     27          {
+     28            TempHumApp_CLUSTERID
+     29          };
+     30          
+     31          
+     32          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     33          const SimpleDescriptionFormat_t TempHumApp_SimpleDesc =
+   \                     TempHumApp_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   0000         DW 0H
+   \   000009   01           DB 1
+   \   00000A   ....         DW TempHumApp_ClusterList
+     34          {
+     35            TempHumApp_ENDPOINT,              //  int Endpoint;
+     36            TempHumApp_PROFID,                //  uint16 AppProfId[2];
+     37            TempHumApp_DEVICEID,              //  uint16 AppDeviceId[2];
+     38            TempHumApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+     39            TempHumApp_FLAGS,                 //  int   AppFlags:4;
+     40            
+     41            
+     42            0,          //  byte  AppNumInClusters;
+     43            (cId_t *)NULL,  //  byte *pAppInClusterList;
+     44            TempHumApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+     45            (cId_t *)TempHumApp_ClusterList   //  byte *pAppInClusterList;
+     46          };
+     47          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     48          unsigned char TempDATA;
+   \                     TempDATA:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     49          endPointDesc_t TempHumApp_epDesc;
+   \                     TempHumApp_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     50          byte TempHumApp_TaskID;
+   \                     TempHumApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     51          byte TempHumApp_TransID;
+   \                     TempHumApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     52          devStates_t TempHumApp_NwkState;
+   \                     TempHumApp_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     53          void TempHumApp_MessageMSGCB(afIncomingMSGPacket_t *MSGpkt);
+     54          void TempHumApp_SendTheMessage(void);
+     55          static void rxCB(uint8 port,uint8 event);
+     56          void TempHumApp_SerialSend(unsigned char* ser_str);
+     57          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          void TempHumApp_Init( byte task_id )
+   \                     TempHumApp_Init:
+     59          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 29
+   \   000005   74E3         MOV     A,#-0x1d
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+     60            //halUARTCfg_t uartConfig;//´®¿Ú
+     61              
+     62            TempHumApp_TaskID = task_id;
+   \   00000C   90....       MOV     DPTR,#TempHumApp_TaskID
+   \   00000F   F0           MOVX    @DPTR,A
+     63            TempHumApp_NwkState=DEV_INIT;
+   \   000010   90....       MOV     DPTR,#TempHumApp_NwkState
+   \   000013   7401         MOV     A,#0x1
+   \   000015   F0           MOVX    @DPTR,A
+     64            TempHumApp_TransID = 0;
+   \   000016   90....       MOV     DPTR,#TempHumApp_TransID
+   \   000019   E4           CLR     A
+   \   00001A   F0           MOVX    @DPTR,A
+     65          
+     66            
+     67            TempHumApp_epDesc.endPoint = TempHumApp_ENDPOINT;
+   \   00001B   90....       MOV     DPTR,#TempHumApp_epDesc
+   \   00001E   740A         MOV     A,#0xa
+   \   000020   F0           MOVX    @DPTR,A
+     68            TempHumApp_epDesc.task_id = &TempHumApp_TaskID;
+   \   000021   A3           INC     DPTR
+   \   000022   74..         MOV     A,#TempHumApp_TaskID & 0xff
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   74..         MOV     A,#(TempHumApp_TaskID >> 8) & 0xff
+   \   000028   F0           MOVX    @DPTR,A
+     69            TempHumApp_epDesc.simpleDesc
+     70                      = (SimpleDescriptionFormat_t *)&TempHumApp_SimpleDesc;
+   \   000029   A3           INC     DPTR
+   \   00002A   74..         MOV     A,#TempHumApp_SimpleDesc & 0xff
+   \   00002C   F0           MOVX    @DPTR,A
+   \   00002D   A3           INC     DPTR
+   \   00002E   74..         MOV     A,#(TempHumApp_SimpleDesc >> 8) & 0xff
+   \   000030   F0           MOVX    @DPTR,A
+     71            
+     72            TempHumApp_epDesc.latencyReq = noLatencyReqs;
+   \   000031   A3           INC     DPTR
+   \   000032   E4           CLR     A
+   \   000033   F0           MOVX    @DPTR,A
+     73            afRegister( &TempHumApp_epDesc ); 
+   \   000034                ; Setup parameters for call to function afRegister
+   \   000034   7A..         MOV     R2,#TempHumApp_epDesc & 0xff
+   \   000036   7B..         MOV     R3,#(TempHumApp_epDesc >> 8) & 0xff
+   \   000038   12....       LCALL   ??afRegister?relay
+     74             //uart×¢²á
+     75            MT_UartRegisterTaskID(task_id);
+   \   00003B                ; Setup parameters for call to function MT_UartRegisterTaskID
+   \   00003B   EE           MOV     A,R6
+   \   00003C   F9           MOV     R1,A
+   \   00003D   12....       LCALL   ??MT_UartRegisterTaskID?relay
+     76            //´®¿Ú³õÊ¼»¯
+     77             MT_UartInit();
+   \   000040                ; Setup parameters for call to function MT_UartInit
+   \   000040   12....       LCALL   ??MT_UartInit?relay
+     78            halUARTCfg_t uartConfig;
+     79            uartConfig.configured = TRUE;
+   \   000043   85..82       MOV     DPL,?XSP + 0
+   \   000046   85..83       MOV     DPH,?XSP + 1
+   \   000049   7401         MOV     A,#0x1
+   \   00004B   F0           MOVX    @DPTR,A
+     80            uartConfig.baudRate = HAL_UART_BR_9600;
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   E4           CLR     A
+   \   000050   F0           MOVX    @DPTR,A
+     81            uartConfig.flowControl = FALSE;
+   \   000051   7402         MOV     A,#0x2
+   \   000053   12....       LCALL   ?XSTACK_DISP0_8
+   \   000056   E4           CLR     A
+   \   000057   F0           MOVX    @DPTR,A
+     82            uartConfig.callBackFunc = rxCB;
+   \   000058   741B         MOV     A,#0x1b
+   \   00005A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005D   74..         MOV     A,#??rxCB?relay & 0xff
+   \   00005F   F0           MOVX    @DPTR,A
+   \   000060   A3           INC     DPTR
+   \   000061   74..         MOV     A,#(??rxCB?relay >> 8) & 0xff
+   \   000063   F0           MOVX    @DPTR,A
+     83            HalUARTOpen(0,&uartConfig);
+   \   000064                ; Setup parameters for call to function HalUARTOpen
+   \   000064   85..82       MOV     DPL,?XSP + 0
+   \   000067   85..83       MOV     DPH,?XSP + 1
+   \   00006A   AA82         MOV     R2,DPL
+   \   00006C   AB83         MOV     R3,DPH
+   \   00006E   7900         MOV     R1,#0x0
+   \   000070   12....       LCALL   ??HalUARTOpen?relay
+     84          }
+   \   000073   741D         MOV     A,#0x1d
+   \   000075   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000078   7F01         MOV     R7,#0x1
+   \   00007A   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     85          static void rxCB(uint8 port,uint8 event)
+   \                     rxCB:
+     86          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 10
+   \   000004   74F6         MOV     A,#-0xa
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+     87            //HalUARTWrite(0,"I get",5);
+     88            unsigned  char Uartbuf[10];
+     89            unsigned char len;
+     90            len=HalUARTRead(0,Uartbuf,10);
+     91            //HalUARTWrite(0,""+len,1);
+     92            if(len)
+   \   000009                ; Setup parameters for call to function HalUARTRead
+   \   000009   7C0A         MOV     R4,#0xa
+   \   00000B   7D00         MOV     R5,#0x0
+   \   00000D   85..82       MOV     DPL,?XSP + 0
+   \   000010   85..83       MOV     DPH,?XSP + 1
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+   \   000017   7900         MOV     R1,#0x0
+   \   000019   12....       LCALL   ??HalUARTRead?relay
+   \   00001C   EA           MOV     A,R2
+   \   00001D   600D         JZ      ??rxCB_0
+     93            {
+     94              //HalUARTWrite(0,"I get",5);
+     95              //HalUARTWrite(0,Uartbuf,len);
+     96              TempHumApp_SerialSend(Uartbuf);
+   \   00001F                ; Setup parameters for call to function TempHumApp_SerialSend
+   \   00001F   85..82       MOV     DPL,?XSP + 0
+   \   000022   85..83       MOV     DPH,?XSP + 1
+   \   000025   AA82         MOV     R2,DPL
+   \   000027   AB83         MOV     R3,DPH
+   \   000029   12....       LCALL   ??TempHumApp_SerialSend?relay
+     97              len=0;
+     98            }
+     99          
+    100          }
+   \                     ??rxCB_0:
+   \   00002C   740A         MOV     A,#0xa
+   \   00002E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000031   D083         POP     DPH
+   \   000033   D082         POP     DPL
+   \   000035   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    101          UINT16 TempHumApp_ProcessEvent( byte task_id, UINT16 events )
+   \                     TempHumApp_ProcessEvent:
+    102          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    103            afIncomingMSGPacket_t *MSGpkt;
+    104          
+    105            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   604F         JZ      ??TempHumApp_ProcessEvent_0
+    106            {
+    107              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( TempHumApp_TaskID );
+   \   00000D                ; Setup parameters for call to function osal_msg_receive
+   \   00000D   8034         SJMP    ??TempHumApp_ProcessEvent_1
+    108              while ( MSGpkt )
+    109              {
+    110                switch ( MSGpkt->hdr.event )
+   \                     ??TempHumApp_ProcessEvent_2:
+   \   00000F   85..82       MOV     DPL,?V0 + 0
+   \   000012   85..83       MOV     DPH,?V0 + 1
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   64D1         XRL     A,#0xd1
+   \   000018   7022         JNZ     ??TempHumApp_ProcessEvent_3
+    111                {
+    112                 
+    113                    case ZDO_STATE_CHANGE:
+    114                      TempHumApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   90....       MOV     DPTR,#TempHumApp_NwkState
+   \   00001F   F0           MOVX    @DPTR,A
+    115                      if(TempHumApp_NwkState==DEV_END_DEVICE)
+   \   000020   6406         XRL     A,#0x6
+   \   000022   7018         JNZ     ??TempHumApp_ProcessEvent_3
+    116                      {
+    117                        P1_0=~P1_0;
+   \   000024   A290         MOV     C,0x90.0
+   \   000026   D2F0         SETB    B.0
+   \   000028   A290         MOV     C,0x90.0
+   \   00002A   30F001       JNB     B.0,??TempHumApp_ProcessEvent_4
+   \   00002D   B3           CPL     C
+   \                     ??TempHumApp_ProcessEvent_4:
+   \   00002E   9290         MOV     0x90.0,C
+    118                        osal_set_event(TempHumApp_TaskID,SEND_DATA_EVENT);
+   \   000030                ; Setup parameters for call to function osal_set_event
+   \   000030   7A01         MOV     R2,#0x1
+   \   000032   7B00         MOV     R3,#0x0
+   \   000034   90....       MOV     DPTR,#TempHumApp_TaskID
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+   \   000039   12....       LCALL   ??osal_set_event?relay
+    119                      }
+    120                      break;
+    121                      
+    122                    default:
+    123                      break;
+    124                }
+    125                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??TempHumApp_ProcessEvent_3:
+   \   00003C                ; Setup parameters for call to function osal_msg_deallocate
+   \   00003C   AA..         MOV     R2,?V0 + 0
+   \   00003E   AB..         MOV     R3,?V0 + 1
+   \   000040   12....       LCALL   ??osal_msg_deallocate?relay
+    126                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( TempHumApp_TaskID );
+   \   000043                ; Setup parameters for call to function osal_msg_receive
+   \                     ??TempHumApp_ProcessEvent_1:
+   \   000043   90....       MOV     DPTR,#TempHumApp_TaskID
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   F9           MOV     R1,A
+   \   000048   12....       LCALL   ??osal_msg_receive?relay
+   \   00004B   8A..         MOV     ?V0 + 0,R2
+   \   00004D   8B..         MOV     ?V0 + 1,R3
+    127              }
+   \   00004F   E5..         MOV     A,?V0 + 0
+   \   000051   45..         ORL     A,?V0 + 1
+   \   000053   70BA         JNZ     ??TempHumApp_ProcessEvent_2
+    128              // return unprocessed events
+    129              return (events ^ SYS_EVENT_MSG);
+   \   000055   EE           MOV     A,R6
+   \   000056   FA           MOV     R2,A
+   \   000057   EF           MOV     A,R7
+   \   000058   6480         XRL     A,#0x80
+   \   00005A   8020         SJMP    ??TempHumApp_ProcessEvent_5
+    130            }
+    131            if(events&SEND_DATA_EVENT)
+   \                     ??TempHumApp_ProcessEvent_0:
+   \   00005C   EE           MOV     A,R6
+   \   00005D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00005F   501E         JNC     ??TempHumApp_ProcessEvent_6
+    132            {
+    133              Read_DHT11();
+   \   000061                ; Setup parameters for call to function Read_DHT11
+   \   000061   12....       LCALL   ??Read_DHT11?relay
+    134              TempHumApp_SendTheMessage();
+   \   000064                ; Setup parameters for call to function TempHumApp_SendTheMessage
+   \   000064   12....       LCALL   ??TempHumApp_SendTheMessage?relay
+    135              osal_start_timerEx(TempHumApp_TaskID,SEND_DATA_EVENT,3000);
+   \   000067                ; Setup parameters for call to function osal_start_timerEx
+   \   000067   7CB8         MOV     R4,#-0x48
+   \   000069   7D0B         MOV     R5,#0xb
+   \   00006B   7A01         MOV     R2,#0x1
+   \   00006D   7B00         MOV     R3,#0x0
+   \   00006F   90....       MOV     DPTR,#TempHumApp_TaskID
+   \   000072   E0           MOVX    A,@DPTR
+   \   000073   F9           MOV     R1,A
+   \   000074   12....       LCALL   ??osal_start_timerEx?relay
+    136              return(events^SEND_DATA_EVENT);
+   \   000077   EE           MOV     A,R6
+   \   000078   6401         XRL     A,#0x1
+   \   00007A   FA           MOV     R2,A
+   \   00007B   EF           MOV     A,R7
+   \                     ??TempHumApp_ProcessEvent_5:
+   \   00007C   FB           MOV     R3,A
+   \   00007D   8004         SJMP    ??TempHumApp_ProcessEvent_7
+    137            }
+    138            return 0;
+   \                     ??TempHumApp_ProcessEvent_6:
+   \   00007F   7A00         MOV     R2,#0x0
+   \   000081   7B00         MOV     R3,#0x0
+   \                     ??TempHumApp_ProcessEvent_7:
+   \   000083   7F04         MOV     R7,#0x4
+   \   000085   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000088                REQUIRE _A_P1
+    139          }
+    140          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    141          void TempHumApp_SendTheMessage(void)
+   \                     TempHumApp_SendTheMessage:
+    142          { 
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 22
+   \   000005   74EA         MOV     A,#-0x16
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    143          unsigned char theMessageData[10]="EndDevice";
+   \   00000A   740C         MOV     A,#0xc
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   AC82         MOV     R4,DPL
+   \   000011   AD83         MOV     R5,DPH
+   \   000013   7583..       MOV     DPH,#(`?<Constant "EndDevice">` >> 8) & 0xff
+   \   000016   7582..       MOV     DPL,#`?<Constant "EndDevice">` & 0xff
+   \   000019   740A         MOV     A,#0xa
+   \   00001B   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    144          
+    145          afAddrType_t my_DstAddr;
+    146          
+    147          my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+   \   00001E   7408         MOV     A,#0x8
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7402         MOV     A,#0x2
+   \   000025   F0           MOVX    @DPTR,A
+    148          my_DstAddr.endPoint=TempHumApp_ENDPOINT;
+   \   000026   7409         MOV     A,#0x9
+   \   000028   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002B   12....       LCALL   ?Subroutine1 & 0xFFFF
+    149          my_DstAddr.addr.shortAddr=0x0000; 
+    150          
+    151          
+    152          theMessageData[0]=66;
+   \                     ??CrossCallReturnLabel_0:
+   \   00002E   740C         MOV     A,#0xc
+   \   000030   12....       LCALL   ?XSTACK_DISP0_8
+   \   000033   7442         MOV     A,#0x42
+   \   000035   F0           MOVX    @DPTR,A
+    153          theMessageData[1]=88;
+   \   000036   740D         MOV     A,#0xd
+   \   000038   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003B   7458         MOV     A,#0x58
+   \   00003D   F0           MOVX    @DPTR,A
+    154          
+    155          AF_DataRequest(&my_DstAddr
+    156          ,&TempHumApp_epDesc
+    157          ,TempHumApp_CLUSTERID
+    158          ,osal_strlen("EndDevice")+1
+    159          ,theMessageData
+    160          ,&TempHumApp_TransID
+    161          ,AF_DISCV_ROUTE
+    162          ,AF_DEFAULT_RADIUS);
+   \   00003E                ; Setup parameters for call to function AF_DataRequest
+   \   00003E                REQUIRE ?Subroutine0
+   \   00003E                ; // Fall through to label ?Subroutine0
+    163          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000003   78..         MOV     R0,#?V0 + 0
+   \   000005   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000008   75....       MOV     ?V0 + 0,#TempHumApp_TransID & 0xff
+   \   00000B   75....       MOV     ?V0 + 1,#(TempHumApp_TransID >> 8) & 0xff
+   \   00000E   78..         MOV     R0,#?V0 + 0
+   \   000010   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000013   740F         MOV     A,#0xf
+   \   000015   12....       LCALL   ?XSTACK_DISP0_8
+   \   000018   8582..       MOV     ?V0 + 0,DPL
+   \   00001B   8583..       MOV     ?V0 + 1,DPH
+   \   00001E   78..         MOV     R0,#?V0 + 0
+   \   000020   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000023                ; Setup parameters for call to function osal_strlen
+   \   000023                ; Setup parameters for call to function osal_strlen
+   \   000023   7A..         MOV     R2,#`?<Constant "EndDevice">_1` & 0xff
+   \   000025   7B..         MOV     R3,#(`?<Constant "EndDevice">_1` >> 8) & 0xff
+   \   000027   12....       LCALL   ??osal_strlen?relay
+   \   00002A   EA           MOV     A,R2
+   \   00002B   2401         ADD     A,#0x1
+   \   00002D   F5..         MOV     ?V0 + 0,A
+   \   00002F   EB           MOV     A,R3
+   \   000030   3400         ADDC    A,#0x0
+   \   000032   F5..         MOV     ?V0 + 1,A
+   \   000034   78..         MOV     R0,#?V0 + 0
+   \   000036   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000039   75..01       MOV     ?V0 + 0,#0x1
+   \   00003C   75..00       MOV     ?V0 + 1,#0x0
+   \   00003F   78..         MOV     R0,#?V0 + 0
+   \   000041   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000044   7920         MOV     R1,#0x20
+   \   000046   7C..         MOV     R4,#TempHumApp_epDesc & 0xff
+   \   000048   7D..         MOV     R5,#(TempHumApp_epDesc >> 8) & 0xff
+   \   00004A   7409         MOV     A,#0x9
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   AA82         MOV     R2,DPL
+   \   000051   AB83         MOV     R3,DPH
+   \   000053   12....       LCALL   ??AF_DataRequest?relay
+   \   000056   7409         MOV     A,#0x9
+   \   000058   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00005B   7416         MOV     A,#0x16
+   \   00005D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000060   7F02         MOV     R7,#0x2
+   \   000062   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   740A         MOV     A,#0xa
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   85..82       MOV     DPL,?XSP + 0
+   \   000006   85..83       MOV     DPH,?XSP + 1
+   \   000009   E4           CLR     A
+   \   00000A   F0           MOVX    @DPTR,A
+   \   00000B   A3           INC     DPTR
+   \   00000C   F0           MOVX    @DPTR,A
+   \   00000D   22           RET
+    164          /*HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+    165          {
+    166            
+    167            if (HAL_KEY_SW_7_PXIFG & HAL_KEY_SW_7_BIT)
+    168            {
+    169            }
+    170            //HAL_KEY_SW_7_PXIFG = 0;
+    171            //HAL_KEY_CPU_PORT_0_IF = 0;
+    172          }*/
+    173          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    174          void TempHumApp_SerialSend(unsigned char* ser_str)
+   \                     TempHumApp_SerialSend:
+    175          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 22
+   \   000005   74EA         MOV     A,#-0x16
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    176            afAddrType_t my_DstAddr;
+    177            unsigned char theMessageData[10]="EndDevice";
+   \   00000A   740C         MOV     A,#0xc
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   AC82         MOV     R4,DPL
+   \   000011   AD83         MOV     R5,DPH
+   \   000013   7583..       MOV     DPH,#(`?<Constant "EndDevice">_2` >> 8) & 0xff
+   \   000016   7582..       MOV     DPL,#`?<Constant "EndDevice">_2` & 0xff
+   \   000019   740A         MOV     A,#0xa
+   \   00001B   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    178            
+    179            my_DstAddr.addrMode=(afAddrMode_t)Addr16Bit;
+   \   00001E   7408         MOV     A,#0x8
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7402         MOV     A,#0x2
+   \   000025   F0           MOVX    @DPTR,A
+    180            my_DstAddr.endPoint=TempHumApp_ENDPOINT;
+   \   000026   7409         MOV     A,#0x9
+   \   000028   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002B   12....       LCALL   ?Subroutine1 & 0xFFFF
+    181            my_DstAddr.addr.shortAddr=0x0000; 
+    182          
+    183            memcpy(theMessageData,ser_str,10);
+   \                     ??CrossCallReturnLabel_1:
+   \   00002E                ; Setup parameters for call to function memcpy
+   \   00002E   75..0A       MOV     ?V0 + 0,#0xa
+   \   000031   F5..         MOV     ?V0 + 1,A
+   \   000033   78..         MOV     R0,#?V0 + 0
+   \   000035   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000038   EA           MOV     A,R2
+   \   000039   FC           MOV     R4,A
+   \   00003A   EB           MOV     A,R3
+   \   00003B   FD           MOV     R5,A
+   \   00003C   740E         MOV     A,#0xe
+   \   00003E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000041   AA82         MOV     R2,DPL
+   \   000043   AB83         MOV     R3,DPH
+   \   000045   12....       LCALL   ??memcpy?relay
+   \   000048   7402         MOV     A,#0x2
+   \   00004A   12....       LCALL   ?DEALLOC_XSTACK8
+    184            
+    185          
+    186            AF_DataRequest(&my_DstAddr
+    187              ,&TempHumApp_epDesc
+    188              ,TempHumApp_CLUSTERID
+    189              ,osal_strlen("EndDevice")+1
+    190              ,theMessageData
+    191              ,&TempHumApp_TransID
+    192              ,AF_DISCV_ROUTE
+    193              ,AF_DEFAULT_RADIUS);
+   \   00004D                ; Setup parameters for call to function AF_DataRequest
+   \   00004D   02....       LJMP    ?Subroutine0 & 0xFFFF
+    194          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TempHumApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TempHumApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??rxCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    rxCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TempHumApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TempHumApp_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TempHumApp_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TempHumApp_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TempHumApp_SerialSend?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TempHumApp_SerialSend
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">_1`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "EndDevice">_2`:
+   \   000000   456E6444     DB "EndDevice"
+   \            65766963
+   \            6500    
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     38  TempHumApp_Init
+                          0 0 38 -> HalUARTOpen
+                          0 0 38 -> MT_UartInit
+                          0 0 38 -> MT_UartRegisterTaskID
+                          0 0 38 -> afRegister
+       0      0     12  TempHumApp_ProcessEvent
+                          0 0 12 -> Read_DHT11
+                          0 0 12 -> TempHumApp_SendTheMessage
+                          0 0 12 -> osal_msg_deallocate
+                          0 0 12 -> osal_msg_receive
+                          0 0 12 -> osal_set_event
+                          0 0 12 -> osal_start_timerEx
+       2      0     53  TempHumApp_SendTheMessage
+                          0 0 41 -> AF_DataRequest
+                          0 0 37 -> osal_strlen
+       2      0     51  TempHumApp_SerialSend
+                          0 0 41 -> AF_DataRequest
+                          0 0 34 -> memcpy
+                          0 0 37 -> osal_strlen
+       2      0     10  rxCB
+                          2 0 10 -> HalUARTRead
+                          2 0 10 -> TempHumApp_SerialSend
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      10  ?<Constant "EndDevice">
+      10  ?<Constant "EndDevice">_1
+      10  ?<Constant "EndDevice">_2
+       6  ??TempHumApp_Init?relay
+       6  ??TempHumApp_ProcessEvent?relay
+       6  ??TempHumApp_SendTheMessage?relay
+       6  ??TempHumApp_SerialSend?relay
+       6  ??rxCB?relay
+     101  ?Subroutine0
+      14  ?Subroutine1
+       1  TempDATA
+       2  TempHumApp_ClusterList
+     125  TempHumApp_Init
+       1  TempHumApp_NwkState
+     136  TempHumApp_ProcessEvent
+      62  TempHumApp_SendTheMessage
+      80  TempHumApp_SerialSend
+      12  TempHumApp_SimpleDesc
+       1  TempHumApp_TaskID
+       1  TempHumApp_TransID
+       6  TempHumApp_epDesc
+       1  _A_P1
+      56  rxCB
+
+ 
+ 574 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+  44 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 604 bytes of CODE  memory
+  44 bytes of CONST memory
+   0 bytes of DATA  memory (+ 1 byte shared)
+  10 bytes of XDATA memory
+
+Errors: none
+Warnings: none
