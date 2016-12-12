@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=1347169442
+Checksum=1027923594
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -31,13 +31,13 @@ ByteLimit=50
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Breakpoints]
 Count=0
 [ChipconEmu]

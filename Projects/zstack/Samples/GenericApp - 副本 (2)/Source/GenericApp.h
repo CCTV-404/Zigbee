@@ -101,24 +101,11 @@ extern void GenericApp_Init( byte task_id );
  */
 extern UINT16 GenericApp_ProcessEvent( byte task_id, UINT16 events );
 
-
-typedef struct
-{
-  uint16 clusterId;
-  union{
-    uint16 shortAddr;
-    ZLongAddr_t extAddr;
-  }addr;
-  unsigned  char UART_Char[30]; 
-}MSGfrom_UART;
-
 /*********************************************************************
 *********************************************************************/
 
 #ifdef __cplusplus
 }
 #endif
-
-
 
 #endif /* GENERICAPP_H */

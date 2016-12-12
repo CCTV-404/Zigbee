@@ -69,9 +69,6 @@
 #include "GenericApp.h"
 #include "DebugTrace.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-   
 #if !defined( WIN32 )
   #include "OnBoard.h"
 #endif
@@ -133,7 +130,7 @@ const SimpleDescriptionFormat_t GenericApp_SimpleDesc =
 // in the structure here and make it a "const" (in code space).  The
 // way it's defined in this sample app it is define in RAM.
 endPointDesc_t GenericApp_epDesc;
-MSGfrom_UART Uart_MSG;
+
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
@@ -163,7 +160,6 @@ static void GenericApp_HandleKeys( byte shift, byte keys );
 static void GenericApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
 static void GenericApp_SendPeriodMessage( void );
 static void GenericApp_SendTheMessage( void );
-void atoMSG_Struct(char* buf, MSGfrom_UART* temp);
 
 #if defined( IAR_ARMCM3_LM )
 static void GenericApp_ProcessRtosMessage( void );
@@ -676,7 +672,7 @@ void GenericApp_start_usrt_test(void)
 }
 static void rxCB(uint8 port,uint8 event)
 {
-  //HalUARTWrite(0,"I get",5);
+ // HalUARTWrite(0,"I get",5);
   unsigned  char Uartbuf[10];
   unsigned char len;
   len=HalUARTRead(0,Uartbuf,10);
@@ -684,41 +680,8 @@ static void rxCB(uint8 port,uint8 event)
   if(len)
   {
     HalUARTWrite(0,"I get",5);
-    atoMSG_Struct(Uartbuf,&Uart_MSG);
+    HalUARTWrite(0,Uartbuf,len);
     len=0;
   }
 }
-void atoMSG_Struct(char* buf, MSGfrom_UART* temp)
-{
-	char* p = buf;
-	char buffer[30];
-	int i = 0,j=0;
-	while(*p!='#')
-	{
-		buffer[j++] = *p;
-		p++;
-	}
-	buffer[j] = '\0';
-	temp->clusterId = atoi(buffer);
-	j=0;
-	while(*p!='#')
-	{
-		buffer[j++]=*p;
-		p++;
-	}
-	buffer[j] = '\0';
-        if(temp->clusterId == 1)
-        {
-          temp->addr.shortAddr = (uint16)atoi(buffer);
-        }
 
-	j=0;
-	while(*p!='\0')
-	{
-		temp->UART_Char[j++] = *p;
-		p++;
-	}
-	temp->UART_Char[j] = '\0';
-
-	HalUARTWrite(0,"change to the struce MSGfrom_UART",sizeof("change to the struce MSGfrom_UART"));
-}
